@@ -1,0 +1,1488 @@
+(1:17 - 3:22)
+I'm just sharing a link for the last notebook. It is the same Langfuse project, but I have done a few enhancements on that. Okay. 
+
+Sir, can you share the observability file that was shown yesterday? It was showing some error in the... HTML file. That HTML file will not directly open. One has to download and that will open.
+
+(3:22 - 3:33)
+I don't know. So once you have to download it, it will only open in the local... it will not be visible in the platform. You have to first download it.
+
+(3:34 - 4:00)
+Anyone who had downloaded this properly and tried to open it, it was opening, right Shikant? That's the right way of doing that. It's HTML file. Yeah, it's working, Prashant. 
+
+After downloading, just open with browser or directly console. So you have to download, double click and it's a regular HTML file. It will open in the browser.
+
+(4:04 - 4:53)
+Okay, cool. Fine then. So I think we are good to go. 
+
+Any other question? Yeah, Prashant, I have a question. I know we are following the labs and we are just understanding what are the labs we are able to do. Thanks for that. 
+
+But is there any websites or something we can follow and see, solve some questions like... I know it's not like real-time experience we don't have. I don't have. So that is when we jump onto a project, we might come across into hurdles, right, to get into some exposure kind of thing.
+
+(4:53 - 5:02)
+That would be helpful. Let me think. So questions you mentioned.
+
+(5:02 - 7:28)
+What kind of question? No, no, no. What I mean to say is, we are going through the labs, getting into the exposure and the basic knowledge we are getting. But when we go to the real picture, like real projects, at that time, I might get stuck up because we end up like we don't know the real picture right now. 
+
+How things will work out? Because we don't know the real problems, how to approach and all. Because you are explaining the examples of it and we are just going through the HTMLs and everything, but we don't know the real picture of it, how things will work out. My question is like, is there any website where we can go like a freelancer kind of thing to look at, join those websites, look at those problems, solve those problems, kind of thing. 
+
+Is there any website we can... Okay. See, one suggestion that I can give is maybe once you download the entire curriculum and what all you have learned, let's say try to summarise that in maybe one markdown file and give that markdown file that, okay, this is the course that I have gone through. This contains these eight, nine modules. 
+
+And these are the topics that I have learned. These are the labs that has been done. Maybe Karthik and team will be able to give you this consolidated markdown file. 
+
+Karthik, will you be able to do this? Yes. Okay. One file, a markdown file. 
+
+I don't want an Excel sheet or a Word document. A markdown file in which the curriculum is mentioned, what all modules are there, what all labs were did. Complete. 
+
+Today is the last session. So, updated till today, right? A single markdown file. Perfect. 
+
+Now, as a good activity, what you do is give this markdown file to maybe Chad, GPT, Gemini, Claude, whatever is your favourite model. Say that, okay, this is what we have learned. These are the labs that I have performed. 
+
+Okay. And most of the lab codes provide this entire context. Lab codes, 99% or 95% were already provided to us by the instructor.
+
+(7:28 - 9:02)
+But I have an understanding of the codes, what these codes do, and what they perform. Okay. But now, I want to apply this learning into some new scenarios, new projects. 
+
+So, can you suggest me three to four projects where I can go ahead and apply? So, get some project suggestions into it. And then you try to solve those scenarios. Okay. 
+
+So, now, there are two approaches to solve those scenarios. One is, if you just ask for the projects, you will still be, you know, venturing into unknown lands, and you are still going to be very much, you can say, in a difficult situation. Yeah, the simple scenario. 
+
+So, what is a better way of doing? So, when you are asking for the projects, the trick is, okay, also ask about hints about the right design patterns. Okay. You may always counter it, but which all labs which can be lab notebooks can be repurposed, number one, which all lab notebooks can be repurposed or what all design patterns can be used, okay, in those. 
+
+So, if you can, you know, ask the model to give you some of the hints, okay, then you are not starting blank, you are not starting from scratch. Okay. So, you have the project objectives, you have the deliverables, what it means, and you have some starting point.
+
+(9:03 - 11:21)
+Okay. So, you repurpose those notebooks into a different project, that is the easiest and the best thing to start to get more confidence on any of the learnings always, okay. So, or I would strongly suggest to do this as a standalone activity also, you do not even have to go to this entire exercise by uploading the entire curriculum, even that I would do at a later stage after a month or so. 
+
+Okay. What I would normally do is, most of the projects, notebooks, which are just upload that Jupyter notebook into cloud or Gemini, say that this is the end-to-end notebook, which talks about an end-to-end project and one design pattern has been implemented. Okay. 
+
+Now, give me another project which implements the same design pattern. Okay. And I want to do it on my own, give me the step by step implementation guidelines. 
+
+So, now you know the steps, now you know the design pattern, and you have some codes to start with, all you have to do is copy paste those codes, keep changing the variable names as per the new project requirements. Okay. And since the design pattern is well known, you will be able to also replicate your line graph, graph or query, whatever that is, okay, and try to adapt it, spend a day, two, three, four, maybe max to max a week. 
+
+And then once you are almost 80-90% through it, and every time when you have completed some milestones, okay, also ask the model to give you some milestones and after each of the milestones that you have implemented, upload it and ask the model to verify whether you have done it correctly or ask for suggestions. Okay. So, in that notebook, the outputs will be all clearly printed, right. 
+
+So, model will go through it. Okay. See that okay, it is following the steps properly, guidelines properly, the architecture pattern has been implemented. 
+
+And then, so let us say the entire new project has been divided into four parts or four milestones. Okay. So, after each part that you have implemented, okay, upload it and ask for the model to review it. 
+
+So, this way you can actually make your learning better. And this activity you do it for all the seven, eight projects end to end that we have done. Okay.
+
+(11:22 - 12:08)
+So, one project one week, and that should be really good enough to give you a high level of confidence that you can actually do it. Because simply, you know, running the codes is good for people who just want to have a idea about the domain, or they want to have an idea about what these agents are, agentic architectures, the kind of use cases, but for builders and coders, okay, this is still not going to be enough. Now, you have to go on a co-pilot and autonomous mode, you have to now help yourselves. 
+
+Okay. Now, you know, the codes now, you know, the design patterns, you know, you already have validated codes with you, you are not asking for codes from chartGPT, chartGPT codes 99.9% will never work. And they will be outdated.
+
+(12:08 - 17:25)
+Why? Because the model has been trained six months ago. And many of these, you know, modules are also getting deprecated dependency issues and every other nonsense, you will get it. Okay, so for each lab notebook, I have done an effort of at least 10 to 15 hours, or maybe in some cases 20 hours. 
+
+Okay, that is the amount of effort which has gone into creating each and every lab notebook, trust me. Okay, and that has gone several rounds of revisions. Now that we have proper validated codes, proper validated, you know, design patterns and proper use cases for each of them, all you have to do is just scale it up. 
+
+Okay, ask for alternative projects, ask for the steps, ask for the phases in which those steps are going to be implemented. Okay, and the pass fail criteria for each of the phase that this is exactly what I should be able to deliver. Otherwise, it is a fail. 
+
+So pass fail for each phase. So these are the prompts, the way you ask is most important. And naive is upload a new Jupyter notebook and give me project suggestions. 
+
+This is a naive prompt that this itself will give you the most nonsense output that you will be never be able to, you know, help yourself. But what did I say, you have to provide the full context. Okay, full context is, this is the Jupyter notebook as a part of learning the course that I did. 
+
+Okay, and I understand this code notebook implementation in the project well. Now I want to implement the same architecture in a different use case or scenario. So I want you to give me a different use case scenario or a project end to end with steps divided into three to four phases and for each phase give me a, you know, pass fail criteria. 
+
+So after each phase, I will upload my Jupyter notebook, you have to evaluate and give me a feedback. Okay, so that I can improvise, improve, whatever. Now, this is the complete prompt that you should provide. 
+
+And then you see the kind of suggestions that you will get with proper steps with proper phases with proper pass fail criteria and so on. And the same activity now repeat for all the other projects, take one end to end project every week. So you are mastering your design patterns this way. 
+
+Right? Yeah, thank you. Thanks. What do you mean by phases? Is it block of no phases with let's say the entire project execution is in 10 phases, let's say, sorry, 10 steps. 
+
+The first step could be as simple as setting up your Jupyter notebook or whatever, let's say the installation, setting up the API key, opening a client and importing your client, this itself could be the phase one, I do not know what the model decides. So once you are done with these four steps, that is importing all the required libraries, you know, setting up your API keys, importing the keys, setting up your LLM, okay, that itself and the outputs of each of those are clearly printed in your Jupyter notebook, upload that Jupyter notebook. So this itself is a phase one. 
+
+So first four steps phase one, the next two steps or three steps, phase two. So logical phases, it will, you know, ask. So in one of the phases, you are defining, let's say the node functions. 
+
+And the phase you are defining the entire graph. And the last phase, you are defining your wrapper function and actually executing your entire project. Okay, this way, I'm just giving you the phases basically, okay, or in one phase, you are defining all the tools, which you are going to use within these agents, okay. 
+
+So each phase has its logical deliverable, you can say, and you also test those deliverables. That is the main thing. Okay, and this is how you would also do the development when you are using cursor or whatever ID you are using VS code, VS code or whatever, yes, windsurf and so on. 
+
+Because people will, you know, give a blank prompt, okay, this is a project I want to code, help me. So this is completely useless, it will maybe quite possible it will be able to build into it. But then you have no idea what has been done, what steps has been taken, what phases, what milestones, and you have never tested your code ever, because you have never looked at the codes ever. 
+
+But when you are doing the development step by step, when you are doing the development phase by phase, and you are manually testing those phases, whether each step works, doesn't work error messages, go back and forth and resolve, then you are a part of the entire cycle, you are part of the entire development process. Okay, you will feel inclusive, and then only you will feel empowered and confident, right that you were I'm in that development process. I'm used to working on Google collab. 
+
+And it's easy because the they're like we have block of code. But when it comes to VS code, like it's hard to debug, like I don't know how they do it. Because it's not that flexible or like to debug the programmes.
+
+(17:26 - 18:43)
+What do you suggest? How do we learn that? No, so I would only give a simple suggestion. VS code is not for learning that is for production level deployment code. Okay. 
+
+So when you have reached a pro level that you have understood the concepts, the architectures, the design patterns, the codes, the nuances, everything quite well, then you graduate to the deployment. Okay, graduate to a production level code 99% of the scenarios, the production guys will be different than the development guys. Okay, we are learning to become developers first. 
+
+Once you are in your developer role for at least a year or two, you have a huge confidence on all your codes, patterns, frameworks, errors, then you graduate to a prod code. Okay, so those are the guys who will write down you probably join a new job, and they will never ask you to write down a production code. I mean, that is highly unlikely that's not even a realistic expectation, frankly. 
+
+So this is the simplest answer. Okay, so the guys who are actually using VS code, they are familiar, they know their responsibilities, they know their expectations. So they will never ask this question that I cannot use a VS code.
+
+(18:44 - 19:12)
+So this case would be like we do our project in Colab, see it's running fine, then paste it over to VS code, then I think it will run, right? No, so if you want to put your Jupyter notebook into a VS code, same thing, open your VS code or maybe a cursor or something. Okay. And then the first thing that you do is upload your Jupyter notebook there and say that, okay, this is a Jupyter notebook with an end to end project.
+
+(19:12 - 19:29)
+Now I want to make it a production grade project, let's say. So first give me the project outline, sorry, what is that called? Scaffold. Okay, that is called as project scaffold.
+
+(19:29 - 21:54)
+In the project scaffold, the proper organisation of the files and the folders are present. So for example, where will you keep your environment file? Where will it keep your configuration file? Where will you keep your markdown files, documentations, test files, source files, agent files, config files, everything. Okay, so that is called as project scaffold. 
+
+So first you ask for the project scaffold. Okay, that is a project organisation folder. That's it. 
+
+So first step is ask for that. Review it. Okay, is that something which is making sense? Once you are comfortable, because it may happen that it may give you too many folders or too many file types, because one file, now it is going to break down into 10, 15 files. 
+
+If it is breaking more than 10 files, that's a red flag, at least for the learners, beginners. So ideally, it shouldn't be breaking a single Jupyter notebook into 20, 25 files. You will be lost in that entire maze of so many files. 
+
+Okay, so make it manageable. Then in the subsequent prompt, I don't want this project to break in more than seven to eight Python files that the other docker-compose file might be there, environment file will be there, .env, gitignore file would be there, cursorignore file would be there, yaml file would be there. So you are not counting those files. 
+
+You are only counting the Python files. Okay, so make it specific that when you are breaking this entire Jupyter notebook or notebook into your Python project structure, it shouldn't be more than five to seven Python files. Okay, so this way you are in a much safer position. 
+
+And then ask for these questions, how it is, you know, going to plan to do that. This planning should be done using the best possible model. So if you are not using Windsor for cursor, okay, with the best possible model. 
+
+So for example, now the best possible model is Opus in the thinking mode, Opus 4.6. If you don't have access to that, go to Cloud, you know, web-based chat, okay. If you have access to Cloud Pro, then also you can do the same activity, go to maybe, it's very simple, okay. So I could not do that right now, but go to again, chat mode or chat interface of the, you know, Cloud Pro.
+
+(21:56 - 22:17)
+Access whatever is the best model that you have, or go to Gemini 3.1 Pro, whatever it is, or if you're using chat GPT+, then go for GPT 5.2 model. So take one of these three best models from three platforms. Okay, I would strongly suggest that you have at least one Pro model access, henceforth.
+
+(22:17 - 25:54)
+Okay, you have already invested 1000s of dollars in your learning, this additional $20 is really going to take you to the next level. Okay. So take one of the best model while doing this architecture level discussions or brainstorming. 
+
+Okay, you're not even asking for the code right away, you are just brainstorming how this project can be scaffolded or how this project can be organised. And once you have got all the decisions, discussions, then take that project folder structure, copy paste that folder structure into your VS code, and then try to replicate it or then you can ask the model to give each of these files one by one. Okay. 
+
+And also as the model, how can I test that this file is actually working. So now the model will give you the codes for each of these files. So for example, all the agents can be created in one, how do you test your agents, or all the API endpoints can be created in one file, how do you test your API agents, endpoints? Okay. 
+
+So, or all the document processing code be in one file, let us say processor.py file, something like that, or preprocessor.py file. So how do you test it? So every time insist on this statement. Okay. 
+
+So give one by one Python file, and also give me how will I test that file is working. Okay. So ask for that, especially. 
+
+So it might give you an additional test file. So like test underscore processor.py file, which will be additional few lines of code to test that your processor.py is actually working or you test it in the command line. So getting used to the command line is the new thing. 
+
+Right now we are all used to what, collab. Okay. So that transition is not going to be all of a sudden, that is going to take some time that will make you uncomfortable during that entire transition period. 
+
+But that's the thing. Okay, unless you are not thorough with the collab notebook codes, there's no point in going to VS code, frankly, because they that it will, I mean, it's only going to, you know, torture you more that will all be Greek and Dutch, otherwise, okay. So, you know, I would say advanced step by step, okay, do not unnecessarily torture yourself by using VS code from day one, I would say, okay. 
+
+So please be comfortable with what codes we have in Jupyter notebooks, or collab notebooks first, try to replicate second step replicated for another project. And then once you have replicated it safely for another project, that means you are now reached a level where you can create another project from scratch. Okay. 
+
+So you have graduated the builder level, now or developer level. Now you have to advance to the production coder. Okay, that is where your VS code is. 
+
+No production code is ever written on collab or Jupyter notebook. That is all VS code, but VS code cannot start from day one. I mean, okay. 
+
+So that is the general suggestions. I think this will really help everyone. Okay. 
+
+Suresh saying, I am using the same process with Cloud Pro with a detailed requirements prompt with Visual Studio Code login and I am able to make it work in local also. Perfect. You see, using terminal commands is the key in the visual.
+
+(25:54 - 27:06)
+So terminal commands has to be there. I mean, you will have to get comfortable sooner or later. Okay. 
+
+If you are looking for VS code and master the markdown files and the requirement, correct. So every time you are looking for an explanation, ask the model to give that explanation in the markdown file, like maybe architecture.md or readme.md, requirement.txt. Okay. So these are the correct files. 
+
+Okay. So don t ask the model to give an explanation on the screen or the chat window because there you will only do a copy paste. Don t do that. 
+
+Okay. Ask the model to generate all the explanations and document it as a markdown file, which you can actually save it in your project folder. Advantage of doing that is your cursor ID or VS code ID will also be able to access that explanations or documentation. 
+
+And you will also be able to see that documentation nicely formatted at any later stage. You don t have to every time scroll up where that explanation was, which chat window that is copy pasted gone. I mean, that s not the right way.
+
+(27:06 - 27:56)
+Okay. So whenever you are asking the model to explain something, ask it to document that explanation as a markdown file. Is that making sense? Okay. 
+
+Okay. So let s go ahead and finish the remaining topic, which is on model context protocol. But before I jump into that, okay, there is one, I think Tim had suggested that we do simulate a bottleneck and go for the tracing.
+
+(27:57 - 28:08)
+Okay. So that I tried and it has worked well. I m just sharing that file over the chat somehow.
+
+(28:21 - 30:52)
+So everyone should thank him. Okay. So I always, you know, appreciate and take reasonable requirements during the session. 
+
+So, okay. I ve shared this notebook in the chat. So I m just sharing my screen. 
+
+It is all completely running piece of code. Okay. We may not run it line by line, but you can trust my outputs. 
+
+Okay. Yes, I did created a delay using time.sleep. Plus there are a couple of redundant API calls also. Okay. 
+
+Let me know if my screen is visible. Okay. So first thing, I ll go on mute for next 10 minutes, because this is all the same done and discussed. 
+
+I want you guys to follow until this point. Okay. This is where the new thing starts. 
+
+So till that, execute all your codes, reach to that point. I have already discussed everything. Test the customer workflow. 
+
+You can take your time. If you are actually running it, even if you don t want to run it, the codes are there. You go it at your own pace, understand. 
+
+Let me know if there are questions in the chat. Okay. I am here very much to answer, but I want you to follow at your own pace, because I have done it already at my pace and everything, viewing the logs and everything. 
+
+Okay. So this is all done. So I want everyone to actually view your LangFuse dashboard and make sure that you are able to see all of these traces.
+
+(30:53 - 39:10)
+Okay. Till this point. So all the recent traces, this is all we did yesterday. 
+
+So this is the only point which is new for today. Okay. So I ll wait here for next 10 minutes. 
+
+By the time you come and reach and let me know if you have any questions. So this is all done. I mean, there is nothing new for me to explain. 
+
+This was deliberately done to see the logs when there would be some issues or I ll be creating some delays, troubleshooting and those things. Done? Yes. Any questions till here? Hello. 
+
+Am I audible? Yes, Prashant. What are we supposed to do in LangFuse? Are we supposed to create a new project? No, no. So what I had asked is you have to reach until that point, number 17, by executing all the codes and get to that point, number 17.
+
+(39:12 - 40:40)
+So have you reached? And then you also have to check the traces. So were you able to create a project and look into the traces? So these are the traces that we have got. All good till here? That was I was expecting that you would actually execute and look into your traces. 
+
+Okay. So now let s see. Business scenario. 
+
+Your customer support agent is deployed in production at an Indian fintech company processing 5,000 queries per day and users start complaining about so slow responses. Some might even take more than 15 to 20 seconds instead of the expected 3 to 5 seconds. Now the operations team needs to pinpoint which node is the bottleneck and why. 
+
+And this is exactly what the LangFuse observability is built for. So we are going to do these four things, deliberately introduce the realistic bottlenecks and then run both the original and the slow agent. The original one, which we have just now created, this is what is running.
+
+(40:40 - 41:33)
+That is our original one. And then also check the LangFuse traces and compare before and after to demonstrate how the observability is driving optimisation. Okay. 
+
+So these are the three bottlenecks that we will be creating. Redundant LLM calls. So instead of three API calls, we ll now be making four. 
+
+And that fourth API call would be just a confidence check in one of these sentiment analysis or you can say the query categorisation part. Okay. Now over retrieval. 
+
+So instead of retrieving three documents, I m going to retrieve 15. That is also going to load the prompt. So more number of prompt or more amount of information is going. 
+
+And that will also nudge the LLM to think more, struggle more to get to the realistic answer. Okay. So that is going to further slow down.
+
+(41:34 - 43:49)
+And we ll also put some artificial delay, maybe 7 to 8 seconds sleep, simulating a slow external API. Okay. So this is in real world equivalent, calling a legacy REST API endpoint, which does not have a timeout. 
+
+Okay. So these are the real world equivalents. So in this case, missing k limit or threshold on vector search. 
+
+So the model decides or maybe the amount of k is decided in real time by a model or something. So in which case it can be 3, 10, 15 or it can be any number. So how do we create this slow node function? So it is the copy of the original node function. 
+
+This is most leader scene. And this is the bottleneck part. Okay. 
+
+Where I m creating a verification prompt. So this is the one for categorising into billing, technical and general. And after the model has categorised, I m making another API call to verify if the categorisation is correct. 
+
+Okay. With the same model. So you previously classified this query as this topic. 
+
+Please verify this classification is correct for this particular query and return the verified category. So it s the same thing with the same Pydantic model. And you are invoking with a new verification prompt. 
+
+Okay. So this is a redundant API call, artificially asking it to verify the previous work. In the current scenario, it is redundant. 
+
+But who knows that this itself can be really something good, maybe as a good cross check or a validator or something like that. But yeah. Second bottleneck, I m just going to simulate a legacy external API by introducing this sleep, time.sleep. So this is the one which is going to also make this API call slow. 
+
+Okay. So this is while analysing the sentiment. Okay. 
+
+So while analysing the query category, a new redundant API call is made. And while analysing the query sentiment. Okay.
+
+(43:50 - 45:12)
+Bottleneck has been introduced, which is like making the entire system sleep for eight seconds. This is like stimulating that the API call is taking eight more seconds for the overall response to be generated. Okay. 
+
+So and the third one is while doing the response generation, instead of retrieving the top three, I m going for top 15. And this is what is going to bloat the entire prompt with irrelevant content and context, more tokens will go inside, that will also lead to higher cost, input cost at least, and also latency will increase. So rest all the things are same. 
+
+The only difference is this three change to 15. The previous case, this is the new line which added. And in this case, this is a new part which was added. 
+
+I hope this is clear everyone. How did I introduce these three bottlenecks? Clear? Yes, no? Yeah. Now let us build a slow graph. 
+
+This code is exactly the same. The difference is instead of the normal graph dot add node, it is the slow graph dot add node. So graph architecture is everything is the same.
+
+(45:12 - 45:33)
+If you want, you can print it. Okay. So that is not exactly. 
+
+Let me see if I can print it. Yeah. So you can see very much. 
+
+It's the same. Okay. This is exactly the same as the previous one.
+
+(45:34 - 47:03)
+Nothing new. Now I'm going to run both the agents. Okay. 
+
+Side by side with the same query and performance hopefully will be different. Okay. So we'll run the same technical query through both the agents and measure the wall clock time. 
+
+Langfuse captures the full trace for both. And important notes for fair benchmarking. We will include a warm up LLM call first to eliminate the cold start connection overhead. 
+
+So what it means is the first time the first API call is made, usually it is seen that the first API call from your account takes a slightly more time. The latency is more. Okay. 
+
+The subsequent API calls are much faster. So that is exactly the warm up LLM call first. And this is more of a problem for open source models which have been deployed on hugging phase inference servers or your custom bedrock models. 
+
+Okay. Those production grade models which are almost running 24 seven millions of queries every minute. Okay. 
+
+For them it is less of a problem because the model is already running, spinning and continuously spitting out all sort of generations for every other customer. Okay. For example, for GPT, Anthropic, Gemini, though this can be less of a problem.
+
+(47:03 - 51:56)
+But if you have a custom deployed model which is not continuously being used 24 seven. Okay. It gets used once and then there is a lag of another one hour and then there is another API call. 
+
+So if there is a good amount of time interval where the model has not been executed, that is where this cold start connection overhead can be a deal breaker. Okay. So we will run the slow agent first. 
+
+So any residual or warm up penalty hits the bottleneck that will go to the slow agent only. And reasoning models might have higher per call latency variance. Again, in some cases it could be just two seconds. 
+
+Other cases can be 20, 25 seconds. The problem is these models will decide on the fly, on the fly, how much reasoning will be done for a given use case. So if you want more deterministic outputs, go for a non-reasoning model, let's say GPT 4.1 mini. 
+
+Okay. In which case, since there is no reasoning involved, now the entire latency will be driven by the model's output. That's it. 
+
+Not from the reasoning part. So wall clock comparison can be a bit noisy as well, because again, it will depend on the CPU, GPU and other things. Okay. 
+
+So wall clock time means how much time it went or how much time has elapsed from making the API call till receiving the final output from the model. Okay. So that is our complete wall clock time. 
+
+And this can be exactly slightly different from what the Langfuse can see slightly. It can be. Okay. 
+
+So here is the question, do you support pre-trained models? Okay. So I am just warming up, running the slow model, a slow agent first, compiling all the times. Okay. 
+
+And then calculating the time elapsed, and then running the original agent with the same query, calculating the time elapsed, and then summarising how much is the delay which has happened. Okay. So you can see, 15 documents, 2600 characters roughly, with a 8 second delay. 
+
+The total delay, I mean, the total time it took for completion is 28.2 seconds. So this will also be observed in my Langfuse. I think the traces. 
+
+Yeah, same. 28.2 seconds. So this is the one. 
+
+Okay. And you get the answer. And the other one took 16 seconds. 
+
+So the one which took 16 seconds the later one, 16.26 seconds. So this is the one which, yeah. Okay. 
+
+And bottleneck overhead is roughly 12 seconds, out of which 8 second was a dead sleep. Even then, it was a latency introduced for 4 seconds. So 4 seconds is still slower. 
+
+I mean, bottleneck that you have manually introduced. And partly that is coming from the verification. Not partly. 
+
+In fact, majorly it is coming from the verification because I do not think the retrieval would have taken much time. Okay. Let us see the retrieval times. 
+
+Okay. I am resuming out. So this is the original agent with 16 seconds. 
+
+Let me see how much time it took for the retrieval part. Okay. So vector store retrieval is 0.19 seconds. 
+
+Please have a look. Okay. 0.19 seconds, that is with the original one with 3 documents retrieved. 
+
+And now with the slow agent, let us see the same. Vector store retrieval is 0.7. So 0.19, okay, roughly 0.2. And this is 0.7. So 0.5 seconds, half a second was slow in the vector store retrieval. You can see very well.
+
+(51:57 - 53:27)
+Okay. When you retrieve 15 documents, it is half a second slower versus retrieving 3 documents where it was only 0.2 seconds or 0.19 something. Okay. 
+
+I will just go back and show you. Yeah, 0.19. So this is 0.2, that was 0.7, 0.7 for 15 documents, 0.2 for 3 documents. So half a second delay was introduced there. 
+
+And if you see the first block here, first block, okay, first node, let me click on the first node, the categorise enquiry. So categorise enquiry is taking overall latency, do we have numbers here? Okay, overall latency is 2.3 seconds. Hello, am I audible? You can see this overall latency is 2.23 seconds.
+
+(53:29 - 53:52)
+And when I had a redundant API call, when I had the redundant API call, the same node is now taking 5.06 seconds. So definitely, 3 seconds additionally is coming from here. Okay, so that is how you can actually track back to back each of these.
+
+(53:54 - 55:14)
+Okay, so now the debugging part. Again, I have fetched all the traces and what we are doing is identify where the time and money being wasted. Okay, so this is the entire code where I am just checking the recent trace. 
+
+Okay, the last two, checking for the entire token usage, total cost, everything you can see. And then also the per observational breakdown. And this is just printing all of it. 
+
+So nothing new, but look at this output. So the original one is taking total latency of 12 seconds, three API calls, this is the total token usage and this much. Okay, that is a trace ID. 
+
+Whereas, okay, I think they should have been slow. This is a misprint here. This is a slow version. 
+
+Okay, I think the second time this would be slow. Yeah. Right. 
+
+So this is for the slower one, you can see very well. Okay. So total latency is 17 seconds.
+
+(55:28 - 55:34)
+Yeah. No, it is the other way round or what? Both are fast. Okay, let me see what is happening.
+
+(55:34 - 59:36)
+The slow has four. Okay, let me make a fresh API call. I think that will be better. 
+
+So we have the graph. I am making a fresh API call. Okay, let us see. 
+
+Why is it taking so much time? Okay, so we have it. So the slower one is four times slower. It almost took 60 seconds. 
+
+Okay. 2576 characters that anyway we had seen. Slow agent completed 60 seconds. 
+
+The other one took 15 seconds. Okay, and now you can see the other metrics. Hopefully, I have not deleted the, yeah, correct. 
+
+Now it is correct. I was expecting this to be fast and this to be slow. So you can see now your LLM calls are four instead of three. 
+
+This is a higher cost. You can see. And then latency also you can see. 
+
+213. This is 46 seconds latency. I do not know how, but this has taken 46 seconds almost. 
+
+And then we have the other. So this latency is initially because of the warm up, it seems very much. Okay. 
+
+Plus the other API calls are also taking more time. Tokens and here the number of tokens that we have given to the model is okay. That is for the response generation. 
+
+So much larger time it has taken to reply. I think it will be easier to, you know, look it into the traces. So here it is better.
+
+(59:36 - 59:52)
+Okay. So again, we can check. This is for the slow. 
+
+It has taken one minute roughly, you can see. I am just zooming in. It has taken one minute and I am just going for the vector store retriever, which is 0.2 seconds.
+
+(59:54 - 1:00:58)
+Sorry. Yeah. So 0.2 seconds. 
+
+And here this took only 15 seconds and vector store retriever is 0.2 seconds. So this time it took same. So it again depends how the warm up period is affecting both. 
+
+So it will also affect the vector store retriever. If it is doing back to back, then it will be fine. But here this is taking roughly 10 seconds, you can see. 
+
+10, 11 seconds. Whereas in the previous case, that was much slower, faster in fact. So this is 46 versus 10. 
+
+Okay. And this much time it has taken primarily because of bloating of the context, because model had to spend more time to filter out the right context to, you know, generate that reply. So that is why it took 46 seconds for the slower one.
+
+(1:00:58 - 1:01:07)
+And here that was only in the original one, it was only 11 seconds. Right. So that is what we got.
+
+(1:01:07 - 1:01:39)
+So 46 versus only 11 seconds. Okay. So how to debug this? This is what I have just now demonstrated, you can just check. 
+
+Now these numbers will be different. Okay. Yeah. 
+
+So this is again, one on one analysis for each of the API call. So this is for the response generation. Okay.
+
+(1:01:39 - 1:02:01)
+So not only more number of tokens are being used, but also cost is more because of that. And also the time taken was more. So 11 seconds versus 46 seconds. 
+
+So these were the last two. And then so these were more or less similar. This is also more or less similar.
+
+(1:02:02 - 1:02:07)
+Okay. And this was one additional for the verification. I think this is for the verification.
+
+(1:02:13 - 1:03:51)
+And this is the final comparison summary. Okay. Just check here. 
+
+Okay. This is just a static print of what originally I had got. But yeah, I think it is pretty much clear. 
+
+Okay. So let us close this topic. We are done. 
+
+Yes, 10.36 on the fast it has taken. And let us come back and check once. This is 46. 
+
+Yeah. So largely because of the reasoning. That is what I also believe that is because of the reasoning 10.55. So 10.36. And including the other things, it becomes so 10.36. Yes, correct. 
+
+On the fast model. Sorry, on the fast agent. And that is largely because of the reasoning. 
+
+Okay. Reasoning can take time. And how much token was generated, you have also not provided a constraint on that. 
+
+So it is possible that it might have generated more tokens also. So for example, here it has generated 854 tokens versus in the in the slow case, it has generated again 593 1072. Yeah, so 10% more, 10% more. 
+
+So that was 894 or 900. This is 1000 roughly. So 10% more tokens were generated again, because of the additional information it got, it thought that this additional information might be helpful.
+
+(1:03:51 - 1:04:42)
+So it has retrieved all those 15 documents, you can see these are all the 15 documents that were retrieved. And then this was the response that was generated. And you can see this number 600 tokens as the input. 
+
+Okay. So this output also contains the reasoning. So you will have to see the actual breakup. 
+
+Okay. So this output 1072 also contains the reasoning tokens. So we will have to be careful. 
+
+Okay, while analysing. So this was only 183. If you see, this was only 183 because of the top three context documents. 
+
+And that was roughly 600 for the slow agent where we were retrieving 500, sorry, 15 documents. Okay, nice. This is done.
+
+(1:04:42 - 1:04:49)
+Let us go back to the next topic. Let me know if you have any questions. All good.
+
+(1:05:31 - 1:05:56)
+Notebook I did share. I had uploaded the notebook, Santosh. The link sharing was not working. 
+
+So I had uploaded it. Let me try sharing the link once again. Yeah, so this is the link.
+
+(1:05:57 - 1:07:08)
+That time that link was giving a problem. So I had manually uploaded it. Done. 
+
+Okay. So let us go to the next one. I will share the tutorial file in the chat.
+
+(1:07:20 - 1:10:33)
+So let me know if you can download that and run. How do we find the LLM cost? It was there throughout. I have been talking about the costs. 
+
+So where did you miss that? Overall usage was also there. Okay, let me show that screen again. Look at the top, topmost. 
+
+This is the total cost. For the entire agent run. Total cost. 
+
+Summary dashboard. Check if we are looking for a summary dashboard. You will probably implement it, but total latency you can see. 
+
+Total cost also you can see from here of the overall tokens and the total cost. This is what you are looking for. Or if you want to create a custom dashboard, then you can fetch the traces the way we did it in the collab notebook. 
+
+And from there you can build your own, you know, customised dashboard. But from the traces, this window is also good enough, I think. Okay, thanks, Prashant. 
+
+Can we write some k queries from the search text box also? Like the way how we write k queries in Azure or AWS? So queries for what? For the log, traceability log. That I have not done maybe. That's similar to kql. 
+
+Yeah, but where do we put it? Again, I don't know if that is supported here. Sorry, I'm asking questions, but this is my first session I'm attending because this observability there. So it's my area of interest. 
+
+So I attended. You can download this also, export it. Usage management, let's check. 
+
+This is what we have got overall. So there are three dashboards. One is the latency dashboard.
+
+(1:10:37 - 1:14:06)
+So this is additionally introduced just now. That is why this has started spiking. Okay, so we have these three dashboards. 
+
+One is the usage dashboard, which talks about all the counts and other is latency and the third one is the cost. So without querying also you are getting almost everything and you can just select in last one day, one hour, whatever. You can also apply filters for each of these in columns. 
+
+So for example, you had the columns in tracing. So these are the column names in the tracing. So if you want, you can apply those filters with these columns also. 
+
+So maybe like metadata or score action, any of these. You can even have additional tags programmatically or manually also. So maybe these tags can also be used for filtering. 
+
+So we already have these three dashboards. I think that should be good and widgets can be created. So additionally, now this is like your, I mean, Power BI widgets or you can say visuals. 
+
+Widgets are like visuals. So what additionally do you want to display? So you can create your own widgets. Okay, like this is the count for the traces, but anything additional that you want to create on your own custom that is called as your widget. 
+
+So even that can be done. But I think these three itself is quite sufficient to get at the high level. So we have cost. 
+
+Yeah, we have the cost usage and latency. Yeah, done. Fine. 
+
+Okay. So everyone is able to click on the tutorial file, which I have shared that is on the MCP. So that is like 18, 17, 18 page document. 
+
+Okay. So let us go through that document one by one. Okay, because all the technical information is there. 
+
+We do not have to understand each and everything. But at a high level, we will see. And we will try to finish that in another 15, 20 minutes. 
+
+And we will go for a break. And after the break, we will do into and hence on. Right. 
+
+Okay, so this is the tutorial file which I have shared. Karan, you want to share the same tutorial file over again. I have just uploaded this.
+
+(1:14:07 - 1:14:11)
+I got locked off. So I could not see the link, you know. Yeah, thank you.
+
+(1:14:11 - 1:14:39)
+I have just now uploaded it again. Yeah, yeah. Thank you. 
+
+Got it. Yeah. Okay. 
+
+Fine. So what is the high level problem that we are solving? I mean, you can keep going through this. This is too many things. 
+
+But let me just give you a very high level idea what we are discussing in this. Okay. So MCP is your model context protocol.
+
+(1:14:39 - 1:17:15)
+The other one we are discussing is your agent to agent protocol. These are the two protocols that we are discussing. Okay, forget about this. 
+
+Just listen to me. I mean, I do not want you to see. So now you are creating, let us say five different agents or five different applications. 
+
+And each of these agent is accessing two to three tools. So combinedly, these five agents are accessing 10 tools. So if these five agents are in five different applications, so five different applications with five agents, accessing 10 tools, which means five into 10, that is 50 code blocks for integrating those tools into each of those agents. 
+
+Because the same tool integration with a different agent will require a different context, different way of integrating. Because again, the framework would have also changed, because the previous agent was created using line graph, the next agent was created using query. So even if the same tool is being used, the way you integrate the same tool with line graph is not going to be the same as in your query, right. 
+
+So the integration codes will change every time because the agent scenario context, many other things would have changed. Okay, so five different agents in five different applications, 10 different tools, five into 10, 50, 50 integration codes you have. And this is only going to become more and more problematic or nightmarish you can say, as the number of tools would increase and the number of applications or agents would increase. 
+
+Okay, so that is where the dimensionality problem starts, okay, in this case. And why is that a problem? Because those guys who have written the tools are all from different companies from different vendors, you can say, and you cannot enforce them to write down a tool code as per your own sweet wish. And this was a problem which Anthropic figured out in November 2024. 
+
+Okay, that everyone is creating agents, fine. But those tools are being created by other vendors or other companies or other, you know, SaaS companies, and so on. And so integration codes had to be written by these builders or application developers.
+
+(1:17:16 - 1:18:53)
+And everyone is doing the same effort at their own way or in their own way. And that is a repeated, you can say, effort, replicated effort, repeated effort, okay, and wasted effort because of the same repetition happening across every other company. And the sole reason was the tools were written in a non-standardised format. 
+
+So, integrating them was not like a copy paste code that if the same tool was integrated, I can use the same code, copy paste for a different agent. No, because it was written in a non-standardised format. So, they wanted to write down a protocol, the Anthropic guys, they are the one who propose the MCP, Model Context Protocol. 
+
+So, they try to write down a protocol or a standardisation technique by which if anyone is creating a tool henceforth, you follow that protocol so that the tools can be easily discovered by the application developers and could be easily integrated, okay, if the tools have been written in a standardised format. And that is where they came up with this protocol, okay, like Hypertext Transfer Protocol, HTTP. Each browser is able to serve the page in the same manner because all the pages follow the same protocol, okay, the browser and the server that communication is facilitated by your HTTP P protocol or HTTP S, that is Hypertext Transfer Protocol in a secured mode, okay.
+
+(1:18:54 - 1:20:58)
+And between the server and your application which is dockerized, the protocol used is typically WSGI, Web Server Gateway Interface, WSGI, which is what your Nginx and your uvcon reverse proxy implements, right. Anyway, so that is the thing. And how does the solution get implemented? So, once all the tools have been written using the MCP, the people who are writing the tools, they will be deploying the tools on a server and that server is now being called as the MCP server, okay. 
+
+So, MCP server is where the tools are deployed. You are the developer writing an application code. Your application code is your client, where you are going to use those tools. 
+
+So, MCP client and MCP server. MCP client is the application code or the ID which is going to use and call those tools which are actually going to be deployed on a third-party server, okay. And those tools will also be executed on that third-party server. 
+
+Those tools will not be executed at your server or in your application code, right. So, call that entire tool code, the invocation of the tool code or execution of the tool code, everything is managed by the MCP server. That is why we are calling it as a server because someone is serving the tools, okay. 
+
+And you are just consuming that via API call. So, how are you instructing your MCP server to execute a particular tool? Now, that can be in two ways, okay. So, either your application sends a natural language query, okay, either your pictorially, again, let me try this.
+
+(1:21:26 - 1:28:23)
+So, this is one image I got, the first image when I search for MCP. So, this is your host with your cloud ID, whatever. That is where your application is written, okay. 
+
+And there will be your MCP server, there can be multiple MCP server, each server is hosting some of the tools, okay. So, tool could be accessing a particular database on that server, okay. So, for example, I can take an example of, let us say this is your AWS MCP server. 
+
+Now, AWS MCP server has several tools. One tool to access your identity and access management, one tool to access your S3 buckets, one tool to launch and terminate your EC2 instances, one tool to set up your bedrock models and so on. So, each of these services are served via different, different tools. 
+
+And everything is coordinated by a single server, that is your AWS MCP server, okay. So, some server code, you will be able to download and connect with your host, okay, with the client. So, what is the host and what is the client here? So, there are two words here. 
+
+One is server, we have understood, but what is the host and what is the client? So, basically, your client is your IDE and host is your actual application, okay, your actual application, that is the host. And client is your IDE, okay, you can say. So, host with the MCP client, you can say. 
+
+Other one, another example is, let us say, GitHub MCP server. So, you want to do some of the GitHub actions, let us say, pull some repository, clone some repository, or merge a PR request or something like that. So, each of these queries will go to the MCP server. 
+
+Server will decide which tool to use, okay, and perform that action. You will probably not have direct access to the tools also, okay. In some cases, you will have access to the direct tools. 
+
+But in many cases, you may not even have. In that case, if you're not having direct access to the tools, direct access means you cannot instruct to use that exact tool. Some cases, you can do that, it depends how that tool has been wrapped, okay. 
+
+So, your query can go in a natural language to the server, that I want to do this, then the server decides which tool to use. Let us say, I want to, the third tool could be again, let us say, your Zerodha MCP server. Has anyone seen that Zerodha MCP server? Zerodha MCP server, okay. 
+
+So, Zerodha is like a broker account, okay. One of the very popular broker account, and that is also equipped with a MCP server. And you can do all sort of analysis. 
+
+Let me show you the queries here, okay. So, if you have set up your, for example, there is a setup which I have already done. So, here is my cloud code, okay. 
+
+And I have set up my connectors. So, in the connectors, you can see the kite, kite is the Zerodha s API name. So, I have set up the connectors. 
+
+And once I have set up the connectors, all the tools are available. So, I can directly ask this kind of a, you know, query to my cloud, okay, that analyse my portfolio. See, this is not mentioning any tool. 
+
+So, this is a natural language query which goes to Zerodha. Zerodha server decides which all tool to use to fetch your entire portfolio holdings, okay. And it will give you, not you, in fact, cloud, all the portfolio holdings with the number of shares and the other other details. 
+
+And then cloud will do all this analysis. So, this figure is not generated by the kite API or MCP server, this figure, this figure, this figure, these are all generated by cloud, not by the Zerodha API. So, Zerodha API is only giving the raw data, okay, fetching from your own account, giving the raw data. 
+
+Raw data would be, let us say, top five positions by market value that is being done by some tool, okay. That tool will fetch your top five holdings. The tool will give you the best and worst performance. 
+
+In fact, the tool will give everything because there is a function, there is a tool which fetches everything. Now, from there, this filtering is all done by the cloud, okay, unrealized PL summary. So, now this is fetched by another tool, okay. 
+
+So, one tool to fetch the holdings, okay, this is all coming from there. And from the holdings, we are able to read the name of the company. And once the company name is there, then cloud will use the web search tool to get the sector, which it is because mostly in the holdings, you will not get a sector. 
+
+You will also probably not get the volatility. So, it might need some additional web search and so on to fetch out some of these additional details. Also plot my portfolio curve against the equal weight compute. 
+
+So, this is again done by cloud because it might need to fetch NIFTY 500 or some other index data for benchmarking. So, again, there is another query here, please group my open positions. Now, there is a tool to fetch the open positions directly based on the underlying and calculate the net delta. 
+
+So, this calculation is done at the cloud end, not at the zero the end or the broker end. Broker is only fetching all the positions which are open. And then all this calculation is done at the cloud end. 
+
+And this kind of output is given to you, okay. So, this is all coming from again another example here, please provide a summary. So, what I am trying to say is, there are two types of servers, where they will directly expose the tools.
+
+(1:28:24 - 1:33:07)
+So, you can actually call the tools in your code itself. The other way is, you will provide a natural language query. And that natural language query will go to the MCP server. 
+
+There some LLM is running behind the scenes. LLM server tries to decompose your query and find out which all tools will be needed to fulfil your query. And then the query execution happens at the server level, not at your end. 
+
+And the output of the tool executions are given to you in the raw format, maybe as a JSON file or HTML or XML, CSV, whatever is the raw format, mostly which is JSON only. And then your client will take that raw format and do the further analysis. That is how it goes. 
+
+So, coming back to this, there was one statement written here. So, this nightmare, I think that is very clear. Okay. 
+
+So, the possible solution is, if you standardise the tool creation, then for 10 tools, you will write or you will need 10 codes. And for 5 applications, you will write 5 codes. So, 5 plus 10 is 15. 
+
+So, 15 code blocks will be needed to just connect to each of these 10 tools. So, why we are calling it as a USB, I think that word might be there several times here. So, USB-C analogy, because you can easily plug and play because each tool has been written with the same protocol, same format. 
+
+So, if this is your application, this is a tool here, you can just plug out that particular tool, plug in another tool. And all this plug in and plug out is happening via a common port. And that is the USB-C we are talking. 
+
+And that common port is now being called as the MCP. So, if all the tools are standardised, then plugging your tools with the applications become easy. You do not have to write down a lot of codes to do that integration, those redundant integration now again, as I said. 
+
+So, that is the open standard introduced by Anthropic in November 24 to standardise how AI systems, particularly LLMs integrate with external tools, data sources and devices. So, what is the main USB here? Main USB is the integration codes are now well structured. You do not have to write down so many integration codes. 
+
+That is one. Second, these servers which are now serving the tools, what are the tools now? So, you can have database tool. So, one tool is wrapped around. 
+
+So, let me give a simple example. So, it could be a customer database or it could be orders database, let us say. So, you have created a tool which will query this orders database. 
+
+So, let us say the customer is asking what is the status of my order number 1234 in the chatbot. Now, that query goes to the server via MCP server. Okay. 
+
+And the server now figures out, okay, this order number, I have to fetch this order number status. So, I think I have a database called as orders DB, which is served by a tool. Okay. 
+
+Let us say it is orders DB tool. Okay. So, I will call that tool which will make a query to that database and fetch the status to the user and give it to the user. 
+
+Okay. So, all that query execution mostly again is hardcoded. Okay. 
+
+What it means is the SQL queries which are going to be run by those tools on those servers, sorry, on those databases, ideally, again, as I said, ideally, it will be hardcoded, which means the chances of prompt injection is also gone. So, LLM is not writing any code. Because if the LLM wants to write down code, what is the biggest problem? If the LLM wants to write down that code, LLM needs to have a complete context of the database schema. 
+
+What was the table? What are the table names? What are the column names? And you may not be comfortable sharing your entire database schema to these LLMs for the LLMs to write down the queries. Okay. So, plus prompt injection issues and those things are there.
+
+(1:33:07 - 1:35:06)
+The prompt injection can happen from the chatbot itself or the customer itself. Okay. Can, you know, give a complete query, which has a prompt injected within it. 
+
+Okay. So, these are the nuances by which MCPs have become so popular. Okay. 
+
+So, in MCP, the tool is executed at the server level. You are the developer, you have no idea what is happening at the server because you do not have access. All you will get is for your query, you will get the response properly in the raw format. 
+
+Okay. So, yeah, so this is one figure I found, which can explain there are again multiple such. So, this is MCP host. 
+
+And you have MCP clients. So, again, once again, let me repeat, MCP host is your IDE. And within that ID, you can have multiple applications, okay, which are your MCP clients. 
+
+And then there can be multiple MCP servers, which are serving different, different tools. In this case, it's a MySQL database. This could be a file system, MCP server, which is connecting to your file system. 
+
+File system could be local also, it could be remote. And one MCP server is doing a web search, maybe. So, till now, we have been using Tavili directly as an API. 
+
+We can actually use Tavili's MCP server also. Yes, let me repeat, we can use the Tavili's MCP server also. In this case, the request goes to the Tavili web server, and Tavili web server will run the API in its own backend. 
+
+You are not making API call, okay. So, your request will go to the MCP server of Tavili in a natural language. Okay. 
+
+And the tool will be executed at the server level. Right now, we have been directly using the Tavili tool in our client location. Okay, we have been executing every time.
+
+(1:35:06 - 1:36:01)
+And the big problem with that is, if there are some bugs in the tool code, because mostly, you are executing a tool at your own, you know, client side. Okay, the host side or the client side. So, if there are bugs in the tool code, that can be, you know, destructive also to your file system to your machine and so on. 
+
+So, here is the biggest advantage. The tools are all run at the server level. Anything happens, you don't bother. 
+
+Your code, your client, your machine is safe. So, these are the things which are common across all of these diagrams and so on. You can see MCP host is your main IDE. 
+
+And then within that, you have the client, which is your actual application, okay, with the agent. So, the application is your agent, let's say. Okay.
+
+(1:36:04 - 1:36:54)
+And then MCP servers interface, interfaces with data sources, and exposes capabilities. Now, these capabilities could be tools, resources and prompts, okay, to the MCP clients. And then these are all executed finally. 
+
+Okay. So, coming back. So, all the communication happens using JSON RPC format, that is a messaging format. 
+
+Okay. And there can be two types of protocols which are using the transport mechanism, how the communication is happening. So, one could be using the STDIO that is basically when your MCP host and the server are in the same machine, then the transport mechanism is standard input output that is STDIO.
+
+(1:36:55 - 1:48:09)
+Whereas SSE, your server site events is when your, you know, host is your local machine, and server is a remote machine. Server is a remote machine. Okay. 
+
+Actual third party server that is where the transport mechanism would be your SSE. So, I think. So, these are all the IDs we can use. 
+
+MCP server can be across any other MCP compatible client. Fine. Okay. 
+
+So, this is the last, most powerful statement. A company maintaining 100 laptops might need five different charger types. So, before MCP, a company running five AI applications against 20 data sources needed 100 such custom integrations. 
+
+Okay. How do I make this off? So, MCP collapses the m n cross m problem into n plus m problem that builds n clients and m servers. Okay. 
+
+And everything just connects. So, some examples are there. For banking and financial services context, consider compliance officer who needs an AI assistant to search a regulatory documents, cross reference with internal policy databases, and check recent enforcement actions and draft a compliance memo. 
+
+So, so many actions are being performed. Without MCP application needs separate connectors for each of these systems. Okay. 
+
+And so, for example, in a company like this, the MCP server will be returned by a different set of developers, although it's the same company. So, the actual application who is application developer who is writing down a chatbot, let's say that is the end user application. And there would be another team who is writing down the tool code. 
+
+Now, those guys will have actual access to the broad server, those guys will have actual access to the databases and so on. As an application developer at the front end, you may not have access to all of those servers and databases. And that is not even needed. 
+
+And that is what that clear separation of responsibilities and you know, access is brought by your MCP. MCP simply says that you just expose the tool, let the client only use the tool, okay, only a few set of people who have super admin access to the servers, where these tools will be run and they only can directly access your. So, that is the whole idea. 
+
+So, without MCP, AI application needs separate connectors. And with MCP, it exposes a MCP server. That's what I said. 
+
+And AI application simply speaks to these MCP. Another scenario is in healthcare, a clinical decision support agent might need to query patient records via EHR. EHR is electronic health record MCP server. 
+
+So, there is an MCP server which is serving the EHR data. Lookup drug interactions, this drug interaction is being served by another pharmacy database MCP server. That's a separate server again. 
+
+And check the latest clinical guidelines via PubMed MCP server. So, there is a third party again server, which is serving the clinical guidelines. So, you are connecting to three different servers from and this connection is although via API call, but this is much simpler than trying to you know, fetch the raw data and all of that. 
+
+Okay. So, MCP makes this plug and play architecture. So, if you want to change your clinical guidelines server from A to B, you can easily do that. 
+
+Okay, that's the thing. Okay. Okay. 
+
+So, architecture again, I would not get much except we should be clear with these three terms. I have very, very well clearly documented. So, host, client and server. 
+
+This is what I have been talking about. Host is the application that the user interacts with directly. So, this is your cloud desktop chat GPT. 
+
+So, this is the chat interface that I was talking about. Okay. Do you have access to my AWS MCP server? Can you fetch the list of EC2 instances? I don't know if this screen is visible. 
+
+Yeah, I like the way you write Prasant returns. That's nice. Yeah. 
+
+EC2 instances are running. Let's see. So, first you have to nudge, okay, whether they are able to access the server or not. 
+
+So, right now it does not have access. Probably these are the only ones which are running. And I need to somehow connect my servers, manage connectors. 
+
+And it does seem to be enabled, but probably I will have to refresh that connection. There is, there is MCP server. Okay. 
+
+Or in the connectors also you can add or browse connectors. There also you can search for AWS. And from here, this is the one which I already added. 
+
+This is the one which is already added. So, let's go back and. It's asking to enable the disabled. 
+
+Already enabled. So, where is that chat gone? So, I see. Let's see. 
+
+I see that it's already connected to cloud desktop. Can you authenticate? Why I am. Okay. 
+
+Okay. I get it. So, usually this is accessible from the cloud code, not from the desktop application. 
+
+Okay. So, in the cloud code, yes, it will be able to. So, I think my cloud code is already running some code, which is, it was running and the deployment was still running. 
+
+It's still going on. So, my cloud code is already doing a lot of stuff in my AWS account. This is already running since morning. 
+
+On and off I have been. So, what I'm doing here is, Tim asked for doing a stress test. So, I wanted to. 
+
+Can you see here? Go through this repo. I want to deploy this in AWS Docker container and do a stress test that is simulate doing a thousand API calls simultaneously. And let's see what happens. 
+
+So, this is what I did. No, sorry. Can you see here? And it has spun an EC2 instance and it has installed Docker already by now. 
+
+Everything, I didn't do anything. This is all via AWS MCP server. Okay. 
+
+And this is all the code files it has written. I have given all the keys and everything. And now it has almost done everything. 
+
+So, I'll need to just go and check this. Okay. But if you are looking for a new session, you can just again connect or maybe I'll just do one thing. 
+
+Same. Access my AWS MCP server and test the running EC2 instance. Now, here at least it should work. 
+
+So, it also works normally as seen in co-work mode. It might take time. So, in the meantime, let's continue. 
+
+Okay. So, this is very clear. Your host is the ID that you are using. 
+
+Okay. Creates and manages the MCP client. So, MCP client is the actual application. 
+
+Client establishes one-on-one session specific connection with the MCP server. And the client handles the capability negotiation, protocol messaging, and maintain security. Okay. 
+
+In simple terms, client is your agent, which is going to, you know, use the tool. Okay. So, this is your application or the agent.
+
+(1:48:09 - 1:48:16)
+This is where you create your application. Okay. Or execute your application inside.
+
+(1:48:17 - 1:49:33)
+And server is where your tool resides. Tools, data, resources, and other capabilities. Not just the tools, but could be data, could be other capabilities, other resources, everything that you are requesting. 
+
+So, wraps the data source or API or the file system. Okay. Or any other making it functionally available to any MCP client. 
+
+Fine. So, this is the entire lifecycle, initialise, operate, and shut down. So, every time this is what is going to happen. 
+
+And again, we will not get into all the tools, much specifics of all of these. Probably, yeah, frameworks. The most important framework is FastMCP. 
+
+So, this is the one which is decorator-based. So, add the right tool you can use. Okay. 
+
+A Python function and decorate it with add the right tool. So, this is the one which we are going to use in the hands-on. We will take a quick break now. 
+
+Okay. So, other details you can follow. And after the break, we will discuss the A2A. 
+
+Okay. So, is there any success? It is doing a lot of stuff. This is probably a warm-up.
+
+(1:49:33 - 1:49:46)
+That is what I told you. Okay. So, my stress test is running t3.xlarge. This is the instance ID.
+
+(1:49:46 - 1:50:15)
+I did not do anything. See, I got such a nice report. Nothing. 
+
+Right. So, I actually, how is the CloudMax plan? I am still exploring Sikant. So, but of course, now you do not have to bother about getting your limits hit every other day.
+
+(1:50:15 - 2:11:06)
+Because I was hitting my limits almost for one and a half months every day or every alternate day, not just the daily limits, but also weekly limits. Okay. And on top of that, I paid additionally around $98 on top of what? My $20 subscription. 
+
+So, almost $120 I paid the last month without the max plan. So, then I thought it is anyway logical to move to the max plan now if that is the case. So, this is one. 
+
+I think we can. Fine. This is a clear demonstration how it works. 
+
+Okay. MCP server is nothing but API service at a high level. Answer is yes, you can say. 
+
+But while writing that API, you do not have to write down that API. First thing is that. Okay. 
+
+Someone else has written that API and provided to you. So, you do not even have to know the API endpoints. That is a basic advantage of MCP server. 
+
+Okay. So, server will decide which API endpoint to hit or which tool to execute. So, all that is managed by the server. 
+
+Okay. You just have to hit the server with a national language query. That is it. 
+
+A single point of contact and you can do 50 operations. The server manages this. If you want to use it directly as an API service, then each of this tool would be hosted on a separate endpoint and you would have to write down 50 codes for 50 endpoints. 
+
+And that is the original problem back. You can write down your own MCP server right and that is the demonstration we will do after the break. Yes? Okay. 
+
+Great. Okay. Everyone back? Okay. 
+
+So, let us continue. Okay. So, quick idea about this A2A. 
+
+So, A2A is basically agent to agent protocol. How one agent will communicate with another agent. It is as simple as that. 
+
+Okay. So, in MCP, the agent communicates with tools, resources, prompts, whereas in agent to agent protocol developed by Google, how one agent is talking to another agent. So, let us say, let us say you have built a personal assistant agent, agent or personal assistant. 
+
+Now, you are asking this agent to book a flight for you. Simple scenario. Okay. 
+
+So, this agent will first connect to the agent of, let us say, Air India, Indigo, whatever. So, each of these websites have, let us say, their own agents. So, it connects with the Air India s agent or Indigo s agent or whichever airline agent. 
+
+And your agent is asking airline agent, what is the availability or price and, you know, time schedule of flight from so and so source to destination, whatever, on so and so date in the evening slot or morning slot or before 6 a.m. and something like that. So, the airline agent will do an internal search and come up with these three, four options are available for early morning flight, this source destination, this is the sector. Okay. 
+
+And these are the prices for the economy for these four flights which are available. Simple, right. Now, you want your agent to also look for hotels, destination city. 
+
+So, imagine that the big hotel retail chains, maybe Marriott or Hyatt and so on, they have their own agents. So, it connects directly with those agents and queries for the availability, room availability in whatever category on so and so date for so and so, you know, number of days and they will come up with the availability. So, here the entire communication is happening from between two agents. 
+
+Okay. So, if a booking has to be done, let us say. So, your agent will say that, okay, now I want to book this particular flight. 
+
+Okay. Now, their agent will probably do all the connections behind the scenes with another agent, which is the payment gateway, maybe Stripe, Razorpay, Billpay, Billdesk, Easypay, whatever is the onboarded payment gateway agent. All these payment gateways are also coming up with their agents. 
+
+Okay. So, communication between the airline agent and the payment gateway agent. Okay. 
+
+And finally, that, let us say you will be presented with a QR code or a payment link, maybe. Okay. So, if it is, let us say QR code or a payment link, you go ahead and do that or somehow, you know, if your agent has access to your account credentials, it will go ahead and do those things. 
+
+So, that is all facilitated by all these agents. So, that is the entire high level concept between agent to agent protocol. Okay. 
+
+So, it is a communication standard introduced by Google because they also felt that, okay, we are falling behind. It was purely coming from the FOMO. Okay. 
+
+When this guy is entropic in November 24 came up with the MCP, they said, okay, no, we also have to, you know, give some standards to the industry. Okay. So, they came up with this A2A in April. 
+
+Okay. And they realised that there are still some gaps which are not being addressed by your MCP. Okay. 
+
+So, they wanted to enable secure communication collaboration between the agents directly, okay, without going into the framework when their deployment platform. So, each of these agents can be created using different frameworks. So, let us say the agent one was created using Langraff, the other agent was created using Crivi, the third agent was created using Autogen, does not matter. 
+
+Okay. And where even they are deployed. So, MCP solves how an agent connects to the tools and data.
+
+(2:11:07 - 2:14:00)
+A2A solves how agents communicate with each other in simplest terms. Right. So, that was developed with input from all these different technology partners. 
+
+It is open sourced. And yes. So, one simple analogy we will see. 
+
+So, without A2A, the ER, ER is emergency response, you can say, doctor calls radiology on the phone, explains the case verbally, waits for the callback, and then calls surgery separately, explains everything again, and manually coordinates the handoff. Okay. Each department uses its own communication method. 
+
+With A2A every department publishes a standardised department card, which has all the capabilities, intake procedures, specialities and contact endpoint. So, when the ER needs the radiology, it looks up the radiology department card, sends a structured referral request and receives an update on the task progress. It is that simple because that entire communication is, you know, standardised. 
+
+So, all that manual repeat is, and see this all manual process can involve a lot of API calls, plus there will be inconsistent things you cannot enforce. So, this is all solved by your A2A. Fine. 
+
+So, architecture wise, again, there will be client and server. Client is the one who is going to initiate the call. Remote is the one where it wants to talk to, will receive the request, process them as the task and respond with the status update. 
+
+So, in this case, in your airline application case, your virtual assistant is your client agent, and the remote agent was the airline's agent from where you were requesting the list of the flights available on given date, time, and, you know, for a particular sector. And then you have the agent cards, which will be like a JSON metadata. Well, I will show you all of these. 
+
+And then the task. So, these are all the different status messages for the tasks which these agents are performing. So, submitted when the task has been received, working, input required, additional information if it is needed, completed, failed, cancelled. 
+
+I think this is all self-explanatory. But this entire lifecycle management is critical, because if you are requesting something from an agent, it should be able to give the exact status at any point of time. So, these MCP and A2A, they are not competing, they are in fact complementary roles in the enterprise AI.
+
+(2:14:00 - 2:14:31)
+MCP solves the agent to tool problem, how a single AI agent connects to different databases, APIs, files, systems and services. A2A solves agent to agent problem, how multiple agents discover each other, communicate and delegate tasks and also collaborate. Okay. 
+
+So, this is the whole idea. When to use which, MCP is to be used when your agent needs to access databases, APIs, file systems or any external tool, A2A when multiple. So, I think this is all very clear.
+
+(2:14:32 - 2:17:56)
+And some real world project ideas are also given here. And just like this, security considerations. Again, prompt injection. 
+
+So, these security injections are mostly important when you are creating the server level tool code, server level code. So, then you have to think about prompt injection, permission scoping, tool poisoning, and consent requirements, other things. Okay. 
+
+And I have given some list of questions, if you are really interested, maybe these can be used. So, for example, these are interview questions, you can say, and also some hints. If you are not very sure, you can just copy paste these questions in chartJPT and you can get the answers. 
+
+Do not worry. Let us directly head on to the hands-on. Okay. 
+
+Without much ado. Okay. File sharing is a problem. 
+
+I am just uploading the Jupyter notebook. Do not know why these days file sharing is consistently giving a problem. So, that is uploaded in the chat and get it from there.
+
+(2:18:48 - 2:20:15)
+So, in this lab, we will be building a real MCP server and client using the fast MCP framework and construct an A2A compliant agent using your official A2A Python SDK. So, rather than just reading about this protocol, let us write down these codes and demonstrate. Okay. 
+
+We will start with the MCP fundamentals. I think I have already discussed all that. But these are the few things that we have discussed in this steps in this notebook. 
+
+Okay. So, we will be setting up all the libraries and dependencies. Fast MCP is the library that we will be using to create the MCP server A2K, A2A SDK, OpenAI and grok. 
+
+I think these are for the models. And these are for the protocols themselves. Then we will be building our MCP server for banking tools. 
+
+And we will be using this decorator at the rate mcp.tool. And connect MCP client and call the tools. So, for that, we will be creating that client and a call tool. Add resources, integrate MCP with LLM for AI agent. 
+
+Okay. And then we will build multiple agents using A2A executor. Okay. 
+
+And then also demonstrate the client server communication between these agents. And then finally, we will have a combined architecture for a multi-agent pattern and some real world applications towards the end. Right.
+
+(2:20:15 - 2:21:18)
+So, these are the steps. Okay. These are the packages and their purpose. 
+
+I have already done the installation. This is all completely running code. Okay. 
+
+I am not going to run this again. Okay. This is going to take time. 
+
+But this is completely running. I just verified this today. Evening just before the session. 
+
+Okay. So, yeah, these are all the installations, clearly. Configuration, API keys. 
+
+And then the key thing is async.io. Okay. So, using this nest async and async. These are the two libraries which we are going to use for making asynchronous calls between these agents, tools, MCP servers, and APIs. 
+
+Okay. So, this is very, very important. So, we will also have to enable async in Google Colab.
+
+(2:21:19 - 2:24:51)
+Okay. If you are running this in VS Code, you may not need this. Okay. 
+
+Because the way the VS Code handles asynchronous operations is via different threads, whereas the way it is handled in Jupyter Notebook or Colab is slightly different. So, we will not get into the technicals of all of these. Okay. 
+
+But understand that there will be some asynchronous API calls that will be made. Okay. And for that, we are using the async.io. Okay. 
+
+So, set up the LLM clients and enable the nested async loop required for running async MCP A2A codes in the Colab Notebooks. That is what we have done. Initialise the client. 
+
+I am not using Lanchain. Okay. Directly OpenAI and Grok. 
+
+No specific reason. It is just random choice. Okay. 
+
+If you want, you can replace this with Lanchain stuff also, if you want to especially implement traceability and those things. So, I have my API clients directly set up. And this is a simple helper function, which I am creating to do a rectified print just to print things nicely later on. 
+
+So, clients are initialised, async is patched and now the MCP part starts. So, here is the business scenario. Okay. 
+
+HDFC bank account services. A retail bank wants to let AI assistants access customer account data, check bank balances and flag suspicious transactions. Instead of building a custom integration for each model. 
+
+Okay. They build one MCP server that any MCP compatible client can connect to. So, what are the operations that can be done? Accessing the account data, checking the balances and flagging suspicious transactions. 
+
+So, this can be done at the customer side. Okay. And they did not want to build customer integrations for any of these instead one MCP server. 
+
+So, this will expose three primitives. One is the tools. These are the actions which the AI can execute like API post endpoint, resources. 
+
+These are read only app loads in the context. Okay. So, this will be using the get endpoint. 
+
+So, post endpoint for tool execution, get endpoints. These are also API endpoints ultimately, but for get endpoints for reading the data. Okay. 
+
+Where is it reading from? It could be reading from your databases. It could be reading from file systems. Okay. 
+
+So, this is read only. And then prompt reusable message templates for consistent AI interaction. So, prompts are also hard coded and saved, let us say. 
+
+And these are all going to be used by your tools and resources while accessing the data. Right. So, we will be building all the three using fast MCP standardised framework that currently powers more than 70 percent of all the MCP servers available today. 
+
+Okay. So, yeah, I hope a high level business context is clear. Okay. 
+
+So, we will be in short creating MCP server called as HDFC bank services with four tools. Okay. We will be creating four tools.
+
+(2:24:54 - 2:26:08)
+Okay. This is the tool one. This is the tool number two. 
+
+Okay. Customer, yeah, customer info. Second is the get transactions. 
+
+Third is the flagging suspicious transaction tool. And the fourth is the checking loan eligibility tool. So, and how are we doing this? This is some custom database. 
+
+Okay. I mean, this is just trying to simulate customer database in production. So, in real case, this will be actual SQL database where the customer data is stored and the transaction data is stored. 
+
+Okay. So, this is our core MCP pattern, I would say, turning any Python function into a standardised tool, which any AI model can later on discover and call. So, how are we doing this? Your MCP server that at the rate MCP dot tool. 
+
+This is how you are decorating a Python function. So, that Python function now becomes a tool by decorating your MCP dot tool function. Okay.
+
+(2:26:09 - 2:36:24)
+Decorator. This is not a function. This is a decorator. 
+
+We call at the rate this as the decorator. So, you are decorating this function as a tool. Okay. 
+
+So, this tool decorator does all the heavy lifting. Basically, the schema generation, validation, JSON RPC compliance, everything. Okay. 
+
+So, we will be using this simulated database dictionaries that we created above. Okay. These are dictionaries, database dictionaries, you can see. 
+
+Okay. And again, I am trying to give some realistic Indian banking data. Sibyl scores are there, UPI transactions, EMIs and those things you can see. 
+
+And in the transactions also, you can see the transaction descriptions, amount, credit or debit and the dates. Fine. So, key point is, these functions are pure plain Python, if you see, right. 
+
+And fast MCP is only wrapping them into MCP compliant tool automatically. Right. Let me repeat that last statement. 
+
+So, these functions are pure Python functions and this fast MCP framework or libraries, just wrapping these functions into MCP compliant tool automatically. Okay. So, this document string that you see this documentation string is the doc string, this becomes the tool description. 
+
+Okay, this becomes the tool description, which these AI models will read to decide which tool to call or when to call these tools. Clear. So, make sure that all the tools or functions that you are creating has these proper documentation strings. 
+
+Fine. So, if you want, you can just go ahead and check these functions. So, I am just fetching the customer from its customer ID. 
+
+And then if checking that customer is present in the database or not, if the customer is present in the database, then fetch the balance and print it. Okay, return the customer ID with the other details of the customer and the balance in a formatted way to two decimal places. This is to get the recent transactions. 
+
+So, you will have to provide the customer ID again and five last transactions are fetched. This is to flag the suspicious transactions. So, again, it will need the customer ID, okay, and the transaction description. 
+
+Also, it will need the string of the transaction and the reason, okay, that you are flagging it. Harsha is asking, could you explain about this decorator? This is what I just did. I mean, let me repeat if you missed it. 
+
+So, this at the rate decorator is coming from your fast MCP. So, this is any regular Python function, which you are turning into regular Python function, which you are turning into a tool. How you are converting a Python function into a tool by just decorating it. 
+
+Okay, now this tool could be from line chain also provides you a tool decorator line graph also provides you a tool decorator. Okay. In our case, right now, we are using this tool decorator from fast MCP. 
+
+So, you are creating this bank server from here. And you're decorating this. So, fast MCP, you can see is your C bank services, and you're creating this MCP server. 
+
+And now that server is being you are tying up or you are creating these tools against that server, right? Simple. Fine, no worries. Okay, let's go ahead. 
+
+Now the connection and testing part. So, we are going to use the fast MCP client to connect to our bank server and call its tools programmatically. In production, this client could be anything like cloud desktop, VS code, and so on. 
+
+And all the communication happens via JSON RPC over transport. Now transport will be STDIO that is a standard input output for local and HTTP for remote. Okay, so right now the client and the server is all going to be in the same machine, which machine Google collab. 
+
+So, what is the transport mechanism we are going to use? Come on, tell me in the chat. For this collab notebook, what will be the transport mechanism? STDIO. Correct. 
+
+Okay, because the client and the server hosts or resides in the same in the same machine where this collab notebook is running. Very good. So, essentially, this is showing the other side of MCP, which is the client. 
+
+Okay, in production, this client could be any of these, like cloud desktop, VS code, copilot, cursor, anything. So, here we are the client. Okay, the pattern is, you have the, okay, so I am importing this client. 
+
+Okay. And then what are we doing in this? Connecting the client directly to the in-memory server, no networking needed for testing for now. So, I am just connecting the client with the server. 
+
+So, here you have the connection. So, this is the connection already done, you can say, okay, in this. Now, that is an asynchronous connection, you can say, you are doing an async with that client in a way. 
+
+Okay. You are doing an async with the client. And then first getting the list of all the tools available and you will wait until all the tools and the descriptions are available. 
+
+That is the meaning of await and async. So, whenever you use async, you will always use await for the return. Return means, I mean, this client will return something, right. 
+
+So, you will wait or you know, the programme will wait until the response is received. Okay. So, that is the asynchronous mode. 
+
+Okay, you can say. So, when the all the list of the tools is available, okay. And then we are printing all the available tools, you can say. 
+
+And then for tool in tools, I am just printing it in the, yeah, so here I am printing all the tools one by one. So, this is what this print is doing. So, printing all the tools one by one, you can see these four tools were printed, get customer info, retrieve this. 
+
+Yeah. And this description is automatically populated from the docstring against each of these functions, correct. So, this in-memory connection, which is no network is the perfect for testing. 
+
+In production, you would be actually using something like, you can say, here, okay, in prod, okay, you would use something like, is it mentioned somewhere? No. So, let me write it down here itself. Okay, something like client and your server would be somewhere like, maybe HTTPS, and you are connecting your server with some URL. 
+
+Okay. And from there, the MCP, just like this, kite server has got kite MCP server URL. I am just showing you, okay, how does the kite MCP server URL looks like, or AWS MCP server looks like. 
+
+So, that is exactly how you would be doing it, clear. So, this is the primary URL for the kite MCP server. It is just fine, clear everyone, make sense. 
+
+So, you will be providing your MCP server URL, okay, MCP server URL. Okay. So, this will be making for remote HTTP connections, you can say. 
+
+So, most important thing is this list tools. That is one thing you have to really appreciate, okay. This is how AI models will discover what is available. 
+
+This is a tool discovery step that makes the MCP so powerful. There is no hard coding needed, just ask the client to list down all the tools. That is it.
+
+(2:36:25 - 2:37:05)
+Okay. So, second step, what are we doing? Fetching the customer information for this customer ID, and then you are waiting for the response and just printing all that data. Result.data contains all the customer information. 
+
+And pp is the pretty print function that we find at the start of the notebook. Then you are also fetching the transactions. Okay, how you are doing an actual call, call tool, call tool, call tool. 
+
+So, this is the method that you are invoking and for some customer ID. So, this is a JSON format you are providing. Okay.
+
+(2:37:06 - 2:38:46)
+So, this is again a JSON format. So, this is the name of the tool, get transaction, get customer info. Okay. 
+
+You are actually getting the name of the tool. And then this is the JSON RPC format in which you are providing the input to that tool. Okay. 
+
+So, let us say I want to fetch the top three transactions for this customer ID, flagging the suspicious transaction again. So, here we are calling this tool. And this is the customer ID. 
+
+This is the description. Okay. And the reason. 
+
+Okay. And then you are printing it. Okay. 
+
+The result. This is the result that you would get from the server after you make this call. Okay. 
+
+And you are just printing that. For loan eligibility again. So, this is the tool which we are using, customer ID and loan amount and sort for, you know, loan type, postman. 
+
+So, the eligibility result will be printed from the server automatically. Okay. So, these are all the things I have created here. 
+
+So, one by one, each of them will be done. Okay. And then you are running the async test. 
+
+So, let us look at the results. So, customer ID 001 Priya Sharma. This is the account ID. 
+
+This is the balance Mumbai civil score account type. These are all the information. Then fetching the transactions.
+
+(2:38:46 - 2:39:07)
+So, last three transactions we have been able to fetch. And one of the transactions has been flagged by the customer. So, this is the alert ID that is returned from the server. 
+
+Okay. Status, customer ID, transaction and the reason. So, reason was specified by the customer.
+
+(2:39:07 - 2:40:24)
+But the alert ID and the status is coming from the server priority. This is also coming from the server created at this is also coming from the server side. Right. 
+
+So, all this information is coming from the server. If you want to go up and check how this is coming, then you can see this alert ID flagged or not. Okay. 
+
+Priority height. Now, these are like right now hard coded. But once the actual system has executed, then only it will return anyway. 
+
+Right. And some alert ID is being randomly generated, you can see. Okay. 
+
+So, this is what the banking system would also actually do. They will create some ID and that ID is returned here. And status once everything has been done and date time. 
+
+Yeah. So, this is how it looks. Loan, this is the result. 
+
+So, declined because of so and so reason. So, Sibyl score 810 and as it declined, this is interesting. Maybe that is hard coded. 
+
+Let us check. Yeah. Approved if pre-qualified.
+
+(2:40:28 - 2:40:44)
+Declined. This is. Yeah. 
+
+So, this message is actually hard coded. Okay. So, do not pay too much attention. 
+
+This message is hard coded. You can make this more robust. So, but yeah, this is in principle how it works.
+
+(2:40:47 - 2:41:07)
+Okay. There is another scenario here. Business scenario. 
+
+Star Health Insurance. Company wants to expose policy data as resources and standardised analysis templates, which are prompts alongside action orientated tools. So, we will see all the three here in this case.
+
+(2:41:07 - 2:41:44)
+Okay. So, we are going to essentially set up a second MCP server for this Star Health Insurance, which will demonstrate all these three MCP primitives, tools, resources and prompts. Fine. 
+
+Resources again, what are these? So, most people only know about MCP tools, but these resources and prompts are also very important. Okay. So, these resources are read only data that your application loads into the AI context.
+
+(2:41:46 - 2:42:03)
+So, think about all the get endpoints. So, AI will read these for reference, you can say and will not be able to modify, of course, because it is read only. And prompts.
+
+(2:42:03 - 2:44:00)
+So, these prompts are created by using at the rate MCP dot prompt. Okay. I can say these prompts are created by using MCP dot prompt and MCP dot resource. 
+
+Okay. This is how it is created. This is created by MCP dot prompt. 
+
+Okay. So, main point is these tools are actions, which are your post endpoints, resources are get endpoints. Okay. 
+
+Tools are always post endpoints and resources are get endpoints and prompts are like templates, reusable templates. So, complete MCP server will use all of these three. So, in this case, the insurance domain, we are showing all of these manually. 
+
+Okay. Let us see one by one. So, there is a submit tool that I am creating here, which is a tool, submit claim, I think there is a submit claim. 
+
+Yeah, submitting a new claim, submit claim. This is what I am creating as a tool. Then I am creating this as a resource. 
+
+Can you see? So, MCP dot resource, that is the thing. This is MCP dot tool. Okay. 
+
+And this is again MCP dot resource, this is MCP dot prompt. So, this is the prompt that we are creating. So, all three are there.
+
+(2:44:00 - 2:44:37)
+Right. So, let us see one by one, each of them. Again, some simulated policy database we are creating, simulated claims database we are creating. 
+
+So, these are the policies by so and so people, Arun Verma, Meera Iyer, the plan names, the sum insured, premium being paid, how many members, hospital network, cashless at 12,000 hospitals, valid until date, claims filed, NCB, NCB is no claim bonus, discount 20 percent. And similarly for the other ones. Okay.
+
+(2:44:37 - 2:48:30)
+Claims, this is a claim ID you can say. And again, policy to which that claim is attached to the claim amount, hospital name, status approved, the other one is under review, diagnosis, dengue treatment, knee replacement, and the date on which the claim was made. Okay. 
+
+So, this is 20 and today is 1st of March. So, yeah, this is already approved and done and dusted. This is the one which is still under review. 
+
+So, maybe this goes to a later date, like 28th or 27th. This was raised. So, this was raised yesterday. 
+
+Let us do it that way. Okay. So, this tool again is going to submit the claim. 
+
+So, first a claim ID gets generated randomly and the claim ID is mapped, policy ID, okay, which the customer will be providing, a policy ID as a string, amount of claim, hospital name and diagnosis. So, these are four things the customer is going to provide or the hospital which is going to process that claim is going to provide, okay, the TPA from the hospital, okay, TPA assistance cell. Almost in India, we have the third party assistance cell, TPA assistance cell in each of these network hospitals that process the claims. 
+
+So, I am just putting all of them together. Resources like a lookup, okay, as I said. So, this is read only loaded into AI context. 
+
+So, get complete policy details, resources are loaded into AI context for reference, okay. And again, there is another resource which get claim history for a policy, useful for renewal analysis and NCB calculation. So, if there was a claim made by the person in the last financial year, then there will be no NCB, whereas if the client or the customer has not made any claim in the previous financial year, then no claim bonus of 20 percent will be applicable. 
+
+So, that is the basic logic here, okay, which we have implemented. And then the prompt generate analysis prompt for reviewing insurance claim against policy terms. So, this is the complete prompt template which will be given to the model, okay. 
+
+So, you are this analyst, this is a claim ID, policy ID, please analyse this, this, this, this, this, this. Provide your analysis in a structured format. So, this entire prompt template goes to the LLM along with this claim and policy and so on, okay. 
+
+What else? There is another prompt template for the renewal. So, generate a renewal recommendation prompt based on the policy usage and the claim history, okay. So, interesting use case. 
+
+So, I have created all of these, one tool, two resources and two prompt, okay. Now, I am going to test all of these one by one. So, first you connect your client with the server and then you start reading. 
+
+So, this is where the MCP plus LLM integration actually starts now, fine, in this case. So, here read the resource. So, policy ID, I am going to read everything about that policy, how many times the claims were made against that policy, who holds that policy and everything about that policy is now available as a context.
+
+(2:48:30 - 2:49:15)
+That context I can pass or I can reuse it later, you see. So, first the context is available, okay, as a resource. So, second thing is again I am reading the resource about the claims. 
+
+So, first about that policy history. So, yeah, this is the, so reading the claim history. So, one is reading the policy details, one is reading the claims history. 
+
+So, these two are there in the context and then generating claim analysis template. So, your prompt is ready. And here we are populating that prompt, okay, with the claim ID and the policy ID.
+
+(2:49:17 - 2:50:07)
+Okay, and then I get this prompt template. And then from that generated prompt text, okay, I am just pass printing the first 300 characters for display. And then you can also use the tool, how it works. 
+
+So, the tool was to submit a new claim. So, here you have provided a policy ID, the tool amount, sorry, claim amount, hospital name, these are all hard coded, which will be submitted, this is a POST request, remember. So, this will be submitted. 
+
+So, after submitting the server will return some data that you are going to print, okay. So, let us see. So, here are the policy details that were fetched as the resource.
+
+(2:50:08 - 2:51:04)
+And this is claiming, reading the claims history for this policy. So, two claims were made for that policy. Generating the prompt analysis template. 
+
+So, these are the tool available, analyse claim and renewal claim and generated prompt, URL star, this, this, this, claim ID is there, policy ID is there, please analyse. So, this is the complete prompt template. Okay, and then submitting the new claim. 
+
+So, this is how you submitted that new claim, fine. Now, let us integrate our prompt template. So, our prompt template is ready. 
+
+Can you see this is our prompt template with the claim ID and policy ID already populated. Now, I am going to submit this prompt to the LLM. So, this is where the real integration starts, okay.
+
+(2:51:06 - 2:55:15)
+So, we are going to wire the MCP tools to OpenAI s function calling, okay, that will build the actual AI banking assistant, you can say. So, user will ask a natural language question, for example, anything maybe, and the LLM will decide which MCP tool to be called. Okay, and then this tool will be executed, the result will go back to the LLM and the LLM will format into a human readable answer. 
+
+So, that is the overall sequence, right. Perfect. So, build tool schemas from MCP. 
+
+This is to convert your MCP tool metadata into OpenAI function calling. Okay, so basically, you have to bind the tools to OpenAI, right. So, that tool binding is being done here. 
+
+So, we have got the tool list from your MCP server, and all those tools are now being connected to your OpenAI. Okay, so this is just creating us kind of a schema. Okay, what is the name of the tool is, what the description of what that tool is, and if there is any input schema, input schema contains the data type of all the inputs which are required by that tool. 
+
+Okay, what are the data type and what are the property, properties will mean the field description. These are field descriptions and these are the data types of each of the inputs for the tool. Okay, so this is the format in which the OpenAI expects the tool description. 
+
+Okay, so that is the schema that we are creating. So, this will be directly used by your OpenAI. Okay. 
+
+Now, this is the AI assistant that uses MCP bank tools to answer the customer query. So, kind of a chatbot we are creating. So, I am connecting the client with the bank server. 
+
+I am getting the list of the tools, building the schema for each of those tools. So, this is the OpenAI tools along with the schema now. This was the raw MCP tool coming from the server. 
+
+All those are passed to the above function. So, now you have the proper schema that you are going to bind with the LLM. Okay. 
+
+So, where is that binding happening here? Okay. So, this is a normal system prompt and the user prompt. So, this is a system prompt and the user prompt. 
+
+Okay, you are a bank assistant, use the available tools to look up the real customer data, always be helpful professional format monetary values in INR. Okay. GPT 4.1 mini model temperature, you can set messages as system and user list of the tools along with the proper schema and tool choices set to auto. 
+
+So, let the model decide basically. And from here you are reading the actual AI message. So, this is your AI message part. 
+
+Okay, if you are using line chain, then you would have chained your prompt template with the LLM. Okay, here, this is how I am pulling out the response. So, the LLM wants to call the tools, execute them via MCP. 
+
+Okay. So, if assistant dot, okay, sorry. If the LLM wants to call, then one by one you have to execute the tools. 
+
+So, what is this for loop doing? This is literally executing the tools one by one. So, for tool call in this, so the LLM decides which tools to be used. So, this will be the list of tool calls.
+
+(2:55:16 - 2:55:48)
+This will be the list of tool calls and you are just iterating over those tool calls and actually executing it. Okay. So, tool call dot function dot name, this is the name of the actual function underlying. 
+
+And then you are creating the JSON load. Now, why is this needed? Because the input to the tools will be in a JSON RPC format. So, you have to create a JSON format. 
+
+Okay, and then call that. So, calling is done here. So, here this is just for printing.
+
+(2:55:48 - 2:56:54)
+The calling is actually being done here. Client dot call tool, function name and the function arguments. So, all the function arguments will be in the JSON format. 
+
+Okay. So, that JSON format is what you are creating here. That JSON format input to the tool name and the function to execute the tool is call tool. 
+
+Okay. And the result of the tool, you are also getting in the JSON format. So, whatever result you got, you extract that, get it to a JSON format. 
+
+So, JSON dot dump is again going to get the result into a. So, JSON dot load and JSON dot dump. See here, there are two different functions. So, dumping is where you are creating a JSON format and JSON dot load is where you are loading the JSON format. 
+
+Okay. So, function dot arguments will already be in a JSON format, which you are reading here in a way. So, JSON dot load is like you are reading a JSON data.
+
+(2:56:54 - 2:57:51)
+This is already a JSON data which you are reading using the JSON dot load. And this is a data in a different format, maybe a dictionary that you are creating as a JSON format. That is what the JSON dot dump does. 
+
+So, JSON dot dump is to write JSON data and here you are reading the JSON object. So, that is the main difference. Fine. 
+
+And this is just populating your list of messages which you can use in the message history. Okay. So, get the final response from the LLM. 
+
+So, here you have initialise your client and chart completions. Okay. This can also come from your responses API.
+
+(2:57:51 - 2:58:12)
+Right now, this is the completions API that we are using. But this can be any other API. And you are getting some messages, this list of messages you are creating here and that you are executing here. 
+
+So, this is like the step where you are doing chain dot invoke in lang chain. Okay. This is where you are using the chain dot invoke.
+
+(2:58:15 - 2:59:03)
+So, final AI message is what you are retrieving and printing here. And then you are testing this. So, let us do this. 
+
+User, can you show me the account details and recent transactions for this customer? So, AI has access to four MCP tools. So, this was all hardcoded. So, from there, calling the MCP tool and then calling another MCP tool for transactions last five. 
+
+Okay. And date time was returned. Now, the assistant, this is the LLM s final response. 
+
+Here are the account details and recent transactions. So, these are the account details and these are the five recent transactions. So, this is completely done from the model side.
+
+(2:59:05 - 3:01:42)
+Okay. If you need any further details, let me know. Fine. 
+
+So, is customer eligible for this? Okay. So, in this case, we are using that prompt template. You remember that we created a prompt template. 
+
+Okay. I think here. So, we are using one of those prompt templates. 
+
+Yeah. Is not eligible at this time. Loan has been declined due to the need to improve the civil score, this and that, despite having if you need further assistance. 
+
+Yeah. So, in fact, that reason was hardcoded, which is why the model has just replied that only. Okay. 
+
+Okay. If you want, you can change to a different model that is also possible, multi provider. So, it is exactly the same flow, but with Lama 3.3 70 billion parameter model via Grok instead of your OpenAI. 
+
+So, I am not going to repeat this. It is exactly the same. Finally, the eight way part, I will take probably 10 more minutes. 
+
+Okay. So, first we are the business scenario, which is a multi agent healthcare system. Hospital network has specialised agents. 
+
+One is the triage agent, which classifies the patient urgency, diagnosis agent, which analyses the symptoms and the billing agent, which will handle the insurance claim. So, three agents are there. And these three agents will do a handoff amongst each other, you can say. 
+
+These agents need to discover each other, that is most important, each other s capabilities and then delegate tasks. And that is exactly what A2A enables. Make sense? Okay. 
+
+So, why we are doing this? Basically, again, these agent cards are like A2S discovery mechanism. Right. So, before agents can even talk to each other, they need to know who are you? What can you do? Where are you? What formats do you support and kind of things? Okay.
+
+(3:01:43 - 3:03:29)
+So, this agent card will answer all of these questions, technically. And where is it served? This is served here. This is like your robots.txt for agents ultimately. 
+
+Okay. So, whichever server it is, a well known agent slash sorry, dot well known slash agent dot JSON. So, whichever MCP server it is, okay, this is the endpoint where the agent s discovery is made as per the A2A protocol again. 
+
+So, which are the key fields? You will find four key fields. One is the skills or the agent skill that you will be using. Okay. 
+
+Other one is capabilities. Okay. And third one is the URL, where each way to reach this particular agent. 
+
+Okay. Where is this agent really hosted? And again, the input output default modes. So, these are the four things you will define in this JSON format or JSON data usually. 
+
+So, these are the other agents that we are creating. So, main thing is again, let me just reiterate this agent cards, these enable automated discovery. Okay. 
+
+Maybe you can think this like a coordinator agent which can fetch all these cards from multiple agents and even can read their skill, maybe decide which one to delegate to for each of these tasks and so on. All this without any hard coding. So, that is the main thing, right.
+
+(3:03:29 - 3:04:58)
+So, let us create this one by one. I am importing. So, first let us create the triage agent hospital. 
+
+This is the name of the agent description. This classifies the patient urgency based on the symptoms, vital signs, medical history, routes patients to the right department. So, this is the URL I was talking about. 
+
+Okay. So, each agent will be hosted in some URL. Now, you will not be able to access this URL because these URLs are running on collab server. 
+
+So, whichever is the remote server. So, this is the URL tied to the remote server, not your local machine. So, do not open this and see. 
+
+Okay. This will not work. However, if you are running this entire notebook in your local machine using a VS code, then definitely this will be accessible. 
+
+Okay. So, version number for that agent input and output modes, the default. So, this agent will take a text and reply as text and then capabilities. 
+
+Does it support streaming mode? Does it support post notification? Now, these are all standard things available in the 8 way. Okay. So, skills are there, agent skill, agent skill. 
+
+So, two skills, one is to identify the urgency, other is to route to the query to the right department. Okay. I think this is anyway clear.
+
+(3:04:59 - 3:05:07)
+So, two things can be done by this agent in a way. Other is the diagnosis agent in this case. Okay.
+
+(3:05:07 - 3:06:01)
+So, this agent can do one thing, differential diagnosis that is the ID name and generates rank the list of possible diagnosis based on the patient data. So, this agent will give a diagnosis. Okay. 
+
+These are the tags for this particular agent. Okay. Now, why are tags needed? So, that you know this agent can or other agents can do a handoff to this agent if any of these keywords are found or triggered you can say. 
+
+So, these are the examples of outputs you would get. Okay. These are the examples of outputs you would get. 
+
+These are the examples of outputs you would get. Okay. Finally, the billing agent, this will handle the insurance claim submissions, pre-authorisation checks, billing for hospital services and so on.
+
+(3:06:02 - 3:06:16)
+So, agent skill, this will do the pre-authorisation check and the other one will submit the claim end to end. Right. So, I have created all these agents running at these three different locations.
+
+(3:06:16 - 3:08:51)
+Okay. These will be three different endpoints in a way. So, your agent cards are defined and ready for discovery by the other agents. 
+
+So, these are the agents created by the MCP server you can say. Now, all I have is your executor agent, sorry, yeah, agent executor. So, this is where the agent gets really executed or you can say main logic is implemented here. 
+
+So, this is the one which will receive your A2A protocol based requests and also return the responses through the event queue mechanism. Fine. So, we will take one example of this triage agent here. 
+
+You can see the entire workflow. So, this agent executor is this triage agent executor is coming from here. This is inheriting from the agent executor and it will have the execute and cancel methods. 
+
+If you see, I have done that. Yeah, here and here, cancel and this one is execute. Fine. 
+
+So, what is happening here? So, this agent executor is where your agent logic lives as I said and this handles all the protocol plumbing that is basically HTTP or JSON RPC, entire task, lifecycle and stuff. So, all you have to do is just implement two things. One is the execute function that is what I just now showed you which will have the context and the event queue and the other one is. 
+
+So, this execute as you see here, this execute, this will get the user input from the context, do whatever it wants to and put the results in the event queue. This is what has happened. And this cancel guy, this cancel, this will handle the cancellation.
+
+(3:08:52 - 3:09:13)
+So, again, it will take the context, you can see, it will again take the context and the event queue from there. So, inside this function ultimately, we are calling your triage patient okay. And you know, this also uses the GPT 4.1 mini model to classify the urgency.
+
+(3:09:16 - 3:09:34)
+Okay. So, in production, this could be any agent framework does not matter. This could be coming from your line graph, could be your ADK does not matter about the tunnels.
+
+(3:09:34 - 3:09:45)
+The main thing is the context. Okay, this context dot get user input. This gets the message text.
+
+(3:09:45 - 3:11:32)
+This is the one which gets the message text. Okay. And this one, last line, okay, sends the response finally. 
+
+That is the entire 8-way contract or implementation. This is the input. And this is your final output. 
+
+Okay. So, again, now, you will be launching that server in the background thread. So, this would be running in the separate thread in the remote machine because anyway, this entire code is running in a remote machine. 
+
+Okay. As a sub process, and then use the 8-way client for communication. So, here, these are the starlet application and in-memory task store default request handler. 
+
+So, these are all being used behind the scenes to execute that client communication. Okay. So, first, we will create this server launch. 
+
+Okay. And how is that server launch done? So, this default request handler and 8-way starlet application. So, these two, these two guys. 
+
+So, yeah, so your request handler and your 8-way app is there. Now, these are pretty technical stuff. I do not know, this will be easy for anyone to understand.
+
+(3:11:32 - 3:13:25)
+So, I mean, this can be just too deep technical stuff unless you know the protocols, getting a hang of all these things can be a bit tricky. So, maybe what I would suggest is you can copy this code to charge GPT and ask it to explain line by line that would, if you are really interested to get to that. But this actually does the entire implementation in the actual production way. 
+
+Okay. So, this is launching your server in a way, this is your server launch. And the client communication, we are going to use the raw HTTPX. 
+
+So, this is your triage server, same thing, uvcon and this is your client byte, HTTPX. Okay. This is first going to fetch your client, sorry, agent card. 
+
+You see, this is going to fetch your agent card for discovery, all of these agents and their capabilities. Okay. And then also send the JSON RPC using the message send. 
+
+Okay. It will send message, requests. So, this is all with the patient system, I think patient symptoms. 
+
+Correct. So, this has almost everything, entire discovery is there, client will fetch the agent card, learns and that way the agents learn what other agents can do. Communication is there, client sends a message, agent will process it and then returns the result ultimately.
+
+(3:13:26 - 3:13:31)
+So, let us test each of this one by one. I am going to test this entire communication. Okay.
+
+(3:13:32 - 3:15:53)
+So, first is the discoverability, second is sending the request to the agent. Okay. So, these two things and we will go for three cases. 
+
+Okay. Three patient cases. One is the emergency cardiac thing, I can say. 
+
+Other is routine headache. And third one is paediatric fever maybe. So, we can see how these agents are handling different urgency levels, you can say. 
+
+Okay. So, this is just a for loop to run each of those one by one. Let us look at the results directly. 
+
+I think that will be easy for us to understand. So, discovering the agent capabilities, agent, hospital triage agent, version number, this has these two skills. Step two is handling the request to the agent. 
+
+So, this is the first case. So, agent response for the case one, I get some message ID kind of and then in the text, this is the assessment you can see. I will have to print this properly. 
+
+It has gone to the emergency. You can see urgency is emergency. Department is cardiology and reasoning is also there. 
+
+The patient exhibits classic signs of possible acute myocardial infraction, which is heart attack, basically. So, the first one is done. Second one. 
+
+This is the 25-year-old female, mild headache. So, again, the assessment shows urgency is routine. Department is general medicine and then we get the reasoning also. 
+
+Third one is again, 8-year-old, high fever is there. So, urgency, department is paediatrics and the reasoning. So, this is all working definitely.
+
+(3:15:53 - 3:18:00)
+Okay. So, you can also fetch the agent card from the local server running on Colab. So, here agent was fetching the agent card by themselves and here you are explicitly reading the agent card from this location. 
+
+You are explicitly reading the agent card from this location. Okay. You can change it to 1, 2, 3 because we created three agents. 
+
+So, one by one you can change this number. Okay. And print the entire agent card. 
+
+So, this is how the entire agent card is coming up. Okay. So, do not try to run this on your local machine because this is accessible on the same machine where Google Colab is running. 
+
+Okay. So, remember that. But this is the if you are wondering how the agent card page looks like. 
+
+So, this is the exact agent card posted on that. So, this is all populated by A2A protocol just because we use that A2A protocol this entire formatting and this JSON file format creation everything was handled by your A2A protocol framework. So, let us combine these two now MCP and A2A to give full closure you can say. 
+
+So, business scenario e-commerce order management oh we are already 20 minutes over maybe another 10 minutes frankly this should end at a good note. So, there is one message in the chat my initial message to chat is used by LLM to reset the function name to be invoked but my input is not sufficient for this specific tool call. So, in this case LLM will ask me for that also you will have to implement it in a specific way.
+
+(3:18:00 - 3:19:32)
+Okay. So, kind of a iterative thing. Okay. 
+
+So, that is like a human in loop. So, the first agent itself is a kind of a human in loop pattern where until all the details are available it does not start the processing pipeline. Yeah. 
+
+Okay. So, coming back to this order management system e-commerce platform maybe a flip card something like this MCP server is exposing all the inventory order and shipping tools. These agents for specialised tasks like order agent, inventory agent, customer support agent. 
+
+Okay. So, this is the kind of architecture recommended enterprise pattern. So, agent use MCP to access tools and data and A2A to coordinate with each other. 
+
+So, agents are using MCP to access the tools, data or resources or even prompts and how are agents communicating with each other that is using the A2A protocol. Right. So, this is one agent and how does it connect with the inventory agent via A2A protocol and how does this agent connect with the tool which is your MCP server.
+
+(3:19:32 - 3:20:16)
+Right. How does this agent connect with the inventory system via MCP server. I hope this is very clear. 
+
+Right. This diagram is very clear. Okay. 
+
+So, MCP server exposes all the inventory order tracking and the tool return tools you can see in this case and the LLM powered coordinator agent will act as the final customer support that is what we are going to create. So, MCP is for the depth you can say you can keep on going below for multiple MCP tools and A2A for breadth that is basically each agent can keep laterally talking to others. Okay.
+
+(3:20:23 - 3:21:51)
+Okay. So, again some simulated data is there. I am creating my MCP server and these are all the tools we are creating. 
+
+I think it is on self-explanatory now checking real-time inventory. This is for tracking the status initiate refund list all product categories and counts fine and again simulated A2A style multi-agent coordination. So, here also we are creating the connection between client and the server first and then listing all the tools available creating a schema and binding all those tools to their open AI model. 
+
+Right. This is what we did earlier also and then here I am just printing what all these agents are doing. Okay. 
+
+So, this is one example scenario for order tracking where is my order number also is the prestige induction cooktop back in stock. So, this is your customers query where is this coming? Yeah here. Okay. 
+
+So, you are running this entire agent system. So, let us see. So, order agent starts tracking this order number inventory agent checks the inventory with this SQ code.
+
+(3:21:52 - 3:22:46)
+Okay. And then the final response I am getting from the LLM. So, this has been shipped and is expected to be delivered regarding this it appears that this product is not found in our inventory could you please check the product name or provide. 
+
+So, basically that is still not there in their inventory it seems. Other one is I want to return my Nike shoes for this order number they do not fit properly. So, first the coordinator agent is running and it triggers the returns agent which processes that order ID reason does not fit items Nike shoes and then this is the final response that so and so order ID has been initiated due to improper fit the pickup is scheduled for so and so date and the refund will be processed to your original.
+
+(3:22:46 - 3:24:42)
+So, this is all done by the agents themselves. So, the supervisor is it or coordinator agent is the main. Okay. 
+
+So, this is all the end to end things what else. So, these are again different applications you can check I have just given a tentative list. I got it from somewhere and again there are some reusable templates are there like domain organised MCP servers how a bank would split tools across retail banking loans fraud detection and then there are yeah and then there are A2A agent discovery registries there. 
+
+So, this is how you build a searchable index of agents by skill tags. And then there is a security checklist also okay towards the end. So, you can just check. 
+
+Finally, there is a cost and timing analysis. So, if you want to just check. So, MCP plus open AI 4 tools chains this is the cost token total to token usage this is same for grok and A2A triage agent is making 3 LLM calls 3 classifications using this model this is a lower cost 2 tool chains 600 tokens.
+
+(3:24:42 - 3:31:13)
+So, there is a saving of 0.02 dollar per run. So, that is the value proposition here. So, before MCP or A2A each model multiplied by each tool call that is n cross m and after MCP we know that the model plus the tool. 
+
+So, how many model plus how many tools that is n n plus m standardised connections will be creating. So, this is all we have discussed. So, this hands on I know this is pretty you know deep may not be definitely beginner friendly, but it is close to production demonstration although this is still a demonstration, but close to production. 
+
+The only place where it lacks is not connecting to a real database otherwise if this was connecting to a database then it would have been really a production grade that is the only place where I see this is lacking, but otherwise this is pretty much good fine. So, let me see how many are still there 14. So, half of the strength is gone already dropped out it seems, but that is completely. 
+
+So, let me know if there are any questions anything which I can help you more. I think Karthik has informed you that today's session is the last session right away this one. So, if you have any more questions maybe you can reach out to the team or you can also reach out to me on LinkedIn. 
+
+So, many of you are already connected. So, we can continue our discussions there. Prashant I have one quick question actually I did posted in the chat as well. 
+
+So, what I mean like the authentication like you know how we can authenticate let us say in my project I am just calling the MCP server for example ServiceNow MCP server I am just calling into my agent. So, how the authentication piece work in there? See authentication is very much similar to any REST API authentication either you use OAuth or JWT these are the typical ways because ultimately this is going over and above your API calls only you are ultimately doing what get post request only with these API endpoints to make those request using those post or get endpoints which is a REST API ultimately since it is a REST API ultimately authentication will also go in the similar manner I mean. So, whichever company is writing the MCP server code will implement the authentication either using OAuth JWT or maybe there are some more protocols I am not very sure but I have mostly used the JWT and the OAuth 2. Yeah, I did use JWT for other purpose. 
+
+Got it and the cost of MCP is like how with the LM model cost or it will be different let us say I am just using ServiceNow through my OpenAI. So, do I need to pay to OpenAI as well as to ServiceNow to access their MCP? It is their call basically if they are so many companies are providing MCP servers for free because you are already a part of their paid tier understand this is being provided as an additional you know way to interact with your own account ultimately you already have having a ServiceNow account you are already a ServiceNow user maybe pro user. So, there can be two tiers which ServiceNow is providing a free or a standard user and a pro user standard users will not have access to my MCP server only the pro users will have access to my MCP server that is how most of the companies are doing they are differentiating a list of clients or maybe users based on the tier of the subscription that they are with this particular MCP server provider companies. 
+
+So, they may not roll out because ultimately the load on the MCP server will increase if everyone tries to you know use the MCP server okay. So, they are providing to the premium tiers or subscriptions that is one approach or for example as I now said this AWS or Zerodha API now these are rolled out to almost everyone okay but again this Zerodha API is not free I am paying 400 rupees for everyone for this API. So, I am already paying for API see I am already paying for API access. 
+
+So, now I am able to get the MCP for free but those guys who are not paying for API probably they might have to pay for MCP access. So, either way. Got it Pandya. 
+
+So, it depends because anyway you have to first authenticate that layer of authentication itself was implemented to make sure that you have the right access tier whether as a standard user or a free user or as a pro user whether your access tier has access to MCP server or not. Got it. That is the basic meaning of the authentication layer right.
+
+(3:31:19 - 3:35:00)
+Yeah the reason I asked actually I am just planning to build one project where I want to use MCP and to learn it like a little bit more and deep. So, that is the reason I am just saying this notebook will give you a fair understanding of all the process and now you can use these servers like sorry IDs like cursor and windsurf and just provide them high level context they will write down your MCP codes following the protocol you just have to provide the right context intention task clearly with and you have to tell them that it has to follow the protocol properly also feed documentation pages to these protocols many a times that also really helps I have seen. So, most people are writing this. 
+
+So, for example this code notebook is not written by me completely maybe some small here and there things have been done but 90 percent it has been written by cursor only. So, somewhere you will have to use because I am also not a pro in this entire protocol. This is just so new and there is just too many things to understand learn we are still struggling with LLM architectures and transformer models and the other end of the spectrum is MCP protocol and E2 and so on. 
+
+So, there is too many things to focus on parallelly simultaneously. So, easiest thing is you understand your use case you understand what kind of prompt works you understand what platform you want to use you have to get comfortable with one of them iterating is the key experimenting is the main thing when you have figured out that this way consistently it works stick to that method that that's what I have been doing I would not experimentally keep you know juggling between different platforms between different models if I figure out that okay this is the way I have done it once for subsequent I will do it that way only maybe that is a longer method maybe that is not an optimal method but I know that way works for me that is the important thing okay rather than anyone just saying that Prashant why are you doing this this can be easily done by using that okay but I have not done using that that is the point so if I have been doing some things and in a specific way may not be the optimal way but if that way has been working good I'll stick to it as long as I can maybe so this solution has many many many options right so a problem has many solutions I'm going to say can be solved in many ways we can't be you know keep hopping to different different solutions without understanding because one way it works means I understand that solution why it works and how did I you know get it to work so since I know the nuances then for me the reliability is much more important okay than you know just hopping into different solutions so I want a reproducibility and reliability of any solution first may not be 100% optimal maybe costlier that's also fine may not be 100% accurate that is also slightly acceptable as a human I can always check the accuracy and other things but at least it has to give me consistently what I want so that's the point. Yeah Prashant your class helped me a lot actually I do not know agent when I joined the class now I have a fair idea what is agent.
+
+(3:35:02 - 3:36:58)
+I have to you know get it to as production ready as much as possible because this iteration the third iteration of the agent patch that we have done here that is you know almost 50% better than the first iteration a lot of new things that we did for example this MCP lab was non-existent in the first two batches a lot of things like even what we did LangFuse was not done in the first two batch that was also completely new CRIU AI project that I did for you guys was again done for this particular batch the previous CRIU AI project was much much simpler okay and yeah first two batches so there is again and Lang graph wise also two more projects were new for you guys we already also discussed a lot on RAG plus prompt engineering so prompt engineering also there were few new notebooks and initially also there were few new so lot of labs were created especially for you I am sure right and all the resources which I provided to you were also not provided to the previous batches so these were also completely created for you people anyway thank you I really enjoyed a lot interacting and learning from you people I also had to learn a lot to teach you so that is also a continuous learning CICD pipeline for me so CICL continuous learning pipeline okay thank you thank you and have a nice day best wishes everyone for your job search everyone thank you thank you thank you thank you

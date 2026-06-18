@@ -1,0 +1,2747 @@
+(0:00 - 0:34)
+I told you yesterday in one of my conference actually. What was it? It was multi cloud, you know, AI Oracle 2026 conference, which happens twice in a year. And it was in Hyderabad.
+
+(0:35 - 0:49)
+So I came today just, you know, an hour before. So even if I left Oracle, but, you know, people are in touch with me and I'm a core volunteer for that actually. Oh, great, great.
+
+(0:50 - 1:03)
+That's nice. So there was a doubt session. Few of the folks utilise that opportunity and I couldn't see everyone.
+
+(1:05 - 1:16)
+But, okay, let's see. And I got to know that Grok, you know, the latest version is on OCI. Okay.
+
+(1:17 - 1:26)
+And because of that, the performance and all has, you know, maybe they quoted. I didn't use that. But yes, I'm definitely going to try.
+
+(1:26 - 1:43)
+I haven't logged into OCI since months now. Okay. I said they probably Grok, you know, that has been hosted on probably on OCI.
+
+(1:43 - 2:43)
+That's what I got to know. So last session. We finished with this tool calling and Lanchain.
+
+(2:43 - 2:52)
+Okay. So let me see if there are any questions in that lab. This was the second one.
+
+(2:52 - 2:59)
+Which we were discussing. I'll just quickly revise this. Okay.
+
+(3:00 - 3:14)
+This went on till late part of the session. So maybe some of the folks had already dropped off. But most of the things were discussed, I think, well, within the class time itself.
+
+(3:20 - 3:49)
+Link for the lab tool. Cool. Yeah.
+
+(3:49 - 3:59)
+So what we learned in this was how to create nodes, how to create edges. Nodes are these boxes, square boxes. There are two built-in nodes.
+
+(3:59 - 4:06)
+One is to capture the conversation starter, conversation starter. And end is to end the entire conversation. So these are built-in.
+
+(4:06 - 4:13)
+We are just importing them. And we are adding some custom nodes. And the connections between these nodes are done by edges.
+
+(4:14 - 4:19)
+So add node, add edges. This is how you add the node. This is how you add the edges.
+
+(4:20 - 4:23)
+Okay. So, you know, starting node. Sorry.
+
+(4:24 - 4:40)
+In the edges, the starting node and the ending node name. And while you add the node here itself, you have to provide the name for the node which will be displayed. And this is a Python function that will bind against that particular node for execution.
+
+(4:41 - 4:52)
+Right. So that's how the structure looks like. So what we initially saw was the problem with the overwriting state.
+
+(4:53 - 5:13)
+Basically, if there are more than one nodes and each node is updating the same state, okay, without the reducer, it tends to overwrite. So the solution was to introduce a reducer and the reducer that we are using is add messages. So now we had a different version of our agent state in which we are not simply using messages as a string.
+
+(5:13 - 5:18)
+Okay. We are using messages as annotated list. And I'm adding the reducer.
+
+(5:19 - 5:32)
+So this reducer makes sure that the messages is a list of lists. List of lists. So every conversation gets added to the original list as a list again.
+
+(5:33 - 5:42)
+Okay. So one example. Now you can see after running that I'm printing the output.
+
+(5:42 - 5:57)
+And when the output was printed, you can see the messages contained the first list here, which is coming from the greeting. Sorry, this is coming from your conversation starter. Hey, I need some help.
+
+(5:57 - 6:07)
+Then the second step was added from greeting node. And then the third step was added from the enquiry node. Okay.
+
+(6:08 - 6:17)
+And this is just to format and print all these. So I'm just extracting all these components from this entire output and just printing them using this for loop. Okay.
+
+(6:17 - 6:34)
+So you can see I have been able to retain all the three messages back to back in the agent state. Now in this cyclical chatbot, basically the idea was you'll have an actual LLM operating in one of these agents. Sorry, nodes.
+
+(6:35 - 6:44)
+And let's call that node as a chatbot node. I'm initialising my model. We are reading the query from the learner or whatever user.
+
+(6:45 - 6:48)
+Okay. Using the state messages. Okay.
+
+(6:48 - 7:12)
+So I'm just reading and then creating a system prompt, invoking the model along with the system prompt and the messages. So I'm just concatenating these two lists because every message is a list, you can say. And then after the model is invoked, I'm just appending the entire response of the model back to the agent state.
+
+(7:13 - 7:20)
+Okay. So you can see the agent state goes as the input and it is formatting within that agent state. And then this is a router function.
+
+(7:21 - 7:26)
+Okay. This will decide whether to continue the conversation or end the conversation. Okay.
+
+(7:27 - 7:34)
+So if there is something called as by, it will return end. So it will go to the end loop. Otherwise it will continue to the chat.
+
+(7:37 - 7:43)
+So, yeah. Now this is the line graph node. What we created here, you can see.
+
+(7:44 - 7:50)
+Entry point is set at the chatbot. So this is my chatbot. So automatically the start is connected to the chatbot because of the entry point.
+
+(7:51 - 7:55)
+And then we are adding a conditional edge. Okay. So conditional edges are technically not visible.
+
+(7:56 - 8:02)
+I had drawn that. So in that conditional edge, two things are happening. One is the chatbot.
+
+(8:02 - 8:09)
+Okay. The source node. So your chatbot source node is connected to the should continue.
+
+(8:09 - 8:17)
+That is, it is continuing. And so that is the basic function which decides the route. So this is a router function which we created above here.
+
+(8:18 - 8:24)
+Okay. And then this is the one which is going to branch out. Okay.
+
+(8:24 - 8:31)
+So chatbot is connected to the should continue. That's a deterministic step. But should continue is now connecting to two branches.
+
+(8:31 - 8:58)
+Okay. So should continue. Now that has got two branches, as I said.
+
+(8:58 - 9:06)
+One is continue chat. And the other end. So that continue chat is further connected to chatbot.
+
+(9:06 - 9:15)
+So that is connected back to the chatbot. So here chatbot was connected to the should continue. That's what you said, right? Chatbot is connected to should continue.
+
+(9:15 - 9:21)
+And that continue chat is connected back to the chatbot. Okay. Whereas end is connected to the end.
+
+(9:21 - 9:31)
+So the other is end, which is connected to my node end. Okay. That will end the conversation, right? So that is the thing.
+
+(9:31 - 9:44)
+So this is a loop that we are having. So under what condition it will continue the chat? If it does not see by, if it sees by, then it will end. And now you are compiling this and, you know, building.
+
+(9:46 - 9:54)
+So that is what is also evident from the land graph here. Okay. There is a comment.
+
+(9:55 - 10:03)
+So it is correct to say that land graph can be used for agentic and agentic workflows. Yes. You can use it for agentics as well as agentic workflow.
+
+(10:07 - 10:18)
+So now this is a simple loop that is going to interact with our chatbot. Basically it is going to run this entire agent and this within a for loop. That's what is technically happening.
+
+(10:18 - 10:27)
+Okay. So what we created this entire chatbot app. And if you see this chatbot app.invoke. So this entire chatbot itself is invoked within the while loop.
+
+(10:28 - 10:35)
+And that is going to run perpetually until the user input says exit. Okay. So that is what is happening.
+
+(10:36 - 10:49)
+And the response contains the full conversation history. So every time it gets appended, I'm reading the last AI response. And based on the last AI response, the conversation continues anyway.
+
+(10:52 - 10:59)
+So I'm just also printing the AI response. You can see every time I'm just printing the AI response. Fine.
+
+(11:00 - 11:09)
+And I'm checking the condition on the user input. So if the user says exit, then it will break this while loop. It will no longer continue the conversation.
+
+(11:15 - 11:27)
+Now, why is this part important? I mean, this is, you know, jugada that I have done, basically. So user input is basically what the user is asking the model to do or anything. Right.
+
+(11:27 - 11:34)
+And I'm just appending this. At the end, say bye. So this is like a soft instruction for the model to respond to the user input.
+
+(11:34 - 11:39)
+And at the end, say bye. So if you see any of these outputs. Okay.
+
+(11:40 - 11:52)
+At the end, it says bye. Now, why is this bye needed? This bye is needed so that my chatbot thinks that I have received a bye. If you see, chatbot thinks that I have received a bye.
+
+(11:53 - 12:05)
+And so I should end the iteration of the, I should end the iteration of the line graph. I mean, this graph. This graph ends.
+
+(12:06 - 12:16)
+Okay. But the entire graph itself is perpetually executed. So literally, I'm not executing the continue chat, because that will go in an infinite loop.
+
+(12:17 - 12:22)
+Okay. Rather, I'm executing the entire chatbot itself in the infinite loop. Okay.
+
+(12:22 - 12:30)
+Which is what the white rule. Not a good way, but we'll refine this method a bit, you know, in the next notebook. Okay.
+
+(12:31 - 12:41)
+So this was a simple jugada to get rid of the infinite loop thing. If you just exit this part, then the model will keep iterating. Okay.
+
+(12:41 - 12:44)
+That is a problem. The model will keep iterating. Okay.
+
+(12:44 - 12:53)
+Because it does not receive the response. So it doesn't know when to exit and all, because you have said that say bye at the end. So model will not say bye to itself.
+
+(12:54 - 13:01)
+That is a problem. Model will not say bye to itself. So it will keep on continuing the chat, and it will keep on going in that infinite loop.
+
+(13:01 - 13:06)
+So that is what I have seen. So just to circumvent that scenario. Okay.
+
+(13:06 - 13:11)
+I have just added this part. So this is just a small jugada which I fixed. Okay.
+
+(13:12 - 13:16)
+So that the model doesn't run in an infinite loop. Okay. So this is the first thing.
+
+(13:16 - 13:29)
+And then the, so whatever the, you know, AI response at the end, it will say bye. So here you can see the models replies and at the end says bye. Then again, the model replies at the end says bye.
+
+(13:29 - 13:36)
+Okay. This is where the model responds and in fact says bye. Okay.
+
+(13:36 - 13:43)
+So every time the model responds at the end says bye. So that this doesn't run in an infinite loop. That's the thing.
+
+(13:44 - 16:04)
+Fine. So let's see if there are any questions. Fine.
+
+(16:07 - 16:12)
+All good then. This is done. Just use this.
+
+(16:14 - 16:20)
+Confused about the reducer function. This is actually appending the state. Then why it is called as reducer.
+
+(16:20 - 16:29)
+Okay. There is, this is actually nomenclature is coming from MapReduce. If you're confused about the name, nothing can be done.
+
+(16:29 - 16:42)
+Just understand the functionality. Okay. So I have not given the names, but I can give you more technical explanation, but that still would be useless.
+
+(16:42 - 16:51)
+Okay. Because this much context is sufficient. If still there is a confusion, maybe let's not get into too much technical details.
+
+(16:51 - 17:12)
+That's not going to be very helpful. So understand the overall functionality that the reducer is helping to add all the subsequent outputs of the nodes appended to the main state. This is the only one line, you know, functionality that you have to understand and explain if asked.
+
+(17:12 - 17:19)
+Okay. That is the only purpose, nothing more. So how technically it is doing behind the scenes, why is it called as reducer and all.
+
+(17:20 - 17:25)
+Now we'll not get into all that discussion. Okay. Neither it is needed, frankly.
+
+(17:26 - 17:35)
+Okay. Now again, this is a follow up tutorial. So here we are going to see how to do conditional routing in much more detail.
+
+(17:36 - 17:44)
+And this will build the foundation of the chatbot that we are going to build, the agentic rag chatbot. Okay. So a follow up on this.
+
+(17:44 - 18:43)
+So let's go ahead. I'll just share the notebook here. So in this, we are going to build a common and powerful type of agent, which is a customer support query router.
+
+(18:44 - 19:10)
+So we are going to build three specialised agents, one for billing, one for handling technical support, and one for handling general enquiries, which will simulate like a real world help desk system. Okay. Again, you'll have to start with the installations of land graph, land chain, open AI, importing the open AI keys.
+
+(19:12 - 20:07)
+Okay. Okay. So this is our open AI key that we are importing and adding.
+
+(20:08 - 20:17)
+Now, again, this is the agent which will track all the information flowing through our graph. And this is again, a type that we have explained. And again, this is a simple one.
+
+(20:17 - 20:30)
+So you don't see the reducer here as of now, we'll be adding that subsequently later. Okay. So this will capture the user query and this will update the department that the router will decide for.
+
+(20:31 - 20:41)
+Okay. So initially the department and query will be empty strings. And as the, you know, router works, the router is going to update the department.
+
+(20:41 - 20:50)
+So when the land graph starts, it will first populate the query. This is the, again, you can think these two as, as our global variables. Okay.
+
+(20:50 - 20:55)
+Available in your support state. So query will be instantly available the moment you execute. Okay.
+
+(20:55 - 21:03)
+Because that will capture the user query actually. And department will be empty initially, but the moment the router function works. Okay.
+
+(21:04 - 21:10)
+It will route it to one of the nodes and that node will update the value of the department. That's what we'll see. Fine.
+
+(21:14 - 21:20)
+Okay. So these are the destination nodes. So I'm going to create a billing node, a technical support node and enquiry node.
+
+(21:20 - 21:34)
+And these are the functions which are going to be attached to those nodes. Okay. Now see, as of now, these nodes are not returning anything essentially, which means they are not updating the state.
+
+(21:35 - 21:45)
+They're simply going to print. Let me repeat. These three nodes are going to not make any changes to the support state.
+
+(21:45 - 21:55)
+I think clearly written. It takes the state and can return an update, but right now it is not returning anything. It doesn't modify the state further in this simple example first.
+
+(21:56 - 22:04)
+So it is. It is reading. You can see.
+
+(22:50 - 22:56)
+So these nodes that we are going to create now. Okay. They are just going to print that.
+
+(22:56 - 23:04)
+Okay. The control has entered that particular node. So welcome to the billing department or welcome to the technical support.
+
+(23:04 - 23:12)
+So these are like information or informative messages. Okay. That will only indicate that a control has reached the respective department.
+
+(23:12 - 23:19)
+Simply. So, and now this is the routing function, the actual decision maker. Okay.
+
+(23:19 - 23:31)
+So again here. So this is a pedantic model which helps the LLM structure its output. So I'm defining a kind of a pedantic schema.
+
+(23:31 - 23:38)
+Okay. So this is the route, the user query to the correct department. And the department name has to be a string.
+
+(23:39 - 23:43)
+So that is the field. And this is the description. Okay.
+
+(23:43 - 23:55)
+And this has to be one of these three. Either billing or technical support or general query. So this is like emulating your enum in your open AI agent builder kit.
+
+(23:56 - 24:03)
+Okay. Your enum enumerated. So enum is your enumerated field in which you will be selecting one of these three values.
+
+(24:03 - 24:17)
+And these one of, and any of these three values are actually a string. So ultimately whatever value gets selected, that will be appended to your, or that will be updated to your department field. Okay.
+
+(24:18 - 24:25)
+Department is the name of the field. And this is the entire description. So the department field will have a value, which is a string.
+
+(24:25 - 24:29)
+And that string will be one of these three. That's what we are simply saying. Okay.
+
+(24:29 - 24:41)
+So this way I'm enforcing the router to update only one of these three. It cannot update any other imaginary field name or anything with it. Then, you know, come up with creatively.
+
+(24:42 - 24:47)
+Okay. So you can set up your model right now. Let's make a GPT 5 mini.
+
+(24:47 - 24:54)
+Okay. So let me change it to GPT 5 mini. Then in that case, I don't need the temperature also.
+
+(24:54 - 24:59)
+Okay. So just get rid of the temperature. So this is my model.
+
+(25:00 - 25:08)
+And I'm forcing the model to give a structured output. That is what. So in this case, the model's output will not be a normal string.
+
+(25:08 - 25:18)
+It will be a string, which is following this JSON schema. It's not a JSON schema, but a Pydantic schema, I would say. That's the correct way.
+
+(25:19 - 25:23)
+Okay. So you are forcing the model to give a structured output. That's exactly what it is.
+
+(25:25 - 25:31)
+So this is like a output parser. Okay. Whatever the string or JSON output the model is giving.
+
+(25:31 - 25:42)
+The model is giving so many outputs you can see. Okay. So all of that gets formatted into the response, which is given by this schema.
+
+(25:43 - 25:47)
+Okay. You are passing that schema here. And what you have is the structured LLM now.
+
+(25:48 - 26:08)
+So normal LLM and that normal LLM bound to a particular schema for output is your structured LLM. Now you create a prompt template. System prompt is simply you are an expert in routing customer support queries based on the user question, route it to the right department, and it has to be one of these three.
+
+(26:09 - 26:12)
+Okay. Fine. And then the human query comes in.
+
+(26:13 - 26:23)
+Fine. So that is a simple router prompt with a human and the system message. I'm going to join the prompt with the structured LLM.
+
+(26:23 - 26:27)
+So this is like prompt chaining. Okay. To the model.
+
+(26:28 - 26:32)
+Simple and chain. Okay. And that chaining is done using that vertical pipe operator.
+
+(26:33 - 26:41)
+So I have got my query router chain. Now, finally, that query router chain will be invoked. Okay.
+
+(26:42 - 26:49)
+But that invoking will happen within a node. Okay. So when the control reaches that particular node.
+
+(26:49 - 26:57)
+So which node is going to execute? You can see. I will create a node by this name called as query router node. Okay.
+
+(26:57 - 27:08)
+And that node will actually invoke that particular chain with some user query. Okay. Now that user query will be fetched from where from the agent state.
+
+(27:08 - 27:22)
+So first I'm importing the agent state. It is fetching the query from the agent state and using that query to populate the prompt template. Once the prompt template has been populated, it will be given to your structured LLM for invoking.
+
+(27:23 - 27:43)
+So this will be your complete response from the model, which will be following the structured schema that we have shared. Okay. And from that route, I will extract the field name called as department because I have clearly mentioned in my schema that there should be a field called as department.
+
+(27:44 - 27:48)
+So I'm extracting that value. So route dot department. This could be simple response also.
+
+(27:48 - 27:59)
+So response dot department also you can say. Okay. And that value will be a string, which will be updated in the department field of your schema.
+
+(27:59 - 28:04)
+Sorry, state. Okay. So this is the schema and this is the state.
+
+(28:05 - 28:10)
+So don't get confused. Okay. This is dot department is coming from the Pydantic schema.
+
+(28:10 - 28:18)
+This is a Pydantic schema. So that has the name department. So whatever the name you are providing here, let's say query department.
+
+(28:19 - 28:28)
+So then here it should be route dot query department. Whereas this department is coming from the state agent state. This is where it is getting updated.
+
+(28:30 - 28:33)
+Okay. So remember that. Don't get confused.
+
+(28:33 - 28:46)
+You might be thinking, why is the department department two times? Okay. So this is the complete response from the response because it is going to be a structured LLM response. It will have a field called as department in the response.
+
+(28:46 - 28:56)
+I'm just extracting that department value from the response. And that value of the department response is going to be one of these three billing support or technical. Yeah.
+
+(28:56 - 28:59)
+Sorry. Billing support. Yeah.
+
+(28:59 - 29:08)
+This one. It will be one of these three values. And one of those three values will ultimately be updated in the agent state, which has also a department named key.
+
+(29:11 - 29:16)
+Okay. So that is what is happening in this code. Now let's build a graph here.
+
+(29:16 - 29:24)
+You are adding nodes. You are adding a node for router. You are adding billing node, technical support node, general enquiry node.
+
+(29:25 - 29:29)
+So four nodes are being added. One is a router node. One is the billing.
+
+(29:29 - 29:37)
+One is a technical and one is the general enquiry. So I'm just adding the nodes here. I'm adding the conversation starter to the router directly.
+
+(29:38 - 29:41)
+So router will directly capture the user query. Okay. That's what is happening.
+
+(29:42 - 29:50)
+And now I'm going to connect all these nodes. Okay. I'm going to connect all these nodes.
+
+(29:58 - 30:15)
+So here you are saying that, okay, you have already added one node. That is, sorry, you have already added one edge. So there is one connection, which has already added here from starting to router.
+
+(30:15 - 30:22)
+Now router will be connected. Okay. To each of the three.
+
+(30:22 - 30:27)
+Okay. Based on what this Lambda function is returning. Okay.
+
+(30:27 - 30:41)
+So what you are returning. So what is X here? What is X? So it's a map, basically. So what is X? Where is this X coming from? X department.
+
+(30:43 - 30:47)
+So X is your agent state, ultimately. Okay. That's your agent state.
+
+(30:47 - 30:53)
+You are reading the department value. You are reading the department value. Okay.
+
+(30:53 - 31:03)
+So based on the department value in your agent state. Okay. The connection of the router will happen to billing or technical support or general enquiry.
+
+(31:03 - 31:18)
+That is what exactly this function is doing. Okay. So here this is kind of a Lambda function is your routing function, mimicking that.
+
+(31:19 - 31:33)
+So, yeah, same thing. Okay. And finally, all of these three will be connected to the end.
+
+(31:33 - 31:48)
+So let me execute this. Billing node is quantified. Execute.
+
+(31:50 - 31:57)
+Fine. So now you can start compiling this. Okay.
+
+(31:58 - 32:03)
+So conversation is captured by start. That directly goes to the router. Router will decide one of these three.
+
+(32:04 - 32:08)
+Okay. So this is the name of the node. Okay.
+
+(32:08 - 32:19)
+And these three nodes are going to be three different agents in the next project as of now. So these are dummy nodes. As of now, these are dummy nodes.
+
+(32:19 - 32:25)
+As we have seen, these are just dummy nodes. They are not doing anything. They are not returning anything as you see.
+
+(32:25 - 32:27)
+Okay. They are neither doing anything. They're just printing.
+
+(32:28 - 32:38)
+Okay. So these are currently dummy nodes, but these dummy nodes will actually become three different agents in the next notebook. Rest all structure is going to remain the same.
+
+(32:40 - 32:48)
+And when any of these three will get triggered, the conversation will end. Okay. So that's what is a deterministic node.
+
+(32:48 - 32:54)
+Edge. Sorry. So all the deterministic edges are in solid lines and conditional edges.
+
+(32:55 - 33:05)
+Conditional edge means those workflow or those part of the workflow may execute, may not execute. That is the conditional edge. Okay.
+
+(33:05 - 33:14)
+So anything that you see in dotted lines, these are conditional edges. Anything in solid line, that is a deterministic edge. So that is going to happen.
+
+(33:15 - 33:24)
+So you see these are solid lines, which means if any of these three get triggered, the conversation has to end. So we know that for sure. Okay.
+
+(33:25 - 33:31)
+So yeah. So let's run this. So I have my entire app.
+
+(33:31 - 33:38)
+If you see, you have compiled that app. Okay. So once you have compiled that app, all you have to do is just invoke.
+
+(33:39 - 33:49)
+Okay. And your billing query, this is the query field. So I can't find my last invoice.
+
+(33:49 - 33:54)
+And I think my credit card was charged twice. Okay. So there are two things in this.
+
+(33:54 - 34:00)
+One is overcharging and one is billing. So let's see what it thinks. Okay.
+
+(34:00 - 34:20)
+So when I invoke this overall app using this billing query, let's see what happens. So test case one, that is the print that I'm giving from here. Classifying query, that is again coming from your execution.
+
+(34:22 - 34:28)
+Router decision goes as billing. Now this billing is coming from your model. Remember that.
+
+(34:28 - 34:36)
+This billing is actually coming from your model. Routing, billing to, so where is this coming? This is coming from your router. Okay.
+
+(34:39 - 34:47)
+Sorry, this is coming from your router. And this is coming from your, if you see here, the three nodes that we created. Correct.
+
+(34:48 - 34:53)
+Routing to billing. You can see routing to billing. Then welcome to the billing department.
+
+(34:53 - 35:01)
+That's exactly what we see here. Routing to billing, welcome to the billing department. Fine, you can just check this.
+
+(35:05 - 35:27)
+So similarly I've got another query here. And you see the output finally. Yeah, so that is the reason it is taking time because actual API call is being made.
+
+(35:28 - 35:33)
+Okay. And so this is the final output. Query and the department is billing.
+
+(35:33 - 35:45)
+So this is the final agent state. Output is your final agent state. Remember, this is your, this is your, final agent.
+
+(35:57 - 36:04)
+Okay. Now another test case. I'm getting 500 internal server error when I try to log in.
+
+(36:04 - 36:18)
+So that seems to be technical. And if you want to see the output once again, the final agent state would have changed, of course. Because each time you invoke, that's the statement which I gave yesterday also.
+
+(36:18 - 36:27)
+So each time you invoke the entire graph, all the previous states are refreshed. Okay. So the query is refreshed with the new query.
+
+(36:28 - 36:39)
+The department is refreshed with the new department. So I have to execute this. Was it still billing? Should have been technical.
+
+(36:40 - 36:48)
+Oh, sorry. Here the output is, I did not save the output. Sorry, that's the reason.
+
+(36:49 - 36:55)
+Let me redo the output. I was not saving the output. So that part was missing.
+
+(36:56 - 37:13)
+Yeah. So this has got updated. So which has got refreshed due to app.invoke method.
+
+(37:14 - 37:32)
+So every time you do the app.invoke or the entire agent is called, once again, the entire agent state will refresh. All the fields will get refreshed to capture the new query, and all the fields will also get accordingly refreshed. You can check.
+
+(37:34 - 37:41)
+So what are your business hours on weekends? So again, this is your general query. Okay. So let's see the conclusion.
+
+(37:42 - 37:52)
+Defining specialised nodes for different tasks, routing function has worked, and we also have seen how to add the condition. So this is the part which can be a bit tricky. Okay.
+
+(37:52 - 38:00)
+This also I had to figure out the right way. But that's okay. For these parts, you can actually take help of any of these LLMs now.
+
+(38:01 - 38:10)
+Okay. So they will be able to give you the conditional edge. So you just have to define what exactly you want to the model, and they will give you a code to build.
+
+(38:11 - 38:18)
+So for example, let's say you want a similar thing. Okay. So maybe you can, I'm just trying it completely impromptu.
+
+(38:18 - 38:22)
+Okay. So let's say this is what you want to make. Okay.
+
+(38:22 - 38:28)
+Let's go to any, any Gemini or chat GPT. Okay. And just paste this.
+
+(38:29 - 38:44)
+Okay. So give me a line graph code to reproduce this graph. So it should not be difficult these days.
+
+(38:44 - 38:59)
+Okay. So you might get even a simpler version also quite possible. I haven't tried that, but the only problem is these names will be different, which we have initially used something else.
+
+(38:59 - 39:08)
+Okay. Because it does not know what to name. So here my agent state has been named as agent state.
+
+(39:08 - 39:10)
+Sorry, support state. That is a name. Typed it.
+
+(39:10 - 39:19)
+You can see, but the code is giving you a different name for this graph state, which is fine, which has the intent user query and a response. Fine. Okay.
+
+(39:19 - 39:24)
+And then you have a function called as router node. I also have a function called as router node. Okay.
+
+(39:25 - 39:35)
+So query router node. And then it is returning and then billing general and technical. So three nodes are also there.
+
+(39:36 - 39:40)
+I also have these three nodes. I also have those three nodes. Fine.
+
+(39:41 - 39:48)
+And then define the conditional routing logic. So this is your routing function. So what is the name of the routing function? Route decision.
+
+(39:48 - 39:56)
+So here my function is this, called as router query router node. Okay. So this is the function.
+
+(39:57 - 40:01)
+Okay. Which will return. And then this is a builder.
+
+(40:02 - 40:11)
+So here also router to router node, billing to billing node, general query to general query node, technical support to technical. So you see this part is exactly the same. So now I'm building the graph.
+
+(40:11 - 40:15)
+You can see this part is same. This is also the same. This is the same.
+
+(40:15 - 40:21)
+So those five lines of code are exactly the same. Okay. Now you are adding an edge from start to the router.
+
+(40:21 - 40:24)
+We also have added start to the router. Okay. See.
+
+(40:25 - 40:33)
+And then you have a conditional logic. So from router to router decision, this part is also same. You see from router to router decision.
+
+(40:33 - 40:41)
+Okay. Now this part is slightly different, depends on the implementation. If you find this is more, you know, easy to comprehend, you can use this.
+
+(40:41 - 40:53)
+Because this is the logic probably I have used in the next notebook. So I haven't used the Lambda function in the next notebook. I have actually used exactly the same logic.
+
+(40:54 - 40:57)
+Let me, I can just jump onto that part. Okay. I'll show you that.
+
+(40:57 - 41:04)
+So you see this works and then you add the other three nodes here also. I'm adding the other three nodes. Okay.
+
+(41:04 - 41:08)
+And finally I'll compile. You also have compiled. Okay.
+
+(41:08 - 41:14)
+And then finally you just have to execute. This is just to visualise. I also have that same code for visualisation.
+
+(41:16 - 41:23)
+See completely impromptu. And 90% of the code is exactly same. So what I'm trying to say is you have to know what you want.
+
+(41:24 - 41:48)
+And if you can get some idea about, or if you can give the model some idea of what you want, you would be able to reproduce most of the code exactly with the right functionality. So as a developer or as a decision maker, you have to understand what is the kind of, you know, solution that you are developing. So for what kind of scenario? Okay.
+
+(41:49 - 42:05)
+So if you think that this is the kind of framework which you will need, I'll be having so many projects. Just get that particular graph component and give it to Gemini or chat GPTSA that I want to implement this in line graph. You don't have to even start from scratch.
+
+(42:05 - 42:15)
+You see, and still it gives you everything. Although I mean this notebook I had prepared one and a half years ago, but still very much it works. Okay.
+
+(42:16 - 42:28)
+Now the names, exact names will be slightly different because again, it cannot deduce those names from here. Problem is it did, it cannot deduce the names from here, but it was able to deduce the functionality. So I hope that is clear.
+
+(42:38 - 42:40)
+Okay. Let me see. There are questions.
+
+(42:41 - 42:57)
+Why don't you change the name of the variables that you can do Santosh? Once you have understood, you can customise the code. Okay. Proven is asking, are you assigning query to state like departments? Assigning query to state? Yes.
+
+(42:58 - 43:02)
+My state has got two fields. That's what I mentioned. My state has got two fields.
+
+(43:02 - 43:07)
+One is query and one is the department. So this is the agent state. We have got two fields.
+
+(43:07 - 43:25)
+So here the query will be updated. The moment it, the conversation starts and here the department will be updated based on the routers decision. Where is LLM model settings in the state? LLM model settings.
+
+(43:25 - 43:36)
+It doesn't know what model I'm going to use. So, or how the router logic is to be used. So you see, this is simply a pass.
+
+(43:37 - 43:42)
+This is simple pass. It has not done that router logic. So this is where you would put it.
+
+(43:43 - 43:54)
+So now you can go back and say that I want to use a LLM, which will read the, so, so let's, let's see. Do, if you want to do that. Okay.
+
+(43:55 - 44:05)
+In the above router node function. Okay. I will be using an LLM.
+
+(44:06 - 44:48)
+Okay. I'll be reading the query from the agent space and then use LLM to classify the department based on the query. And then finally update the department field, the agent state.
+
+(44:49 - 44:58)
+Okay. Oh, help me with the code. So you have to tell exactly what you want.
+
+(45:12 - 45:18)
+So, yeah. So that's what structured output. This is for structured output.
+
+(45:18 - 45:23)
+Same thing. And now it will bind that super. It is binding that.
+
+(45:23 - 45:32)
+Correct. So you need, see, once you know exactly what you want, most of the, you know, codes will automatically fall through. So I'm not just giving you codes.
+
+(45:32 - 45:49)
+I'm also teaching you how to generate these kind of codes from scratch. Is that really helpful? Yes. So once you know exactly what is happening, that is the learning you should take from this overall exercise or overall session.
+
+(45:49 - 45:55)
+Okay. You should be able to generate these level of code using these models. Okay.
+
+(45:55 - 46:01)
+Everything, every time don't think that someone will spoon feed you. You have to learn fishing and that's what we are doing here. You see.
+
+(46:02 - 46:14)
+So this is your router. Sorry, this is your schema that you are going to force on the model. How do you force it using the structured output? So you have passed that schema.
+
+(46:15 - 46:27)
+Only that my schema name is slightly different. I think my schema name is route query based model. Here they have used route response based model.
+
+(46:27 - 46:30)
+Same thing. Okay. And department literal, one of these three.
+
+(46:30 - 46:37)
+So more or less same thing department. And it's not literal, but it will come from there only ultimately. Fine.
+
+(46:37 - 46:47)
+So now it is going to initialise your LLM. Also you have passed the graph state. You can see, and there is a system prompt.
+
+(46:48 - 47:01)
+And this is your system prompt and the human prompt exactly the same way that I'm doing. But in fact, the kind of output here I'm getting is a better, so you see a much better system prompt. So maybe I'll update my code.
+
+(47:04 - 47:20)
+Where is my system prompt here? Okay. So this is the system prompt I have got from there. Anyway.
+
+(47:21 - 47:28)
+So it depends. Okay. But you see, so you update that system prompt into the system and the query, the human.
+
+(47:28 - 47:32)
+And that's what also we have done. Okay. Query in the human part and system prompt in the system part.
+
+(47:32 - 47:38)
+Fantastic. And then next you are chaining your prompt template with a structured LLM. Exactly.
+
+(47:38 - 47:50)
+You are prompt with a structured LLM. See, it is as if literally it has seen my code earlier, and then you are reading the user query and passing it to the chain and invoking. Same thing.
+
+(47:50 - 47:59)
+Only thing is that reading part I have done earlier. Okay. I think, and I am passing it.
+
+(47:59 - 48:06)
+So I'm reading the query and invoking. Simply see reading and invoking. And then updating.
+
+(48:07 - 48:10)
+Return department. Result dot department. Exactly the same.
+
+(48:10 - 48:15)
+This is stored as a result. In my case, this is stored as a route. So route dot department.
+
+(48:15 - 48:21)
+Okay. That is the router decision. And that route dot department is stored within the department part of your agent state.
+
+(48:22 - 48:27)
+Same thing is happening here. Okay. Result dot department is stored in the department of your agent state.
+
+(48:27 - 48:38)
+So we updated the department for the conditional edge can see it. Now they have updated the function router function because now it's much more clear to the model. What exactly I want.
+
+(48:38 - 48:49)
+So it has given me a updated version. And why is that needed? Because earlier it did not have the department in the agent state. If you see the earlier agent state did not have that keyword department.
+
+(48:50 - 48:57)
+Okay. It did not have the department. Now, after my query came in that boss, now you have to add that.
+
+(48:57 - 49:07)
+So it has added the department to match the user request. So you must also update the routing function. And then you can test it.
+
+(49:07 - 49:14)
+Perfect. So that works. So this is asking why am I getting because you're not saving that output man.
+
+(49:14 - 49:19)
+Okay. So unless you save it, the output will still remain the same. Okay.
+
+(49:19 - 49:27)
+Make sure that you save the output of the invoke. So this is missing in your code. This is missing in your code, which is why you are getting the same.
+
+(49:28 - 49:40)
+Okay. So make sure that you are saving that output by that output equal to was present only in the first call. It was only presented the first call.
+
+(49:40 - 49:48)
+The other two calls did not have output equal to. So output was not getting updated. So you are still printing the previous agent state output.
+
+(49:53 - 49:57)
+Cool. So this is also done closed from my side. Okay.
+
+(49:57 - 50:12)
+Let me know if there are any questions. Yeah. Just stopping a screen share.
+
+(50:14 - 51:13)
+So does this work all good? Okay. Okay. So the next one, we'll take is this actual implementation of that agentic rag.
+
+(51:13 - 51:26)
+Okay. So we created the skeleton and now that skeleton will turn into a real project. So everything needed to execute in that project is there in this code.
+
+(51:27 - 51:51)
+So I'll just share this. So this is very much similar agent that we created using the drag and drop interface. Everyone remembers.
+
+(51:51 - 52:14)
+Okay. So that functionality is being replicated. So what is that we are doing in this project? We'll leverage the power of AI agents and rag to build a customer intelligent routing agent, agentic rag system, sorry to handle customer support queries using custom knowledge base.
+
+(52:14 - 52:18)
+Okay. That is the main takeaway. So router and those things are going to be there.
+
+(52:18 - 52:40)
+And just like previous, we'll categorise the enquiry query into one of these, whether it is a billing or technical or a general, and we'll also categorise the sentiment of the query. And based on the category and the sentiment, we'll do the routing. If the sentiment is negative directly escalated to human.
+
+(52:40 - 53:05)
+And if the sentiment is neutral or positive, then based on the query category updated, sorry, forwarded to one of these three agents. Now these three agents are connected to a vector database. So it will retrieve and respond based on the vector database information, right? So it will not directly reply based on its, you know, LLM knowledge.
+
+(53:05 - 53:21)
+It will actually fetch the knowledge or fetch the right context. It will fetch the right context from your knowledge base or vector database. And based on that, it will give the final response.
+
+(53:21 - 53:26)
+So we are going to use the GPT 5.2 model. And that's what I have also updated in this. Okay.
+
+(53:27 - 53:56)
+So although somewhere here, you can see 4O mentioned, but I'll use GPT 5.2 or we'll use GPT 5 mini just to save some bugs, but that's okay. So system will use this model to analyse the user query and determine the query category and the sentiment. So two things are being determined, okay, back to back.
+
+(53:56 - 54:11)
+And based on the query category and sentiment, the system will route to one of these four cases. So escalate to the human if the sentiment is negative. You don't even have to read whether it is billing response, sorry, billing query or technical query or general query.
+
+(54:12 - 54:31)
+Okay. Immediately that is escalated for human resolution. And if it is positive, what is positive? If the sentiment is positive or neutral, then queries related to billing are generated by the billing agent, technical or the general, depending on each of these.
+
+(54:31 - 54:39)
+There is a knowledge base that we are going to do very much similar to what we did a couple of weeks ago. Okay. And then there is an escalation mechanism.
+
+(54:40 - 54:48)
+So negative triggers, this I have already explained. So let's instal. These are known names.
+
+(54:48 - 54:53)
+Chroma, because we are going to create a vector database. So that also will need. Open AI key.
+
+(54:54 - 55:01)
+Tabularly is not needed, so you can delete this code. That is not needed. After Chroma, it might ask you to restart the kernel.
+
+(55:02 - 55:17)
+So don't forget to do that wherever or whenever it is asking to restart. There are a few packages which will ask the collab to restart. So I normally suggest not to club this installation in the main.
+
+(55:22 - 56:27)
+So any queries, any questions in the chat? In the meantime, the installations are going on. I can take. So do we need to use OOPS concepts for this kind of project? Because I see everything is in Python.
+
+(56:29 - 56:43)
+Yes, OOPS will be needed because as you already see, the codes do have classes somewhere. Okay. But this is just, you know, a simple implementation.
+
+(56:43 - 56:52)
+You don't need a very high level of OOPS. Okay. But definitely some understanding of the OOPS will be helpful.
+
+(56:52 - 57:03)
+I would say. More than that, understanding of what problem we are solving, how we are solving, why we are solving is more important. Because all these codes are anyway coming from these models.
+
+(57:03 - 57:11)
+I'm just going to connect to them. Understand. And I'm already giving you enough code based to give you the entire flow.
+
+(57:11 - 57:22)
+So you can understand the overall flow and everything from here. And get all those codes generated from the models. I prefer to use Gemini because it doesn't give me complicated codes.
+
+(57:22 - 57:27)
+Okay. If I give the same query to, let's say Claude. Okay.
+
+(57:27 - 57:31)
+Claude is definitely not for beginners. I'm warning you. Okay.
+
+(57:31 - 57:41)
+Claude is only for advanced coders. Okay. ChatGPT is much more helpful if you want to do creative writing.
+
+(57:41 - 57:52)
+I don't trust ChatGPT for coding exercises. It tends to give a lot of deprecated codes. That is my observation.
+
+(57:53 - 58:11)
+So I don't have a very good opinion about the code quality coming from ChatGPT. But, but, but, but, but, but. ChatGPT is extremely good in explaining codes.
+
+(58:11 - 58:22)
+So if you got the codes from somewhere. Upload the notebook to ChatGPT and ask it to explain line by line. ChatGPT will do the best out of all these three.
+
+(58:23 - 58:32)
+So code explanations can be done by ChatGPT very nicely. But if you ask it to write down a code for you. I have reservations for that.
+
+(58:33 - 58:36)
+Now these are my personal observations. I'm saying. Okay.
+
+(58:36 - 58:51)
+So I've seen that the code quality coming from Gemini is far better than ChatGPT. The best code quality you will get it from Claude models. But again, the Claude models will tend to over complicate.
+
+(58:52 - 59:07)
+Over do over engineer your requirement. Your requirement was to, you know, create a small code block. It will literally create the entire project for you into it.
+
+(59:08 - 59:13)
+So it over does. So that's one problem with Claude. Okay.
+
+(59:14 - 59:34)
+So somewhere in my Claude system prompt, I have even mentioned. So Claude is so, you know, eager to give Python codes that I have in my, I'll show you when this is something in my system prompt. I have even written this, which is very funny.
+
+(59:34 - 59:49)
+I'll show you in the settings. You see here. So I have seen that Claude unnecessarily tries to give code every other time, even without asking.
+
+(1:00:05 - 1:00:15)
+Okay. So, and again, so sometimes I want to avoid this. Okay.
+
+(1:00:45 - 1:00:52)
+Fine. So I think the installations are done. You can run this code that will download all the documents.
+
+(1:00:52 - 1:01:04)
+So it will download this JSON file and just check it here. This JSON file. And again, this is not needed.
+
+(1:01:04 - 1:01:13)
+So don't run this. This is not needed. Unless you want to read that JSON file from your Google Drive.
+
+(1:01:13 - 1:01:16)
+Okay. So. Fine.
+
+(1:01:17 - 1:01:22)
+So this is how your JSON file is. It is a pair of question answer pairs. You can see question answer.
+
+(1:01:22 - 1:01:39)
+And in the metadata also, there is a category mentioned technical or something like that. So what type of query it is, that is also there. So I can help.
+
+(1:01:39 - 1:01:49)
+Sorry, I can use this. I can use this information. Okay.
+
+(1:01:50 - 1:02:02)
+To make the vector database search easier or faster, I would say. Okay. So kind of metadata filtering we can do.
+
+(1:02:02 - 1:02:06)
+Because my metadata already has the category. Okay. So we can do a metadata filtering.
+
+(1:02:07 - 1:02:24)
+Instead of searching into 150 documents, the total number of documents is indeed actually in this case 150. So instead of searching into 150 documents, there are 50 documents for technical, 50 for billing, 50 for general. So my search space gets, you know, limited.
+
+(1:02:24 - 1:02:35)
+So I'm not searching all the 150 documents. I'm just searching for 50 documents because of the metadata filtering that I can implement. But that is the whole idea behind keeping the metadata information.
+
+(1:02:36 - 1:02:43)
+So these are the last three entries. These were the first three entries. And these are the last three entries.
+
+(1:02:44 - 1:02:55)
+Okay. I'm going to add some. So basically now these are what? These are normal list of dictionaries.
+
+(1:02:56 - 1:03:05)
+It's a list of dictionaries. So now I have to do a proper document ingestion. So each of this dictionary that you see has to become a Lanchain document.
+
+(1:03:05 - 1:03:11)
+And that is what we are doing here. So I'm reading each document from that knowledge base. Currently a knowledge base is a list.
+
+(1:03:12 - 1:03:20)
+So I'm iterating for all the documents within that list. So when you iterate, each document is actually a dictionary. From here to here, it's a dictionary.
+
+(1:03:20 - 1:03:28)
+Okay. And from that dictionary, I am pulling out the metadata and the text. And creating a proper Lanchain document.
+
+(1:03:28 - 1:04:00)
+Okay. Okay. So one by one, you are reading each of these dictionaries.
+
+(1:04:00 - 1:04:10)
+And you are updating the metadata. And the data part of the Lanchain document. And you are converting that into a Lanchain document.
+
+(1:04:10 - 1:04:19)
+And appending into your process documents. So ultimately your process documents will be a list of Lanchain documents. Right now, it is a list of dictionaries.
+
+(1:04:21 - 1:04:30)
+Finally at the end, it will become a list of Lanchain documents. So that is the net outcome of this Python code. Okay.
+
+(1:04:30 - 1:04:55)
+What has happened here? No module name dot Lanchain. What has happened? Explain the error. What changed? We just had one version of this running.
+
+(1:05:46 - 1:05:57)
+Okay. We had used, I remember now, specific versions. So this is the same lab we had done into interact system.
+
+(1:05:59 - 1:06:03)
+Okay. Okay. Let's see if this workaround doesn't work.
+
+(1:06:03 - 1:06:10)
+Then we will go back and. It has become Lanchain code. Correct.
+
+(1:06:12 - 1:06:21)
+Let's see. That worked. So this is the only change you have to make in your code.
+
+(1:06:21 - 1:06:37)
+I hope that works later on. So if that is giving an error. Okay.
+
+(1:06:37 - 1:06:52)
+That works. There is a query in the chat. Since there are multiple technical query documents in your list, Lanchain will create multiple Lanchain documents for technical.
+
+(1:06:52 - 1:06:58)
+Yes. So not just for technical, for all three. So you can now see that it is ultimately a list.
+
+(1:06:59 - 1:07:05)
+You can see it's a list. And list of what? Lanchain documents. So the data type is a Lanchain document.
+
+(1:07:05 - 1:07:18)
+Lanchain document number one, Lanchain document number two, Lanchain document number three. So advantage with the Lanchain document is you have a proper metadata now. Now this is the same metadata that will be needed by the vector database.
+
+(1:07:18 - 1:07:28)
+Right now this metadata was just as a field in your dictionary. Because the data type was a dictionary within a list. Right.
+
+(1:07:28 - 1:07:40)
+But now it is a proper Lanchain document with metadata. And the content. So the embeddings will be generated for the page content part.
+
+(1:07:41 - 1:07:48)
+This contains the raw content. Okay. Which will also undergo your chunking.
+
+(1:07:48 - 1:07:54)
+Okay. So the chunking is done for the page content part. Anyway, this content part is small.
+
+(1:07:55 - 1:08:05)
+So most likely each, this is not going to get divided into further chunk. So each page content will become one chunk more or less. Okay.
+
+(1:08:05 - 1:08:16)
+So let's create the vector database now. I'm using the text embedding three small model. If there is a vector database already existing, you can remove it.
+
+(1:08:31 - 1:08:38)
+So yeah, these are the names which we already know. Name of the collection, name of the vector database. We are going to go with cosine similarity.
+
+(1:08:40 - 1:08:59)
+And setting the vector database as retriever. We are going to retrieve the top three documents. And some similarity score threshold I have given as 0.2. So if any of the three documents that you have retrieved has a similarity score lower than 0.2, that will not be used for response generation.
+
+(1:09:00 - 1:09:13)
+Let me repeat this. You are anyway retrieving the top three documents. But let's say the third document that you have retrieved has a score of, similarity score of 0.15, which is lower than the threshold.
+
+(1:09:13 - 1:09:38)
+That document will not be given to the model for response generation. So I can do another level of filtering amongst the top retrieved documents. So now let's test our retriever.
+
+(1:09:38 - 1:09:46)
+Okay, this is like testing the retriever right away. So what is the refund policy? And you are putting a metadata filter. That's what exactly I told you at the start.
+
+(1:09:46 - 1:09:56)
+Okay, we are going to implement a metadata filter. So here the category is general. So where is this going to come later? This is going to come from the model right now.
+
+(1:09:56 - 1:10:04)
+I have not plugged in the model. The only model that I have here is the embedding model. Okay, the only model that I have here is the embedding model.
+
+(1:10:05 - 1:10:17)
+Okay, my response generation model, my actual brain of the agent is not yet there. So that is going to come up later. So this metadata filter category general will be actually the output from the model.
+
+(1:10:17 - 1:10:32)
+Right now, I'm specifying it upfront that I believe that this is a refund policy is basically a general query. Okay, so this is the input given to me. Sorry, given by me.
+
+(1:10:32 - 1:10:59)
+Now based on that metadata filter, okay, I'm asking the knowledge base search to be invoked with this user query. So what this does is it will not search all the 150 documents. Okay, how do you know 150 documents? You can just see the code, processed docs, see the length of the processed docs.
+
+(1:11:47 - 1:11:55)
+So even your knowledge base. So it's not 150, it's a smaller version, which I'm using here it seems. There was a separate one.
+
+(1:11:56 - 1:12:04)
+But okay, it's good to know that how many documents are there, we should have it. So total 30 we have. Okay, no worries.
+
+(1:12:04 - 1:12:25)
+So we can make it, you know, better. This is more like a smaller project because we didn't have to go for very extensive number of tokens because more knowledge base means more tokens also, which is what I wanted to initially avoid. Okay, fine.
+
+(1:12:25 - 1:12:38)
+So we have 30 documents, essentially. So this works and category general. Now, is this working? Yes, this is working because I was able to retrieve the top three documents based on the user query.
+
+(1:12:39 - 1:13:01)
+So what is the user query? What is the refund policy? So the first document, what is the refund policy? Then what is your policy for handling damaged deliveries? Yes, also relevant. What is your shipping policy? So it still has the keywords like policy, policy. So probably from there, it is making some similarity.
+
+(1:13:01 - 1:13:08)
+So this is also having or talking about some policy. This is also talking about some policy. And this is anyway a direct match.
+
+(1:13:09 - 1:13:28)
+And because of that, you can also see these scores. So right now, I'm not printing the scores, but we can also print the scores. Now, the problem is if you provide the filter, which has the category name misspelled.
+
+(1:13:30 - 1:13:40)
+So here it's still general, but G is capital. Remember, in your metadata, all the category names are small. Remember, all the category names are small.
+
+(1:13:41 - 1:14:11)
+So here the only problem is I have misspelled the category name. And if I do that, because of the filter you are applying, what is happening is your knowledge base thinks that there is another metadata, sorry, another set of documents with general, capital G general as the category. But we know that there is no capital G general as the category in your set of documents.
+
+(1:14:12 - 1:14:19)
+We have small g general as the category, not capital. And so nothing was retrieved. So this is the tricky part.
+
+(1:14:19 - 1:14:40)
+So this means that when you are getting these category names generated from the model, you have to enforce the model to exactly give the same name, including the case. So case match has to be there. And that, unfortunately, the case match cannot be done using a Pydantic schema.
+
+(1:14:41 - 1:14:54)
+So you'll have to implement a second level of validation. Okay, let me repeat what I said. Pydantic schema will do a type matching or type validation.
+
+(1:14:55 - 1:15:14)
+If it is a string with a small caps, that cannot be enforced or that cannot be validated easily. So we'll need to implement a manual method to get that done. I'll show you how it will be.
+
+(1:15:18 - 1:15:34)
+Okay, so another example here, this is completely a wrong category name. So this is the problem. If you use some cheap open source model, which is giving you a wrong category name, you may not even retrieve anything.
+
+(1:15:35 - 1:15:49)
+So the whole point of implementing the metadata filter is, I don't want to search into thousands of documents. I want to only search into relevant set of documents. So that narrowing down is being implemented using the metadata filter.
+
+(1:15:51 - 1:16:12)
+Okay, and the filter values are populated by a model that will be populated by the model. So if the model is populating a wrong category name, then that's where again the failure mode is present. Okay, so you have to make sure that you are using a decent model so that model does not hallucinate the category name.
+
+(1:16:12 - 1:16:25)
+Okay, so a decent model means a decent reasoning thinking model. Fine. So that might even lead to think that there is no relevant information, but that is wrong.
+
+(1:16:26 - 1:16:29)
+That is wrong. So there is relevant information. We know it.
+
+(1:16:29 - 1:16:34)
+Right. But just because the metadata filter was not being returned properly. Okay.
+
+(1:16:37 - 1:16:44)
+We are not able to retrieve any relevant set of documents. Fine. Okay.
+
+(1:16:44 - 1:16:55)
+Now define the customer and query state. So this is my final state, agent state you can say. This is my final agent state which has customer query, category, sentiment, and the final response of the model.
+
+(1:16:55 - 1:17:01)
+Okay. So all four things added and all four are going to be strings. Okay.
+
+(1:17:01 - 1:17:18)
+And your query category, this is the Pydantic schema, you can say which you are going to force to the structured output for the model. So model will select one of these three values. Similarly, this is the Pydantic schema which you are going to use for sentiment analysis.
+
+(1:17:18 - 1:17:27)
+Okay. So model will select one of these three. Now we are going to create all these node functions one by one.
+
+(1:17:27 - 1:17:31)
+You can use this model chart, GPT, 4-O mini. Okay. Don't change.
+
+(1:17:32 - 1:17:38)
+Let's use the same. Doesn't matter. So, but you want to be deterministic and grounded.
+
+(1:17:38 - 1:17:46)
+So make sure the temperature is set to zero. Okay. So now this is the function which is going to be used by your node.
+
+(1:17:47 - 1:17:55)
+Which node? The node which is going to categorise the enquiry. So this is a function which will go into the query categorisation node. Remember that.
+
+(1:20:02 - 1:20:14)
+Okay. Sorry. So this block which we initially planned.
+
+(1:20:14 - 1:20:27)
+So what is the, so just assume that this is one of the nodes. So what is the node function going to execute within this block? And that is what I'm showing you now. So this is the node function.
+
+(1:20:28 - 1:20:34)
+Okay. So it is first reading the query from the state. Fine.
+
+(1:20:34 - 1:20:44)
+And now I'm creating a prompt. This prompt says that act as a customer support agent trying to best categorise the customer query. I've given some more idea about that.
+
+(1:20:44 - 1:21:12)
+And your job is to categorise into one of these three. Technical query means what? General query means what? Billing queries means what? So it's a good idea to give more context about the kind of queries based on your use case and what the company does. And then finally you also share the customer query as a variable.
+
+(1:21:13 - 1:21:22)
+So you will need some sort of way to pass the customer query into this prompt template. So this is our entire string. Okay.
+
+(1:21:24 - 1:21:32)
+And .format you can use to pass the customer query into that prompt template. Or you can use the f strings also. That is also fine.
+
+(1:21:34 - 1:21:42)
+So .format is a method by which you can actually update the value of the variable. In this case, the only variable is your customer query. Right.
+
+(1:21:43 - 1:21:58)
+So we have used the customer query. And your customer query is being read from the agent state. So you are passing that query into the prompt template using this .format. So that becomes your prompt including your customer query.
+
+(1:21:59 - 1:22:05)
+Now that prompt including the customer query is given to the model. Okay. For the final response generation.
+
+(1:22:06 - 1:22:12)
+Okay. But this model is also constrained using that structured output. Pydentx schema.
+
+(1:22:12 - 1:22:20)
+Okay. So this Pydentx schema has a clear thing that, okay, it has to be one of these three values. Okay.
+
+(1:22:20 - 1:22:38)
+Literal means the model will be forced to pick one of those three. So whatever topic it is picking, it will update in the route category .categorised topic. How does it know that I have to use a categorised topic as a field name? That is again coming from your Pydentx schema here.
+
+(1:22:38 - 1:22:51)
+So categorised topic is the field name that it is going to update in the response. So what is the response called? Response is called as route category. In that response, there will be a field by the name as categorised topic.
+
+(1:22:51 - 1:22:59)
+And that is coming from your query category schema. So this is clearly mentioned within that schema. Right.
+
+(1:23:00 - 1:23:06)
+So once you get the query category, I'm also updating the agent state. So this is where the agent state is getting updated. Okay.
+
+(1:23:07 - 1:23:13)
+So let's run this. And now actual API call is being made. Okay.
+
+(1:23:13 - 1:23:22)
+Remember, this is the first time API call will be made here. Okay. So this is coming from your model actually.
+
+(1:23:22 - 1:23:34)
+So model is predicting that this question relates to a technical query. Model is saying that this question relates to a general query. Okay.
+
+(1:23:34 - 1:23:40)
+Now model says that this is related to a billing query. Perfect. So works.
+
+(1:23:41 - 1:23:50)
+Now, very similarly, this is the node function going to be used in the sentiment analysis node. Okay. So again, I'm reading the customer query from your agent state.
+
+(1:23:51 - 1:24:12)
+Again, a similar sentiment category prompt. So I'm asking the model to read the customer query below, analyse the sentiment, and you have to choose one of these three. So here, although there is a clear instruction, okay, just return the sentiment one of the above, but still the model may hallucinate and try to give you some additional header and footer.
+
+(1:24:12 - 1:24:26)
+Here is the sentiment for the user query or something like that. Or as per my understanding, this is the sentiment for the given customer query. So I don't want any of those, you know, additional text.
+
+(1:24:27 - 1:24:35)
+Okay. So some cheap models may still hallucinate those additional text. They may not be able to follow the instructions properly.
+
+(1:24:36 - 1:24:50)
+Okay. So that is the reason you have to enforce a pedantic schema once again. So here the pedantic schema that I am enforcing for the model to give a structured output is this query sentiment, which has a field name called a sentiment we have seen.
+
+(1:24:50 - 1:25:08)
+There's got a field name here called a sentiment. So this is the field name sentiment which will be updated. Now let's check if this node function is working.
+
+(1:25:08 - 1:25:13)
+So see the steps here. I'm not directly building the graph. Building the graph is the end part.
+
+(1:25:13 - 1:25:28)
+You have to test each and every granular component. So first you have to plan your graph on the sketch of paper. Plan the graph means you have to write down in your sketch of paper.
+
+(1:25:28 - 1:25:33)
+Okay. Paper sketch that these are the nodes which I'm going to build. These are the edges.
+
+(1:25:33 - 1:25:38)
+These are the connections. And then for each of those nodes that you are planning. Okay.
+
+(1:25:38 - 1:25:49)
+You have to create a node function. So what I have right now tested is the node function that I'm going to use in those nodes. So you have to first create the node function.
+
+(1:25:49 - 1:26:03)
+Test that these node functions are working exactly as expected. And then you join the node function or you combine the node function with the actual node. Okay.
+
+(1:26:06 - 1:26:13)
+So now there are three more node functions. Which three? Because now if I go back to the plan here. This is my plan.
+
+(1:26:14 - 1:26:19)
+Okay. So I'll need three more node functions. One for this.
+
+(1:26:21 - 1:26:24)
+Okay. One for this. One for this.
+
+(1:26:24 - 1:26:30)
+And one for this. Okay. So again at these three places I'm going to use models.
+
+(1:26:30 - 1:26:33)
+Okay. For the response generation. So here also I'm going to.
+
+(1:26:33 - 1:26:39)
+Ultimately these are what? Agents and agents are nodes in this case. Okay. So these are node agents or agentic nodes.
+
+(1:26:40 - 1:26:46)
+These are LLM nodes. There is a concept called as LLM node because there are no tools involved. So this is a LLM node.
+
+(1:26:46 - 1:26:52)
+You can very well call it as a LLM node. Which is very technically correct. Whereas these three are agentic nodes.
+
+(1:26:53 - 1:27:02)
+These are agentic nodes. The difference between LLM node is it just has LLM and no tools. No tools.
+
+(1:27:02 - 1:27:07)
+No tools being used. Okay. Whereas in the agentic node you will have the prompt.
+
+(1:27:08 - 1:27:12)
+As you also have the prompt in this. Plus the LLM. Plus the tools.
+
+(1:27:12 - 1:27:23)
+Which tool? Tool is your vector database. So that's why it's an agentic node. So I'll give a pause here.
+
+(1:27:23 - 1:27:29)
+Let me know if you have understood. Till this point. So now that we have already planned three agentic nodes.
+
+(1:27:29 - 1:27:41)
+I'll still need three node functions. I'll need one node function for the billing response. One node function for technical response.
+
+(1:27:41 - 1:27:51)
+And one node function for general response. Clear? So there is a comment here. In the latest explanation you use LLM to decide.
+
+(1:27:53 - 1:27:56)
+Yeah. I think we can take a break. Yes.
+
+(1:28:00 - 1:28:11)
+LLM to decide a category and not use the knowledge base document. Yes. You don't need a knowledge base to decide the category.
+
+(1:28:14 - 1:28:21)
+We will use the knowledge base to generate the response. So retrieve the right chunk. Based on the category.
+
+(1:28:22 - 1:28:26)
+So that category will be used for metadata filtering. Okay. This.
+
+(1:28:27 - 1:28:34)
+Okay. This query category which is generated from here. That will be used as filter.
+
+(1:28:35 - 1:28:42)
+So vector database search will still happen. But after metadata filtering. So it is not going to search all 30.
+
+(1:28:43 - 1:28:50)
+Okay. It is going to search only those 10 documents which have category as general. Or category as billing.
+
+(1:28:51 - 1:29:07)
+Or category as technical. Clear? Yes. The knowledge base will be used in the agentic node.
+
+(1:29:07 - 1:29:22)
+Correct. So how to use it? Again. You can use it as a tool.
+
+(1:29:22 - 1:29:26)
+You may not use it as a tool. That is also fine. Here in this example I am not using it as a tool.
+
+(1:29:29 - 1:29:34)
+But essence is still the same. Okay. It is still being used as a tool but not literally as a tool.
+
+(1:29:35 - 1:29:44)
+Literally means I am not using the tool wrapper from line chain. But still it is a tool. Anything over and above the model is a tool ultimately.
+
+(1:29:45 - 1:29:52)
+Okay. So you can see all these things are there. We are using that metadata retrieving and then you are populating.
+
+(1:29:52 - 1:30:14)
+So we will discuss anyway after the break. But I think let me see if there are any questions. Okay.
+
+(1:30:14 - 1:48:16)
+All good? Okay. Back. So fine.
+
+(1:48:20 - 1:48:29)
+Let us create these agent functions now. Agent node functions. So this is for generating the technical response.
+
+(1:48:29 - 1:48:42)
+So first thing is we are importing the support state once again. So importing this by this name. You can say this is a name that I am mapping.
+
+(1:48:42 - 1:48:55)
+And so I am referring to the actual customer support state by this name, local name. Not needed but it is a good practise. And so the output is also mapped back to the customer support state.
+
+(1:48:55 - 1:49:08)
+So you are not just reading but also writing it back to that. Okay. So this provides a technical support response by combining knowledge from the vector store and LLM.
+
+(1:49:21 - 1:49:47)
+So I am reading the customer query category from the agent state, customer query again, and then simply using a metadata filter here. So if this categorised topic is in a different case, let's say if T is capital, then you are comparing by making it in a lower case. Okay.
+
+(1:49:47 - 1:50:03)
+If T is capital or the entire thing is capital, whatever be the original case returned by the model, whatever be the original case, see this value is being returned by the model and updated in the support state. Okay. So we are reading the value from the support state.
+
+(1:50:03 - 1:50:19)
+So whatever was returned here, you can see whatever was returned here. Okay. Even though we have asked it to, you know, format in a proper way, but still worst case scenario is still the model hallucinated and returned it in a different case.
+
+(1:50:20 - 1:50:42)
+So first thing is I'm lowering the case so that I can match with technical in the lower case. And if the case matches, that means the query has come down to the right agent. That means the query has come down to the right agent because what is this node for? This node is for generating the technical response.
+
+(1:50:43 - 1:50:52)
+So first thing is you should check whether the query is indeed technical in nature. If not, then it goes to the else condition. Apologies.
+
+(1:50:52 - 1:51:00)
+I was not able to answer this question. Please reach out to something. So for non-technical queries, this is a default response handling.
+
+(1:51:00 - 1:51:15)
+As of now, you can make it better, but for now, this is what it is. So let's say the query is indeed technical. Then I'm setting the metadata filter to technical and then doing a database search.
+
+(1:51:16 - 1:51:29)
+So this will have the relevant documents, top three documents as a list. Using this code, I'm joining those three documents between two empty spaces, using two empty spaces. I'm joining these three documents.
+
+(1:51:30 - 1:51:37)
+Okay. So this is a retrieved content and that retrieved content will be updated in this prompt template. Okay.
+
+(1:51:37 - 1:51:50)
+So this is a prompt template, which will go to the response generation model. Craft a clear and in detail technical response for the following customer query. Use the provided knowledge-based information to enrich your response.
+
+(1:51:50 - 1:52:01)
+In case there is no knowledge-based information, when will it get no knowledge-based information? So this could be empty. This could be empty. Or you do not know the answer.
+
+(1:52:01 - 1:52:04)
+Just say that apologies. I was not able to answer your question. Please reach out to this.
+
+(1:52:05 - 1:52:12)
+And this is a customer. So this prompt template has got two variables. One is the customer query and one is the retrieved content, which I have to update.
+
+(1:52:13 - 1:52:22)
+So that prompt template is now changed to the LLM. And while you are invoking, you can see the dictionary here. So I'm mapping the variables.
+
+(1:52:23 - 1:52:40)
+So one variable is coming from the query, which you are retrieving from the state. And the other variable value is coming from the retrieved content, which you are getting it from the retriever and then formatting it later. So these two values are updated in this dictionary.
+
+(1:52:40 - 1:52:55)
+And that dictionary is given to the chain.invoke method. Once the chain.invoke method makes the API call, that response will have content. So I'm just pulling the content part of the response.
+
+(1:52:56 - 1:53:09)
+.content means I'm pulling the content part of the AI response. That content part contains the AI message only. And that AI message is updated in the technical reply.
+
+(1:53:10 - 1:53:25)
+So I'm just extracting the AI message component of the overall response structure. The overall response structure has all the information about response ID, run ID, model use, token usage, and a number of other things are there. So I'm not interested in all of that information.
+
+(1:53:26 - 1:53:43)
+I'm just interested in the AI message part. And that is what I'm extracting by using the .content. That technical reply is now also updated in the final response part of your agent state. Final response part of the agent state.
+
+(1:53:43 - 1:54:28)
+Okay. So any questions in this logic? Okay. So then similarly, let's execute this and check whether this works.
+
+(1:54:30 - 1:54:36)
+Okay. So customer query, what is the refund policy? I have given a general. Now here the problem is G is capital.
+
+(1:54:36 - 1:54:47)
+And that is why this was expected. Okay. Is it query category? No, no, no.
+
+(1:54:48 - 1:54:59)
+That is fine. What is the refund policy should be billing, I think. Yeah.
+
+(1:55:00 - 1:55:05)
+Let's see another case. Oh, sorry, sorry. The function is technical response.
+
+(1:55:05 - 1:55:11)
+So it will only reply the technical queries. Correct. So the general is correct.
+
+(1:55:11 - 1:55:19)
+Map to. The general is the correct mapping to the refund policy question that so query category is correct. Okay.
+
+(1:55:19 - 1:55:34)
+The problem is you are firing this query to the wrong agent. This is the one which is only going to reply to technical. Now you see when it is being fired, a technical query is fired to a technical agent.
+
+(1:55:34 - 1:55:38)
+Then the response. You can see very nicely. It comes up.
+
+(1:55:39 - 1:55:42)
+You see the final response. Very nicely. It comes up.
+
+(1:55:44 - 1:55:50)
+Fine. So thank you for enquiring regarding this model on prem support. Yes, we do support on prem model of our.
+
+(1:55:51 - 1:55:54)
+This allows you to run this. This isn't so on. Very nice.
+
+(1:55:54 - 1:55:57)
+Okay. So you can actually also save this output. Okay.
+
+(1:55:58 - 1:56:31)
+And if you want, I mean, and you can also extract the final response part of that output. And print and see the response. And there you can use the print display.
+
+(1:56:31 - 1:56:38)
+So there was a display function. I think somewhere. Let me go back and use the display function.
+
+(1:56:40 - 1:57:02)
+Yeah, this one. Display and then markdown. So display.
+
+(1:57:04 - 1:57:24)
+Markdown. Markdown is going to be small or what? Yeah. So you see, I got a proper response now.
+
+(1:57:31 - 1:57:41)
+Okay. Similarly, you can check the other two more agents. So the only difference is the line where I'm checking for the filter.
+
+(1:57:41 - 1:57:50)
+And the second line where I'm applying the filter. Third changes place where I'm giving this statement. Okay.
+
+(1:57:51 - 1:57:54)
+Rest all are same. Rest all are same. Okay.
+
+(1:57:55 - 1:58:05)
+So this is a billing reply. So these are the three changes I'm doing. So similarly, if you want to update and display.
+
+(1:58:21 - 1:58:24)
+Okay. Thanks. This is the response.
+
+(1:58:28 - 1:58:47)
+Okay. Question. In the chat, we suppose pass state object as input to the agent node function, but your simple unit test case execution, you pass two strings variable.
+
+(1:58:48 - 1:59:10)
+How does it map to the state object? But in your sample, no, no, no, no, no, no, Where is the thing? This is what you are saying. String variables. 35.
+
+(1:59:18 - 1:59:26)
+Where is this one? 35. Okay. So in this, you can just tell me line 35.
+
+(1:59:27 - 1:59:40)
+Here? No. This one? No. So the thing is you are mapping the.
+
+(1:59:45 - 1:59:51)
+Okay. So where are these two variables going? These are not going to the state. Directly.
+
+(1:59:52 - 2:00:16)
+Okay. These are going to your. So here, here.
+
+(2:00:18 - 2:00:24)
+Customer query. So this is a customer query. And the other is a query category.
+
+(2:00:26 - 2:00:30)
+And the query category is. Yeah. So these two.
+
+(2:00:30 - 2:00:37)
+Okay. Correct. So what was the question? Now, let me just check.
+
+(2:00:44 - 2:00:49)
+Unit test case. You are passing two string variable. How does it map to the state? Okay.
+
+(2:00:49 - 2:00:58)
+Okay. So basically, this is expecting an input, which is your customer support only. Okay.
+
+(2:00:58 - 2:01:10)
+This, this customer support state. And instead of the customer support state, what you are mapping is a dictionary. Where are you using the dictionary? You are using this dictionary to read at this point.
+
+(2:01:11 - 2:01:19)
+Okay. And ultimately, this is a type dictionary only. If you see this, the data type is a type dictionary.
+
+(2:01:20 - 2:01:31)
+Can you see? It's a dictionary only. And so the output, sorry, the input that you have given is a, let's see, this is a type dictionary. It's just that.
+
+(2:01:32 - 2:01:43)
+Since it is a dictionary, the input that you are giving is also a dictionary. So that is where the dictionary mapping happens, because of the keys being same. If the key mismatch is happening, then there will be a problem.
+
+(2:01:44 - 2:01:49)
+So there is a key with this name. There is a key with this name. The input that you are giving is not a normal list.
+
+(2:01:49 - 2:01:54)
+It is a dictionary already. And the agent state is also a type dictionary. Okay.
+
+(2:01:54 - 2:01:55)
+Got it. Thanks. Okay.
+
+(2:01:56 - 2:02:03)
+Fine. But yeah, a relevant question. So now this is the node function for the escalation.
+
+(2:02:03 - 2:02:12)
+This is just a dummy function, which will give a response as apologies. I cannot respond it right now. And someone from the team will be reaching out shortly.
+
+(2:02:13 - 2:02:18)
+So this is like a dummy function. There is not making any API call as such. This is a router.
+
+(2:02:19 - 2:02:32)
+So router is just checking all the conditions that we have already discussed. I think this is quite simple to understand. So you are checking the state in those agents, just to make sure it does not hallucinate the issue.
+
+(2:02:32 - 2:02:38)
+Yeah, right now. That's exactly what we are doing. So I am providing those states right now.
+
+(2:02:38 - 2:02:50)
+Okay. The state variables. I am providing the state variables right now for a, for a, you can say, test for a test.
+
+(2:02:50 - 2:03:04)
+Now, once we build the entire graph, see the node functions have to be tested out of the graph. That's what I mentioned half an hour ago also. So each node will be requiring a function.
+
+(2:03:04 - 2:03:11)
+Okay. So that the control goes to the node. The node executes means the function executes, but you have to test the function thoroughly.
+
+(2:03:13 - 2:03:24)
+Before you plug in that function into the graph. So this is where I'm going to plug all those functions. Because once you plug in, it will be very difficult to identify where is the error coming from.
+
+(2:03:24 - 2:03:32)
+You're getting my point. Okay. So it's very important to test each of these functions individually before you plug all these things.
+
+(2:03:32 - 2:03:37)
+So now you are going to build the entire workflow. Okay. So here.
+
+(2:03:38 - 2:03:52)
+Again, you're starting from an empty graph and then you are adding these five nodes, six nodes. So one for categorising the enquiry, one for analysing the sentiment. These are the three response generators and one is for escalation.
+
+(2:03:52 - 2:03:58)
+So all the boxes are generated here. Okay. So these are the functions which I'm mapping to each of these nodes.
+
+(2:03:59 - 2:04:05)
+And these are the name of the nodes. So this is the name of the node. This is the node function, name of the node, node function.
+
+(2:04:06 - 2:04:23)
+So usually it's a common practise to keep the name of the node, same as the node functions to avoid, you know, discrepancy or, you know, getting confused. Okay. So if the name of the node is categorised enquiry, normally I would expect that there is a Python function exactly by the same name.
+
+(2:04:23 - 2:04:33)
+Where the functionality of the node is coded. Okay. So I've added all the nodes now connecting the edges.
+
+(2:04:33 - 2:04:43)
+So the entry point, you are setting the entry point here, setting the entry point at the categorised enquiry. Okay. So the start will get connected to categorise enquiry.
+
+(2:04:44 - 2:05:04)
+Now the categorise enquiry will get connected to, so entry point. So start will be connected to categorise enquiry. Now this categorise enquiry come to this line number 16.
+
+(2:05:05 - 2:05:11)
+So categorise enquiry will be connected to sentiment. Now sentiment will be connected to router. Okay.
+
+(2:05:12 - 2:05:26)
+Router will have these four branches. Router will have four branches, one, two, three, four, and each of those four branches are connected to end. Each of those branches are connected to end.
+
+(2:05:26 - 2:05:31)
+That's how it goes. So this has got four branches. Okay.
+
+(2:05:31 - 2:05:43)
+And these four branches are connected to the end. One additional thing that you see here is memory saver. Okay.
+
+(2:05:43 - 2:05:55)
+So now you are adding memory also. So now check pointer equal to memory. So when you compile this graph, okay, it will maintain the conversation history as well.
+
+(2:05:55 - 2:06:01)
+Okay. So that is one additional improvement I have done here. So let's execute this.
+
+(2:06:13 - 2:06:22)
+Okay. So Praveen is saying you are checking the state category in those just to make sure it does not. Yes.
+
+(2:06:22 - 2:06:25)
+That I have already answered. I think. Perfect.
+
+(2:06:26 - 2:06:43)
+So this is how the overall looks. And once again, let me reiterate the solid edges means it's a deterministic path in the workflow that it will execute exactly the way you see it. Dotted ones means one of these will execute because they are coming from the same hierarchy.
+
+(2:06:43 - 2:07:00)
+So one of the four will execute, which one you don't know, because that will be based on the query category and the sentiment, but any of these four executes, finally, it will go to the end. Let me know if this is very clear, the overall flow before I go ahead. Yeah.
+
+(2:07:01 - 2:07:21)
+Can I get some response in the chat? If this overall flow is very clear. So we have, you know, built upon this step by step. If I had directly jumped onto this project, that would have been very difficult because, you know, there are too many things happening.
+
+(2:07:22 - 2:07:26)
+A lot of nodes are there. A lot of edges are there. Router is there.
+
+(2:07:26 - 2:07:38)
+And so that's why we built on it systematically. Okay. So we did two line graph notebooks as a primer, and then we are building the project step by step.
+
+(2:07:40 - 2:08:02)
+Okay. So if this is clear, then we can. What happened? Okay.
+
+(2:08:02 - 2:08:11)
+So helper function to run the flow. Now I'm going to wrap this entire workflow. What is the workflow here? This is our workflow customer support graph.
+
+(2:08:12 - 2:08:29)
+I'm going to wrap this into a proper application. You can say a final agent. So in our definition, now this entire workflow, whatever is one agent, or if you want, you can call these guys also as individual agents.
+
+(2:08:30 - 2:08:33)
+It's up to you. Okay. Because these are actually also fetching knowledge.
+
+(2:08:34 - 2:08:46)
+So they are, you know, equipped with tools. So since these guys are equipped with tools, it is fair to call them as agents, or if you want to call them as sub agents, that's also fine. Okay.
+
+(2:08:46 - 2:08:59)
+And this entire thing becomes a single agent, which is what I'm calling. So this is a final agent, which is wrapping this entire workflow. This entire line graph, graph is being wrapped within this function.
+
+(2:09:00 - 2:09:05)
+That's a usual practise. Okay. So later on, you will not be directly calling this graph.
+
+(2:09:05 - 2:09:14)
+You will actually be calling this function. Okay. That will take your, so what are the inputs? Agent is your entire graph.
+
+(2:09:14 - 2:09:20)
+Prompt is the user prompt. User session ID. Now, this is where the real game starts.
+
+(2:09:20 - 2:09:34)
+Okay. Now I can provide different user names. Let's say Prashant, then you have Praveen, you have Pandya Rajan, you have other, you know, Karthik, or maybe Renuka, Santosh.
+
+(2:09:35 - 2:09:45)
+So whatever user session ID, then verbose is false. Now, what is this verbose going to do? So each step of the agent execution will be printed. If you make verbose equal to true.
+
+(2:09:46 - 2:09:58)
+If you make verbose equal to true, then each step of the workflow execution, each node execution will be printed in the console. If you want that print, then make verbose equal to true. Okay.
+
+(2:09:59 - 2:10:04)
+So let me repeat. This agent is nothing but your entire line graph. Graph.
+
+(2:10:05 - 2:10:10)
+Prompt is your user query. Initial conversation starter, that is. Okay.
+
+(2:10:11 - 2:10:18)
+Then this will keep a track. So Prashant's queries will be tracked separately. Praveen's query will be tracked separately.
+
+(2:10:18 - 2:10:27)
+And that is what this memory agent does. This memory component does. This memory component keeps tracking the user IDs.
+
+(2:10:28 - 2:10:36)
+So Prashant will have a different user ID. Praveen will have a user, different user ID, and their conversations will be different. So they will not be, you know, mixed up.
+
+(2:10:37 - 2:10:43)
+Okay. How is that maintained? That is maintained by creating different threads. Okay.
+
+(2:10:43 - 2:10:51)
+So first you create a agent stream, and then in that you provide the initial prompt. Configurable is the thread ID. So this thread ID persists.
+
+(2:10:52 - 2:11:00)
+Okay. For a given user ID, the thread ID persists. And based on this thread ID, conversations can be continued at a later stage.
+
+(2:11:00 - 2:11:04)
+Okay. Without mixing up. So I'll show you that.
+
+(2:11:05 - 2:11:12)
+So this is just printing. And for event in events, so that's what I said. For each event, what is an event? Event is a node execution.
+
+(2:11:13 - 2:11:23)
+So if the node executes, I'm just printing the response of that node. Printing the response of that node. Okay.
+
+(2:11:23 - 2:11:45)
+So this way, every update in your state happens, will be printed. So what is printed? And what is the event? Event is nothing but every single update into the agent state is an event. Remember this.
+
+(2:11:46 - 2:11:52)
+Okay. So each of these event is printed. So entire thread will be printed.
+
+(2:11:52 - 2:12:02)
+Okay. Let's see. And finally, once the entire workflow is done, I'll print the final response.
+
+(2:12:02 - 2:12:08)
+Where is this final response coming from? Agent state. So that's what I said. Event is all coming from the agent state.
+
+(2:12:08 - 2:12:13)
+Okay. And so this final response is also a part of that agent state. Okay.
+
+(2:12:13 - 2:12:20)
+Now let's see. So these are the, you know, items in my knowledge base. These are the 30 question answer pairs.
+
+(2:12:20 - 2:12:29)
+That is what I've printed. Okay. Let's say this is Prashant007.
+
+(2:12:29 - 2:12:36)
+Okay. Do we support pre-trained models? Okay. So the agent is running.
+
+(2:12:37 - 2:12:45)
+You can see. Currently the agent state was empty. So the first thing which got updated was the customer query.
+
+(2:12:45 - 2:12:57)
+Then the control went to whom? The control went to the categorised query node. And so this was updated. Then the control went to the sentiment analyser node.
+
+(2:12:57 - 2:13:13)
+And so the sentiment was updated. And then based on the technical and neutral, which node was executed, the technical response generator node was executed. So this is the final response coming from the technical response generator node.
+
+(2:13:13 - 2:13:20)
+So I'm just printing that final response here. Thank you for enquiring regarding pre-trained models. Okay.
+
+(2:13:20 - 2:13:29)
+Now the beauty is, let me just try. Let me just try. I'm just going to copy this.
+
+(2:13:32 - 2:13:37)
+And I'm not going to change the user ID. Okay. The user ID still remains the same.
+
+(2:13:37 - 2:13:43)
+Or if you want, you can still provide the same user ID. As long as the user ID is same, it is not going to create a new one. Okay.
+
+(2:13:44 - 2:13:52)
+So let me see. What did I just ask? Okay. Let's see what happens.
+
+(2:13:54 - 2:14:18)
+Does this maintain conversation history? Although you have not created a specific mechanism, but let's see if it is still able to track the conversation history. Okay. So you see, it was not able to retrieve any documents.
+
+(2:14:18 - 2:14:34)
+And the model, as such, it does not have any idea. And that is the reason. So this is what I have been telling you since start.
+
+(2:14:34 - 2:14:49)
+Okay. Agent state is not same as your proper memory component. This memory component that we have right now implemented is only to create separate threads for different conversations, which will be initiated by different users.
+
+(2:14:50 - 2:14:58)
+Let's say there is one user called as Prashant007. There is another user called as, let's say, Jim009. Whatever.
+
+(2:14:58 - 2:15:05)
+Okay. So their conversations will be tracked separately. But as of now, they are not being also saved.
+
+(2:15:06 - 2:15:10)
+You can say they are saved in the agent state. Okay. Fine.
+
+(2:15:11 - 2:15:20)
+But they are not being passed. Those conversations, the previous conversations are still not being passed to the model. So the model still has no idea.
+
+(2:15:21 - 2:15:23)
+See, this is still working. You can see. I'll show you.
+
+(2:15:24 - 2:15:30)
+I'll show you. So look at this very, very carefully. Okay.
+
+(2:15:32 - 2:15:42)
+Okay. Look at this very, very carefully. So what is the last state here? Customer query is, do you support pretend model? Customer query is technical.
+
+(2:15:42 - 2:15:46)
+Okay. This is neutral. Okay.
+
+(2:15:46 - 2:16:14)
+Now you see, here it started with only customer query, and these guys were getting populated one by one. But here when it started, when did the agent start? When the agent started here, what happened? It's not starting from clean slate. Remember, this time, this time, the agent does not start from clean slate, or other state.
+
+(2:16:15 - 2:16:34)
+Okay. It is already carrying the previous information, which is why you can see only the customer query was updated, but the remaining other three things are coming from the previous state. You see, and one by one, these fields will be updated.
+
+(2:16:34 - 2:16:49)
+So customer category, sorry, query category will be updated from technical to general, but the sentiment is still the same, and the response is still the same. So in the next node, when the flow goes to the next node, so these are getting overwritten. Okay.
+
+(2:16:49 - 2:16:56)
+These are getting overwritten because you did not implement a reducer. Remember that there was no reducer in any of these. Okay.
+
+(2:16:56 - 2:17:06)
+So that is why these fields are getting overwritten. That is why these fields are getting overwritten. But these fields do exist in the second execution.
+
+(2:17:06 - 2:17:26)
+In the previous notebooks, we have seen that whenever you call that graph, or whenever you invoke that graph afresh, the entire agent state is refreshed. That's what I repeated several times. But now, the agent state is not coming from the refreshed state or a clean slate.
+
+(2:17:27 - 2:17:34)
+Okay. It is already preserving the previous execution state. Is that statement clear, everyone? Yes, no.
+
+(2:17:35 - 2:18:02)
+It is already having the previous state execution, or previous execution states. And one by one, as the nodes, the second time execution nodes are executing, they are updating the corresponding, they are updating the corresponding fields in the agent state. So each time I run with the same user ID, it will not start from scratch.
+
+(2:18:02 - 2:18:13)
+It will start from the previous execution. It will preserve the previous agent state, and only keep on updating the fields. This is memory efficient.
+
+(2:18:14 - 2:18:20)
+Okay. This is memory efficient, because the agent state doesn't have to be created again in the memory stack. It is already there.
+
+(2:18:20 - 2:18:31)
+It just has to update the states, these fields essentially. So finally, so you see, this is the previous response. This is all our previous response.
+
+(2:18:32 - 2:18:43)
+And now finally, the response got updated in the last step. And that response is also mentioned. But the moment you, here also I'm not changing the user ID.
+
+(2:18:43 - 2:18:50)
+So let me execute this again. Okay. So here also, I'm not changing.
+
+(2:18:50 - 2:19:03)
+So what was the previous thing? General, neutral, and apologies. You can see it started from general, neutral, and apologies. And the only thing that got updated in the first node was the invoice.
+
+(2:19:04 - 2:19:13)
+I mean the query part. Then in the second step, the category gets updated. Then in the third, sentiment gets updated, which is again neutral.
+
+(2:19:13 - 2:19:21)
+And then again in the next step, the response gets updated. You see. Now let me change the user ID here.
+
+(2:19:22 - 2:19:37)
+Okay. Let me change the user ID. Instead of Prashant007, let me use a user ID, let's say Santosh009.
+
+(2:19:43 - 2:19:56)
+Now let's see what happens. Okay. Oh, so here the verbose was false.
+
+(2:19:56 - 2:20:01)
+So, my bad. Let's make it true. See, the verbose was false.
+
+(2:20:02 - 2:20:08)
+And that is the reason I am only directly getting the final response. Let me restart. So instead of 009, let me make it 007.
+
+(2:20:09 - 2:20:15)
+So that will create another thread. And let's see. Now you see each step execution here.
+
+(2:20:15 - 2:20:26)
+This starts exactly fresh. And that is the reason it does not have the category and the sentiment and the final response when this agent started. So this is a separate agent, which is tracking Santosh.
+
+(2:20:27 - 2:20:36)
+There was a separate agent, which is tracking Prashant. Right. So Prashant's agent is not being used to answer Santosh query.
+
+(2:20:37 - 2:20:56)
+Is this clear everyone? Till here, till here at least. And now since I'm not changing the user ID, so this will be again taking. So this is directly your faulty.
+
+(2:20:56 - 2:21:00)
+I am fed up. So this is a negative sentiment. So it directly went for escalation.
+
+(2:21:04 - 2:21:09)
+Yeah. So I think everyone understood the concept now. There's nothing more to explain in this notebook.
+
+(2:21:12 - 2:21:13)
+Okay. Okay. Okay.
+
+(2:21:13 - 2:21:20)
+Let's see if there are questions. So now the history of conversation, that is the only thing which is remaining. Okay.
+
+(2:21:20 - 2:21:32)
+So now 50% of the problem is solved. So now my agent can handle hundreds of users simultaneously, but the conversation history is still not being maintained. That's the only problem that we are yet to solve.
+
+(2:21:32 - 2:21:49)
+Is this clear? My agent, single agent, whatever I have created, that chatbot is able to keep a track of multiple queries from multiple users simultaneously. But the conversation history is not being shared with the model. So follow-up conversations are not working.
+
+(2:21:49 - 2:21:57)
+That is the only thing which is a problem. The follow-up conversation is not working. So we'll see how to, you know, fix that part.
+
+(2:22:07 - 2:22:31)
+Pandey Rajan is saying, Is this clear? We need to clear state for any new query. May not be because if it is coming from the same user, ideally you want to preserve the state. So problem with clearing the state is, or, you know, starting afresh is, each time it will be a memory overload or overhead.
+
+(2:22:31 - 2:22:42)
+Okay. Then the previous agent state will be discarded and a new agent state gets created in a new thread. So that is like a, you know, a processor overload, overhead.
+
+(2:22:42 - 2:22:51)
+Sorry. But if you're reusing the same agent state for the same customer, that's much more efficient. Then the subsequent interactions become faster.
+
+(2:22:52 - 2:23:06)
+Okay. So what is the strategy to do the follow-up? So for that, you need to pass the conversations also to the model. That we will see in a later notebook.
+
+(2:23:06 - 2:23:34)
+Okay, not today, but in the later notebooks, we will be doing a full conversational chatbot. Okay. Which will not only have the capability to, you know, keep a track of different users, but also the conversations.
+
+(2:23:34 - 2:24:27)
+Okay. Okay. This is done.
+
+(2:24:28 - 2:24:39)
+Let me save this. So in case you want to refresh it to get the latest version, and now do it after saving successfully. Yeah, done.
+
+(2:24:43 - 2:24:58)
+How do you want to maintain this session? How to invalidate users again? So you are mixing this with application layer sessions. Okay. This is just the agent state.
+
+(2:24:59 - 2:25:11)
+Now agent state is different from the user session. Once the user is logged in, there will be a session variable, which will be tracked by your application layer. Whether you create it using chain late, stream late, there will be a front end.
+
+(2:25:12 - 2:25:24)
+That front end is where the user authentication happens. And let's say in stream late, if you're creating the user interface using stream late, stream late creates a session variable. Okay.
+
+(2:25:24 - 2:25:37)
+So there you can provide the session timeout. Now that is the session timeout for the entire session that the user is having in the platform. Okay.
+
+(2:25:37 - 2:25:54)
+So here the assumption is as long as the user's session is active on the platform, the agent state will remain. We are not going to invalidate the agent state in between. I mean, that makes still no sense if the user is still logged in.
+
+(2:25:54 - 2:26:02)
+Okay. So user session maintaining is a different concept than this agent state maintaining. Okay.
+
+(2:26:02 - 2:26:09)
+So I think that got cleared. Okay. So what is the next one? Let me just bring up the next.
+
+(2:27:04 - 2:27:16)
+How much time we have? Half an hour. Okay. We'll build one more agent, which is a, which is going to follow a reflective pattern.
+
+(2:27:16 - 2:28:30)
+Okay. I'll just show you what is the agent we have built. Okay.
+
+(2:28:30 - 2:28:38)
+So this is the one which I had shared in the design patterns. Right. So we now know what all patterns.
+
+(2:28:39 - 2:28:56)
+We know the react pattern tool use. We have done in this one in the project, the lab three tool use. Also we have seen the lab one, which is online chain react pattern.
+
+(2:28:56 - 2:29:00)
+Yeah. Then conversation memory. So there's also, we have, we are going to use.
+
+(2:29:00 - 2:29:07)
+So to some extent memory saver we have used, SQL server we'll be using. So this is going to come up. Okay.
+
+(2:29:10 - 2:29:17)
+Router pattern we have used. So this is what we have just now used. Reflection self-correction pattern.
+
+(2:29:17 - 2:29:23)
+So this is the one which we are going to use in the current project lab number five. Okay. Let me repeat.
+
+(2:29:23 - 2:29:31)
+This is the pattern which we are going to use. So this notebook was already shared before the start of the agents. Okay.
+
+(2:29:32 - 2:29:55)
+So this is the advanced patent, which gives agent ability to iteratively review and improve its own work, creating a powerful feedback mechanism. For self-correction. So in the reflection pattern that enables LLM to generate some initial output and critique to identify flaws or areas for improvement and then modify.
+
+(2:29:56 - 2:30:05)
+So first you will have one agent. So let's say agent will generate the code. So here, this is the project that we are going to do reflective self-correcting code generation agent.
+
+(2:30:05 - 2:30:22)
+This is the one which we are going to build in this entire notebook. So this agent will receive the user request for generating some code. So this is the one which will generate the code that will give its output to another agent, which will be your reflector agent.
+
+(2:30:22 - 2:30:39)
+So generator agent gives it output to the reflector agent. Reflector agent will review the code check for inconsistencies, execute the code. If there is any error in the code, it will give a feedback to the generator agent boss.
+
+(2:30:39 - 2:30:48)
+Your code is not working. This is the error I'm getting. Please regenerate the code and, you know, give me the updated code.
+
+(2:30:49 - 2:30:56)
+So this iteration may happen three, four times, five times. We can keep a track in the agent state. We will keep a track.
+
+(2:30:56 - 2:31:09)
+How many times this iteration is happening and we can set up a threshold also. So beyond, let's say five iterations, if it goes, means it is, you know, stuck in some sort of a loop, then we can do a hard stop. Okay.
+
+(2:31:10 - 2:31:19)
+So if the generator is able to generate an output, which the reflector is giving a go ahead. Okay. Then that will be given back to the user.
+
+(2:31:19 - 2:31:29)
+That's the overall thing. And then the parallel agent we will take in the next session. Okay.
+
+(2:31:29 - 2:31:32)
+Followed by memory. Okay. We'll do all the agents.
+
+(2:31:32 - 2:31:43)
+Don't worry, but I'm just telling you where we are as of now in our agentic pattern, so that you are very clear what all agents we have already implemented. So this is the code. Let me just share this notebook.
+
+(2:32:41 - 2:32:51)
+What patterns we have covered so far. I would suggest you to figure out based on the projects that we have. I just reviewed this document and still the same question is being asked.
+
+(2:32:52 - 2:33:04)
+So now you go through all the labs that I have done and try to connect those dots. Okay. Try to do a one-on-one mapping that this lab has already used the tool.
+
+(2:33:04 - 2:33:10)
+This lab has already done this pattern. Let me know in the next session, if there is any mismatch, I'll correct you. Okay.
+
+(2:33:15 - 2:33:21)
+Okay. So this, I have just now shown a reflection pattern. We'll have two things.
+
+(2:33:23 - 2:33:34)
+So yeah, this is the same system diagram. User prompt will ask the generator to generate some code. And then reflector will review that code.
+
+(2:33:34 - 2:33:50)
+Reflector will provide the critical review. And based on that critical review, the generator code will come up with a revised version of that. If you want to see a practical use of this, I don't know how much time we have.
+
+(2:34:08 - 2:36:10)
+Let me see if I can show you end-to-end system. A real use case. Okay.
+
+(2:36:10 - 2:36:33)
+I'll show you. Fortunately, I got that. So is this visible? So this is my AWS MCP server that I've created on my own completely from scratch, kind of.
+
+(2:36:33 - 2:36:40)
+Okay. And what is the main purpose of this? Okay. Maybe I can show you.
+
+(2:36:57 - 2:37:11)
+Okay. So this tool automates AWS operations by generating, validating, and executing secure BOTUS-free code. So this purely uses the same architecture, which I'm going to do in this project.
+
+(2:37:12 - 2:37:19)
+Okay. So you can take this project as a starter and try to replicate or create something of this sort. Okay.
+
+(2:37:19 - 2:37:25)
+That's an extension to that project. So I'm just showing you so that you can feel motivated. What all can be done.
+
+(2:37:26 - 2:37:34)
+Can all, can these labs be just made into production grade? Answer is yes. And so this is a very much production grade code. Okay.
+
+(2:37:35 - 2:37:43)
+I also have a chainlet interface. Maybe I can show you that as well later. Also, you can see guardrails are implemented.
+
+(2:37:43 - 2:37:45)
+A lot of things are there. Okay. On the left side.
+
+(2:37:47 - 2:37:51)
+Examples, test code generation, execution. Okay. Anyway.
+
+(2:37:51 - 2:38:04)
+So this is generating code on the fly using some models and fine. These are the features which are there. So dynamically generates executable code, which is a BOTUS-free code.
+
+(2:38:05 - 2:38:17)
+People who are coming from AWS understand what is BOTUS-free. So BOTUS-free is an API SDK, you can say, of AWS. You can connect to any of the AWS infrastructure using the BOTUS-free API.
+
+(2:38:19 - 2:38:27)
+Okay. Literally any AWS service. I have also set up a lot of guardrails reduction and reduction and other things.
+
+(2:38:28 - 2:38:35)
+Reflective loop. So obviously you have a generator and a reflector. Exactly the same way what I have discussed in that lab, although.
+
+(2:38:36 - 2:38:48)
+And then a lot of batch processing and confirmations, other things are there, which right now. Okay. This is PowerShell.
+
+(2:38:48 - 2:38:57)
+So my paint is activating. Okay. Okay.
+
+(2:39:06 - 2:39:13)
+So I am into my virtual environment. So this is a good practise. Okay.
+
+(2:39:13 - 2:39:22)
+Because you will be parallelly working on so many projects. How to actually start. So anyway, installations and those things are not needed.
+
+(2:39:22 - 2:39:32)
+I have already configured my environment file with a number of settings, which I'll show you. Okay. And this is how I can put up my queries.
+
+(2:39:32 - 2:39:43)
+So literally I'm connecting to my AWS account using this project. And in real time, these queries are going to be made. Okay.
+
+(2:39:43 - 2:39:49)
+So let me show you. So the first query I'm making is list all the S3 buckets. Okay.
+
+(2:39:49 - 2:40:00)
+And you see total execution time it has started. So this is the query list, all the three buckets. Okay.
+
+(2:40:00 - 2:40:08)
+Assuming some role. This is my AWS account, actual AWS account. So this is like role assumption is done by my code.
+
+(2:40:10 - 2:40:23)
+Once the role is assumed successfully, it will start executing the Boto3 code. Now my Jamea engine has initialised. First it will generate.
+
+(2:40:23 - 2:40:31)
+So verbose debug. Original query is this. There is no sensitive information detected in the input prompt.
+
+(2:40:31 - 2:40:37)
+Okay. So I will use the original query for execution. Okay.
+
+(2:40:37 - 2:40:47)
+So the only reduction happened is on the account ID. Fine. And then this is the code which was generated by my generator.
+
+(2:40:48 - 2:40:54)
+This is the code actually generated in the first attempt. This is the raw coming from the LLM. Okay.
+
+(2:40:54 - 2:41:04)
+And there is no reduction needed. Okay. So probably because there is no reduction needed, the same code was used.
+
+(2:41:04 - 2:41:15)
+The only reduction happened was on the alias, sorry, account. So in the backend, I am creating some sort of alias map. Rest all the code is being exactly the same.
+
+(2:41:15 - 2:41:21)
+The only reduction happening is on the account level. I mean, this account ID. This account ID.
+
+(2:41:21 - 2:41:38)
+Okay. Now once that is done, success. Now, why is it a success? Because if I just go back to my code here, you can see, if I just go below, you can see success, failure, success, failure many times.
+
+(2:41:38 - 2:41:45)
+Okay. So once the agent runs, okay, this is the code which is generated and then it will be evaluated. Okay.
+
+(2:41:47 - 2:41:53)
+So code execution, no response, decision finished. Same thing is happening here also. So these are my console messages.
+
+(2:41:53 - 2:42:06)
+You see, same thing is happening here. So success on attempt one means this code is correct and execution did not give any error. Two things.
+
+(2:42:07 - 2:42:20)
+The code is correct and the execution did not result in an error and response. Now I'm getting from the model that successfully retrieved a list of buckets. There is one bucket called as this, which is currently active.
+
+(2:42:21 - 2:42:25)
+This was created on 23rd of November. There are no errors in this process. If you need it.
+
+(2:42:25 - 2:42:29)
+So this is the final thing that I have got. Okay. So let me ask another question.
+
+(2:42:30 - 2:43:01)
+I think I'll just change this. Okay. What are the, what are the AC2 expenses running in my account? Let's see.
+
+(2:43:06 - 2:43:22)
+Okay. So this is the query. So this part I have already explained.
+
+(2:43:23 - 2:43:30)
+So what are this? No sensitive information detected. Okay. I'll probably show you one or two queries with sensitive information.
+
+(2:43:30 - 2:43:40)
+And probably that will make sense. The actual guardrailing part. So you see, this is the code which was generated from the LLM in real time.
+
+(2:43:41 - 2:43:47)
+And this was along with the alias map. Success on the first attempt itself. Good.
+
+(2:43:47 - 2:44:04)
+So you have one AC2 instance running in your account and this is the instance ID. Now I can tell you one thing that this instance ID was not seen by the LLM. This instance ID was actually not seen by the LLM.
+
+(2:44:06 - 2:44:15)
+How do I know? Yeah. So this is the final details. But question is how do I know? Okay.
+
+(2:44:15 - 2:44:37)
+Let me try. Oh. Was I not sharing the complete screen? I think I was not sharing the complete screen.
+
+(2:44:37 - 2:45:09)
+Let's see. Did you see this? Did you see this? This ID screen. So yeah, yeah.
+
+(2:45:09 - 2:45:18)
+Sorry. So I thought I'm sharing my entire screen. I just now realised I was sharing the different screen.
+
+(2:45:18 - 2:45:21)
+Yeah. So this is how it is. Okay.
+
+(2:45:21 - 2:45:33)
+So this is a query which I had given. What are the AC2 instances running? And you can see this actual account ID. This is the code which was generated.
+
+(2:45:33 - 2:45:45)
+So original query, there was nothing to redact. And this is the code which is generated by my generator component of the overall agent. Then after reduction, anything.
+
+(2:45:45 - 2:46:01)
+And success on attempt one means this code did not meet any, I can say, errors. This code did not face any errors. So it was successful.
+
+(2:46:03 - 2:46:06)
+Okay. And this is the final response I have got. Okay.
+
+(2:46:06 - 2:46:15)
+I can maybe do one follow-up question. Okay. So let's do one thing.
+
+(2:46:18 - 2:46:25)
+So I'll just copy the instance ID. Clear. Okay.
+
+(2:46:27 - 2:46:53)
+So what is the status of, let's see what happens. So query is asking about this AC2 instance. Redacted one sensitive item.
+
+(2:46:54 - 2:47:06)
+So what is the reduction? So it was redacting one of the information. And what was that information? You can see the instance ID was redacted. You can see.
+
+(2:47:06 - 2:47:12)
+So that is the beauty of guardrails that I set up. Okay. So my account ID is also not shared with the model.
+
+(2:47:13 - 2:47:25)
+Instance ID was redacted. And still was in the first attempt, it was able to do. You can see the redacted codes are also present in the.
+
+(2:47:26 - 2:47:32)
+So this is the redacted code. This is the original code generated by the model. This is the redacted code, which was executed.
+
+(2:47:33 - 2:47:39)
+Okay. And the final response I'm getting from the model. So again, the model has not seen this instance ID.
+
+(2:47:39 - 2:47:43)
+I can guarantee you that. Okay. Because it was redacted anyway.
+
+(2:47:44 - 2:47:53)
+And still it tells me the complete information that it is currently running state. And there are no errors. So executed, you can check the status.
+
+(2:47:54 - 2:47:58)
+Processed one item. This is the index ID. Right.
+
+(2:47:58 - 2:48:06)
+So I have a user interface for doing all of this as well. Maybe I'll show you those things later. But see, these are the things you can actually do.
+
+(2:48:08 - 2:48:18)
+You can also ask maybe anything about the key pairs or you want to delete this instance. That is also possible. Literally, I have done.
+
+(2:48:19 - 2:48:25)
+I can just fire a query, delete this instance. It will actually delete that instance also. But pause that instance.
+
+(2:48:25 - 2:49:00)
+Okay. So it might also work. So here, pause this EC2 instance.
+
+(2:49:00 - 2:49:07)
+Let's see what happens. I'm trying this after a long time. But I have extensively used this system.
+
+(2:49:11 - 2:49:20)
+Okay. So again, the instance ID was redacted. Code was generated using that redacted instance name.
+
+(2:49:24 - 2:49:30)
+Success on attempt is currently in the process of stop. Super. There is no.
+
+(2:49:31 - 2:49:42)
+And now if I, the status is stopping. Right. So after five seconds, maybe 15 seconds or 30 seconds, if I ask what is the status, it will tell me that it is already in the stopped state.
+
+(2:49:42 - 2:49:49)
+So I'm just going back to the previous question now. Okay. So let's give this some more seconds.
+
+(2:49:49 - 2:49:58)
+So you see, I didn't even have to log in into my account. This is something what I've created. Okay.
+
+(2:50:04 - 2:50:18)
+So now I'm querying the status. What is the status of this? So ideally, it should tell me that it is in the paused state or stopped state. Super.
+
+(2:50:19 - 2:50:27)
+You see, it's all working. Okay. With all proper guardrails.
+
+(2:50:27 - 2:50:49)
+So this is your reflector pattern. And now I can show you the architecture. Yeah.
+
+(2:50:49 - 2:51:02)
+Architecture, which I moved. Seriously. Legacy might have.
+
+(2:51:29 - 2:51:40)
+I don't know what I did with that architecture document. It was there somewhere, but let's look at the PRD itself. I think the PRD will have some idea about the architecture.
+
+(2:51:42 - 2:51:44)
+Yeah. Component status. Core engine.
+
+(2:51:44 - 2:51:52)
+So you have the generator, executor. So you have the generator code, you have the executor code and the reflector. That's what I told you.
+
+(2:51:52 - 2:51:57)
+Right. So that is a core engine. And then you have the guardrailing engine, then CLI engine.
+
+(2:51:58 - 2:52:02)
+Okay. And then rest all are normal operations. Fine.
+
+(2:52:03 - 2:52:25)
+But your core engine itself has all that information. So which is what this project is also all about. So how much time we have? Five minutes.
+
+(2:52:26 - 2:52:34)
+Okay. Let's see. I will not be able to finish this, but at least I have shown you a real life use case of this entire thing that we are generating.
+
+(2:52:34 - 2:52:42)
+Okay. So let's see if there are questions. Or if you want, we can start this in the next session also.
+
+(2:52:56 - 2:53:09)
+The tier is expiring. Will it allow me to create a new account with a new email ID? Theoretically, yes. But again, you will have to still set up your billing.
+
+(2:53:10 - 2:53:16)
+Okay. I think the same credit card can be used for multiple accounts. I haven't tried it, but it should be possible.
+
+(2:53:17 - 2:53:23)
+As long as there is nothing pending in your free account. Okay. Against that particular credit card.
+
+(2:53:24 - 2:53:35)
+So make sure that if there is nothing pending, everything is paid up. And theoretically, yes, it should be. So create multiple gmail IDs.
+
+(2:53:35 - 2:53:52)
+I think that will work. Yeah. Are we going to create any production ready agents in this using an ID? See, this takes a lot of time, effort and iterations.
+
+(2:53:53 - 2:54:12)
+If we want to do this in real time, then probably we will not be able to discuss all the length and breadth that we have been able to cover. Because creating one such project itself will take one course. Okay.
+
+(2:54:12 - 2:54:32)
+Literally, the amount of thought process, architecting, iterating, everything. Okay. So maybe if you want, you can propose building a system like this from scratch along with me if you want or offline, whatever.
+
+(2:54:32 - 2:54:54)
+But I can tell you this itself will consume the entire time of the entire course. So I would encourage you to try all these things offline. You know, taking the learnings from this course rather than expecting to create something of this within the course itself.
+
+(2:54:54 - 2:54:58)
+Okay. But don't start from scratch. That is the point here.
+
+(2:54:58 - 2:55:03)
+I never started this project from scratch. Okay. Remember.
+
+(2:55:04 - 2:55:13)
+Okay. So you are always, you know, standing on the shoulder of giants. That's the saying in English, which means this notebook was the starting point.
+
+(2:55:13 - 2:55:22)
+Tell them that follow this notebook. I'm going to create an agent which is like this, like this. Okay.
+
+(2:55:22 - 2:55:57)
+This is the overall task. Ask it to generate an architecture document, review the document before any code generation happens. Once you are satisfied that, okay, it has really understood your requirements, all the features of your application are understood, documented in the PID, system architecture is clear at what stages, what all frameworks will be used, what all files will be created, how will the file be organised into multiple folders and trees.
+
+(2:55:58 - 2:56:13)
+Okay. So this back and forth conversation itself will happen for the first few days. So in the first 10, 15 iteration, sorry, 10 to 15 conversations with the model, I will not even ask it to generate a single line of code.
+
+(2:56:14 - 2:56:37)
+So unless I'm 210% sure that the model is really understood and documented what all I need, then the code generation starts phase by phase. I will, you know, break this entire project. I'll ask the model to, you know, now that you have a complete idea about the system architecture and the PID, break this entire project into 10 phases or five phases.
+
+(2:56:38 - 2:56:54)
+And for each phase, give me a unit test. How do I figure out that that phase is successful? Okay. So it will create another document in which all these phases will be documented and unit test for each of those phases will also be documented.
+
+(2:56:55 - 2:57:12)
+Then you go to a fresh, you know, session and then start with the phase one, do a unit test manually. Some changes might be needed, then go with phase two. I mean, I normally do that way.
+
+(2:57:12 - 2:57:25)
+Now there are agents which will do the phase one, two, three, four, five, back to back on their own. This is what the replete, lovable and those things too. They will require minimum intervention from the users, but I don't prefer those things.
+
+(2:57:26 - 2:57:47)
+Okay. So I normally want to verify each and every phase manually, which is why I will also ask the unit test or maybe let me check if I can just hold on. Let's see how lucky you are.
+
+(2:58:14 - 2:58:28)
+Okay. So I'll do one thing just that we are not doing this project. So I will want you to check this out.
+
+(2:58:28 - 2:58:34)
+Okay. I don't have all the conversations, frankly, but this is one of the initial conversations. Okay.
+
+(2:58:34 - 2:58:41)
+One of the initial conversations. So convert this notebook into a broad level app. You see, I did not start from scratch.
+
+(2:58:41 - 2:58:46)
+That's what I told you. This is three phase agent. I created that somewhere additionally.
+
+(2:58:47 - 2:58:55)
+So that's what I said. You are not going to start from scratch. Even these labs can be considered as your starting points.
+
+(2:58:56 - 2:59:05)
+You see, and that's what I've done. Can you see on the top right? Top right. Convert this into a production level app, create a new folder called AWS infrastructure manager.
+
+(2:59:05 - 2:59:14)
+You see, this is the starting point of this particular project itself. So what I told you is not theory. I have actually implemented exactly in the same manner.
+
+(2:59:16 - 2:59:22)
+This is the creation of the folder. Forget about any other thing. I mean, so many files.
+
+(2:59:22 - 2:59:31)
+Now you are able to see hundreds of them, but this is the starting conversation I'm having now. Read the prompt. Okay.
+
+(2:59:32 - 2:59:44)
+Within the project root and modularize this entire notebook so that the main.py takes the user query from the command line or a list of queries. Submit me the refactored plan first. Exactly.
+
+(2:59:45 - 2:59:50)
+That's what I told you. Don't ever ask for any codes. Make sure that it has understood.
+
+(2:59:50 - 2:59:56)
+Gives a refactoring plan document, which I might have deleted by now. Okay. Which I might have deleted.
+
+(2:59:56 - 3:00:01)
+Okay. Don't. So, but this is the overall plan it had submitted.
+
+(3:00:01 - 3:00:06)
+You can see. So, so many folders will be created. So many files will be created.
+
+(3:00:06 - 3:00:11)
+Phase one, phase two, phase three. And then the refactoring steps will happen. Requirement.txt will be created.
+
+(3:00:12 - 3:00:17)
+Readme.txt will be created. Environment file will be created. And then other configuration settings.
+
+(3:00:18 - 3:00:23)
+So that is in the phase one, you can see. Okay. And then in the phase two, this will be done.
+
+(3:00:23 - 3:00:28)
+Phase three, this will be done. Phase four, this will be done. And phase five, this will be done.
+
+(3:00:29 - 3:00:31)
+Phase six, this will be done. Okay. That's what I told you.
+
+(3:00:31 - 3:00:37)
+And it has just given something, but not yet created. Okay. So, basically, this is how you would be calling.
+
+(3:00:38 - 3:00:42)
+Fine. Something, something. And configuration priority.
+
+(3:00:42 - 3:00:47)
+Now, these are the features, basically. Okay. So, these are the design decisions that we need to make.
+
+(3:00:47 - 3:00:53)
+Okay. And then migration checklist I have got. Total estimated file count is 30.
+
+(3:00:53 - 3:00:57)
+Around 2,500 to 3,000 lines of code. Test coverage. Next steps.
+
+(3:00:58 - 3:01:06)
+Okay. Then, I think the graph can be merged with. So, basically, what I said is, there are a couple of folders here.
+
+(3:01:07 - 3:01:17)
+So, agents is there, and the graph is there. Which is Langraff. So, what I said is, why don't you merge these two? Because ultimately, we are creating Langraff agents only.
+
+(3:01:18 - 3:01:20)
+So, I asked it to merge. Okay. Let's see what it responded.
+
+(3:01:21 - 3:01:26)
+Okay. So, you merge these two. Also, go through the revised architecture.
+
+(3:01:26 - 3:01:36)
+So, these revised architecture I generated from Cloud. Downloaded that and gave it as a, you know, additional thing. Okay.
+
+(3:01:36 - 3:01:46)
+Now, submit me a revised implementation plan. So, this was not generated here. This was generated using Cloud Opus or something, which I used from the web interface.
+
+(3:01:47 - 3:02:00)
+So, there are multiple steps, multiple branches in my usual workflow. I don't generate normally everything from here. The entire brainstorming or most of the brainstorming, I prefer to do it in Cloud.
+
+(3:02:00 - 3:02:07)
+Okay. So, I imported the markdown files. And now, this is the revised refracting plan.
+
+(3:02:07 - 3:02:10)
+Okay. This is the revised refracting. These are the key changes.
+
+(3:02:10 - 3:02:16)
+Now, this is the entire architecture. Okay. Ambiguity detection, this, this, that, observation.
+
+(3:02:16 - 3:02:23)
+So, this is like a React agent ultimately. Okay. So, for complex, Boto3, and for simple, it will go for CLI.
+
+(3:02:23 - 3:02:32)
+Okay. And so on, so on, so on, so on. You can see phase 1, phase 2, phase 3. So, this is the revised phase-wise plan.
+
+(3:02:33 - 3:02:40)
+No code generated till now. Enhanced features as per the new architecture. Fine.
+
+(3:02:40 - 3:02:47)
+Whatever that was. The migration checklist, example usage, this is the output, and so on. So, summary of changes from the original plan.
+
+(3:02:47 - 3:02:52)
+Fine. So, original plan had got two executors. Now, I have got three executors.
+
+(3:02:53 - 3:02:59)
+Agent nodes, originally it was four. And now, I made it five to check the ambiguity of the codes, and so on. Okay.
+
+(3:02:59 - 3:03:04)
+Ambiguity detection was not there. Policy creation was not there. I did that in the revised plan.
+
+(3:03:04 - 3:03:07)
+Fine. Holder structure, separate, I must. Fine.
+
+(3:03:07 - 3:03:14)
+So, these are the changes. Roughly, 1009 of code was increased. So, this was basic three phase, and now it has.
+
+(3:03:14 - 3:03:20)
+So, are you ready to proceed? Okay. This looks good. Update the architecture document also with the latest.
+
+(3:03:20 - 3:03:31)
+So, this document somewhere, I think, I deleted accidentally. And also, create a PRD with the detail-wise phase while. And you will update this document as the progress is being made.
+
+(3:03:32 - 3:03:35)
+Okay. Let's go. So, now, it has only created two files.
+
+(3:03:35 - 3:03:48)
+So, till now, again, no code has got generated. Now, I am asking it to just generate architecture.md and prd.md. That's it. So, in this entire exercise, two documents have got created.
+
+(3:03:48 - 3:03:51)
+One is this. One is this. So, don't be in a hurry to generate code.
+
+(3:03:51 - 3:03:56)
+See. That's my, you know, strong suggestion. Okay.
+
+(3:03:57 - 3:04:00)
+Now, it looks good. Let's begin with the phase one. And that's what exactly I told you.
+
+(3:04:00 - 3:04:07)
+So, now, it has started creating all the files for the phase one. So, phase one, then I will manually verify. Okay.
+
+(3:04:07 - 3:04:16)
+So, it has told me that these are the files I have created in the phase one. I would have now continue with phase two. I would have manually verified that and then come back.
+
+(3:04:16 - 3:04:20)
+This was all done two months ago. Okay. So, now, continue with phase two.
+
+(3:04:20 - 3:04:29)
+So, don't, you know, give too many tasks. So, phase two complete. I would have manually verified that and then asked it to continue to the phase three.
+
+(3:04:30 - 3:04:35)
+So, phase three continued. You can see. Continue with phase four.
+
+(3:04:35 - 3:04:43)
+So, phase four continued. So, phase four is complete. And then, so many things are happening.
+
+(3:04:45 - 3:04:50)
+Next steps, agent five, agent no. So, phase five. So, phase five is also getting completed.
+
+(3:04:51 - 3:04:52)
+Okay. Okay. Okay.
+
+(3:04:52 - 3:04:55)
+Okay. Now, continue to phase six. Also being done.
+
+(3:04:55 - 3:04:56)
+Done. Done. Done.
+
+(3:04:57 - 3:05:01)
+So, next step, phase seven. Okay. Phase seven is also being done.
+
+(3:05:04 - 3:05:11)
+Now, application is ready for immediate use. Fine. Now, I start getting some queries and errors.
+
+(3:05:11 - 3:05:14)
+Okay. I might have got this unexpected error. Some keys required.
+
+(3:05:14 - 3:05:17)
+Okay. So, I see the issue. API keys required.
+
+(3:05:17 - 3:05:24)
+And now, enhancements will start based on these errors and so on. There is another problem now. You can see.
+
+(3:05:24 - 3:05:35)
+There is one more error happening somewhere. So, now it will modify based on that error. Is the console output being saved somewhere? Because I also want to probably save this console output.
+
+(3:05:35 - 3:05:49)
+So, then it created another file, log file. So, there's a logger which got implemented and so on. Now, this is one of the then debugging, masking.
+
+(3:05:49 - 3:05:54)
+So, these are different, different sessions. So, I just opened one of the sessions. This is for another session.
+
+(3:05:54 - 3:06:03)
+This is for the masking of the PIIs. So, let me show you how I did that masking of the PIIs. Again, this is all completely prompts.
+
+(3:06:03 - 3:06:07)
+So, I'm not writing codes. I'm just giving the right set of prompts. Okay.
+
+(3:06:08 - 3:06:13)
+How to do the PII reduction. So, now a stretch goal. Now, that functionality I'm clear.
+
+(3:06:13 - 3:06:19)
+So, a stretch goal. Design and create a professional GUI for this project. So, I'll show you the GUI in the next class.
+
+(3:06:19 - 3:06:30)
+Okay. And don't change the existing code at any cost. Do you want to do a stream read, chain read or fast e-pay for this? Brainstorm and give me the detailed explanation for your choice.
+
+(3:06:31 - 3:06:43)
+I have not asked it to generate any code yet. So, it will give me a detailed set of, you know, requirements. And so, I thought, okay, let's go with chain read.
+
+(3:06:44 - 3:06:53)
+So, this was done in chain read. And some errors were coming, I think. So, that was resolved in the next iteration.
+
+(3:06:54 - 3:07:25)
+So, chain read was the main app. I don't know if you can see this. Okay.
+
+(3:07:25 - 3:07:28)
+This is the chain read code. Okay. Some account ID is there.
+
+(3:07:29 - 3:07:32)
+Guardians are active. And this is the model being used. Okay.
+
+(3:07:33 - 3:07:45)
+How do you help? So, list the AC2 instances in my account. Let's see. Starting your Genia engine.
+
+(3:07:46 - 3:07:51)
+This is the generated code. Now the executor. Execution is successful.
+
+(3:07:51 - 3:08:01)
+This is the instance ID. Super. This is the raw code.
+
+(3:08:02 - 3:08:10)
+Plan is proposed and so on. So, I'm able to trace back each and everything, how things happened. So, this is the front end part of it.
+
+(3:08:14 - 3:08:24)
+So, you see, everything is, you know, happening back to back. But multiple interventions are needed. Okay.
+
+(3:08:25 - 3:08:33)
+So, this doesn't happen in one. I would suggest never redact any region names. So, again, it was redacting too many things.
+
+(3:08:33 - 3:08:36)
+So, I gave a feedback. Don't redact this. Don't redact that.
+
+(3:08:36 - 3:08:45)
+You have to make sure you are redacting this, not that. So, multiple attempts have gone in. And then again.
+
+(3:08:46 - 3:09:00)
+So, I came across another article. So, I gave this article. Why don't you, you know, read this article and make sure that you can utilise the learning from that article in our project.
+
+(3:09:00 - 3:09:04)
+So, even that I do. You see. That entire article was shared.
+
+(3:09:04 - 3:09:10)
+Okay. This entire article with design patterns, codes, and everything. This is all coming from this entire article.
+
+(3:09:10 - 3:09:19)
+And simply I said, is this of any help? See, this is also a good way. Okay. So, now it says, yes, this is very helpful.
+
+(3:09:19 - 3:09:27)
+It matches perfectly on what we are building. So, if you are reading something and you find something helpful, give it to the model. Support the model.
+
+(3:09:27 - 3:09:38)
+Don't expect everything. So, as long as you are supporting the model with all sort of documentation, additional codes that you find somewhere else, which could be related, which could be helpful. Keep on providing all that.
+
+(3:09:39 - 3:09:48)
+Okay. So, model completely doesn't, you know, generate from scratch or hallucinate from scratch. It stays grounded with these articles, with these starter codes and so on.
+
+(3:09:49 - 3:09:54)
+Okay. So, that really reduces the iteration cycle. Okay.
+
+(3:09:57 - 3:10:05)
+So, I don't want you to implement any solution specific. Again, now you can. Okay.
+
+(3:10:05 - 3:10:20)
+Let me end the session today. Yes, Srikanth, you have a question. So, I have shown you how to build a production level app from scratch literally now today.
+
+(3:10:21 - 3:10:29)
+Okay. So, see, building this takes time, but the theory behind it should be clear. So, that was the whole takeaway.
+
+(3:10:50 - 3:11:01)
+So, any questions? What model did you use to refactor? I don't remember. Most of the codes, I have done it from SONET 4.5 only, two months ago. Yeah.
+
+(3:11:01 - 3:11:11)
+SONET 4.5, that is the most common model I have used. 80% of my codes have been generated from SONET only. Unmute.
+
+(3:11:11 - 3:11:15)
+Unmute. Okay. Yes, Srikanth.
+
+(3:11:17 - 3:11:46)
+You can unmute and ask. Hey, Krishan, quick question. When we are generating like phase-wise, what you just mentioned, the procedure, best practise, still do you need to understand the code going inside the Python file? I know you test and you verify each component and they go to next step, right? Like, do we need to understand? This is where the difference between a developer and an architect is.
+
+(3:11:46 - 3:11:51)
+Architect's job finishes in the first four prompts. Got it. Okay.
+
+(3:11:51 - 3:11:53)
+End of the story. End of the story. End of the discussion.
+
+(3:11:54 - 3:12:16)
+Solution architect's job finished in the first four prompts, where we finalise the architecture.md in the prd.md. Done. What all frameworks we are going to use, whether we are going to use guardrails or not, in which step you are going to introduce the guardrails. So all that planning is done before you start writing the first code for the first phase.
+
+(3:12:17 - 3:12:36)
+All the brainstorming is what the job role or the JD of the solution architect is. Solution architect is not expected to implement all these and, you know, break their head with each of these, you know, code implementations and their errors and everything else. Okay.
+
+(3:12:36 - 3:12:59)
+That is what a developer will do ultimately. So LLM engineer, LLM developer, JNI developer, agentic developer, whatever, you know, role that you see, which is a builder role. So you have to clarify right in this, before the start of the interview, is this a builder level role or a planner level role? You have to be very clear with your ask and the kind of role that you are seeking.
+
+(3:13:00 - 3:13:05)
+Okay. You are very comfortable reading thousands of lines of code. Okay.
+
+(3:13:05 - 3:13:25)
+It's very tricky to, you know, get into a builder kind of a profile. If you are very new to Python, just learned a couple of weeks ago, I would still suggest you to, you know, hold on till the end of the course before start applying. But anyway, those process also takes time.
+
+(3:13:26 - 3:13:50)
+And if you have already some Python background, you'll have to strategically, you know, place your profile exactly. Because again, the point is, if they hire you for building an application like this and you have just started Python three weeks ago. I mean, no way I can see you will be able to build a production level app like this.
+
+(3:13:50 - 3:14:00)
+Even with the help of LLMs, I can guarantee you that. Anyone can say anything, but I'm giving you the realistic expectation here. Okay.
+
+(3:14:00 - 3:14:18)
+Although these LLMs are going to give you 90% of the code, maybe even 99%, but that 1% which is not working, it will take you 99 days to figure out if you're not a coder at heart. Yeah, that makes sense. One bug will keep you holding.
+
+(3:14:18 - 3:14:22)
+Okay. And you'll feel many times giving it up. Okay.
+
+(3:14:22 - 3:14:28)
+Praful, yes. Go ahead. Okay.
+
+(3:14:28 - 3:14:35)
+Yeah. I am like coder at heart. Like I've been going through these Python for a long time.
+
+(3:14:36 - 3:14:47)
+Mostly I use LLMs, especially Claude to generate code. And I understand like where things are going. I can debug, but I still don't have that confidence.
+
+(3:14:49 - 3:15:09)
+But even in my job, like currently I'm a principal statistical programmer. These days, I don't remember all the codes. So practically speaking, how much is the basic? I feel like, you know, basic, I can explain lists.
+
+(3:15:09 - 3:15:20)
+I can explain some data structures. But I can't go more than that. Does that suffice? Okay.
+
+(3:15:21 - 3:15:39)
+So point is, as long as they are not asking you to write down a code during the interview, that's all fine. Okay. Understanding the actual components, the type of code or the exact data structures which are needed to implement a particular solution.
+
+(3:15:40 - 3:15:54)
+If you're able to address those properly, then we are still good. So for example, to create a line graph agent, what are the components we needed? We needed this chat prompt template. We needed the LLM with a structured output.
+
+(3:15:55 - 3:16:14)
+We are creating Pydantic schemas so that you can enforce the model. So if that is the level of explanation you are able to give, then it's just the manual process of writing which can be outsourced. But if you are simply saying that we want to create an agent which will write down a code, another agent which will review the code.
+
+(3:16:15 - 3:16:44)
+So this is the explanation for a solution architect. But a builder will explain it in a more deeper way that this agent, I mean, the entire agent philosophy, the agent state, what all components are there, and how is the agent state, you know, created using Pydantic or Typedict, or then the follow-up question will come. Why did you use Typedict and not Pydantic? And then the solution architect is, you know, wondering and pondering.
+
+(3:16:44 - 3:16:56)
+But the developer will be able to justify that. Okay. So point is, you have to give or build enough confidence to the interviewer that you can implement things technically.
+
+(3:16:56 - 3:17:13)
+So whenever you are speaking, some of these, you know, terms should come up. So, which will, you know, give a flavour that you know things technically as well. They may not ask you to build the project right away during the interview.
+
+(3:17:13 - 3:17:28)
+But yeah, that's how I would see it. Okay. Yes, sir.
+
+(3:17:30 - 3:17:38)
+More time in analysing trade-offs, coaching teams, reviewing the failures, defunding guardrails. Yes, it was very good. So that's very well articulated.
+
+(3:17:38 - 3:17:43)
+That's the correct expectation from architect. Okay. Managing technical debt.
+
+(3:17:44 - 3:17:53)
+Yes. And of course, overall project costing, influencing decision across engineering team, product, businesses. Much of this is preventative.
+
+(3:17:54 - 3:18:04)
+Yeah, yeah, please. Yeah. I have a question actually.
+
+(3:18:05 - 3:18:17)
+So we learned the land graph. Okay. I have a use case, the real-time use case, convert the business requirement to Jira features and stories and create the one in the Jira.
+
+(3:18:18 - 3:18:45)
+Okay. So, you know, sometimes a bit confused whether should I use really the land graph or just, you know, plain two, three Python programme to do that one. So, at what stage I should have, you know, decide, okay, you know, going with the land graph for this use case is a good or just, you know, give up because that's too much things we are happening in the land graph.
+
+(3:18:45 - 3:19:02)
+I strongly suggest, so for all these hypothetical scenarios, okay, or established scenarios, whatever it is, okay, since hypothetical, because we don't have the application done right away. We are going to create it. So anything which is going to happen in future is hypothetical.
+
+(3:19:03 - 3:19:08)
+Okay. So all these kind of potential use cases, let's say that is a better word, potential use cases. Okay.
+
+(3:19:09 - 3:19:23)
+I would, again, go back to the models, whatever the model I trust, again, Gemini or Cloud, whatever, best models which are available, state of the art. Do brainstorming. Again, the same question which you have asked me, I'll ask it to my model.
+
+(3:19:23 - 3:19:36)
+Okay. And again, go with the tree of thought kind of prompting. So for example, whether to implement this in Python or use land graph agents.
+
+(3:19:36 - 3:19:46)
+Okay. Think thoroughly and give me the pros and cons for both the approaches and then suggest to me which approach will be better for this particular use case. See, that is the prompt.
+
+(3:19:48 - 3:20:03)
+Okay. I see. So I want everyone to, you know, be capable enough to help themselves rather than me trying to provide my views or my thought process in solving your problem.
+
+(3:20:04 - 3:20:08)
+No, then it will never, you will ever be dependent on me. Yeah. Okay.
+
+(3:20:09 - 3:20:21)
+So my idea is to teach you the right way. So all the brainstorming, I do it from these models these days because I have my intuitions, no doubt. For any given use case, I have my intuition what will work.
+
+(3:20:22 - 3:20:27)
+And that is, I can contradict it. Let me see what the model says. Okay.
+
+(3:20:27 - 3:20:40)
+I do not directly want to jump into the solution. I'll try to give a fair chance to these models to present their solution, their analysis. Based on my previous years of experience, I know what works, what doesn't work.
+
+(3:20:40 - 3:20:47)
+And then the contradiction phase starts. Four or five interactions will be contradiction. If you're doing this, then this will be a problem.
+
+(3:20:48 - 3:20:52)
+Okay. If you're doing that, then that will be another problem. Okay.
+
+(3:20:52 - 3:21:08)
+So why are you unnecessarily complicating? Don't you think this will be a better solution? And this is useful for learning because for your contradiction, the model will present a better solution, which you also might have not thought. So that is how you also become a better planner, better architect. You see.
+
+(3:21:09 - 3:21:13)
+Okay. Yeah. Actually, it's a real time use case, only partially done by our team.
+
+(3:21:14 - 3:21:19)
+Okay. But I'm working on integrating with JIRA. So I'm a bit confused.
+
+(3:21:19 - 3:21:23)
+So that's why I asked. But I understand. I have to use AI to solve my problem.
+
+(3:21:23 - 3:21:28)
+Okay. Use the AI tool to post my questions. And yeah.
+
+(3:21:29 - 3:21:30)
+Thanks. I got it. Yeah.
+
+(3:21:30 - 3:21:33)
+Thanks. Okay. Fine.
+
+(3:21:33 - 3:21:39)
+Maybe it's already quite time. I'll have to hang up now. We'll meet next week.
+
+(3:21:39 - 3:21:41)
+Thank you. Have a nice day. Bye-bye.

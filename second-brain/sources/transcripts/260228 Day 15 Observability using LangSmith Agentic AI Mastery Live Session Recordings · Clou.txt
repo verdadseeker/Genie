@@ -1,0 +1,1169 @@
+(0:29 - 1:01)
+Hello everyone, am I audible? Good evening Prashanth. Yeah. Thanks for the labs and sessions. 
+
+I was able to complete and build that, you know, RAG customer support agent. It was, you know, a proud moment when I was able to view that customer agent on, you know, browser. Second QA.
+
+(1:02 - 1:27)
+Both local and cloud, both the versions, right? Local, I didn't, you know, I've not done it, but yes, on cloud. But on AWS. Now I'll replicate on, you know, OCI also and share, you know, my perspective on that.
+
+(1:28 - 1:44)
+AWS was very smooth. All steps are very clear. Okay, nice.
+
+(1:52 - 2:27)
+Yeah, I had tried to document every possible thing that you might encounter all possibilities because this project has got some maturity by now, because we have done this a few times. So we know all the nuances. See, more or less, it's not only about this particular project, but more or less, if you follow the steps, you can replicate. 
+
+I think towards the end of the last session, I also demonstrated how you can get to this kind of a code. And that is important. Okay, so try replicating any other project, upload it, follow the same steps.
+
+(2:28 - 2:50)
+Okay, first, you know, discuss about what architecture you will use for deployment. What cloud you will use, what resources you will use. So once all those discussions are, you know, satisfactory, you are convinced, okay, that this is really going to work, then you can start asking for the code, don't directly jump into the code.
+
+(2:51 - 3:54)
+And again, I suggest to first prepare the environment properly. Okay, so environment preparation means right from installing Python in your local or whatever cloud to installing all the libraries, then setting up the environment variables. Okay, and then activating all the libraries. 
+
+And then, you know, setting up the proper folder structure. So and then the execution part starts actually. So I was going through the steps as well as you know, your video session, live session video. 
+
+So that helped me to, you know, and achieve that. And when I thought of, you know, show you, but was screenshot. No, I told you, if you had stopped, and then restarted every time, the static IP changes or the you know, IP for the EC2 instance changes.
+
+(3:55 - 4:25)
+That could be one reason. No, no, it is showing the same. I'll pick, I'll try and in case anything, you know, I may need help. 
+
+So I take. Remember that even if the EC2 instance is not deleted, if you stop it and run it once again, maybe a couple of minutes, the IP address will change, the public IP will change, unless you attach a elastic IP to it. Okay, I didn't do anything because I don't have that much of knowledge on that.
+
+(4:26 - 4:30)
+You didn't stop and restart. Right. Okay, fine.
+
+(4:31 - 4:45)
+There was something there. I'm trying to restart, but it's not restarting. Anyway, I'll restart. 
+
+I'll rework on that and then. Yeah, yeah, let us know. But remember that if you.
+
+(4:45 - 4:55)
+We'll check the public IP. Once you pause the entire instance. And when you restart the instance, then the instance IP address, public IP address changes.
+
+(4:56 - 5:52)
+Okay. No, I didn't stop anything. So it should remain the same. 
+
+And remember, you will have to remove the S every time. Unless you make your EC2 instance secure by attaching some SSL certificate, slideboard, that was unsecured instance as of now. But again, that everything is a cloud operation. 
+
+So that goes beyond our, you know, course material, you can say anyone who is taking up the cloud courses simultaneously should be able to figure the remaining things out. But once the instance is up and running, once the application is up and running, once you're able to hit the browser and, you know, check the application, that means more or less we are done technically. Now, the remaining thing is your cloud, which independently you can, you know, figure it out.
+
+(5:53 - 6:11)
+Yeah, it's a good idea. I should restart the instance. And obviously, IP changed. 
+
+So we'll access it from the IP. So you have to go to the instance page, click on that instance. And if you see the information about the instance, the IP address will be displayed exactly the same.
+
+(6:11 - 6:43)
+It's there. Process is same. But just because many times what we do is, and then we just do refresh the browser. 
+
+And then you are wondering and pondering that this was working half an hour ago. And then when I refresh, why is it not working? Okay. And without realising that before you refreshed, you had actually paused your EC2 instance or done something with the instance. 
+
+Okay. And that is where things might have got broke. Maybe.
+
+(6:44 - 6:50)
+Thank you. Connect EC2 instance and restart the application. That's the easiest way.
+
+(6:50 - 6:54)
+Restart the code. Correct. So just restart the application.
+
+(6:54 - 7:05)
+You have to do one thing. If your application was running and now it is not running, these are the two quick fixes. One is check for the IP address and delete that as.
+
+(7:05 - 7:39)
+And second thing is, if you are able to hit the IP address, that is not a problem. Then the second catch is restart the application maybe. And third is stop it and look at the logs. 
+
+Even for viewing the logs, I had given the commands. So what I would do is just copy those last 50 lines from the logs, go to chat-jpt and ask for the solution. Chat-jpt is very good enough to provide me that solution. 
+
+Right. So that is the easiest way. So, you know, try helping yourself a bit.
+
+(7:39 - 7:49)
+Getting used to these things will really help in the long run. I used Claude actually. So since you mentioned about the... Chat-jpt doesn't matter.
+
+(7:50 - 8:51)
+No, chat-jpt is also used. But I used Claude in the recent project. So it came in one or two places. 
+
+So there were some permissions issues. So they asked me to reset the permissions and also that worked. And that was the only place I got stuck. 
+
+Rest smooth. And there was an issue on a port. I think that is missing. 
+
+So you have to open 8000 port. That's it. Ubuntu instance. 
+
+That's it. Okay. Nice. 
+
+Nice. Nice. Okay. 
+
+So today's agenda is traceability and observability. That is one. And we will do both in Lang-Smith as well as Lang-Fuse. 
+
+So and then if time permits, we'll go towards the last topic, which is on MCP. Okay. So I have a couple of hands-on today.
+
+(8:51 - 9:06)
+One on Lang-Smith end-to-end and one is on Lang-Fuse end-to-end. Lang-Fuse is I'm taking for K21 for the first time. In the previous two batches, I had not done Lang-Fuse.
+
+(9:06 - 9:51)
+We had only done using Lang-Smith. So you guys are lucky that this time we're also doing Lang-Fuse, which is the open source version of the Lang-Smith. Lang-Smith is a paid library, but also comes with very decent, you can say, usage limits per month. 
+
+That's around 1000 traces per month. Lang-Fuse also comes with both managed and hosted versions. So there you get more, you can say, free usage that is around, I think, 5000 traces per month. 
+
+Okay. So beyond that, again, Lang-Fuse also goes into a paid model. Okay.
+
+(9:51 - 14:59)
+So it's like both are freemium. Okay. Lang-Smith is quite end-to-end. 
+
+I mean, so we'll talk about both Lang-Smith and Lang-Fuse. No worries, one by one. And I'll show you how the traces look like. 
+
+We'll go into the documentation pages and figure out. But yes, but before we get started, let's understand what is observability and traceability. Why do we need all of that? Okay. 
+
+What is the end outcome? So before this, anyone wants to have any last questions before I get started? All good? Everything is fine? No one has any questions, queries? Okay. So day 15 and 16. Okay. 
+
+So although I have a presentation on observability and traceability, I'm just sharing this presentation in the chat. Okay. So observability, monitoring and traceability, understanding AI agent systems from the inside. 
+
+So you want to see what your agent is actually thinking. Okay. So this is the topic that we are taking now. 
+
+So otherwise, how far we have reached? So almost building agents is done. We have done a lot of agents of almost every other design pattern we have taken in line graph. Also, we built few agents in CRIUI, I think last Saturday.
+
+(15:00 - 15:38)
+And on Sunday, we did the deployment, okay, both in local machine as well as AWS cloud. So more or less the technical part is done. Okay. 
+
+Now what remains is this observability piece. And one last topic is that is on model context protocol. And some discussion on A2A as well. 
+
+So this time, I'm going to also do some hands-on lab in MCP. Until the last batch, we just used to have a lot of discussion on MCP. Prashant, it looks like you are on mute actually. 
+
+We are not able to hear you. I'm not sure. I can hear.
+
+(15:39 - 16:58)
+No, we can able to hear. Yeah, I can hear too. You have to increase the volume maybe. 
+
+Yeah. Okay. Thanks for confirming. 
+
+Yeah. So as I said, in the previous two batches, we did not have enough hands-on on MCP A2A. But this time, I am planning a proper end-to-end project plus our hands-on both using MCP. 
+
+We will use both local MCP servers. And the standard mode of connecting would be your STDIO. Okay. 
+
+And the other is a remote MCP server. We'll create both, connect with proper databases as I think I promised the last week. Okay. 
+
+We'll do this project tomorrow. Okay. Let's see. 
+
+We'll be able to start with the MCP discussion today if time permits. And then we'll do the hands-on tomorrow. Yeah, that's the agenda high level. 
+
+And if everything finishes tomorrow, then maybe tomorrow is the last session or otherwise, it will go to the next week because more or less MCP is the last topic. Okay. Unless there is something which I might have forgotten to cover, but I do not remember.
+
+(16:59 - 17:08)
+Let's see. Okay. So this week or the last week, the next week will be the last week for this programme. 
+
+I have given you a high level idea. Okay. So let's see what is observability.
+
+(17:09 - 18:18)
+So observability is a 30,000 feet of what is happening within your application. Traceability is drilled down, doing a post-mortem and you want to dissect your application and see exactly each and every API call, what went into the model and what came out of the model, how much time did it take, how much was the costing, what was the context given to the model. And if you are setting up some guardrailing, then what kind of guardrailing was active, what kind of PII reduction happened and all that. 
+
+Okay. So you want to trace each and every API call that is your traceability in short and observability is at a 30,000 feet view, what all is happening within your application, what is the overall latency, what is the overall cost for one customer interaction or one end-to-end cycle, what is the overall cost, where is the bottleneck. So at a high level, if you want to observe the performance of your application or evaluate your application, that is what the observability is more about.
+
+(18:19 - 19:44)
+So both mean monitoring in one sense. Okay. Is it something like monitoring of the application like we do in infra-monitoring? Yes, but this is more like application level monitoring rather than the infrastructure monitoring. 
+
+Yes. And within the application also, we are not monitoring all the other resources, especially the monitoring is with respect to the API calls being made. Okay. 
+
+And all the latency cost, everything which is related to the API calls. So that is what is most important in any LLM based applications or even agents. Okay. 
+
+Which agents are getting triggered in what sequence that is all about the application. So yes, you want to trace, let us say you created a swarm of agents, you created a swarm of agents or a crew of agents, let us say what you do in crew UI. And not all agents are getting triggered for a particular API call, sorry for a particular user request. 
+
+So then you want to exactly trace that which all agents are getting triggered in what sequence they are getting triggered. So that is what you can do it in observability. Now, within each of the agents, what was the input? What was the output? What was the agent state before and after? That is the traceability part of it.
+
+(19:46 - 19:51)
+Right. So literally, you can monitor your agents in production. Yes, that is the whole idea.
+
+(19:52 - 23:01)
+Correct. Okay. So the core problem, agents are fundamentally different from traditional software, they make autonomous decisions and a lot of impromptu decision makings are going to happen because of your LLMs involved. 
+
+Okay. So in traditional software, you have the well-defined input, the processes well-defined, what all calculations are going to do, what all processing is going to happen, what are the steps of execution, and you get the desired output. Okay. 
+
+You may not know the value of the output beforehand, but you know exactly what is expected out of it. Okay. So if you want to do the debugging, you can put print statements across each of these steps in the process, and you can keep a track. 
+
+Okay. We have gone to line number 9, line number 15, line number 20. And you can step to the code and also reproduce the codes as long as you are able to fix the random seed. 
+
+Okay. So this is how you would normally do in machine learning or even traditional software development. Agent wise, again, user queries the input, usually the LLM does the reasoning. 
+
+Again, depending on what kind of setting you have provided in the LLM for reasoning, it may be a low reasoning, medium effort reasoning, high effort reasoning, or extra high effort reasoning. So these are the settings for the latest models. For the previous generation models, instead of setting up the reasoning, you have the capability of setting up the temperature. 
+
+So temperature controls the creativity. Okay. So based on all that the outputs and the time the model will take will to respond will differ. 
+
+Okay. Then again, these models are also attached to a lot of tools. So which all tools were decided by the model to be executed and what were the actual queries, okay, for each of the tool calls that is also coming from the models. 
+
+Okay. And if needed, more reasoning will happen more iterations will happen more tool call will happen that is like a iterative process. And this will completely be dependent on this input. 
+
+Okay, if the input is very straightforward, plain and simple, then number of iterations might be much lesser, maybe one or two. But if the input, the user query is very complex, multi step, many things the user has queried at one go, then multiple tool calls will get triggered, maybe simultaneously or one by one that depends on the architecture that you have created. And back to back. 
+
+And finally, once all the context is available with the model, you will get the end output. Okay. So what went in is this input, what came out is this output and it can act as a black box. 
+
+Okay. Because you are not literally able to view what the model is reasoning or thinking in each of these intermediate steps, if you have not, you know, implemented them at a low level. Okay.
+
+(23:01 - 24:33)
+So what is low level? So, line graph is more like a low level API code, whereas query is more like a high level. Okay. So you create your own states, memories, and you know, the way that you can track each of these is much, you get a more control in the case of line graph. 
+
+These are some of the differences we have already discussed in the last session. Okay. Creva is a more like a higher level wrapper. 
+
+Okay. So, fine. So key differences between again, traditional application and agent you can go through. 
+
+So this is what I have discussed. So in the traditional software or application, the output is deterministic, which means every time you give the same input, you get the same output. But again, in the case of agents, even though the input is same, but there can still be a chance that the output can vary. 
+
+Okay. You cannot 100% guarantee error messages. So you will get proper error messages here, you will get vague API failure messages, maybe like 429 error. 
+
+Now, unless you are not knowing exactly the reasons for the 429 error, it will be difficult for you to figure out. Authentication error, server error, timeout error, n number of errors are there. Okay, you will have to find out what in multiple errors, the error code is still the same.
+
+(24:34 - 26:34)
+So that is again a bigger problem. Reproducibility, this is easy, but here it is different because if you have different LLMs with different settings, it can still change. Costs are predictable here are variable because again, it will depend on the user query, complexity, steps it has taken to execute, and so on. 
+
+And debugging is also simpler. In this case, it can be a bit more trickier. Okay, so these are the five critical reasons for observability, that is debugging. 
+
+Your voice is breaking now. Yeah, Prashant, we are not able to hear you. Is it working? Okay, so this is what I got. 
+
+My Zoom app got crashed and I had to restart. I will just catch up again. Sumesh, you had raised your hands.
+
+(26:37 - 28:31)
+Yeah, Prashant, we were not able to hear you. Yeah, yeah, I realised that. Okay, that's why I stopped speaking because the screen got frozen and I could realise that. 
+
+So what I want to say is this, let me repeat it from here. Okay, so nothing much. I instantly recognise that there is something wrong with Zoom app and it finally crashed. 
+
+I do not know. Sometimes it may happen that it starts doing upgrades while the session is still on. I do not know, but that happens. 
+
+Anyway, so yes, these are the five critical reasons I have tried to compile. Okay, three in this page, two in the next page. Okay, so there are some scenarios are there. 
+
+I do not want to really read out everything. I hope everyone can do this after the end of the session also at home, but let us go at the high level points. I hope that is okay, right. 
+
+I have tried to give this more like a study notes and I mean, instead of me repeating each and every point, I will just probably only try to highlight the important ones, right. Okay, so in this case, without observability, okay, I mean, it is very difficult to order status is not working, what this statement means. I mean, that itself is vague in the first place, okay. 
+
+And without observability, you do not know what these agents have done, what kind of API calls were made, which agents were triggered, in what sequence they were triggered, what were their states before and after, what were the tools. Okay, what did the LLM decide and so the user is still not happy. So with observability, you can literally see the exact LLM prompt, which are the tools which got executed, which all errors which happened in between and you can try to reproduce these errors and fix.
+
+(28:32 - 30:34)
+Okay, so that kind of a debugging capability becomes immediately available to you once you start looking at the system inside out. So again, your monthly bill is let us say $5,000 in LLM cost, where you are expecting only $2,000 with the same amount of let us say user queries. Now again, without observability, just wondering and pondering why is the cost so high, why which queries are very expensive and can we optimise? So answering these three questions, because these are the questions coming from the stakeholders. 
+
+Okay, so without observability, again, it will be difficult to figure out what is wrong in the system which is leading to a high cost. But now with observability, literally, you can see the per token, sorry, per query usage of the tokens and then identify the inefficient prompts. You can reduce the prompts or if multiple calls are happening back to back, you can also think about doing some prompt caching if the same context is being used over and over again. 
+
+Okay, so prompt caching is a fancy concept, but it is not so easy to, I would say, implement or even benefit from that is the more appropriate word. Okay, let me repeat the last statement. Prompt caching looks very promising. 
+
+Every time we discuss prompt caching and say that okay, you are going to save xyz cost, you know xyz impact is going to happen on the cost. But to be able to benefit from that kind of a cost, there has to be some, you know, or you can say your application needs to be in a format which can benefit from that prompt caching. That last statement is a bit tricky to understand.
+
+(30:35 - 31:23)
+So, not every application that you build can really benefit from prompt caching. So, is your application going to benefit or not? That itself is the biggest thing to wonder and ponder, I would say. Because unless, for example, the same system prompt is being used, I am just giving a high level idea. 
+
+Okay, let us say you want to put the system prompt in the caching. Okay, why system prompt? Because you know that for this particular chart application end to end, the system prompt is mostly going to be common for all the charts. But usually the system prompt is what? 5 lines, 10 lines, 15 lines, 20 lines.
+
+(31:24 - 32:03)
+That may be what? 50, 100, 200, 300 tokens. Minimum caching tokens for OpenAI is 1024. Minimum caching tokens for Gemini is again 1024. 
+
+And minimum caching tokens for Anthropic model is 4096. So, unless you have a huge amount of context to be cached, they do not even accept it. Even if you try to put it on your cache, it rejects, the server rejects.
+
+(32:05 - 35:57)
+So, if the API call is requiring some inputs, which is, and this is the amount. So, why I did mention about the system prompt? Because system prompt is going to be mostly static part of the overall prompt. See, the overall prompt contains normally two parts. 
+
+Part which is static, usually which is the static system prompt, and a variable part of the prompt, which is containing more context, the previous state of the agent execution, the user query. So, the variable part, and the static part. Static part is what this chatbot is all about, what is the context we are talking, what this chatbot is supposed to behave, some, I mean, what kind of queries it is supposed to answer, that role, goal, overall task, constraint, this is probably the static part of the overall prompt. 
+
+The dynamic part of any prompt would be the actual context, the actual user query, the actual agent state at that point when the API call is being made. So, these are the variable part. Many times, for example, in the RAG applications, you will find that the variable part is much, much more than the static part. 
+
+So, in the variable part, you will have the actual context that you have retrieved from your documents. So, this, although I am mentioning it as small in my fingers, but this itself can be much bigger. So, let us say your context, that variable part, let us use the word variable part of the prompt template, or the prompt itself is, let us say 3000 tokens, whereas the static part, which is mostly common across all the charts is just 200 tokens. 
+
+Then such a system, such an application cannot benefit from prompt caching. It is as simple as that. That is what exactly I repeated. 
+
+So, these are the constraints. Remember this. What else? So, you can identify the inefficient prompts, optimise expensive operations, reduce the bill. 
+
+If you are really interested, you can take this guide, prompt, caching, open AI. So, you will get this kind of guides, Gemini, Claude, just sharing all these three pages. And whatever we discussed is there, and I think the constraint will also be there somewhere. 
+
+So, maximum how much time can it be retained? Yeah, that is exactly what I was trying to tell you. So, unless your input prompt contains more than this part, which is static, which is going to be common across the entire conversation history, then only this makes sense. So, this is the constraint for Gemini, which is, so if you are using bigger models, 3.1, then minimum token limit is 4096, below which the server will reject the caching. 
+
+And for Gemini 3 and 2.5 models, it is 1024 tokens. And for, so the pro models have a higher token limit for benefiting from caching, remember this. And Anthropic, I think across all models, it is 4096 only.
+
+(35:59 - 36:23)
+Somewhere it is mentioned, you can check. Yeah, cache limit. So, minimum cacheable prompt length.
+
+(36:29 - 38:01)
+So, before we jump into any exotic ideas to reduce the cost, one has to be very much familiar with these kinds of limitations. So, obviously, one very good idea to reduce the cost was prompt caching, but these are the catch nuances. So, what else? For simpler, simpler task also, you are using a pro model, which is much more costing or expensive, that is again not a good idea. 
+
+So, for example, in our customer support agent that we built last week and the last few weeks, we had used the same model across all the 3, 4, 5, 6 blocks, remember. So, this was our system. So, we use the same model here also, here also, here also, here also, here also, that is again not a good idea. 
+
+So, these are much simpler tasks, simple categorisation is there, sentiment analysis is there, you can use a much cheaper, faster model, whereas for the response generation, you can go for a decent model. I am not saying pro models, because again, this is not a very complex task. So, but when you multiply that number of queries to 1 million or something like that, then just saving 2 code blocks out of 5, that is like 2 by 5 is like 40 percent.
+
+(38:03 - 40:48)
+So, 40 percent reduction you will instantly get by switching to a much cheaper, faster model for these two tasks immediately. So, that kind of things you have to think. Quality assurance, again customer complaints, agent gave wrong refund amount. 
+
+So, this is like quality issue, the agent is not able to resolve the customer query properly. So, without observability, what data was used by the agent, we have no idea, how did the calculation happen, what was the reasoning behind that calculations, was the calculated amount just a hallucinated number, or did it actually use a calculator tool to calculate that number in real time, all of these. So, is it again one-off or is it a systematic error? So, are there many more similar queries where users have flagged that kind of calculation errors. 
+
+So, then you know that, yes, it is a systematic error, not a one-off error. So, you will need to make your agent more robust. Okay. 
+
+So, you can also do a exact replay, see the calculation steps, identify the root cause. So, that is all you can do using observability. Does prompt caching relate to model context window? No. 
+
+So, although the cached is using the model context window, I mean caching whatever amount of token that you are going to use, is still going to use the model context window, but the concepts are slightly different. Okay. So, in caching, what happens is one time the context is learned, the let us say model will not try to generate the vectors for the inputs again. 
+
+So, computational overhead is less, which is why they are going to give you the benefit of cost, because no GPU is needed once it is cached, because for the first time, they will charge you, let us say. And why did they charge you? Because they have to calculate the vectors and everything for the part that you want to cache. But once it is calculated, it is kept in the memory as it is.
+
+(40:48 - 41:10)
+Okay. So, subsequently, you are just using those vectors, it then acts as a lookup table without making any changes. However, in the case of context window, every time the entire, it is like dynamics case, okay, your entire input gets recalculated, your entire output gets recalculated.
+
+(41:11 - 42:01)
+And the total input plus output will be equal to the or less than the context window. That is how it goes. So, without caching, the entire input is recalculated in the GPU, what is recalculated, your QKV vectors are getting recalculated, query keys and values. 
+
+Santosh is asking how to do performance testing for LLM. Performance testing in what sense? Again, this is slightly vague question. Unless you identify what task this LLM is supposed to verify, how do you evaluate the performance? So, if you are saying RAG evaluation performance, that is the application performance.
+
+(42:01 - 46:05)
+If you are saying model performance, then you have to mention the task. Let us say performance of a model on classification task, performance of a model on question answering task, performance of the model on sentiment analysis task, performance of the model on part of speech tagging task, performance of the model in named entity recognition task, performance of the model in embedding task. So, for each task, the metrics are different again. 
+
+Because why you need to identify the task? Because the metrics are different. The way you would evaluate the model is different. So, for summarization task, you talk about blue score, rogue score, perplexity. 
+
+So, these are different, different metrics, model evaluation metrics. Just search for model evaluation metrics. These are not a part of this course. 
+
+So, I am not going to discuss much. So, you can just check for this model evaluation metrics. This is what you are probably looking for. 
+
+Just search for LLM model evaluation metrics. And you will get several articles exactly with the same theme. And in each of these, this is the first thing that they will do. 
+
+They will try to fix the task. And based on the task, then the benchmark data set will be fixed. Okay. 
+
+So, for example, glue, super glue, these are for summarization task. Okay. So, once you fix your task, then based on the task, the metrics will be decided. 
+
+And then to evaluate the model's performance, you will have to also fix the benchmark as per that task. Because if the task changes, the benchmark data set will also change. You cannot use the same benchmark data set for every task. 
+
+Okay. So, a lot of things go. Okay. 
+
+Link, this is not a link. This is just okay. A web search I did. 
+
+Okay. Fine. Okay. 
+
+So, let us continue. How do we do load testing in production? Number of times agents will run will be very high. Okay. 
+
+Load testing is more of the LLM ops concept, actually, operational part of it, which we do not want to discuss here. Okay. It is more of a LLM ops kind of a thing. 
+
+LLM operations, just like machine learning operations, we have LLM operations. So, simple answer is you can, so wherever your model is, okay, and your application is, they can be on the same server, they can be in two different servers, your application has to be able to scale. So, you can set up automatic load balancing ALB for your application. 
+
+If your application is hosted on an EC2 server, you can put triggers for automatically scaling. So, that is how usually people would do it. Okay. 
+
+But again, load testing, if you want to do, you will have to literally, the way we normally do is in SageMaker, I set up a pipeline and simulate this kind of a scenario, okay, that we are firing 1000, 10,000 API calls to the same endpoint. And then we want to see whether the application is scaling up or not. And then for each of these API call, you are also monitoring the latency. 
+
+Okay. So, that is normally done using, means I have been doing using SageMaker pipelines end to end. Tool, I have not been using tool.
+
+(46:06 - 48:03)
+I mostly have been doing this at a, you know, developer way, which is using SageMaker mostly. Okay. So, models and applications on SageMaker, SageMaker custom endpoint for deployment, and then you start doing it. 
+
+So, that is one way. Otherwise, if you want to do it, then you can set up the observability. I mean, if you want to go the tool wise way, then same, again, then I would say the same, but trying to aggregate is going to be a challenge, because these tools are going to give you API level, you know, traceability, which means if you are simulating a system which is making 10,000 API calls, how do you aggregate the metrics for those 10,000 API calls? So, you probably will have to still write down a lot of codes. 
+
+Okay. So, that is how it is. Maybe we can discuss all of those things. 
+
+I will also give a Jmeter. I have not been using those, frankly. Okay. 
+
+So, I have been doing a more traditional way. And one way is this using the observability itself. You just write down codes too, because that is very easily, you can retrieve the traces using codes also, just a few lines of code, you can retrieve the traces. 
+
+And when you have the entire trace, you have the latency of the cost and everything from that trace itself, okay, which is what we will also see in LineFuse, you can literally retrieve the entire trace. And once you have the trace in hand, then you can start doing. So, this is like retrieving the entire trace, okay, using codes.
+
+(48:03 - 49:16)
+So, for each of the traces, you can actually identify from there. Okay. So, this is one more way you can actually do it. 
+
+But you will have to simulate a system somehow. If you want to use a tool, it might already be having that facility. Okay, let us compute this. 
+
+Yeah. So, performance optimisation. Basically, here we want to find out where is our system bottleneck? Is it getting slow at the retrieval stage? Or is it using some particular block of the entire line graph workflow? Or is it getting slow at the router stage? Or is it getting slow in the parallelised part? So, where exactly the overall process is getting most slow, okay, or slowest? So, that is what you can find out. 
+
+Also, in which parts of your entire workflow, the costing is the highest. So, those kind of things, you can easily trace if you have set up the observability properly. And this is the last and the most important part.
+
+(49:16 - 54:00)
+You can also empower your end users to also give a rating after each and every chat. And those ratings can be also tracked. Okay, that is the beauty. 
+
+Okay. So, for each interaction, the user can provide a satisfaction score, maybe between 0 to 5. Okay, or 1 to 5, let us say. And those stars or whatever scores you can say, are bound to the traces. 
+
+So, the moment you retrieve the trace, you are also able to retrieve these scores. And if some textual feedback is also there, like a comment, that also can be retrieved easily. Okay. 
+
+So, for example, let us say I was expecting a 50% returns, or maybe 30% return policy, whatever. And the model decided to only give me 10%. So, then I can always give that in the feedback, doing a thumbs down or maybe scoring the overall interaction as 1 or 2 maybe. 
+
+Okay. So, what to observe? There are three levels. One is the application level. 
+
+Okay. You can literally observe each of the response request or request response pairs, whatever goes to the model, whatever comes out from the model, that is our request response pair. Overall time, that is your latency. 
+
+Error rates, how many times your requests are overall failing. Success rates, how much. Yeah. 
+
+So, this is at the entire application level. Okay. Then agent level. 
+
+Okay. So, this is a deeper visibility. So, for example, what did we actually ask the LLM? So, the actual prompt, now you are giving to these agents. 
+
+And what exactly was the output coming from these? So, how many tool calls were used? Which tool calls were used? What was the data returned by each of those tool calls? Okay. How did the agent choose those? So, basically the reasoning effort of those LLMs in this case. And how did the state change before and after that particular thing? And then at a business level. 
+
+Okay. Which metrics matter to your business and stakeholders? In this case, query type distribution. So, what are the users asking about mostly? Okay. 
+
+So, are they asking technical queries, non-technical queries, refund related queries? Okay. Whatever, because that insight is going to be really helpful for the business. Because if a lot of queries are coming from the, let us say, returns or refund policies, that means there is some problem with the product ultimately. 
+
+Okay. We need to get back, talk to those customers and find out the actual reasons why they are asking for returns and refunds and so on. Okay. 
+
+They are really not satisfied with the service. Or if the questions are mostly around the technical part of it, then probably we have not given enough technical documentation on how to use these products. So, that is why the users are going to getting confused for which setting to use for what kind of scenario and so on. 
+
+So, maybe then creating application notes, white papers, okay, or enriching the document with more examples, code examples, scenarios should be, so could be considered. So, that is very important. Resolution rates. 
+
+So, and how many queries are instantly getting resolved? How many are being carried forward to a technical agent, a human agent that is? So, these are all. And what is the overall cost per interaction? Most important metric. Okay. 
+
+So, if the user is on an average, some user can get the entire resolution in three interactions. Some user might take eight to 10 interactions. So, let us say the average number is five. 
+
+So, whatever is that. So, for 10,000 customer interactions, which has happened on maybe span of five days. Okay. 
+
+What is the total cost that you have paid divided by 10,000? That is the cost per interaction now. Okay. So, this way you will be able to get some number for the interaction cost. 
+
+Okay. And that number you can just multiply by a million or 10 million. So, you know the exact application cost in running. 
+
+Okay. So, total cost of ownership or total cost of running, whatever. So, traceability, this is the ability to follow the complete path, including all decisions, tool calls and state changes.
+
+(54:02 - 55:32)
+Everything in more details. So, three levels of traceability. So, this is a request, response, intermediate, will also individual timing for each of these steps. 
+
+Okay. So, each tool call, how much time it took, how much time it took for response generation, how much time the query required processing and all that. So, time for each of these things. 
+
+And then advance what we call as the full trace. This is what we typically call as the full trace. This is how a full trace would look like. 
+
+Okay. You can see the overall cost. I am just zooming. 
+
+You can see the overall cost. Each step, how much time it took and the cost per steps. Okay. 
+
+So, this is called as full trace for each of these blocks. Okay. I am able to trace. 
+
+So, best for production debugging, cost optimisation, compliance auditing. This is most importantly for compliance auditing and cost optimisation. Okay. 
+
+And then you can also compare scenarios. Okay. If this was the prompt, this is the kind of output we got. 
+
+If that was the prompt, this is. So, this way you can also optimise not just the entire system, but also your prompts. Okay. 
+
+So, prompt management also gets really better once you start doing this kind of tracing. Okay. So, other things are more or less repeat.
+
+(55:32 - 58:52)
+You can just go through this. Okay. The tools are there. 
+
+Langsmith is what we are going to use very extensively today and maybe tomorrow as well. Right. So, this is again a commercial solution developed by the same Lang chain ecosystem. 
+
+So, it is like a visual trace explorer. So, whatever platform that I have been showing you. So, this is very much similar to your Langsmith. 
+
+This is Langfuse however, but the interface is very similar. Okay. It is just that the Langfuse is open source version of Langsmith. 
+
+Rest all things are more or less same. You can filter traces by metadata, text time, compare traces side by side. Yes, that is what I was trying to tell you. 
+
+Okay. So, two traces in which you had the original prompt, other one has a changed prompt and then you can see in a waterfall manner. Okay. 
+
+How the process went. Cost tracking is there. Integration is native. 
+
+You do not have to write down any additional line of code to do the tracking. Okay. And you can also create evaluation data set for further testing. 
+
+Fine. Pinix by Arize. So, this is one of the biggest competitors to Langsmith. 
+
+So, second most important tool that you should be knowing about traceability and observability. Okay. So, these are the key features once again. 
+
+More or less it is similar to Langsmith in terms of features. It is just that the look and feel will be slightly different. I have not been using Finix much. 
+
+Okay. I am more of bigger fan of Langsmith and Langfuse. So, I mean, it is not easy to find use case for switching to different, different tools every other time. 
+
+In my opinion, getting a comfort and mastery over one of the tool for one of the things is more important than trying to know everything everywhere. Okay. So, but knowing what all tools are available in the market, that is a good idea. 
+
+Langsmith, Langchain has been very much extensively used by the industry. So, I am still sticking to Langsmith, Langchain, Langfuse also. So, this is free open source and with optional enterprise support. 
+
+So, this is the biggest USP of Finix. Okay. It is open source. 
+
+But again, when I say open source, you will have to host it by yourself. And if you want to host it by yourself, then another big choice is Langfuse. Why not go for Langfuse then? Okay. 
+
+Third is WNB, Weights and Bias. This is mostly for machine learning experiment tracking. This is slightly off discussion. 
+
+This is not related to agents. So, if you are building models, machine learning models, and you want to track each of those model hyperparameters when you are making multiple permutation combinations of those model hyperparameters and you want to train them, especially with SageMaker pipelines and all that, then you can use the WNB. But this is not relevant to agents at all. 
+
+Yeah. So, this is your tool comparison. Self-hosting option is not there with Langsmith, but with Langfuse.
+
+(58:55 - 58:59)
+So, trace visualisation, yes. Cost tracking, yes. Lang chain integration is native here, yes.
+
+(59:01 - 59:10)
+And prices you can check. So, waterfall views are there. You can also go for waterfall views.
+
+(59:14 - 59:17)
+Okay. So, different different views are there. So, this is one view.
+
+(59:18 - 59:23)
+This is another view. Okay. So, I will show you the waterfall views also.
+
+(59:31 - 1:04:25)
+And these are the best practises you can just refer. Somebody can take a look. Fine. 
+
+So, this is done. This is just a high level revision recap. I think I shared at the start of the session. 
+
+Fine. So, let us take a hands-on on line graph before we go for the break at 10. Okay. 
+
+So, we have half an hour. Let us finish with this. Okay. 
+
+So, we will do this project and we will take a break before we go to the Langfuse version of the same project. Okay. So, do you have the paid version of Langsmith or I am using the free version? Because free version is quite good. 
+
+I mean, 1000 traces per month, unless you are making something in production. Okay. So, if you need more, then I would fall back to Langfuse first. 
+
+Okay. Unless someone is ready to pay for it. So, first thing first, go to Langsmith website. 
+
+Okay. This is the link. Go to products. 
+
+You can see observability, evaluation, deployment. Deployment normally done by Langsurf. Okay. 
+
+You can check the pricing before we do anything more. So, you can see the pricing part. So, up to 5000 base traces per month. 
+
+Sorry, this was actually, I have been saying 1000, but this is not 1000, it is actually 5000, which is quite good. Tracing to debug offline and online evals are there, prompt hub, playground, canvas. So, almost every feature is available, even in the free account, you can see. 
+
+You can also set up monitoring and alerting annotation cues for human feedback. And one agent builder, up to 50 agent builder runs per month. So, what is this one agent builder agent? So, we created this OpenAI agent. 
+
+Okay. So, there you can attach this. And these are the enterprise versions, okay, where you can get more than 10000 or even more. 
+
+So, 5000 traces are there, already available to you. Okay. So, first thing is, click on this trial Langsmith, it will take you to the login page, create your account. 
+
+Okay. So, create your account. So, since I have created my account, fine. 
+
+So, this is something I am able to get. Fine. So, once you land up here, first thing is we need to get our API keys. 
+
+So, there you go to settings, okay. And from the settings, you have the API keys. So, let me just give a pause here. 
+
+So, everyone will have to set up their organisation, which is you can select one of the organisation or you can create, okay, one organisation. So, this is how the main page comes up for me, because I have already set up tracing for a few of the projects. So, in my case, this is not empty, in your case, this might be empty. 
+
+So, this is something new, which I have also not tried Langsmith agent builder. I will try that later. Okay, let us come back. 
+
+Yeah, so this is the main page. Okay, go to home. And then on the left side, there is a settings button, click on that.
+
+(1:04:26 - 1:06:52)
+And on the left side, there is API keys. So, you can create an API key, personal access token, PAT, you can provide a name and the default workspace and expiration date you can set up, never 30 days, 90 days, one year or custom. Okay. 
+
+So, do not go for service key, go for PAT, personal access token and create your key. Okay. And make sure while you are creating the key, you are also saving those because later on, you cannot see them. 
+
+Okay, remember that later on, you will not be able to see them. Okay, so if I just click on create key, okay. So, make sure you copy it right away. 
+
+Make sure you copy it right away. And then go to your collab, go to your collab, go to your secrets manager and make sure you are adding this key. So, let me give you the name of the key in the collab. 
+
+So, Langsmith API key, this is the text you will be using. Langsmith API key, that is what you will have to add here. And the value will be your key that you have set up just now. 
+
+Okay. Does it mean concurrent agent? No. So, if you are creating it using Langsmith, yes, but not in their agent builder. 
+
+So, they have got a new feature called as agent builder, which is like a visual agent builder similar to all these platforms, n8n, OpenAI. So, similarly, they have also got a new platform called as agent builder. Okay, so there you can create a single agent attached to your tracing.
+
+(1:06:54 - 1:09:50)
+And not more than 50 runs of that agent can be done per month for tracing in your free account. That is that constraint is only for the agent builder. Okay. 
+
+But if you're doing it, the way I am showing you in the collab notebook, I have just shown the link for the collab notebook. So, here, if you are doing it this way, then you can easily go for 5000 traces, can easily go for 5000 traces per month. And then you can go on a pay as you go model. 
+
+You don't even have to, you know. So, for example, you can fund your account with $5, $10. In that you will buy some credits and you use those credits. 
+
+So, everyone ready? So, how many of you have been using cloud pro accounts? Just checking. Not a free cloud pro. Srikant Akersh, Santosh, Proful. 
+
+Okay. Anyone who has been using max cloud pro, I mean, the upgraded version of that cloud max, cloud max? No, nothing specific. I was just waiting for the installation to be done.
+
+(1:09:55 - 1:12:37)
+So, cloud max, you will get only what? Five times more query limit per day or per week, I think. They just have higher usage limits, I think, five times more in cloud pro and 20 times more for the max account, I think. No, it is five times more for $100 and 20 times more for $200. 
+
+I think that is the correct pricing. No, reason to ask was that indirectly that in the cloud pro, you do get something called a school work and cloud code. So, that is equipped with entropic agents already. 
+
+So, you just at a high level, define your task, it will spin all sort of agents, sub agents, give you a high level plan that was this is how I am going to do all that. And it will actually do all that. Not in the chat mode. 
+
+There is a cloud co work and cloud code. Okay, so maybe if you already have cloud pro accounts, I would strongly suggest you to go through some of the YouTube or tutorials, maybe on Udemy somewhere and explore the cloud code and cloud co work as well, because those are the true agentic or agents created by entropic. But again, they will be very much token hungry, I would say. 
+
+So, the token usage is immense, even for one task, it can go to 20 to $30. It has happened to me. Okay. 
+
+So, will cloud co work run those programmes, you need to be able to I don't know what programmes you're talking about, but whichever programmes or you want to be automated, you'll have to provide access. So, again, it can be local access or it can be browser level access either way. Okay.
+
+(1:13:03 - 1:13:24)
+So, Sajeev, can I ask one question related to the cloud pro? So, as you mentioned, like, you know, we can, we can like, you know, like, you know, have a agent there itself on the cloud pro. So, you are not creating the agent, agents are all spun by them internally. Yeah, that line actually.
+
+(1:13:24 - 1:13:34)
+Because see, I'm also still figuring it out. No, no, no, no, I do not want to. You need to ask was if there is already some pro user here, maybe also get to learn from them.
+
+(1:13:35 - 1:15:53)
+That was also another reason was the way I have understood is they have internally built all sort of agentic system, you just have to define the task, the agents will swarm of agents will, you know, do that task. The way it works is you can also define skills for each of these agents. Okay. 
+
+That's what I was trying to understand. So that means we are learning to build agent, but this cloud came up with like, you know, just generating the agent by their self, right? So the skill which we are building, I mean, how that can be like, you know, the future proof. That is the reason I asked that question. 
+
+Which skill? I mean, like building this agent and all, right? So learning how to build the agent, but cloud came this way, like, you know, the agent itself, right? Yes, yes, yes. See, again, as I said, if one task execution is taking 20, 25 dollars, which I create in line graph, and then I am able to do it in, let us say, $1, then there is a huge cost involved already there. Plus, the agent that we are building in these notebooks or whatever production grade, okay, they are consistent in terms of performance. 
+
+Every time you spin a new cloud co-work or a cloud code, chat, even if you give the same task, it is not guaranteed that every time the same workflow will happen, because this is all LLM fired. Okay, so that and you have zero observable, giving you some traces. But yeah, but definitely that is useless for a corporate level thing, which requires auditability, which requires you to, you know, be able to explain each and every API call.
+
+(1:15:53 - 1:16:43)
+So, you cannot do that on cloud pro, I mean, the cloud agents, okay. So, if you are a standalone solo entrepreneur who wants to build a software, a SaaS kind of a software, and, you know, what, try to commercialise it, cloud pro can work, sorry, cloud code or cloud co-work can work. But on a larger enterprise thing, I do not see that working. 
+
+I mean, you can still take some help. I do not know how that too, I am still exploring, as I said, but for enterprise grade application, you want reliability, you want consistency, you want reproducibility, and most importantly, you want traceability. So, these are all missing actually.
+
+(1:16:44 - 1:22:21)
+Got it, got it. Yeah, that is what I just want to, yeah, got it. The same code was working last week and now this is, this is Blanchine core. 
+
+Okay, no worries. Plan B, plan B, plan B, I have this, Blanchine. So, one suggestion I would give is after you instal these four, restart the session once. 
+
+Restart the session once that really helps. Before you go to the next installation, and then you keep on continuing. Okay, so this and the second change that might work is this. 
+
+Okay. So, this is a change what I have done. Okay, instead of Blanchine.documents, it has moved to Blanchine core. 
+
+I hope everything else works. Do I need to explain what is happening here? Because we have looked into the same project several times. Even last week, I gave you the idea about this particular project. 
+
+Okay, so if you still are clueless, I mean, please go through the last few weeks recordings. Okay, so we have built this agent several times. So, the only thing that we are adding up here is the traceability part. 
+
+And how did we do? We have already done that traceability. So, you have to set up the key and you have to set up the tracing to be true. And what is the name of the project? Okay, because this is the name that will appear in your LangSmith dashboard. 
+
+Okay, so go back to the LangSmith. And if you go to the home, this is your tracing. This is your tracing. 
+
+Click on that tracing and you can see this customer support agent new. Okay, so this customer support agent new which I have just now created. Okay, no runs found. 
+
+Okay, now here I will start getting the traces. Okay, so this is the one which you have just now created. Fine. 
+
+In your case, it may not appear instantly because I had already created this. So, it came for me. Once you start running, then it will automatically appear. 
+
+Okay, so but this is where I am expecting things to be. Okay, so that is it. Only three lines and you have set up the tracing for this project. 
+
+It is that super simple. Okay, and all the API calls that we are going to make are already wrapped with Lanchain. So, we are using the OpenAI Lanchainized version, not the direct OpenAI library. 
+
+If you directly want to use OpenAI library SDK, or if you want to use Gemini SDK or Anthropic SDK without Lanchain. Okay, without Lanchain, then you can probably go with Lankfuse. So, that way you are not vendor locked. 
+
+Okay, let me repeat that right now we are using all the API calls from within Lanchain and that is how it is able to track easily, because you are using the Lanchainized version of OpenAI, not the OpenAI SDK directly. Okay, so but let us say if you are using OpenAI SDK directly, then Lanksmith will not be able to directly track it, you will have to set up more codes, I would say. And if you are anyway ready to set up more codes, then it is better to go with Lankfuse. 
+
+Because there you get much more advantage of you know, getting credits and more traces per month. That is it. So, these three lines are new. 
+
+Otherwise, you just create your knowledge base embedding model, and then set up your retriever. Okay, the pedantic schemas for my query category sentiment, and this is your agent state. And the node functions. 
+
+This is the model I'm using chat GPT 5 mini. These are my node functions. And finally, this is my agent graph. 
+
+This is the agent graph, all the node functions attached to those respective nodes. These are the actual node functions. This is the name of the node where it will be executed node function attached to this node, agent node function attached to this node. 
+
+So, you are creating the nodes and their corresponding node functions. You are also creating all the edges, basically how you are going to connect to these nodes. And then this is the conditional routing which is going to happen.
+
+(1:22:25 - 1:22:45)
+Build the entire graph. Okay, so query will come up with the start. And then it will be categorised into billing technical and general, followed by sentiment analysis positive, negative, neutral.
+
+(1:22:45 - 1:25:02)
+If the query is negative directly, it will go for human escalation that is decided by the router that you created here is your router function. Okay. And if the query is positive or neutral, then based on the category, it will be routed to one of these three agents. 
+
+Now, each of these three agents have access to your rag. You can see here, it has access to your rag, where it is first able to apply a filter, retrieve the documents, format the documents for context, how is it formatting, just concatenating one below the other, and then setting up that retrieve context as actual context. This is a prompt template. 
+
+And then that is chained to your LLM. And you are invoking with the user query and the content retrieved content, that is it. Okay. 
+
+So, this is all repeat. Okay. And then wrapping this entire agent graph into this convenience function for calling. 
+
+So, these are the 30 question answers that you have in your JSON file. And you can actually start doing this. Or you can ignore this PydentX serializer warnings if you want to. 
+
+So, for that, you will have to import warnings and let me give you a code to suppress those warning messages. Okay. So, once you execute this, then all those warnings should be gone. 
+
+Fine. So, it is working, you can see. And since we have executed so many times, your tracing should already be updated now.
+
+(1:25:03 - 1:25:18)
+Okay. So, so many traces I have already got and one is already running, you can see. So, the entire agent line graph workflow, I would say, will be appearing like this.
+
+(1:25:18 - 1:26:27)
+And if you are running parts of the workflow, then it will appear like this. So, what do you mean by parts of the workflow? So, here we have run the parts of the workflow also right here. So, this is a part of the workflow. 
+
+This is also a part of the workflow. Okay. So, this is again a part of the workflow. 
+
+This is a part of the workflow because these are also making API calls. Okay. So, getting the sentiment, getting the sentiment. 
+
+These are all standalone API calls that you have made without the entire agent. Okay. So, those standalone are appearing like this. 
+
+And when the entire agent is running, this is how it would appear. Okay. So, yeah, you can fire these agents and see one by one. 
+
+This is also fine. So, click on any of these traces. Okay. 
+
+So, for example, I have clicked on that trace, I am just zooming out. Okay. So, in the waterfall case, this is how it looks.
+
+(1:26:27 - 1:27:38)
+Okay, literally, you can track each of these phases, three phases largely. And for each of these, you can see the amount of latency, the overall cost. Okay. 
+
+So, the cost, input, output, you can see very well start time and time for each step. And you can also check what was the input which went to the model, which is the and what was the exact output which came from the model, each and everything you can see, query category, neutral. So, this is your complete trace. 
+
+You can also have the ID for each of these Langraph runs or traces. So, trace ID is there, run ID is there. You can use this trace ID, run ID to also assign feedback scores. 
+
+Okay. That can also be done. You can see which model was used, how much time it took for retrieval also, because you can see vector store retriever took 0.1 seconds, which is like 170 milliseconds.
+
+(1:27:39 - 1:29:49)
+These were the documents which were retrieved, you can see the top three documents which were retrieved. Okay, these are the top three documents which were retrieved. So, that is the level of traceability that you can have. 
+
+Okay. I am just clicking on the vector store retriever. Okay, this was the query. 
+
+Based on this query, these are the top three documents that were retrieved. And totally it took 170 milliseconds. Okay. 
+
+Praful, I already answered why it starts with runnable is if you are running a part of the overall workflow, then it will come as runnable. Runnable is nothing but the Lanchain chain. Runnable is nothing but the chain, only the chain part. 
+
+This is the chain that you have written here. Sorry, this is the Lanchain chain, whatever chain you are creating. So, this is your chain. 
+
+If you are just only running this chain, for example, this chain was run here. When you are calling this function technically, and when you are checking your vector store retriever here. Okay. 
+
+So, when you are checking for the vector store retriever, that will appear as a vector store retriever only. Oh yeah, vector store retriever. And when you are running the entire Langraff, which was compiled. 
+
+So, entire Langraff means when you are running the entire Langraff compiled, that is towards the end, whatever you are running this, you are running the entire agent. When you run the entire agent, that will come as a compiled lang graph that will come as a compiled lang graph. So, single API standalone API calls can also be traced that is the point I was trying to make.
+
+(1:29:49 - 1:30:58)
+So, see this is a simple standalone API call in a case of runnable just click on the chat prompt template it will tell you what was the customer query that was retrieved the content and this is the output that is it. So, this is a single API call how much was the costing latency and everything. I suggest you take some 5-10 minutes explore this click on each of these and you can click on let us say two here and also go to comparison mode compare runs. 
+
+So, I clicked on these two and go to compare runs. So, you can actually also compare side by side two runs into one. So, this took 15 seconds roughly 15.5 seconds this took 18 seconds.
+
+(1:30:59 - 1:32:18)
+So, you can actually track why is this taking much longer time why is this taking low lesser time. So, what was the bottleneck. So, this time it took. 
+
+So, the categorisation is almost the same time you can see categorisation was the same time, but probably this is 2 seconds this is 2.5 seconds here it is 2.5 seconds and this is 2.35 seconds yeah roughly more or less similar retriever is 0.21 0.25 determined route that is instantaneous. So, the last step itself is taking more time that is it that is where the three seconds are different then click on the waterfall mode or this is your normal mode and this is your waterfall mode whichever you find more easy to yeah whichever you find easier to compare fine. So, we can go for a break now I will have my dinner and I will resume.
+
+(1:32:25 - 1:56:29)
+So, you can explore this take 5 more minutes and then take your break. Tantush is saying why is it still saying waiting for traces. Can you share your screen? I do not see because in my case I am able to get all the things properly done I mean re-executing fine. 
+
+Any other question from anyone till what we have done just now. So, this trace is basically the entire agent execution there can be some confusion when you running this lang graph agents with langsmith enabled. So, these are two different abstraction levels I can say. 
+
+So, traces for the entire agent execution run is basically one step inside that execution. Prashant I have a question like is there any specific industry standards like these SLAs or anything we need to follow in traces if we for suppose if the traces are going beyond the limits or something we need to follow we need to observe on this. Yeah good question primarily when we are making these retrieval see idea is the sooner the better I mean for the retrieval in most of our cases you can see the retrieval has happened within 100 to 200 milliseconds and that is the industry standard. 
+
+It should be less than half a second max to max 1 second if it is going up to 1 second means it is a red flag frankly unless you are searching on millions of documents if it is few 100 to 1000 ideally the overall time it takes for the vectors to retrieval because this is something which is more deterministic. The data set is there your query is there and how much time it takes for retrieving the top 5 documents top 10 documents it more deterministic because that is also determined by the kind of vector database you are using the kind of strategy that you are using but if the vector database is fixed if the retrieval strategy or the algorithm is fixed for a given query the number of top documents that you are retrieving that is also fixed then by large this number should not vary a lot maybe plus minus 50 to 100 milliseconds. So, with a average plus minus 50 to 100 milliseconds this average should not exceed 200 to 300 milliseconds for small size vector db which is containing less than 1000 chunks I would say for 1000 to 10,000 chunks it might go to 0.5 seconds or 500 milliseconds and you know worst cases where it goes to 1 million to 10 million chunks per database it can go close to 1 seconds but beyond that if it is taking then I would suggest going for a managed vector database solution what does that mean managed vector database solution. 
+
+So, there are platforms like pine cone just search for pine cone it is a vector database where again this will again be dependent on whether your company is eager to share the embeddings on a third party cloud. So, in this case what you are doing is there are two options you can directly throw your chunks and they will do the embeddings and store or you can directly throw the embeddings and they will only do the storage and retrieval is all happening on cloud and you also have a choice to bring your own compute BYOC in which case you can actually connect the enterprise AWS, GCP or Azure account with zero access operating model which means they are not going to charge any mockup or markup they are saying that entire data resides in your own AWS VPC. I will just add an application layer on top of it. 
+
+I will charge you per query and how many documents you are retrieving in a month. So, query volume and retrieval volume is the business model that they are normally charging to go to the pricing. That is the case when you are connecting your own AWS account because there you are already paying your own AWS account for storage and all that stuff. 
+
+However, in a case of a completely managed so this was like semi-hosted system in a completely managed thing what you are doing is you are simply sharing your chunks or embeddings they will provision a cloud on your behalf you can choose whether you still want to go with AWS, GCP or Microsoft but since they are doing the provisioning they will charge you for the cloud storage as well along with the queries. So, you can just see here. So, database can be created on demand inference and system. 
+
+So, all these are the different APIs which are available but you can see the usage here. So, for example AWS US East one is the region availability this is for a starter. There are no dedicated nodes in this case. 
+
+Read nodes here you will get some dedicated read nodes. Index again both dense and sparse is there up to five index you can create which means five collections you can make if you want. Index means how many collections per database. 
+
+So, in our code if you see we made a collection and we provided the collection name also remember the vector database collection name we provided. We can make there was a database name and there was a collection name. There is a collection name and there is a database name. 
+
+So, this is the database name you can say. So, in one database this is the collection you can make multiple collections maybe one collection for technical documents one collection for customer policies or customer data or company policies. So, that way you can have a logical grouping also but then it would mean for a single query you will have to search in multiple collections or multiple indexes which is again I would not suggest. 
+
+If you think that for any query searching across multiple collections is required then actually put everything into one. It is better to put everything into one only where there is a clear isolation of the application that this application will use this collection this application will use that collection then consider going for collections. So, these are the considerations and see a million inference for the embedding that is what I would I was also telling you. 
+
+You can directly throw the chunks and some 5 million tokens per month embedding is already included. These are open source model let me tell you this. These are open source model and you can get both of them easily on hugging face also. 
+
+So, you can do the embedding on your own GPU server if you just download them or Pinecone has also created their own fine-tuned version for the embeddings. So, this is Pinecones and again re-rankers are also there BGA re-ranker Cohere re-rankers. Now Cohere is enterprise grade re-ranking facility. 
+
+So, definitely no company will provide Cohere for free because they also have to pay Cohere. So, you are getting it in this case but BGA is a open source across encoder available on Hugging Face. So, this is already included 500 requests per month and you can see how many users projects you can create security compliance audit logs. 
+
+You can explore this. So, this is not the only one platform you can also check for Zillage and Milvus. So, Zillage is again a vector database cloud leader in the Forrester wave this check. 
+
+So, Zillage and Milvus are products from the same company. It is one of them is open source. The other one is a cloud managed version cloud hosting version and check their pricing plans. 
+
+So, Zillage is the managed version and Milvus is the open source. So, you do have. So, these are the two industry leading options I would say easily available. 
+
+Third is now cloud specific. For example, if your most of the documents are already present in S3 buckets assuming then or AWS I would strongly suggest to go with open search. That is the vector database which you can use. 
+
+So, again you can use the bedrock models like Titan embedding V2 model you can use again. So, AWS, Titan embedding model you can use V1, V2 both the models. So, I will use this model as well. 
+
+Titan embedding models which are already available on Amazon V2. Yeah, this one and for response generation you can use. So, this is like a complete AWS native solution you have built. 
+
+Your data is already S3 from S3 you push it to open search. Now open search is like your equivalent of elastic search or vector search. This is a vector database which is already hosted on a clusters. 
+
+So, just like when you spin a RDS that is relational database service whenever you create a proper normal structured database or unstructured database either way on AWS. So, AWS will have a RDS service for traditional databases. So, there also you get the option for spinning as a single machine or as a cluster and how many availability zones it should be there and if you want to have master nodes, multiple master nodes. 
+
+So, all those options are also available on open search. You can spin up multiple clusters or you can spin up this open search on a single machine also. So, normally you can use R7G dot medium dot search kind of thing for a decent 4 GB RAM. 
+
+R7G or R8G also you can use dot medium. Medium will give you 2 GB, large will give you 4 GB dot search or R8 also you can do and page dot sh. These are the typical machine names I would say. 
+
+R7G, R8G these are very regular ones which I use. So, you can see the pricing also. How many from here you can make out. 
+
+So, how many gigs you want now 8, 16, 32 based on how many. So, because if your application is scaling to hundreds of users then probably you will need more virtual CPUs number one whereas if your application is having huge number of vectors let us say thousands or millions then the memory part will become more important. So, how you want the search to be? Is it memory optimised or compute optimised? So, that way you have different categories of machines which you are going to spin but usually this is memory optimised for example. 
+
+Now, there are machines which are compute optimised also. So, these are the usual machines people will spin for open search because the moment you start launching your open search service you will have to select a machine. So, these are the typical machine you can go with R7G series or you can go with R8G series also that is also quite good. 
+
+R8G is the newer version and then from here you can select which one you want. So, your entire data is in S3 bucket then your embeddings are stored in open search and then what is the next thing? You want an embedding model to create the embeddings. So, you can use Titan embeddings from Bedrock and you want your response generation model. 
+
+So, for that response generation you would probably use if you want you can use cloud models also because all the cloud models on a Tyco everything is available on Bedrock or if you do not want to use the cloud models you can go for Nova, Nova Pro, Nova Lite, Nova Pro models. So, Nova Pro, Nova Lite these are the Amazon models for response generation. You can use these Nova. 
+
+Re-ranking models like all Cohere models are also available on Bedrock. So, all these models are available on Bedrock if you just go to Bedrock you can see. So, this is like a AWS native solution. 
+
+The point I am trying to come to here is similar solutions are now also available for Azure and GCP. The good thing is about in Azure you will have direct access to OpenAI models. AWS will not give you OpenAI models on Bedrock. 
+
+So, if your favourite models are OpenAI models for embeddings like what we have been doing until now. Then you are probably looking for Azure OpenAI endpoint. So, then your cloud natural cloud inclination is towards Azure. 
+
+But if you are also open to GCP you will get access to all the Gemini, Gemini Pro models. Now, in GCP you will neither get access to cloud models or probably you will also not get access to OpenAI models. No way, no way. 
+
+Not even in your wildest dreams you can think of. So, you will only get Gemini models. A fourth option is there where you want to get access to all of these models and that is your OCI, Oracle Cloud Infrastructure. 
+
+There Gemini models are also there. Cloud models are also there. OpenAI models are also there. 
+
+Otherwise, the fifth option is to go with OpenRouter. OpenRouter service. I think I might have talked about OpenRouter. 
+
+In this OpenRouter a single API token will give you access to more than 650 models. List of models also you can. This is OpenRouter. 
+
+List of models, a list of models. 637 models are there. So, if you just search for cloud, you will get all the cloud Opus 6 on it. 
+
+All cloud models are there here. If you want to go for Gemini, all Gemini models are there. The Pro versions, 3 Pro also is there. 
+
+Or if you want to go with OpenAI, all GPT models are there, both open source as well as the paid ones. Everything is there. Or if you want to go with. 
+
+So, Cloud, for example, does not have its own embedding model. So, Cloud normally uses a third party called as Voyage AIs embedding models, which are also available on Bedrock. So, if you go to Cloud Voyage API embeddings, go to this page and you can see the embedding models coming from Cloud are actually coming from Voyage company. 
+
+So, Cloud natively does not train embedding models. So, if you are a big fan of SONET Opus models, and you want to do embedding from Cloud only, then this is the choice that you have. And here the context length just to give you an idea is much higher compared to your OpenAI model. 
+
+So, for example, OpenAI model, whether it is small or large, the context length is 8192 tokens only 8192, which is one fourth almost. Okay. So, these are all 32,000 tokens only in this case, this is but this is a fine tuned version. 
+
+So, you have fine tuned versions for finance for law also. This is something very interesting for optimised for legal long context. This is optimised for finance retrieval. 
+
+In fact, Cloud is working anthropic, I would say as the larger companies working heavily on finance applications. Okay, they have already onboarded a lot of big corporate clients and banks, they are serving custom models to these banks, okay already. So, in the next few months, what I am going to watch out for is finance specific models coming from Cloud. 
+
+Already, there are a couple of finance specific models available on perplexity platform. Okay, but now, this is where I will be watching that space for. So, that is where the business models are getting pivot. 
+
+Okay, so this platform, you can use open router, where but again, you are sharing your data to open router. So, if that is a concern, security concern, compliance concern, then it is best to either go with a self hosted version or on premise version, or at least have a model on your own cloud VPC. Okay, VPC is virtual private cloud or a VPS virtual private server. 
+
+So, spin your own virtual private server either on AWS or GCP or Azure and isolate that VPC and only that VPC you create your entire application and all the models within the same VPC, all your models would be there, your application would also be hosted within the same VPC itself. Okay, your open search domain will also be in the same VPC, your EC2 instance, which is hosting your application will also be in the same VPC. So, that way you can have a good isolation layer. 
+
+Okay. So, this is good for most of the banking and healthcare kind of industry. But even more regulated industries, let us say defence, okay, will go even deeper. 
+
+So, defence will not allow any third party cloud. Okay, whatsoever, they will always insist on on prem server, where all the embeddings are stored all the user queries, whatever interactions they are never shared across any cloud. It has to be on prem on prem oil and natural gas. 
+
+Let me tell you. So, that is again, so I did a lot of trainings for BPCL, Bharat Petroleum, for example, and in one such, even I have been into their board meetings. Okay. 
+
+So, I got to know that just to give you even today they are not into any cloud. All of their entire data is on prem. They already had one data breach, and which went escalated up to the PMO. 
+
+And they had, you know, shut down that plan for a day or two, I would not reveal too much information, but we are already had a couple of instances, because of which now they have decided they will still continue being on prem completely. Yeah, no, like, even yesterday, Trump tweet not to use cloud anthropic anymore in the Fed. So, see, there will be a lot of preferences, there will be regulations, and there will be what I would say is vengeance as well. 
+
+Okay. So, multiple factors would be there to influence such decisions. Okay, let us focus back.
+
+(1:56:30 - 2:01:43)
+Last thing that we are going to discuss is about this Langfuse observability. Okay, so the same project, I am not changing the project. This we are going a bit more deeper in the observability concepts. 
+
+Okay. So, in the first case, we already set up just in three lines of code. But here, also, there will be three lines, but we'll also go to the trace level things. 
+
+Okay. So, these three lines will become different three lines here. Let me share the notebook, this is completely running. 
+
+You can see my 403 client error, hidden, incorrect API key, have to verify, correct. So, who is facing this? So, you have to provide your Langsmith API key. I did discuss how to create your own API key. 
+
+So, if you go to settings here, in the API keys, you will be able to create API key, use a personal access token, name this and just create your key, right. And add it to your, you have to add it to your secrets manager here. So, I already have the Langfuse, Langfuse, Langfuse. 
+
+But similarly, previous notebook, I had added my Langsmith. Okay. So, I think that should resolve. 
+
+Okay. So, let us see what this Langfuse is all about, and how does it differ from your Langsmith as of now. Okay. 
+
+So, I think the title itself is very clear. It is an open source alternative to Langsmith. And both these products have been developed by the same company from where Langchain comes up. 
+
+Okay. So, again, for tracing, debugging and scoring, Langraph agents. So, in this lab, we will be building the same for customer support and instrumented with Langfuse for full observability. 
+
+Langfuse is open source that can capture traces, latencies, token usage cost, every single step of your workflow. And like Langsmith, which is proprietary and tightly coupled to Langchain, Langfuse is framework agnostic. So, whether you develop your application using Lama index, or you develop your application using OpenAI SDK, or use Google SDK, okay, it does not matter which or Cray in fact, okay, does not matter whether how you are creating your agents, okay, that is framework agnostic. 
+
+It is self-hostable, which means you can download a copy of this Langfuse and host it in your own server, same server where your agent is hosted. Okay. So, that is the meaning of self-hostable and built on telemetry, open telemetry standard. 
+
+So, this is again like a protocol, okay, which is required to communicate these traces. Santhosh, where are you getting this from? The code from Langsmith import client, right. So, where I do not know why that run ID is generated, maybe because of my, I just did the code fix, maybe it is automatically generated, I am not sure. 
+
+So, just I wanted to check whether you have this code piece or it is generated by... Which notebook, the Langsmith notebook or the Langfuse notebook? Langsmith notebook. So, here, it is not moving from here. Even I have that API key configured, everything has done.
+
+(2:01:44 - 2:03:47)
+But I am stuck here. So, the project which you created, right, do we need to configure anything, the project mapping to the API key? Have you done anything? So, see, that project naming has to be there so that you can track your... So, these are the projects that I have created for tracing. By default, there will be something. 
+
+So, if you do not mention your project name, then all those traces will go to the default. Understood. So, here, I have opened... The same project name what you used, customer. 
+
+So, this is the notebook you are talking about, correct? So, you have set up the key. So, from Langsmith, where is that? Initialise the client. I do not know, where is that code? I do not see that code anyway. 
+
+Code at the end, maybe the line 68. So, here? Yeah, when we are calling... Okay, here. Oh, okay. 
+
+I missed this part. Sorry. Yeah. 
+
+So, basically, whenever I am running any of these, I am getting some trace and runs, correct? So, that is what I was talking about sometime back that if you want this feedback to be provided and recorded, let us say I want to record a feedback for this run. I can copy this trace ID or run ID. Let us say I am copying the run ID. 
+
+So, from here, I can copy this. And for this particular run, I can provide a feedback from the code. So, I am just providing this run ID now. 
+
+Is my screen shared? Yeah. So, this is the run ID, which I just copied from here, which I copied from here. From Langsmith, okay.
+
+(2:03:47 - 2:04:17)
+Yes, from the line graph. Correct, correct. Okay. 
+
+And then whether, yeah, so this comment, you can change, okay, whether the, let us say you have to act yourself as the user, just imagine that this comment is being captured from your chat interface, okay, and you are passing it here. Understood? This comment as a string, you are capturing from the chat interface and passing it here as a variable. Okay, so then what will happen is.
+
+(2:04:17 - 2:04:59)
+So, why we are doing hardcoded here, Prasad? No, you are not doing a hardcoding. So, this is like an API. Maybe you can create a function out of it. 
+
+And to that function, for each chat run, you can see our conversation will have an ID generated, you have to capture that run ID from the traces. And you also have to capture this comment from the user, okay, whether they are satisfied with the overall query resolution process or not, if there is any comment that they would like to, you know, give. So, capture that comment, capture that run ID programmatically for that particular conversation that is happening.
+
+(2:04:59 - 2:05:14)
+And then you want to record that comment with that conversation properly. So, this is what we are doing. So, once it has been there, let me just check, you can see now it is appearing.
+
+(2:05:14 - 2:06:50)
+So, this is the comment which just now we passed. So, this way, we can also track, this was created by me, no doubt. So, this way you can see how many, let us say conversations were flagged by the user, they were not satisfied. 
+
+Okay, you can actually programmatically pull just like in Langfuse also, I am doing it here. So, you can programmatically pull the list of last 10, 15, 1000, like in this case, if you see, I am programmatically pulling my traces. So, and I have the trace ID. 
+
+Similarly, I can also have the run ID against these trace IDs. So, I can programmatically identify in the last 15,000 or 10,000 interactions, how many users flagged the conversations, flagged means they are not satisfied. Because you are able to capture this. 
+
+And what is the average satisfaction score? Because now this is 0 or 1. Now, if I do that for hundreds of interactions, for some it will be 0, for some it will be 1, 0, 1, 0, 1, 0, 1. But the moment it start getting into hundreds and thousands, you will get an average score. For this entire agentic system, you will get an average score, okay, that on an average, this agent is working with a score of 4.2, 4.5, that is what. Now, that average score you will get once each of these traces have got a number and a feedback.
+
+(2:06:50 - 2:07:03)
+Okay. So, that is the whole intention. So, you can record this. 
+
+I think yeah, this is for that only. So, you can get the run ID. And yes.
+
+(2:07:05 - 2:08:47)
+So, ideally, you would get this ID when you are doing the agent.invoke. But we are never saving that we are always doing that agent.invoke within this wrapper function. So, you will have to probably modify this wrapper function that I have created to also capture because this wrapper function is doing the invoke behind the scenes, right, this is the wrapper function, you are passing the agent here, okay. And that agent is using the agent.stream in this case, correct. 
+
+And that is exactly the statement I have given. So, when the agent is being invoked or when the agent is streamed, in that case, this events has the run ID actually, okay, which we have not yet captured anytime till now, but ideally this will have. So, maybe let me just check agent is not defined, agent is, okay, this agent is mine. 
+
+I need some prompt. So, this is my prompt. So, now I have got the events.
+
+(2:08:49 - 2:11:38)
+And let us have a look what all we have in that events. It is a generator function. So, again, the same thing. 
+
+So, for each step, there will be an event, okay. So, let me take the first step out of that events is what we have got one by one. So, this is a complete event. 
+
+I need to check how you can get the run ID from here, probably the lang graph documentation will have to refer. But that is exactly what we are doing in the langfuse version. So, this is just a repeat. 
+
+But if you want to get to that level, I would strongly suggest you to stick to langfuse then, okay. This is for high level setting up the monitoring. But if you want to go to that level, then langfuse is the better option, which I have anyway done. 
+
+So, it is just the repeat. So, let us directly head on to that, okay. But yeah, that is exactly what is mentioned here. 
+
+You can capture it. And in principle, you can capture this from the agent invoke or agent stream, okay, and pass it on there. Right now, I am capturing it from the user interface, okay. 
+
+Again, there are different metrics are there. So, mostly people would be interested in the correctness score, okay. How accurate it was and the score is between 0 to 1. So, 1 for correct and 0 for incorrect. 
+
+So, it is binary. So, source type is API indicating that the feedback. So, just go through the documentation, you will see all the other options by which you can access this.
+
+(2:11:39 - 2:12:17)
+So, feedback has been recorded. This is what we have got here. So, for each API call, you can also record the feedback, okay. 
+
+Back to this, let us run this quickly. Now, the initial things are same. Yeah, so I do not have to explain any of these.
+
+(2:12:19 - 2:14:34)
+This is clear. And anyway, we will discuss more on this. Langfuse API keys have been set up. 
+
+So, how do you set up your Langfuse API keys? Again, go to this website, cloud.langfuse.com. And first, you will have to create your own project. I am just sharing the link. So, to get the API keys, I think there is a link already given below to set up your API keys. 
+
+So, cloud.langfuse.com. Sign up, create a new project. But before you create a new project, you will have to create a new organisation. Okay. 
+
+So, before the project, you will have to create your own organisation name, just give some random organisation name. Here I am giving my organisation name as K21. So, that is the name of the organisation. 
+
+And once you have created your organisation, okay, then it will ask you to create a project. Okay. And then once you create a project, then you will be able to get the key. 
+
+So, once you get the organisation, there itself, you will be able to get a option for getting a key when you go to settings. Okay. So, in the settings of that particular organisation. 
+
+Okay. So, this is the settings and you will get all the information, API keys, go to the API keys and you will get all of these. So, public key, secret key, you can copy it from there. 
+
+So, I am just clicking on creating a new key. So, again, so these are the things that you will have to copy. All right, I will just delete this. 
+
+So, I will just pause here for two minutes. Let me know if you are able to get to the API keys part. So, the instructions are already there. 
+
+In between first and second step, there is one step to create your name of the organisation, which I have not documented here. And within the organisation, you can create multiple projects. But the moment you have created the organisation, in principle, you should be able to create your key.
+
+(2:14:35 - 2:14:41)
+Ideally, you should create your key for each project. So, go to the project settings. Okay.
+
+(2:14:43 - 2:14:55)
+And from there, you can also go to the API keys. That is what exactly I did. I clicked on the project. 
+
+Okay. So, from settings, this is the project. This is for the entire organisation.
+
+(2:14:56 - 2:15:03)
+So, this is the organisation. I created a project here. Within that project, I have the API keys.
+
+(2:15:07 - 2:16:09)
+So, overall traces, usage, everything can be tracked. And this is all for free. See, this is all for free. 
+
+Even you can track the scoring, you can see here. So, just let me know in the chat if you are able to get your API keys sorted here. So, what will be the name of the API key? These are the name of the API key, public key, secret key and the base URL. 
+
+And you will have to set up all these three in the chat. Sorry, in the secrets manager. So, LangFuse, public key, LangFuse secret key and LangFuse base URL. 
+
+So, three things you will have to set up. Apart from the OpenAI model. Okay. 
+
+So, you have to set up these four things. OpenAI key, anyway, you would already have. But apart from that, LangFuse side, there are three.
+
+(2:16:14 - 2:18:06)
+Okay, Mohammed has already got it. Instal it and then get it. The differences between LangFuse and LangSmith. 
+
+Key difference, both are for observability and evaluation. But they differ fundamentally in philosophy and architecture. Okay. 
+
+So, one is the licencing proprietary versus open source, self hosted, you can create dockerized versions of these LangFuse. This is already enterprise licence. So, you will not be able to have LangSmith on-premises. 
+
+Okay. So, LangSmith is given to you as a software as a service kind of a SaaS app, you can say, ultimately. Framework support, it is agnostic. 
+
+You can use any SDK to create your agents, even CRIUI. Here, it works best with LangChain and LangGraph. Standard that it is following is OpenTelemetry. 
+
+This is a custom tree model. So, they have created a proprietary architecture for this. And this is depth of the data that you want. 
+
+This is the trace based. Yeah. Good question. 
+
+LangFuse is from MIT? Licence, licence. It is open source. Open source can have multiple types of licences. 
+
+MIT licence, Apache licence. I mean, I do not remember, but these are the three, four most common licences. Okay. 
+
+It is open source. But MIT licence, if you just do a Google search, what is MIT licence, you will get it. Apache licence, MIT licence, and many other licences are there for open source.
+
+(2:18:06 - 2:19:15)
+So, these are like open source licence standards, you can say. Licencing techniques or standards, you can say for open source softwares and codes. So, when to choose LangFuse? Most important question, when you need a framework agnostic observability layer. 
+
+So, you are developing your entire agent not using LangChain, or you do not want to be very interlocked with LangChain. You want to have flexibility to switch between different SDKs, then LangFuse is something to consider for data sovereignty and compliance. So, basically, since it is self-hosted, you can actually, in the same VPC, in the same AWS server, you can also host your LangFuse in a separate Docker container, simply. 
+
+So, when to choose LangSmith? When you are 100% in the LangChain, LangRaph ecosystem, and you prefer a fully managed service. That is exactly what I just now said. So, LangSmith is a fully managed SaaS with built-in alerting dashboards and everything.
+
+(2:19:17 - 2:19:38)
+Okay, so how many of you have been able to set up your account and got the API keys ready? So, this code works, I have just verified today evening only. So, this is completely working piece of code. This is just to make sure all the keys are imported.
+
+(2:19:39 - 2:20:40)
+And then you create your own client. Okay, and just check the authentication. This is just to check whether you are able to connect to the LangFuse server. 
+
+Okay, right now, what we are using is a LangFuse deployed on some third-party server, the deployed or managed version of LangFuse, but you can have a self-hosted version of LangFuse as well. Okay, so I'm just checking up my authentication, it is fine. And then you download your documents, setting up the vector database, creating it as a vector retriever. 
+
+So, this part is all the same, nothing new. So, I've just run it and define your customer query state, creating all the node functions, everything, everything is all the same. Okay, all the nodes created, building and compiling your graph is the same graph. 
+
+From here now, back to LangFuse tracing. Okay, so this is where LangFuse replaces Langsmith. Instead of setting Langsmith tracing equal to two, that's what we did.
+
+(2:20:40 - 2:22:06)
+Okay, that is what we did in the previous notebook. As the environment variable, we will be creating a custom callback handler from LangFuse.langchain. So, this is the one which is going to create the tracing. Okay, and you can pass it to the config dictionary when streaming or invoking any LangGraph graph. 
+
+And for each LLM call or retriever query and node execution, this is automatically traced. Okay, so the main differences with Langsmith tracing is enabled as an environment variable. You just set up as an environment variable at the start of the notebook and that's it. 
+
+There is no handler, there is no callback, there is no custom function from Langsmith with that you have to invoke or call or attach with your code or a graph, nothing. Just set the environment variable at the top of the notebook, forget it. And then each and every API call which is happening in that entire notebook anywhere gets automatically tracked. 
+
+That is the convenience you get with Langsmith. But here, the same thing is done by callback handler explicitly in the configuration. So, if you want to leave out some of the API calls for tracking, that case, that is also possible.
+
+(2:22:06 - 2:23:08)
+But in the Langsmith case, that is not possible. Okay, because here it is used by using callback. So, you can actually leave out some of the API calls for tracking also if you want. 
+
+That option is there. Okay, so here I'm importing my callback handler. And this is again creating the same wrapper function. 
+
+Okay, I'm passing my agent, prompt, session ID and verbose, everything is same. Here I'm creating my handler. Now again, in Langsmith code, if you saw there was session ID and tags. 
+
+So, those things I have removed, which are not supported in Langfuse. So, agent dot string the Langfuse tracing, fine. For the entire agent, this is where you are setting for the entire agent.
+
+(2:23:09 - 2:24:14)
+And then you start running your agent. And for each of those events means node execution, event means node executions, you are just capturing that event and printing. And for the final response, you are capturing it from the last agent state. 
+
+Okay, final response is present in your agent state, which you are capturing and displaying is as a proper markdown. So, important in short lived environments, notebooks or serverless flush pending traces. So, you can do this. 
+
+Okay. So, pending traces can be flushed. And if you want, you can return the final state of the agent for scoring later. 
+
+So, that can be used for scoring as well. Fine. So, I have created some user ID, this is the query. 
+
+And here, this is exactly the same code that you had in your line graph also. Okay, there is no single change, I can open that once again and show you. So, the way you are using that function is still the same.
+
+(2:24:21 - 2:25:10)
+So, this code from Langsmith is exactly same as the same code in Langfuse. Okay, there is no change at all. So, business scenario, everything, everything is same, AI product company received diverse technical queries, billing, general support, occasionally angry customers who need human escalation. 
+
+So, this is all the same. So, front end, how you use Langfuse is all the same. But back end, these are a few additional lines that got added. 
+
+So, first is creating that callback handler. So, it will track every API call within that line graph. And that was one. 
+
+And you attach that Langfuse handler to your agent. Simple. Okay.
+
+(2:25:10 - 2:27:13)
+So, this is again the same. In the end, you just have to flush that. Yeah. 
+
+So, this is all the same. Nothing changed. So, now how do I add the feedback scores to the traces? So, in Langsmith, you use the client dot create feedback. 
+
+So, this is what you would be doing when you provide a run ID. So, this is what I was trying to do. So, you will have to create a Langsmith client. 
+
+And from there, you will have to create a feedback programmatically. Okay, that is what we did the end. Correct. 
+
+We created the client. And you can use a create feedback correctness score. In Langfuse, the equivalent is Langfuse dot create score. 
+
+Instead of create feedback, you will have to use create score, which attaches a numeric or categorical score. So, scoring is essential for monitoring quality over time, filtering traces in the dashboard. So, suppose you want to only look into those traces where the user has marked negative score or zero score. 
+
+Okay. Those are the flagged conversations. So, you want to focus more on the flagged conversations. 
+
+So, that filtering can also be done in the dashboard. Building evaluation datasets also can be done. Okay. 
+
+So, these are the three data types, numeric, zero to one, categorical, correct or incorrect. Okay. And Boolean true false, simple thumbs up, thumbs down. 
+
+So, you create a client just like before. And you set the trace limit. So, fetch the recent traces to get the trace IDs. 
+
+So, in this case, I have set five. So, I am getting the last five trace IDs. Okay. 
+
+And I am just printing each of these trace IDs. These are customer queries. Okay. 
+
+So, these are the queries. So, when you make these queries, then only you will be able to see the queries. Otherwise, if you directly jump here, this might be empty.
+
+(2:27:13 - 2:27:17)
+Okay. So, when you run the notebook in the same sequence, you will get all of these. Okay.
+
+(2:27:18 - 2:28:20)
+Now, the score the most recent trace with correctness feedback. So, I am just going to pull the last one. Okay. 
+
+The latest score, it is in a reverse chronological order. So, latest one is the first printed here. Okay. 
+
+So, this is the latest. So, I am getting the trace ID. Okay. 
+
+And now I am creating the create score function. Okay. I am passing the trace ID correctness one numeric agent. 
+
+So, this part is almost same what we did here. So, here I was doing it using run ID. Here I am using it using the trace ID right now. 
+
+Correct. And then you can also add a categorical helpfulness score. So, here the metric name is helpfulness whether the answer was helpful or not. 
+
+So, Hanser being helpful is not same as Hanser being correct. Okay. So, two different things are there. 
+
+Agent correctly routed and answered. Here the response was relevant and addressed. So, this is categorical.
+
+(2:28:20 - 2:32:38)
+So, yes or no, this will be ultimately Boolean only. So, scores have been assigned and then you can add it to this trace. So, you can also check this. 
+
+Go to the lang fuse and then go to your project. This is how your project comes up. Click on tracing left side. 
+
+Now the traces start. Okay. So, click on the last timestamp, zoom out. 
+
+So, this is your trace ID. Okay. You can see everything thread ID is Prashant001, telemetry SDK, version number, name, scope, three items, attributes, whatever public key and so on. 
+
+Yes. And you can see total latency, total cost, usage, sum is 1350, input tokens, output tokens, reasoning tokens are also there, which is charged as output tokens. Remember. 
+
+Okay. And you have the ID also, trace ID, AET1, E2. So, from there you can check this. 
+
+And you can add to the datasets, annotate, comment also you can add if you want, the JSON form. Yeah. There is a log view for each and every item. 
+
+Okay. And scores if you have done. So, there was no scoring available for this. 
+
+Maybe we can just check. So, also you can see block wise, whichever block you click, you will be able to see the trace for that particular block. Okay. 
+
+So, for the billing response, this is what we got. Okay. So, categorise in query, whichever you are clicking, you are getting the corresponding trace actually. 
+
+So, it is visually very, very easy and you do not have to create this platform, this environment, nothing. You are able to get the same thing even better in fact now, you see. And this summation, this is a summation, capital sigma is the summation. 
+
+So, total cost is this. This is a total latency and total cost. Okay. 
+
+And for each step again, you get to see. So, 125 was the input, 84 was the output. So, total is 209. 
+
+That is how you would read it. Okay. Here also you can see runnables and so on. 
+
+So, individual chains are called as runnables and the overall node otherwise is this. So, within the node, you will get the chain and the vector store retriever and multiple steps are present in each of the nodes. So, here you have the name of the nodes also. 
+
+So, you can click on the nodes from here or you can also click on the name of the nodes from here either way. Yeah, you can see there are scores also I have provided. So, this is 4352, 4352. 
+
+Can you see the last trace ID is this for which I have provided 4352 F12 and for the same 4352 here at the top 4352 F12. That is what we were programmatically able to fetch. So, this is the one which I fetched. 
+
+I passed that, I passed that trace ID to this function. Yeah, to this function. Then I added the scores.
+
+(2:32:40 - 2:34:45)
+And so, these are the scores that I have. One is for helpfulness and one is for the correctness, you can see. One means correct and other one is helpful, correct. 
+
+So, this way I have also updated the, this way I have also updated the scores. That is for the trace. So, trace ID would not change. 
+
+It is exactly the same. So, anyway, but for this trace, I have got two scores already. So, now viewing logs and traces in the Langfuse dashboard. 
+
+So, you can go ahead and check it out. These are the other things you can do. So, timestamp, latency, cost, tags, everything is there. 
+
+And you can also drill into a trace. So, these are some activity which I would like you to take, spend time half an hour, one hour, explore the user dashboard over the next few days. So, this is like, you would not understand unless you actually do the hands-on and exploration at your own pace, at your own end. 
+
+So, scores also I have just now showed you, scores and metrics aggregated. So, this is what each of these sections are. And you can also query traces and observations programmatically. 
+
+So, that is what I fetched here. The last few traces, input, outputs, everything with the timestamp from the Langfuse API. Can you see here, langfuse.api.trace, limit 5. So, last 5, I have retrieved it and printed here. 
+
+And view additional LLM call observations generation for cost-token analysis, that also I have done here. So, recent LLM observations, these are the model name, the overall latency, the overall cost. So, now I can also do the flushing at the end.
+
+(2:34:46 - 2:37:02)
+So, Langfuse batch events in the, batches events in the background and sends them asynchronously to reduce the network workload. In long-running applications like web servers API, this works automatically fine. But in environments like this, Jupyter Notebooks or Colab, you should explicitly flush it or shut down at the very end to ensure all pending events are sent to Langfuse before the process exits. 
+
+So, flushing will finally register, it is like committing. So, if the process is automatically ending, no problem, but otherwise you will have to force flush so that it gets registered in the server to send all the pending events blocks until complete and finally shut down at the end of your application. Once everything is done, you can shut down your Langfuse call. 
+
+This ensures all remaining events are flushed anyway. So, shutdown is for flushing everything. Fine, I think I have given almost everything. 
+
+Let us check this. Okay, almost we are time up. Fine. 
+
+So, tomorrow we will start with the MCP part. I will give you a quick overview of what MCP is, what A2A protocol is, what problem does it solve, where are we going to use them, how to create your MCP server and clients in the local machine and also how to create it for the server deployed MCP server kind of thing. And we will take two hands-on, one in a Jupyter Notebook and the other one is like I have the same customer support router agentic rack system on which, no, not this, sorry, there is another project, insurance claim processing multi-agent system. 
+
+It is a hierarchical agent that I have created using Crewe AI and Langsmith, no, Langgraph. So, I have created with both. We will take one of them.
+
+(2:37:03 - 2:37:37)
+Mostly we will take the Langgraph one because mostly we are familiar with that. So, it is a hierarchical agent. There is a supervisor agent. 
+
+Then you have a lot of worker agents. So, supervisor agent will supervise all these worker agents. These worker agents can also communicate with each other. 
+
+So, all those. So, that is a true multi-agentic system production grade system that I will try to demonstrate that will not be running on Colab, that will run on my local machine. And that also has guardrails and everything set.
+
+(2:37:37 - 2:37:56)
+So, it is like a proper enterprise grade agentic system, full agentic system. So, that I will demonstrate. I will give you all the code. 
+
+I will run it and show you how it works. So, we have proper PII reduction. We have guardrail set at the input, at the output.
+
+(2:37:56 - 2:38:09)
+I will discuss a complete architecture. So, that will take your knowledge to production grade, I would say. So, I do not know if that would finish because that will take much more time.
+
+(2:38:09 - 2:38:53)
+So, at least we will start the discussion and maybe we will continue to the next week if needed. Last questions. Can you make a code to purposefully make a bottleneck and show how to troubleshoot? Interesting. 
+
+Tim, I will take this. Not today. We are already time up, but maybe definitely tomorrow. 
+
+That is also interesting. I have just taken a note of that. Interesting.
+
+(2:38:55 - 2:39:10)
+Langfuse is working for me in production. How will it be handled? The flushing. So, it is all within the code. 
+
+So, do not worry. Okay. This is interesting.
+
+(2:39:11 - 2:39:32)
+Creating a purposeful bottleneck. I will see how it can be done for the demonstration. Yes. 
+
+Okay. Cool. Thank you. 
+
+And we will meet tomorrow. Same time, same link. Have a nice day. 
+
+Bye-bye.

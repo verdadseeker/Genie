@@ -1,0 +1,1640 @@
+(0:09 - 2:45)
+So, I think the last session we were having, we were talking about tool calling agents in Lanchain. So, this was the project that we were doing in Lanchain, I think. So, in the last week, we have already covered de-agentic patterns plus the no-code agent builder from OpenAI.
+
+(2:50 - 3:02)
+So, now we are going to create a lot of agents using Lanchain, Langraff. So, Lanchain, this is the only project, but quite extensive. Lanchain is not technically a framework to create serious agents.
+
+(3:02 - 3:21)
+For tool calling agents, it is good, but anything beyond that, you should be checking out with Langraff. So, Langraff is the actual framework for creating more complex, more serious agents or agentic workflows, I would say. So, after this, we will be directly upgrading to Langraff agents.
+
+(3:22 - 3:46)
+So, we will be having two notebooks here, I have got them ready. And if time permits, we will start with a project, but if not today, then we will take this project tomorrow. Fine.
+
+(3:46 - 4:22)
+So, all good? Any questions or anything? Why is Lanchain not sufficient? No, the question is actually wrong, Utkarsh. Lanchain is used for production, not for agents. Lanchain is the entire ecosystem.
+
+(4:22 - 4:34)
+Within the Lanchain, you have specific packages for specific things. So, let us say tool calling is there from Lanchain. If you want to create custom tools, you will mostly use Lanchain once again.
+
+(4:39 - 4:53)
+But let us say you want to add memory, you want to add conversational interfaces. For some of these, let us say memory part, again, Lanchain already has it. But if you want to add a conversational interface, you will use Chainlet.
+
+(4:53 - 5:10)
+If you want to, let us say, add more complex agents, you will use Langraff. If you want to add more traceability, observability, you will use Langsmith. If you want an open source version of the Langsmith, you will use Langfuse.
+
+(5:11 - 5:29)
+If you want to go for deployment, you will use Langserv. So different components are there within Lanchain ecosystem which are more specialised for specific use cases. So Lanchain is the mother framework which will orchestrate many of these things.
+
+(5:32 - 6:02)
+So for agents, Langraff is the better framework for creating all sort of exotic and custom customised agents and agentic workflows. But we'll still be using Lanchain to orchestrate and connect that Lanchain agent, sorry, Langraff agent with the other part of the workflow. So let's say you want to put memory into that, you will still use Lanchain.
+
+(6:02 - 6:19)
+Or if you want to have multi-user conversation capabilities, you will still use Lanchain. So agent is the same, but how does the agent interact with the remaining system? So for that, you will still use Lanchain, although you have created the agent using Langraff. I hope that is clear.
+
+(6:21 - 6:44)
+What are the plans for the next classes, can you please provide, that's what I'm giving you summation. So next session and the next week again, so three sessions I'll have on Langraff. So by the next session, so next week end, that is 13th and 14th will be mostly done with the 14th and 15th, sorry, that will be done with the Langraff agents.
+
+(6:44 - 6:53)
+And then we'll have a deployment session on 21st, Karthik, that's correct, 21st that is announced. Yes. Yeah.
+
+(6:54 - 7:01)
+Not yet announced. We'll pick one of these agents and actually take it to the deployment. So that is a plan for the 21st.
+
+(7:04 - 8:55)
+Yeah. Okay. So anyone facing any issues in this Lanchain agent that we created the last week, everything all good? So did you get a chance to execute these, this IPYNB, need a TPU, so change it back to a CPU.
+
+(8:55 - 9:29)
+Okay. Change it back to a CPU, if that is anything other than CPU, I think that was already shared in the last session. Fine.
+
+(9:31 - 9:41)
+So let's have a quick recap. Okay. So here we are going to build a beginner friendly agents in Lanchain, we'll be building three agents.
+
+(9:41 - 9:53)
+Okay. One is our Wikipedia agent, one is a web search agent, one is a calculator agent, plus we'll also create custom agents and bind it with the LLMs. So these are the two things we are going to learn end to end.
+
+(9:53 - 9:59)
+Okay. And why do you need agents? Everyone knows. Why do you need tools? Okay.
+
+(9:59 - 10:07)
+Without tools, agents are just, you know, pure LLM API calls. Okay. So agent is a combination of three things.
+
+(10:07 - 10:15)
+I have mentioned at least three things. You can have more, but at least three things. One is a brain of the agent, which is your LLM.
+
+(10:15 - 10:20)
+Second is the tools. Okay. Tool execution capabilities.
+
+(10:21 - 10:29)
+Okay. And then third, what is the other one? State. Correct.
+
+(10:30 - 10:42)
+So these are the three things. How does agent keep a track of what all has been done and what it is going to do and where is it going to update what it has done actually. So that is the three things, main components.
+
+(10:43 - 10:55)
+Additionally, in the application layer, you can add memory. So which is not technically a part of the agent, but it is more of a part of the application layer. So memory, as I said, right.
+
+(10:56 - 11:55)
+So there are, let me just write it here. So as I said, the agent, first thing is your LLM that acts as your brain. Okay.
+
+(11:55 - 12:00)
+Second is your tools. Okay. Tool execution.
+
+(12:03 - 12:14)
+Third thing is prompt. Actually, prompt will have all the tasks. You can say instructions.
+
+(12:17 - 12:23)
+Okay. Format of the output. Format of output.
+
+(12:24 - 13:25)
+Okay. What else? role, of course, task plus role, task plus role. And then the JD, this is like a JD job description for the agent. 
+
+Okay, so task role, okay, you are a Flana agent. This is a high level task. And in detail, this is these are the things that you are supposed to do. 
+
+So that's like a job description. So these are the three main things which define the agent. On top of that, you can have number four, which is your agent state and your memory component. 
+
+So these are the things which are actually handled by the application layer. Okay, so application layer, which is typically either in lang chain or your lang graph. So these are your lang graph components, you can say, which handles these things.
+
+(13:26 - 16:10)
+Fine. So once the agent does not have a state, but agent has to interact with the state, that is how you have to understand, agent does not have a state of its own, but agent will read the state and update the state. Okay, so it will need access to the state, which it is inherently having. 
+
+So every agent will have inherent access to the state, but state is like a whiteboard. We'll talk about the state today, okay, when we start with the lang graph. So for now, this is just a high level, you may not be able to understand everything, that's completely fine. 
+
+When we are, when I'm going to demonstrate each and everything state, I am going to demonstrate memory not today, but maybe tomorrow. Okay, so I'm going to take the hands on on the state, how exactly we are going to build a state step by step, we are literally going to build that state from scratch. Okay, and this clarity will be there. 
+
+Okay, but these three things will always be an integral part of an agent, whether it is coming from, now brain is being used for your thinking, reasoning, thinking, you can say reasoning, planning, reasoning, planning, this is all the, so whether you create this agent by using lang graph, or you use CRIU AI, CRIU AI, or you are using autogen, or any other framework, these are the three things which always will be common in their definition. Okay, now, CRIU AI may call the state as something else, CRIU AI may implement a memory in a different way. But so these, because as I said, these are application layer things. 
+
+So how the other frameworks are supporting will be slightly different. But inherently, because these are not directly a part of the agent, then how are these things executed that will be quite different in different frameworks. But any agent that you create in any other framework will have these three things in common. 
+
+Okay, so let us continue. So what is agent, agent state and those things will not discuss right now, it is going to be anyway discussed, when we start with the lang graph. So just hold on till that point. 
+
+Fine. This is what we already discussed, I think. Yeah, so the agent that we are going to create in this lang chain is basically reasoning and action.
+
+(16:10 - 17:28)
+Okay, so you are asking the agent something, the agent will think, okay, let us say I am asking the agent, what is the weather in Mumbai, it will give a thought, okay, I need to check the current weather. And then it will say that, okay, I have got these tools. Okay. 
+
+So one of these tools is weather API, using the weather API, I am supposed to fetch the weather for Mumbai. Okay, so Mumbai becomes a query. And this is the tool. 
+
+So the agent, the LLM component of the agent, I would say the LLM component of the agent will also do the thinking, reasoning, planning. And as a result of all that thinking, reasoning, it will identify. So that is a net deliverable by the agent. 
+
+Okay, so LLM component of the agent will have two kinds of deliverables. First is to identify the right, the right tool, or tools, okay, required for that task, required for the task. So that is done by the, that identification is done by the LLM. 
+
+Okay, LLM does not execute. And then the tool execution starts, okay. But for the tool to execute, it will also give you the second thing.
+
+(17:28 - 17:52)
+So first is the identification step. And second is the query or, you know, query, or some additional information needed for the tool execution, okay, needed for tool execution. So for example, it was able to identify that I want to use the weather API as a tool, that is the first component.
+
+(17:52 - 19:42)
+But the second component here was the actual query. So here the query is extracted from the user's query. Okay, so this is the query part, what will be the input to the tool. 
+
+So you can say this is nothing but the input to the tool. Input to the tool is also identified. Okay, so first it identifies the right tool. 
+
+And then it also identifies the exact input I have to give to the tool. Okay, tool cannot be just executed anywhere. Okay, so to execute the tool, it will need the right set of inputs. 
+
+So what should be the right input for the tool execution that is also given by the LLM. So these are the two things which the LLM identifies. And the third thing, when it has all the information, the third thing is basically the final response, final response generation is also done by the same LLM. 
+
+Okay, but before it goes to the final response generation, you can see the agent response. So who responds when I say the agent is responding, it is basically the LLM which is responding, there is no other generative model anywhere else. Okay, so once the LLM sees that all the data has been available to me, now I have got all the required information, then it will do the final response generation. 
+
+So that response generation is also handled by the LLM. Okay, so agents response is technically the LLM response. So these are the three things which the agent is actually doing. 
+
+Fine. So there are several use cases I have already discussed, I will not repeat everything. Let us start executing this.
+
+(19:44 - 20:41)
+Now here you might get some warnings about deprecated functions or deprecated or conflicting package versions and so on. I just want to get rid of all that for now. You can instal Lanchain, Lanchain OpenAI and Lanchain Community. 
+
+So all these things I have discussed. So just instal them one by one. How agents know which, agent is not knowing agent has got a brain, which is the LLM. 
+
+LLM is equipped with reasoning and thinking capabilities. The LLM does that thinking. Okay. 
+
+Can you share the other component responsibilities tool prompt. So I think I just mentioned the tool we are going to do. Okay.
+
+(20:43 - 23:08)
+So tool is, these are the things which we have already discussed in the last session also, Renuka. Okay. So tool is required to fulfil the user request. 
+
+Okay. If the user is simply asking questions from the LLM, it does not need an agent. Okay. 
+
+User will ask the agent to perform some action. So who is performing that action that is coming because of the tool. And prompt is needed to clarify what task it is supposed to do in detail. 
+
+So all that information, additional information about the instructions, format of the output, any constraints, what all has happened to some extent, everything is provided in that prompt. State and memory we'll discuss later. So if that is missed, no problem. 
+
+We'll discuss that later. You can just keep a note. Anyway, we'll discuss those things. 
+
+Although I have touched upon it, but if you think it's still not yet done, don't worry, we'll do it later. I'm expecting that you guys already have all these API keys, which we have already discussed in the previous sessions. Okay. 
+
+So three tools that we are going to create. One is the Wikipedia tool, which is already there. So this is a Wikipedia tool. 
+
+You can import from the Lanchain. And then we are adding a wrapper over that tool. It's not mandatory, but if you want, you can add a wrapper to change the tool name and the tool description. 
+
+So this is the default name and the tool description that you got from the Wikipedia tool, which is imported from lanchain-community.tools. You see this tool is already available. I'm not creating this tool. This tool will import the top three results based on the user query. 
+
+And for each of the results, the first 8,000 characters of the Wikipedia page will be extracted and given back to the user. So that will become the tool execution output. Okay. 
+
+So this is your tool that we are importing. You are creating an instance of that tool. And then this is what you are doing.
+
+(23:08 - 24:40)
+And you are putting this parser for better HTML parsing because the output of that tool will be HTML page. So you want to present it in a more decent format to the user. So you want to extract all the HTML elements properly. 
+
+So that is what the LXML does. So this is the tool name and the description you get directly from this Wikipedia API wrapper. Okay. 
+
+So if you want, you can change it. So you can see this tool description. This is already coming from the tool, which is the default. 
+
+Okay. And the arguments which this tool takes. So it is the query. 
+
+So query is the field name, okay, which the tool takes mandatory. So that is a mandatory field. Okay. 
+
+And what is that query means that this description tells you that, okay, this is a query to look up on Wikipedia. Fine. So we have already covered all these things in the last session. 
+
+I am just quickly going through. Again, I am conducting a Wikipedia search on the query as ISRO. So you can change this query to anything. 
+
+Okay. If you want to change, let us say Chandrayaan. Let us see. 
+
+This is a different query. I am running on the flash. Prashant, can you maximise the screen? One training has issued in font size.
+
+(24:44 - 25:01)
+You want me to increase the font size? Yes. Yeah, it is good. Yeah. 
+
+Okay. Fine. So this is, this I changed just now, but yeah, these are the results.
+
+(25:02 - 25:19)
+So one page is exactly having the name title as Chandrayaan page. The other is Chandrayaan 1 and the other page is Chandrayaan Gutta. So probably this is the name of some old city in Hyderabad.
+
+(25:19 - 25:25)
+Fine. So, but with this keyword, these are the top three results that I have got. Okay.
+
+(25:32 - 27:51)
+Fine. So if you want, you can again, let us take India AI mission. Okay. 
+
+India AI mission. Okay. This is something I am handling a project for them. 
+
+Fine. So India AI is a web portal launched by the government of India and that works in close coordination with other government bodies, especially MIT. Yes. 
+
+And e-governance division, which is also a part of the NIG, National Institute of Smart Governance and of course, NASSCOM and other schools. Fine. That is good. 
+
+And what is the other page? There is a page on AI India and AI safety. Fine, whatever it is. Okay. 
+
+There is a question. So NTSS, the, see all the code from warnings, import warning. Yes, you have to run that. 
+
+Everything, all the code blocks, you have to run exactly in the same order. Have you used some tools to generate the skeleton, cursor, anti-gravity or AI tools for this code? This code, this entire notebook has gone, you know, significant revisions. So this was the first version, which I created somewhere in the first week of January last year. 
+
+And after that for all the subsequent batches, this has been undergoing drastic changes. So first time it was created by using the documentation page, the line chain and the line graph documentation, and then later on modify. Okay. 
+
+This was not done using cursor, anti-gravity or any of those AI tools. So some part of it was derived from, because those guys will again use their brain. And the problem with these tools is their brain is trained eight months ago, seven months ago.
+
+(27:51 - 30:09)
+And the code, so for example, these libraries are so recent. If there is a change in the last month, these guys would not be knowing it. Okay. 
+
+These models I'm saying, okay, brain means model. These models would not be knowing it. So you cannot start creating this kind of a thing from scratch using cursor, anti-gravity these days. 
+
+Okay. Now, the reason I told you, okay, they will give you something, but two problems will be there. Number one, the code will be outdated. 
+
+It will use a lot of outdated and deprecated functions. Okay. Especially if you're not using the latest versions. 
+
+So if you're using, let's say, Cloud Sonnet 3.7, which was trained in 2024, you'll get a very different code versus if you are using Cloud Opus 4.6. Same goes with GPT. If you're using GPT 4.0 or 4.0 mini, you will, that was trained in 2024, you will get a completely different code, outdated, deprecated code versus you are using GPT 5.2, which was trained six months ago, let's say, or four months ago. Okay. 
+
+So I usually never start with generated codes. That's the worst case scenario. I mean, that's not the good practise even. 
+
+Okay. I always start with the documentation, the official documentation. This is slightly a hard way to expect for new beginners and so on. 
+
+That is the reason you have paid thousands of dollars to subscribe to the course. So you would not be starting from scratch. You would not be getting into the hassles of going through the documentation pages and overwhelming yourself. 
+
+Okay. That is our task. So we don't start from these models. 
+
+I mean, that's never the right approach. Okay. These models can hallucinate any random code and then we are trapped. 
+
+Okay. So we always start from the official documentation pages, which are the most proper way to do it. These days, what I'm trying also to do is some of the documentation pages, some not all, also have a button called as copy page.
+
+(30:10 - 36:52)
+So if I want to generate a tutorial from some of those, I just copy that entire page. Okay. Not the way you copy, drag and drop and control C, no. 
+
+There's a specific way of copying such pages, documentation pages. So if I get that facility, then obviously I use that copy button or copy function and copy that page into your cursor, anti-gravity, whatever model you want to use. So that now the model's code is grounded on the functions, on the classes, on the way which is mentioned in that particular documentation page. 
+
+So unless you ground these models, they'll simply hallucinate any random code. And that is a big pain point. Okay. 
+
+So that was your answer to the question. Okay. So this is done. 
+
+Yeah, that's what I told you. Yeah, there is a tool you can use to wrap your existing tools. So this is while wrapping, I'm just changing the function name, or you can say the tool name and the description. 
+
+So this is just a wrapper over a tool. And tool itself was a wrapper, you can say. That's why you can see this was already named as a wrapper. 
+
+Okay. So tool technically is a wrapper over a lot of, so there might be some, you know, a big Python class or a function behind the scenes. In fact, it is not a function, it is a class because if you are coming from Python programming background, you would know that there is something called as PEP 8 style guidelines. 
+
+Okay. PEP 8 style guidelines. If you have never followed this page, okay, and I think I had got disconnected. 
+
+No worries. Yeah. So this is the class we created an instance of that. 
+
+And within that class, the entire code for connecting with Wikipedia, fetching all the information is there and some customisation can be done. These are now class instance or you can say, yeah, these are the instance variables. These are the instance variables. 
+
+Now exactly how they are being done, you have to, you know, check the actual documentation page, which will have all the details. Okay. So you can click on this, you can view the source, if you're really interested, it will fetch, you see, that's what I told you, this is a class name. 
+
+And this is the complete, these are your instance variables, class variables to be specific. If there is anything which is directly coded within the class, these are class variables. Okay. 
+
+And then there are instance variables which are coded within the function definitions. Okay. Fine. 
+
+So to use, you should have the Wikipedia Python package, which we have already installed. This is a wrapper and so on. So yeah, you can see, this is a complete actual code of this, how this is working, everything is there. 
+
+Okay. So this is how it fetches the page. This is how it connects that page to the document. 
+
+And these are the things that we are extracting, you can see title, summary and the source. Okay. And how many, fine. 
+
+And then how to execute. So that is where the executor is, Wikipedia query run. So this is executor to that tool. 
+
+Okay. Now you want to customise that tool, but you cannot customise the entire functionality. If you want to customise the entire functionality, you will have to change the way this class has been coded. 
+
+Okay. So you have to change the source code. The only customisation right now is that I am discussing here is customising the name of the tool and the customising the description of the tool. 
+
+These are the only two customisable options by using the tool class from like chain. So here you are wrapping an existing tool and while wrapping, okay, while wrapping, you are providing a custom name. That is the only thing which is happening. 
+
+No additional functionality, nothing. Okay. So there was a Wikipedia tool and on top of it, you added your own tool. 
+
+So this is a wrapper over wrapper. So this is your wrapper. Okay. 
+
+And while doing that, you are just changing the name and the description. That is it. Functionality is exactly the same. 
+
+And that is what you are saying. The functionality is coming from your Wikipedia API runner. Okay. 
+
+So this is the same. So you are not changing that. Fine. 
+
+There is nothing more to discuss. We have already discussed all these things. Fine. 
+
+Now there is another thing called a stably. Now, so you want to do a web search. So there are two types of web searches. 
+
+So tool for web search, you can say tool for web search. Okay. So there is one type of tool which will fetch the fetch the, you can say, actual content of the pages, content of the pages and fetch the, the other one is fetching the search results, fetch the search results page. 
+
+Now these guys are called a SERPR tools. These are called a SERPR tools. S E R P E R. Okay. 
+
+So search engine results page. Okay. So search engine results page.
+
+(36:53 - 42:01)
+That is the full form of SERP. Okay. And any tool which is working to fetch the, so what does this tool fetch you? So this is, these are the hyperlinks of the top 10 pages. 
+
+Okay. These are the hyperlinks, the names. Exactly. 
+
+If you do any Google search, the first thing that you get is the search engine results page. So a tool which can fetch the search engine results page, that is called as a SERPR tool. That is a SERPR tool. 
+
+What is Taveli? Taveli is not a SERPR tool. Taveli is not a SERPR tool. Taveli directly fetches this. 
+
+Another option, another option. So one is Taveli and the other is Brave, Brave search. Okay. 
+
+So you can also check this. So one option is this, other option is this, Brave search. You can just go to, so there are many options for this SERPR tools also. 
+
+Okay. There are many options. So Brave. 
+
+So a lot of no-code platforms or there are a lot of, you know, frameworks. They also have an API. They also have an API, you can see. 
+
+And both of them are making money. So see this page that you see here, this page is called as the SERP, search engine results page. This is the page what the SERPR fetches, whatever I have highlighted. 
+
+That is the outcome, that is the output of the SERPR tool. Okay. But what Brave and Taveli does is it will navigate to each of these links. 
+
+It will actually navigate to each of these links. So let's say it will internally click and then navigate, fetch all the content which is present in this page, and then it will fetch that content and give it to you. That's what I have written here. 
+
+It will fetch the actual content of these pages and give you that content in a raw format, in a polished format, both. Okay. So right now we are using Taveli, which is free. 
+
+Brave is also free with very limit, you know, limits, within limits, I think. So you can just check that. So that is the search engine optimised for LLMs and RACs, similar to Brave. 
+
+Okay. There are multiple options. I'm not saying these are the only two, there are many more, but these are the two which I have extensively used. 
+
+That is the way I can put it right now. Fine. So you would use Wikipedia for factual knowledge, which is established, verifiable. 
+
+Okay. Taveli for any current events which just happened an hour ago, and you think that some of the news pages have already reported that. Of course, unless it is there on the internet, you would not be able to fetch it. 
+
+So Wikipedia will not get updated every day. Okay. It will be mostly used for historical facts, general knowledge, and encyclopaedic kind of information. 
+
+Taveli is more for current news and events. Perfect. So how many results that you want to fetch? Advanced mode, and if you want to include the raw content, which will also have the HTML format, everything, not just the snippets. 
+
+Okay. So these things I've already discussed. Maybe I'll just go ahead. 
+
+Okay. And again, there is a package called as rich. You are importing that rich package to format the output nicely. 
+
+Okay. So here the search query is model context protocol, MCP. Okay. 
+
+And this is the query result that I have used. Tell me about the model context protocol. This is the query. 
+
+And I'm now getting all these results. So total results found is six. And you can actually go up and, you know, patiently scroll everything. 
+
+Okay. This is the first result. So I've just printed the first result here. 
+
+You can see the title, the URL, content, score. This is the similarity score based on the user query. So this is the user query. 
+
+Okay. And the query based on the title of the page and the content. Okay. 
+
+So this is the content. And how similar is that content to the query? That is the similarity score. Okay. 
+
+So higher, the better. The highest number is one. Anyway, 100% match. 
+
+So this is like almost matching 90% to the user query. And this is the raw content. Okay. 
+
+You can see. So it has still stripped off the HTML tags, but still the formatting tags are there. Formatting tag means the markdown formats. 
+
+I think the last class I did talk about markdown formats. You can see these are the markdown format codes, this backslash and the hashes. These are all your markdown. 
+
+So two hashes means H2 heading, single hash means H1 heading. Okay. Star star means bold. 
+
+So anything related to the formatting is preserved, but the actual HTML tags are removed. Okay. So this way, you are still able to get the entire content, but without the HTML tags, which is not needed anyway.
+
+(42:02 - 44:38)
+Fine. So I've already given the explanation for these. Okay. 
+
+So this is a summary, what all we have learned till now. Okay. Now we want to build our own tool. 
+
+Let's say we'll build a calculator tool. And then how do we connect that tool to the LLM? So till now, we have got two tools, and the Wikipedia tool, that every tool, we have executed both the tools, they are working. And now I will connect these tools to the actual model. 
+
+That's the next thing we are going to do. Fine. So let's create a simple math tool using the tool decorator. 
+
+So earlier, we had used the tool class. Okay, now this is the tool decorator. So there are two different things that was capital T tool. 
+
+So whenever the name is in capitals, okay, as per the Puppet style guidelines, that will be a class, this is not a class, this is a function, you can say and you're using that as a decorator. Okay, so I'm creating a simple tool, which will take two numbers, and multiply those two numbers, it will simply return the multiplication result of those two numbers. Okay, so I'll just execute this tool. 
+
+Okay, so multiply dot name, the this is the name of the tool, this is the description of the tool. And these are the arguments arguments means, what are the inputs needed by this tool? Okay, what are the inputs needed by this tool? So this tool needs small a and small b. Okay, these are the two inputs that the tool needs. Fine. 
+
+This tool is used to multiply the two numbers. And this is the name of the tool as such. So you can see three double quotes start three double quote end. 
+
+And how do you code the description? For that, I would strongly suggest you to follow PEP 257 style guidelines PEP 257 style docstring standards that is 257 is docstring standard. Okay, so please spend some time in understanding these standards. Okay, so that is how a proper coding of the documentation string happens. 
+
+Okay, so how do you do that? This is what we call as the documentation string, starting from three double quote, ending with three double quotes, just below the name of the function name of the class. This is what is the docstring. Okay, so docstring is very, very important if you are going to aspire a serious developer role, okay, creator role, builder role, anything related to that, you have to adhere to these standards.
+
+(44:39 - 45:13)
+Okay, or speaking about these standards during your interviews can make a huge change in the mindset so that they know only those people who actually code by themselves, they know these standards, those people who are completely dependent on these models to write down the codes, they would never know the names and numbers of these standards. You see, we have done that in the last 15 years, I have hardcoded all these several lakhs of codes, I would say. So I know these standards, because all your production level code has to adhere to these standards.
+
+(45:14 - 48:10)
+Okay, and the third thing that you should know strongly is Pydantic. Okay, so Pydantic. So learn this Pydantic. 
+
+Okay, so these are the three things you should be, you know, very comfortable for any developer role, builder role, agentic builder role, LLM engineer role, anything which is not to do with, let us say, architect, okay, or a decision maker. But even for architect, you have to ensure that your team who is writing the code follows these documentation standards. Okay, so three things, I will just put these names in the chat, PEP-8, PEP-257. 
+
+So PEP-8 is your style guidelines. PEP-257 is docstring standards. PEP-8 has been written, written, literally that page has been written by none other than Guido Von Ressem, who has, who is the creator of Python language, you can just search PEP-8, the result that you get, style guideline for Python code. 
+
+The very first result that you get is the name of the guy Guido Von Ressem. He is the creator of Python language. Okay, so it is coming directly from the source. 
+
+And the third thing is Pydantic. So these three things, you should be comfortable. Okay, if you do not want to lose your job to an AI model, because these models are anyway trained, but how do you communicate to the interviewer, okay, that you also can write down meaningful production level code, which adheres to these standards. 
+
+So softly while making your presentation or, you know, interview, just utter these two, three keywords and see the impact. Okay, so these are some tricks. Okay, although, I mean, but you should look into these pages and be comfortable already what is mentioned. 
+
+Okay, it shouldn t happen that you are just bluffing out different names, or, you know, keywords, without actually knowing it. Fine. So you can see the data type is a structured tool. 
+
+And let us test this tool. Yes, so I am invoking the tool because this is all a tool created by using lang chain. So anything in lang chain has to be invoked to run. 
+
+So invoking means to execute the tool to execute the chain to run that chain or to execute that chain. So invoking means execution in simplest terms. So you are executing the multiply tool by using these two inputs, right? And you are printing the output. 
+
+Fine. You can just change these numbers and see, okay, let us say I will make it 1.234 and 3.14. Let us see. So this is the output.
+
+(48:14 - 48:52)
+Okay. Again, this can be minus 2.91. And this is 13.28. Let us see. So you are getting something, no doubt. 
+
+So you can do integer multiplication, you can do floating point multiplication, anything that you want. But multiplication of an integer with a string will only replicate the string. Okay, so you can say hello space, hello space and see what happens.
+
+(48:53 - 48:59)
+Hello, hello, hello. Let us say I will make it 10. So hello gets replicated 10 times.
+
+(49:01 - 52:22)
+So that is the basic thing again from Python. Okay, let us see if there are any questions. Mary is asking what is the benefit of wrapping? Right now, the only benefit as I have shown you, okay, is to change the name and the description. 
+
+That is it. Tableau is a web scraper. In a way, yes. 
+
+Not a web scraper. Sorry, sorry, sorry, Venkat. It is not a web scraper. 
+
+I have repeated that several times. Okay. It is your search engine results fetcher, you can say. 
+
+Plus, it will actually fetch the, not just the results, but it will actually go and navigate into those search results and fetch the content of the top 5, top 3, top 4, whatever that number you are putting. It will fetch the content of the top search results. Okay. 
+
+So if it is not standard tool like a Wikipedia, custom tools can also be created. Yes, that is what we have seen. Next, okay. 
+
+There is one more question by Gehekasha. Pydantic is similar to Typedict. Okay. 
+
+They are related in a sense. Okay, I would say. I mean, describing what fields exist and what they have, but different layers are there. 
+
+Okay. Typedict is mostly, you know, for static type checking. Okay. 
+
+It does not have validation. That is another thing which I remember. Or no coercion is there. 
+
+Okay. No parsing or no coercion. And it is good when you want to have a lightweight implementation. 
+
+And you already trust that the input which will be given by the user, the user is going to stick to that format. Okay. So Typedict is more informative, you can say. 
+
+Whereas Pydantic will enforce data types. Okay. That is like data validation plus parsing, I would say, and coercion.
+
+(52:22 - 52:40)
+In the sense, it will not only validate, but coerce. Coerce means it will force the user to parse the exact same data type in the inputs. If the data type does not match, it will actually throw an error. 
+
+So that coercion is implemented by using Pydantic. Okay. It will also have defaults.
+
+(52:40 - 53:05)
+What is the data type it is expecting. So you can set up the defaults and constraints and so on. So that is what my understanding about these two are. 
+
+Okay. So going ahead. So from Pydantic, I'm importing the base model. 
+
+Again, we'll be using this base model to create a schema for the tool. Okay. So we have this Pydantic and field tools.
+
+(53:14 - 54:55)
+And then the structure tool, this will be needed to, yeah. So this will be needed to create your tool and bind it with the LLMs. Again, this is coming from your Lanchain core tools. 
+
+Fine. Okay. So here, I think it is already written. 
+
+The base model is coming from your Pydantic. So definitely we'll be not only implementing the data type. So it expects A and B. A and B are supposed to be float. 
+
+And this is the name or description of that A and B. So what is A and B? That description is given by first number and second number. So these are the fields which are described by this. So it's like a description you are adding to the inputs. 
+
+Simple description that you are adding to the inputs. So base class essentially, sorry, this base model is actually like a base class which you are inheriting from the Pydantic model. Okay. 
+
+So it's like inheriting a schema. Okay. And you are building on top of that schema. 
+
+So this schema already has these components built in. For example, runtime validation, coercion, type parsing. Okay. 
+
+So this is already built in within that base model. Defaults and field description. So all these are coming from the base model. 
+
+You are just modifying that base model and creating your own class definition for the data type. Okay. And here then you are creating this multiply.
+
+(54:56 - 55:12)
+Okay. So this is taking A and B. Again, this is like float. And this will simply result. 
+
+So it's the same as the previous function. Now you are creating a structure tool from this function. So structure tool dot from function.
+
+(55:12 - 55:46)
+You are passing that function. So essentially whenever we say that tool is being executed, you are technically executing a function behind the scenes. So which function you will be executing behind the scene? This is the, you can provide a different name, but usually we don't change the that will only lead to confusion. 
+
+This is the description of the tool. You can see now this multiply is the tool, whereas this multiply that you created here was a function. So you are wrapping that multiply function with the tool. 
+
+Okay. You are wrapping it by using here. Okay.
+
+(55:46 - 59:52)
+And now this multiply, which will go into your memory, okay, will be a multiply named. So let me just show you this step by step. We just execute this and let's see time goes. 
+
+Okay. As of now, your multiply is a function, right? Now I'm going to wrap this function with the tool. Okay. 
+
+So now when I execute this, the same multiply will have a different data type. Now the same multiply has become a tool. Okay. 
+
+So that multiply was earlier a function. Okay. And now that same multiply has become a tool because we have wrapped it. 
+
+And that's what exactly this is doing. Fine. Schema. 
+
+So schema will tell you that, okay, this tool needs these fields for the execution, which all fields it needs. It needs field A and field B. So essentially you have to do the mapping. So if let's say this mapping has to be same as this mapping, otherwise, again, there is a problem. 
+
+Okay. So if the function needs three inputs, the tool also will have to have three inputs, right? Or the third input can be a default if it is not provided so that you can change. Okay. 
+
+So when I execute, I get the name of the tool, description of the tool, and now the name of the fields and their descriptions. Okay. So name of the field and their descriptions. 
+
+Let's test this tool. Okay. So now this multiply was a tool which we created using Lanchain. 
+
+It's a Lanchain tool. Okay. And now that tool is also working. 
+
+Fine. Earlier we checked that, okay, this multiply. So now you might think, okay, I was able to create the same tool just by wrapping with iterate decorator. 
+
+So this is the simplest way. For very, very simple tools, you can actually use this technique. For very simple tools, you can use this. 
+
+But here the problem is there is no way to force, there is no way to force the user or even tell the user that this tool needs exactly these two inputs, number one, and validation is not there. And if you want the coercion and validation, you have to go with the Pydentek version, the structure tool that we created just now. So for example, if I just execute this, and I just show you who's, now the same is just structure tool. 
+
+Okay. Basically, because of that, but again, enforcement is not there. So that you have to remember, which means if I try to multiply, let's say 2.12 with ABC, let's see what happens. 
+
+So it will say that it is not callable and some type of error. Now, let's see what happens if I find, now that has again become a structure tool. After you have enforced it using Pydentek, you can test it. 
+
+Okay, now let me do one more thing. Actually, it is already there. I have done it. 
+
+Okay. So if you just directly do it without, these are the problems. Okay. 
+
+So when you invoke it with a number and a text, then you will get a problem because it was expecting both A and B as, it was expecting both A and B as floats, you can see. A is float, B is float. So that is the advantage of Pydentek.
+
+(59:52 - 1:00:30)
+It will give you a proper validation report. Okay. There is a validation error in the calculated input. 
+
+So that Pydentek enforces. Fine. So these are the some real world use cases some people had been asking in the chat. 
+
+Okay. So tool that searches the web and extract that is your web search tool. It can be used in search, research assistant, competitive intelligence gathering, content aggregation, data collection, based on on the fly, you know, concept and a topic generation. 
+
+And these are the things which are included in that tool. First, the searching. Second is converting the HTML content into a markdown content, stripping off the HTML tags.
+
+(1:00:30 - 1:04:32)
+And the third is summarising that markdown content also. So tabular tool I think we have seen the last session. So here the tell me about the Microsoft Q1. 
+
+Now this is already Q3 results of 2025 should be available. Okay. Yeah, I think it is available. 
+
+So Q3 results of Microsoft are available now. This is already firm. So it should be available. 
+
+Or even Q4 because in India, we follow a different format. So Q4 results also should be available. Okay. 
+
+And it talks about SEC filings and so on. Nice. So I'm able to get all these results. 
+
+And probably these are coming directly from the Microsoft page. Okay, you can see the very first result is so this much content you have, you know, extracted from the internet. Yeah, so Microsoft MSFT that is the you know, ticker, okay for Microsoft on these NASDAQ and so on. 
+
+Q4 earnings report, that is exactly the name of this page, you can navigate to this and see the title of the page is Microsoft, put my cursor over there, you can see MSFT Q4 earnings report. So that is the title. And this is the results that was fetched, you can just check that. 
+
+So this is the overall content 99.99 is the content matching similarity. So you see, without you having actually going to the Google or any other search engine, without you having typing down anything without you having clicking on the results without you having pulling all those results. So this is all being automated by this simple tool. 
+
+I'm still not calling it as an agent. This is a simple tool call can do so many things. You see, and this is the raw. 
+
+Now in the raw, you see that if I just go to the view page source, you will have all sort of hyperlinks and everything. Okay, so that is the raw content. Basically, this is fetched. 
+
+Okay, so moving on. So this is the actual URL for the first result that is CNBC 2025. And then you can convert all that result into markdown also. 
+
+Now, this can give you results if it is forbidden. So that is a problem. Many of these websites will not allow the content to be scraped properly. 
+
+And that is the reason you will get this HTTP error. Okay, so this can happen. So let's try for some other URLs. 
+
+Client 429 error, too many requests again. Okay, fine. What about the other one? 403 error. 
+
+So mostly 403 error is what you will expect. Okay, because all these web pages are reserving their rights. At the end of each of these pages, you will see all rights reserved. 
+
+And that is where the problem starts. Okay. At the end of any of these pages, you will see copyrighted information, all rights reserved, or something like that. 
+
+You can see all rights reserved. And that is a culprit here. Because all the rights are reserved. 
+
+This is the other unit. So if it is coming from Wikipedia or any of those, then this is not going to throw an error. But otherwise, these are the reasons.
+
+(1:04:32 - 1:04:47)
+As per my understanding. Okay. HTTP error. 
+
+Okay. Cool. Yeah, so this is the document title.
+
+(1:04:48 - 1:06:21)
+And then you can see all the page content. So you are able to fetch the page content, but probably the conversion into markdown format, that was giving an error, I guess. Yeah, yeah, this conversion itself was just giving. 
+
+And this is a different package. Okay. So you are able to already extract the content by using Taveli. 
+
+So Taveli was already extracting. But if you try to extract the content using the URL using a different package, okay, let's say you feed any other URL to this marketdown. So the beauty of this marketdown is it will extract the web page content and give you in a markdown format, but only few of the pages will work, not all. 
+
+But our Taveli has already done the extraction of the web page results. And that is what I'm printing below. See, this is the content coming from Taveli. 
+
+Okay, not coming from your marketdown as such. Okay, because this anyway failed, right? This anyway failed. This document content anyway failed. 
+
+So where is this document content coming from then? Okay, this is coming from Taveli actually. Okay. So this was the search result. 
+
+You can see. So all this is coming from Taveli. Now I can pass that to marketdown for formatting later.
+
+(1:06:23 - 1:07:04)
+So let's bind all of these and, you know, put it in a more structured format. So configure the Taveli for search results. Some people were asking for the additional configurations, I would strongly encourage you to go to the Taveli documentation page. 
+
+All the further customisation can be discussed over there. Okay. So what is fetching the results? You can see Taveli search results maximum. 
+
+And there are many more options, Taveli search results here. I'm doing Taveli search results. So one option here is how many pages you want to fetch.
+
+(1:07:05 - 1:10:48)
+Advanced mode include the answer false and raw content true. So include answer means basically it will try to, you know, generate some LLM generated because Taveli is powered by an LLM behind the scenes, which also tries to summarise the content present in that web page. So I don't want that to happen. 
+
+I just want to see the raw content. Okay. And then you are creating the Taveli tool and then wrapping it with your own structure tool. 
+
+So either it is a structure tool that we have seen. Okay. But you are not enforcing PyDyn take right now because you are doing in a lazy way. 
+
+You can do it in a proper structure tool thing and you can bind a proper PyDyn take schema to it. Okay. So Taveli tool dot invoke. 
+
+So this is a function which will invoke the Taveli tool. Invoking the Taveli tool means execute that tool. So whenever this function is called, it will execute the Taveli tool, get all the results. 
+
+And this, all the results are stored in that. Okay. Which contains everything. 
+
+Now this docs is an empty list. Now one by one, I'm going to fetch all the results. That is what the TQDM results does. 
+
+So it will give you a progress bar. So the purpose of TQDM is to give you this progress bar. Okay. 
+
+Otherwise you can directly iterate for result in results also you can do. Okay. But TQDM of the results will create this kind of a progress bar. 
+
+That's the only thing. Then you are extracting the title from the results. You are extracting the content and then you are appending all the content within that empty list. 
+
+And if any of these fail, okay, because there are times where Taveli is not able to navigate the actual page content because of, again, restrictions and so on. Yes, it happens even with Taveli. Okay. 
+
+So in those cases, it will simply fall back to this. If the content is empty or if there is any other error. Okay. 
+
+So we are going to use two engines to extract the content. One engine is the Taveli itself, which we will favour because it will have a higher success rate. The other is to use the Markitdown. 
+
+We'll provide a URL to Markitdown and Markitdown will extract the web page. So let's say I have, I'll just click on any of these links. Okay. 
+
+So this is a webpage link. Let's see how the Markitdown actually works. I'm just, so this didn't work. 
+
+No worry. I say that URL is this. Okay. 
+
+Now let me print this URL. Okay. Let's see what happens. 
+
+Okay. So it has converted into a converter result. Yeah. 
+
+So I'll fetch the actual result from there. Okay. And let me see if this can be printed directly. 
+
+So it did not. Yeah, that's exactly what I was trying to show you. See, this is actually fetching the actual content from that. 
+
+Yeah. This is actually fetching the content from the URL, which I just clicked. So this is the URL, which I clicked. 
+
+Okay. And I can navigate it. There is nothing restricted on this page.
+
+(1:10:49 - 1:11:35)
+I'm assuming since the page does not restrict anything, you can see nothing of that sort, all rights reserved, copyright, something, something. So there is no restriction on this page. Feel free to report issues, whatever it is. 
+
+So this is an open page. Any web scraper can read this. So normally this is a page for any web scraper. 
+
+Then your Markitdown and Taveli will definitely have a much higher success rate. Fine. It will, see, it has very beautifully converted the content of this entire page into this Markdown format. 
+
+So these are the lectures. And then this is the table in which it had done the formatting. Proper slides are there.
+
+(1:11:36 - 1:12:12)
+Links are there. Okay. And everything. 
+
+Super. This is a Markdown format. Even you can click on any of these. 
+
+Okay. So let's move ahead. This is done, done, done. 
+
+Now you can check Markitdown. This is for, I think, model context protocol. Yeah.
+
+(1:12:14 - 1:12:56)
+Docs is not defined. Where is the docs? Okay. I have to run this query. 
+
+Sorry. So let me run this query, model context protocol. And these are the docs that I have. 
+
+Okay. And this is the first document I have got. Okay. 
+
+Now building a weather tool. Okay. So weather API key has already been imported. 
+
+This is the query and this is a base URL. Okay. So you are creating a URL, complete URL by attaching the query with the base URL.
+
+(1:12:56 - 1:17:34)
+And now you are using the requests, Python library. This is the request Python library. Okay. 
+
+To do an API call. So this is a crude API call being done. You can use a curl command also. 
+
+Okay. So curl is like complete URL. Okay. 
+
+Fine. And response 200 means your API call was successful. 200 is the status code. 
+
+So you can have status code like 403, 429, API rate limit lease, 403, authentication error can also be there. Server not responding, timeout error, 503 error, 401 error. So a lot of these error codes you should remember. 
+
+Okay. API, I can say rest API status codes, status codes. Okay. 
+
+Please help yourself. I mean, I can only give you things. Okay. 
+
+So you can see the success codes are present in 2xx like 200. These are success codes, redirection code, client error codes, server. And these are the five informational things. 
+
+So you can just check. These are the most important ones. So again, this is only for people who are looking for real developer kind of roles. 
+
+Okay. So otherwise the solution architects and those things are not expected to know. If you know, fantastic. 
+
+Okay. But again, this is not a part of the curriculum. So don't expect me to explain each of these. 
+
+Okay. So please help yourself. So but definitely since 99% of the model access you are doing using API calls, whether it is proprietary or open source, okay, since you are using models using API calls, right now, I'm not using a model, but still it is API call. 
+
+So any API call will follow the same structure, the same status code, everything. Okay. So it becomes relevant to discuss. 
+
+Okay. So this is the complete JSON object as a response I have received from the server. Okay. 
+
+So you can see, let me just print it. Okay. So now that this code works, I can wrap this into a tool. 
+
+So I have wrapped that code into a tool simply. Okay. This code works. 
+
+Now that code I'm wrapping as a tool. So first to wrap it, I have to create a function, which will take a query string. I'll just attach that query string here and create a URL. 
+
+Okay. And along with the API key and the query. Okay. 
+
+So query is being taken by the function here. So this query is wrapped along with the API key and the base URL. So the complete URL gets created and you just use the request module. 
+
+This is a request package to execute dot get means. So there are get and post. Okay. 
+
+So post is like interacting with the server. Here you are not interacting, you are just fetching some details. So you are using the get method. 
+
+So API calls can be get method or post method. These are the two most, there are many more, but these are the two most common methods to interact with the REST API calls, get method and post method. Okay. 
+
+So whenever you are sharing some information with the server, that is a post method. Okay. Here you are just getting the information from the server. 
+
+So that is a get method. So this response object convert that into a JSON and this is your data. And from that, you are fetching all the results. 
+
+Okay. So you see your location has all the details. So I'm fetching that. 
+
+So let me just execute this, change this to Gurgaon. Let's see if that works. That works. 
+
+Right. So this is the lat long and time and everything. So what is the current temperature like? 16 degrees. 
+
+Yeah. At least I'm not wearing my regular heavy duty jacket today. So this is much better. 
+
+Fine. That's okay. And this is just to do a much nicer formatting. 
+
+Nothing more. Okay. It's just to do a nicer formatting, no exotic thing.
+
+(1:17:35 - 1:20:39)
+Fine. And the last section where you want to create your own tools. Maybe we can take a small break here and then we can create our own tools. 
+
+So that we will discuss after the break. Okay. So let's see if there are questions. 
+
+I think Python does not have data type that maybe there is a bad ending. So see there is core Python, which we know as data types in core Python, ink, float, string, Boolean, complex. Okay. 
+
+Or even data structures or containers called as list, tuples, dictionaries, strings. Okay. Sets. 
+
+These are the data types which are collections in Python. Okay. There is no standard, I mean, direct way of validating, which is why you are using additional package, which is bad ending. 
+
+How about the paywall? No, it cannot skip the paywall, obviously. So if it needs authentication, it, say, for example, what we did here is also a kind of a paywall only. Without this API key, it will not be able to make. 
+
+So just change the API key or delete this key part, means you are making an API call without the key, means that's going to fail in the authentication. So paywall is nothing but a way to authenticate yourself. Okay. 
+
+Same thing, if you are using OpenAI key, means you are authenticating yourself for the payment. You have indirectly, you know, agreed to the server that I'm ready to pay for this API cost, and this is the key where you will do the billing. So usually this is how it is done. 
+
+Plus, there can be some bearer tokens and other things also. So apart from the key, there could be some bearer tokens for additional authentication. So I'm not saying that this is the only way the authentication can happen. 
+
+Plus, there can be additional tokens. Okay. Session tokens are also available. 
+
+For example, with your broker APIs, you want to use Zerodha or Motilal or whatever. Okay. There is something called a session token also. 
+
+You have to generate that session token, and that session token gets generated after the key authentication has been done. So first you authenticate yourself with the key, and then the session authentication happens. There are two levels of authentication. 
+
+So during the generation of the session token, it will ask you for the OTP. But before generating the OTP, you will have to authenticate by providing the right keys. Okay.
+
+(1:20:40 - 1:44:18)
+So that makes it three level now. Okay. Fine. 
+
+Fine. Okay. So tool calling, those things I have already explained. 
+
+So tool calling, also called as function calling, ability to understand what a tool does, decide which tool, generate the correct parameters. So yeah, these are the things which I've already mentioned as a part of the LLMs. Okay. 
+
+So identify which tool, and then generate the parameters. These are all things I've already mentioned. Process the tools output, continue the conversation. 
+
+Right. So now there are two approaches. One is to directly use the models which are capable of tool calling. 
+
+And one is to use the models which do not have the capability of using tool calling. So these are the older models, essentially. So most of the models, in fact, all the models which have been commercially developed, the last one, one and a half years, they are supporting tool call out of the box, you don't have to really do anything. 
+
+Unless you are creating a model from scratch, or unless you are using a very small model, maybe under 1 billion parameters or a half a billion parameters. Okay. So whenever you want to use a model, just check if that model supports tool calling. 
+
+So if it supports tool calling, then fantastic. I mean, your job is much, much easy. But if it doesn't support tool calling, then we'll have to, you know, take some special measures. 
+
+That's the catch here. Okay, so if the model supports tool calling, you can just bind those tools. And you don't have to do anything. 
+
+We just there is one line of code which will connect the tools with that model. That's called a tool binding. Otherwise, if it doesn't support, then you have to provide a number of information to the model that you have access to so many tools, this is the description for each tool and so on. 
+
+And then the model will decide, okay, you'll have to provide the name, the description, the parameters, everything, the entire history geography of that tool has to be provided to the model. Okay. And then the model will only give an output that this tool is supposed to be used and with these parameters, but with the tool binding, okay, if the model already supports the tool, then the tool itself will have the information about the name of the tool, the description of the tool, and the arguments which are needed to call that tool. 
+
+So all that you don't have to explicitly pass or share to the model, you just bind the tools and it reads all this information in hand inherently. Okay, so tool calling for models which have a native support. So natively understands when to call a tool, which tool to call, what are the parameters, what are the results? Okay, so this is all inherent, built in, you can say. 
+
+Let's take one example, GPT-5 mini, I'm taking right now. If you want to use a temperature as a parameter, you can use GPT-4o. Okay, GPT-4o mini also supports tool calling. 
+
+Fine. So right now we have these three tools, web search and get weather. So this is going to use Tavili, this is going to use weather API, which I have already shared. 
+
+And this is a simple multiply tool. Okay, so now I'm going to bind those tools. That's exactly what I told you, because this particular model supports native tool calling. 
+
+So all you have to do is just bind the tools. So when you're binding the tool, now each tool has its name, description, list of arguments, all those informations are directly passed on to the model. You don't have to write down an additional line of code extra, nothing. 
+
+Now I have to create a chat prompt template, and I'll pass the user parameters directly to the model using runnable. Okay, so chat prompt template is to create the overall prompt template. So this is my prompt. 
+
+And I'll pass some of the user queries. So for example, the Mumbai, or even these numbers, I can pass this as variable into the prompt. And that needs the runnable pass through. 
+
+Okay, so without the runnable pass through, your prompt would be static. But if you want a dynamic prompt where the user is able to provide the numbers, the user is able to provide the text, basically the city, and the user is able to provide this query, okay, then it has to go via runnable pass through, right. So it's a simple prompt. 
+
+And I'm invoking this chat jpeg model with this prompt. Okay, now this is right now static. So I don't need runnable. 
+
+So you see nowhere I've used runnable as of now. And all the information is there. Okay, now when I execute the results, you can see, okay, there are so many things you can see type of tool called tool called tool called finished reason and so on. 
+
+Let me make it a bit more easy for comprehension. You can see the model was able to identify that. For the first question, I'll have to use the multiply tool with these parameters.
+
+(1:44:19 - 1:46:20)
+For the second question, I'll have to use the get weather API with this parameters. And for the third question, I'll need to use this tool with this query parameter. Right? So correct. 
+
+So now you can actually also create that toolkit. Okay, that's basically a list of tools, which is much more formatted, you can say, okay, it's like a dictionary map. So instead of just binding the tools as a list, what we have done here, I'm just binding the tools as a list, you can see the data type is a list. 
+
+So instead of a list, you can use a dictionary. Okay. So this is a dictionary, which is having the name of the tool and the overall tool, name of the tool and tool name of the tool and the tool. 
+
+Okay, what is the benefit? It's easy for tracking. That's it. So now the LLM will actually return the name of the tool rather than the name of the tool. 
+
+Now, what do you mean by each of them? Name of the tool is this and the name of the tool is this okay name of the tool means the actual name of the Python function or the class being used as a tool. That is the second thing. And this is a human specified name of the actual tool. 
+
+So for example, this tool will be called as Tavili API wrapper runnable. That's very complicated and technical. Here, this can be called as Tavili web search. 
+
+So you can provide a user friendly name like Tavili web search. And here it would be Tavili API wrapper, something like that. So instead of the LLM returning you Tavili API wrapper, so and so it will return this okay, Tavili web search. 
+
+That's much more easy to comprehend. That's the exact purpose of creating a toolkit as a dictionary. So now I'm using see the results already has three tool calls.
+
+(1:46:21 - 1:47:51)
+These are the tool calls. Now I'm iterating on each of the tool call here. Okay, I'm iterating just selecting the name of the tool and invoking each of the tools and printing the output of the tools, right and this is just an empty line that I'm doing. 
+
+So let's see. So this for loop is going to invoke the tools one by one. Okay, and print their results. 
+
+So first the multiply tool was invoked. This is the result I got. Then the weather API was invoked. 
+
+This is the result. And then the web search was invoked. And I've got the results, you can see, all I have to do is just pass these three results back to the model. 
+
+And then the model will generate the overall answer. And that is where I'll need the overall prompt template, right? And see, that is where I'll need a prompt template now. So I'm using the chat prompt template with static prompts. 
+
+As of now, let's do that and see and then we'll use the enable version. So this is a static prompt converting that into a prompt template, you can see, and that prompt template is chained with the tools using the pipe operator. So the output of the prompt template will go to the chat GPT with tools. 
+
+So what is this chat GPT with tools, this is the chat GPT model, which has the tools already bound. Okay, so you have already bounded tools with the chat GPT, you can just go up and check. So that is chat GPT with tools here.
+
+(1:47:51 - 1:49:42)
+Yeah, you have already bound the tools with the chat GPT. So that is the chat GPT, which already has the information about the tools. So essentially, you are passing the prompt template to the model with tools. 
+
+And now you invoke that chain. Basically, now you execute that chain, okay, with a different city name. And let's see what happens. 
+
+Yeah, so I've got the results, you can see, get weather, current weather in Tokyo today and so on, to call arguments. Okay. And did you notice one thing, the city name is being provided as a variable, you can see. 
+
+And that city name I'm mapping here. So that is being done by your enable. Okay, so. 
+
+So right now, this is simple. So explicitly, I'm not using the enable, I think in this code, your enable is not explicitly being used. But if you have more complex chains, then probably the enable will be needed. 
+
+So this was simple. Yeah, so a single prompt template is there. So you can pass that variable to that prompt template by the exact name of the query.
+
+(1:49:43 - 1:50:40)
+Sorry, the variable, the name of the variable is city here. So you have a city as a variable and the value. And that's how you are passing the city name into that entire. 
+
+That's why it did not fetch the Mumbai, which was already hardcoded above. So this is the Tokyo. Fine. 
+
+Now, I think this is how to use the grok if you want to use it. But this is purely optional. I think grok demonstration I have already done. 
+
+But just in case you want to see, I, the intention for this is to show you that even the grok models, the open source grok models also support tool calling. Okay. So before executing this, the next thing is we should go to grok and verify which all models are available, because time to time these model names change.
+
+(1:50:41 - 1:51:00)
+So you can use one of these models. Let me use the 3.370 billion parameter versatile model. This is the one which I'm using. 
+
+So what I'm going to do is just replace this text with that. Okay. And explain the importance of fast language models.
+
+(1:51:01 - 1:51:45)
+Let's say we can explain the difference between encoder and decoder transformer architectures. Let's see. Yes. 
+
+So I've got the results. So this is the encoder, the decoder and the key differences. So it is essentially working. 
+
+You see, this is a direct API call. There is no tool or as such anything. This is just to check whether the API call is working in the first place or not.
+
+(1:51:45 - 1:52:02)
+So I've given my API key. This is the complete chat completion API. How did I get this code? If you go to API docs or playground, go to the playground. 
+
+So this is the code we have got. So I'm going to use 7TB versatile model. So this is the code I just copy pasted here.
+
+(1:52:03 - 1:52:10)
+Okay. So just copy this. And this is the same code, role, content, model name, steamfalls.
+
+(1:52:10 - 1:53:02)
+You can see the model name is there, role, content. Yeah. And if you want, you can use the other parameters also. 
+
+Steam, top peak, completions, temperature and so on. And from here you are fetching the actual model response from the chat completion. The chat completion is the API response, whereas the model response is present in the content. 
+
+Okay. So don't get confused. This is the API response from the entire server that contains multiple things. 
+
+As we have seen, what do you mean by multiple things? These are the other things. Okay. Other things you see, these are the other things which are present. 
+
+Yeah. These are the other things. You are not interested in all of these, right? You're only interested in the actual content of the LLM API.
+
+(1:53:05 - 1:57:01)
+So which is what I'm extracting from here, the actual content part. Fine. That is done. 
+
+And now in this code, what we have used is directly the grok model. Here we have used directly the grok model from the official grok package SDK, from the official grok SDK. Now there is a chained version of that as well. 
+
+Okay. Okay. Chained version of the grok model. 
+
+Here you see the API call is much more easy to understand, comprehend. Okay. I think this model would be available 3.1. Yeah. 
+
+3.1 instant is there. Or if you want, you can change that model also. It doesn't matter. 
+
+So keep the temperature low for factual based questions. And you see, I've been able to create my grok model. Advantage, now I can go up and just change this with the grok model. 
+
+That's it. Okay. So, okay. 
+
+So without native support, now these were the grok models, which already have the native tool calling support. So structured output parsing can be done and so on. So the technique to make the support available is prompting. 
+
+And then further output parsing, followed by using a react framework, the reasoning and acting. So what does this mean? Basically, it means that your overload will increase, overload of API call will increase. And where is that overload coming from? This prompt template will have not only what the user is asking, but will also have all the information about all the tools available, tool names, descriptions, and many other things. 
+
+So that is the extra overload I'm talking about. Okay. So that is your structured prompting plus the output of that API call from the model, maybe in the form of a string. 
+
+So I don't want the string output. I want to convert that into a JSON format or into maybe a different format, like a dictionary. Okay. 
+
+Which will be used for the further step in the workflow. So you'll have to do some output parsing or post processing, you can say. And reasoning action has to be implemented manually. 
+
+What it means is, first, the API call has to be made. And that API call will tell you all the tools, tools have to be executed. And then the output of the tool execution has to be fed back manually to the model for observation or reasoning. 
+
+And then the model will finally generate the actual response. So all of these steps has to be manually appended, you know, created. So that's what I just mentioned here. 
+
+So let's take one example. So I'm using the JSON output parser in a chart prompt template again. And this is to render the test description for each of the tools. 
+
+Okay, so you see, I have a list of tools, and I'm binding that or rather wrapping that tools with the render text description. So this will print the description attached to each of the three tools. So this was the first tool, this is the description. 
+
+This is the second tool, this is the description. This is the third tool, this is the description. So this function was able to extract the description from each of the tools. 
+
+So it literally and behind the scenes, it runs a for loop. And for each of the tool within the tools, it will use the tool.name to get this name. It gets tool.args to get the arguments and tool.description to get this.
+
+(1:57:02 - 1:58:31)
+And then the formatting is done inherently. So that is all being handed inside this function. Okay, so now I've got the list of tools, the names and what they do along with the data types of each of them. 
+
+Sorry, each of the inputs to these tools. That's a pretty structured format. Now, this is a system prompt, you are an assistant that has access to the following set of tools, here are the names and descriptions for this tool. 
+
+So that's exactly what I was trying to tell you, right? So it can still be done, but you have to provide the complete information about all the tools available to the model. Okay. And then the user queries are going to be there anyway, plus formatting instructions are there. 
+
+Now, what is this formatting instruction? So return the name of the tool and the input, which will be used to execute the tool. Second, the entire response has to be in a JSON block with the name of the tool with the arguments and the arguments should be in the form of a dictionary with the key value mapping. Okay, so the key in the dictionary will be the actual parameter name within the tool and the value is what you have to tell me for each of those keys. 
+
+So now let's execute that prompt template. So user question is this, so input is still the user question, you can see above. I think I might have written somewhere, I'll just show you what is this input.
+
+(1:58:31 - 1:59:03)
+Okay. Oh, sorry, sorry, this input is going to come from your later stage, the chain, chain. So this input is different. 
+
+This is a Python function. Sorry. Yeah, so this input is going to come when we invoke this chain along with the prompt.
+
+(1:59:03 - 1:59:49)
+So I have got my basic prompt ready now. Now this is the list of instructions. So the list of instructions has the input as one of these. 
+
+So first input is this, second input is this, third input is this. So one by one, the inputs will go to the model, model will think, okay, for this kind of input, what tool will be needed for this kind of a tool, what tool will be needed. And for this kind of input, what tool would be needed. 
+
+Okay, so one by one, three API calls are made, you can say. And that you are passing to the, so prompt, this is my entire prompt. Okay, that chat prompt template.
+
+(1:59:52 - 1:59:59)
+And then here is my grok model, which I initialised. Okay. I can take any model.
+
+(1:59:59 - 2:01:07)
+So let's assume that this grok model does not support tool calling. Let's assume, although it does support as we have seen, but I am not using the standard method of tool calling for that grok model. I'm calling the non-native support method. 
+
+Okay. So even though this grok model, whatever I have used above does support tool calling, but I'm not using that support. I'm creating that support manually, right. 
+
+And the output parser. So this is how, what we get. So now here, chain.map, I've created my chain, and I'm mapping the instructions. 
+
+So what does this map function do? Map function will one by one. So see, what is this map? In Python, there is a concept of map filter. Okay. 
+
+So map. Okay. So map function runs a for loop behind the scenes and takes the instructions one by one from this list and feeds it to the chain.
+
+(2:01:07 - 2:01:15)
+And feeds it to the chain. Let me repeat, map runs a for loop behind the scenes. Okay.
+
+(2:01:16 - 2:01:38)
+It's a kind of runnable only, you can see it's a kind of runnable. Okay. And it runs a lambda function and a number of things. 
+
+So not getting to the technical, but your map function is technically a runnable and runs a for loop behind the scenes. It will take the instructions, which is a list here. And from this list, it will take each one of the entries one by one.
+
+(2:01:38 - 2:01:55)
+And each entry will be passed to your entire chain. Okay. One by one. 
+
+And the output of that chain will be captured here in the responses. So you can see it's a list of three responses. And why is it a list of three responses? Because three API calls were made.
+
+(2:01:55 - 2:02:06)
+If there was only one API call, then you would have got only a single JSON with all the three outputs. We're not getting a single JSON, we're getting three JSONs. So it's a list of three JSON.
+
+(2:02:08 - 2:02:52)
+It's a, you can say, list of three JSON objects or outputs. Okay. So this is a JSON object, which was given clearly in the instructions part of your prompt. 
+
+Okay. It has to be a JSON blob. So three JSON blobs, you can say. 
+
+So this is one JSON blob, which has the name of the tool that is multiply and the arguments. Yeah. So name is web extract info, and this is the argument.
+
+(2:02:53 - 2:02:58)
+Fine. Now let's create a toolkit. Again, the same thing, the way we did.
+
+(2:03:00 - 2:03:18)
+And this is just to extract the name. This is just to extract the name of the tool and also the parameters which are needed to call the tool. And I am going to execute the tool one by one.
+
+(2:03:18 - 2:04:04)
+See here, the model, the grok model has only given the information of which tool to use with what inputs. Simple. It has not yet executed it. 
+
+See, LLMs cannot execute anything. You have to understand. LLMs will take the user query, understand the user query, do a reasoning, and for each of the user inputs, it will tell, okay, for this query, this is the right tool to be used with these set of parameters. 
+
+And that's exactly what we have got as a result of the API call. So three API calls were made by whom? By the mapper function behind the scenes, okay, based on these three queries. Now is the time to actually execute the tool.
+
+(2:04:04 - 2:09:11)
+And you see that the tool execution is happening here. So first, I have to iterate over the responses. See, this is your responses. 
+
+From the responses, I'm extracting the name of the tool one by one. And then also I'll be extracting the arguments within the tool. So that's exactly what I'm doing here. 
+
+Okay, I'm extracting the tool name, converting that into lowercase, and also extracting the set of arguments. And then I'm executing it, invoke using those arguments, invoke the tool using those arguments, but which tool, one by one, the selected tool will change. So in the first iteration, the selected tool is multiply. 
+
+The second iteration, the selected tool is get weather. And in the third, it is the search weather extract info, sorry, web extract info. So now this is taking some time, but yeah, finished. 
+
+Super. So this is where the tool execution is happening. Okay, so now imagine that this is exactly what you are doing manually to create an agent. 
+
+This many codes, this much of a code you are doing manually, okay, step by step to visualise the steps in an agent. What if I told you all of this was possible in one line. And that's what the line graph does. 
+
+The entire thing orchestrated in one line. Okay, here I have done a low code version of the agent. Okay. 
+
+So now I'm extracting all the information from that output. Okay, that tool output, this is the tool output, and extracting all the five documents you can see. Fine, fine. 
+
+So now you know how to call the agents or tools basically within Langchain. If you want to create an end-to-end agent, we can also do that. But again, these are just going to be academic in nature. 
+
+Okay, no one really creates an end-to-end tool in Langchain, as I've already mentioned it several times. But if you still want to have a use case, a simple example of how do you, you know, call custom tools in Langchain, this is the end overall notebook based on that. Now let's start with the line graph. 
+
+Okay. So first we will, so today I'll just discuss the theory part. And the actual theory part means we'll still be creating agents, but these are like going to be dummy agents, you can say. 
+
+Okay, they will not be solving a business problem. Okay, so to solve a business problem, we'll take an end-to-end project. So don't ask me what is the business use case of this notebook or the next notebook. 
+
+Okay, here the only business use case that we'll be discussing is understand the line graph framework, how an agent is created in the line graph framework. What will this agent do? What is the business use case? Those kind of questions are irrelevant for next one hour. Okay, when to use this agent? Don't ask me these kind of questions. 
+
+Okay, we just want to create an agent and see what this agent does. That's the understanding I'm going to explain. So I'll not entertain any question which is related to the business part of this agent. 
+
+Okay, these are, as I have already mentioned, first let's learn how to create an agent. What is the framework? What are the steps? How do you create that graph? How do you execute that graph? How do you interpret the outputs? So all those things, let's learn how to create that agent first. Okay, what are the different things available? Like in this case, I'm talking about routing this and that, which will be used in the next project actually. 
+
+Okay, fine. So let me share this code. I just ran this code before the class. 
+
+So I'm going to run this all over again. Okay, there are questions. Is grok from x? This is serious spelling. 
+
+This is groq, not k. k is from musk. So this is not your musk's platform. Okay, Praful, how is LLM calling the tools? LLM is not calling the tools. 
+
+Tool call means executing the tool. LLM cannot execute the tools. So let's use the right words. 
+
+That's how what you have to learn. Okay, so tool call means executing the tool. Ultimately, LLM cannot execute the tool.
+
+(2:09:11 - 2:13:46)
+It will only think reason for this input, which tool to call. And it is only giving me output that Prashant, for this kind of queries, these are the tools that you have to execute. You have to execute with these inputs. 
+
+That's what we have been seeing every time. Okay. These are the tools that you have to execute. 
+
+Okay, and that tool execution is being done explicitly. Here model is not executing. I am doing that tool execution explicitly. 
+
+Is that super clear, everyone? Just type clear in the chat. Okay. Everyone, or you can write down this statement in the chat. 
+
+Model does not execute the tool. Just write down this statement for your understanding. Let it register in your mind. 
+
+Deepest. Okay. Model does not execute the tool. 
+
+Model only gives the information about which tool to use with the parameters, okay, for a given user query and scenario. Model does not execute the tool. Who does the tool execution agent? We have not built an end-to-end agent in this case. 
+
+We have just seen how to bind the tools without LLM and execute the tool externally. If you want to execute the tool internally, then the better way is to do it via Langraph. That's what we are going to do now. 
+
+Okay, end-to-end agent. So, here in this entire notebook, I have not claimed that I have created an agent. Okay. 
+
+What we have done is how to call tools with an LLM, call tools with an agent, okay, but calling of the tool with an, sorry, calling the tool with a model LLM, okay, but calling as such directly is not included within the API call. API call does not execute the tool, right. API call only invokes and asks the model boss for this query, which tool should I execute. 
+
+That information is the output. That output goes to execution externally. Okay. 
+
+Srikant is having some error. No. Reshare it. 
+
+See, the link doesn't change. I have saved it. Link never changes. 
+
+You just have to refresh your browser. Okay. Even if I paste this 100 times, this link doesn't change. 
+
+So, if you got this link yesterday or last week, it's going to be the same link only. Okay. All you have to do is just refresh. 
+
+I normally at the end of the session, save it. And once it is saved, you just have to manually refresh. Okay. 
+
+Clear? Okay. Perfect. Okay. 
+
+So, let's go ahead. Now, from simple chains to stateful agents, that's the overall thing we are going to do now. So, now we know how to create a chain, how to bind the tool with the LLM. 
+
+And now, there is a word called a stateful, because I mentioned that agent will not be able to function properly without the state. So, I want to create a stateful agent, because model API calls are stateless. I have repeated this several times every single session. 
+
+Model API calls that you are making, any API call you are making to any of these models, they are stateless. Okay. Whether it is a grok model, OpenAI model, any model. 
+
+So, for example, here you are making an API call. So, wherever, here. So, you are making an API call here. 
+
+Okay. This is the code. And when you execute this, okay, you are making an API call, right? You configure and you are making an API call, and you are printing the output. 
+
+This is stateless. If you simply ask, okay, what did I ask you before? Let's see what happens. And the model has no idea.
+
+(2:13:49 - 2:14:19)
+What did I just ask before? Okay. Let's see the output. You see, this is what I had asked. 
+
+Okay. Now, let's see what happens. We did not ask anything before this. 
+
+This is the beginning. Every time I execute, this is what will happen, because model has no idea what conversation has happened before. That is the meaning of stateless.
+
+(2:14:19 - 2:18:54)
+Is this clear, everyone? Just type clear. That is the meaning of stateless. Stateless means models LLM API calls are stateless. 
+
+Clear? Model has no idea about the previous interactions. And that is why you need that state. Okay. 
+
+So, agent needs that state so that it can keep a track of what all things have happened. Okay. And what it needs to do in that sequence of events. 
+
+Okay. So, lang chain agents are very straightforward. I mean, no exotic things. 
+
+If you still want to create an agent, maybe I can show you sometime later. But there is literally no, no, not much use of a lang chain agent. So, it's better to go with directly lang graph instead of spending too much time on lang chain then. 
+
+Okay. So, now lang graph agents are much more, you know, versatile. Think about a straight roadmap going from A to B to C. That's what the lang chain agent will be. 
+
+So, if I simply instruct this delivery boy, go to person A, then go to person B, and then go to person C. That's it. And your job is done. And you can go back home. 
+
+Simple. But here in this case, I'm saying overall task is to deliver the three packets to A, B and C. You choose your path. You choose your vehicle. 
+
+You choose your, you know, overall how you are going to manage your time. You want to visit A before lunch or you want to visit B and C before lunch. It's up to you. 
+
+You have to find out your best way or best mode. And at the end, your net task is to deliver these three packets. That's exactly what lang graph agents try to do. 
+
+Okay. So, I'm just giving an analogy here. A city map with intersections around about. 
+
+Decide where to go. If needed, loop back. If needed, come back. 
+
+Remember. So, for example, it went to A. A was not present at home that part of time. Fine. 
+
+It will go to B and then it will go to C. And then it knows that A was not present. So, I couldn't deliver it back to A. So, it will come back to A and reattempt. Okay. 
+
+So, that's probably what I'm referring here. So, in the core concepts, you can see there are. So, agent is like, sorry, state is like the memory of the agent. 
+
+But don't get misled by the statement. There is a separate concept called as memory in which we will be tracking the conversations of the user with the models separately. Okay. 
+
+Or the previous tasks. The history of the previous conversations and the tasks. That is maintained in a separate memory module. 
+
+Let's say in a separate memory module. That's a different thing. Okay. 
+
+So, here is like a short term memory, I would say. Because for each task, there will be a state mentioned. Okay. 
+
+Overall. So, it's a temporary memory, you can say, no doubt. So, it's a shared object. 
+
+Because if I am creating three agents to deliver A, B, and C. Now, depending on which agent is closer to A, B, and C, each of them will decide. Okay. Agent one says that I'm close to B. So, I can deliver it to B. Agent number two says that I'm close to A. So, I'll go and deliver A. Agent three will say I have no other option. 
+
+I will go to deliver C. Fine. So, that is what. Now, there has to be a place where each of these agents are updating the job sheet. 
+
+Okay. And that is the state here I'm talking about. This gets passed between all these steps in your graph. 
+
+Graph is like a sequence. But this sequence doesn't have to be linear. It can loop back, it can iterate, it can branch out, it can merge. 
+
+So, it's like a complex graph. Okay. Which will have multiple steps. 
+
+And as I just said, these steps doesn't have to be linear in nature. They can be branching, merging, and all that exotic things happening. So, each of these steps will have, sorry, the agent state will carry information like conversation history and tool results.
+
+(2:18:55 - 2:19:09)
+Now, conversation history and tool results for that particular overall job. If the job changes tomorrow, then the entire conversation history will be replaced, I would say. Okay.
+
+(2:19:09 - 2:20:22)
+So, this is for the entire agent. So, if the agent is re-executed, then conversation history will be deleted and replaced with a newer one. So, we typically define the structure or the schema using the type dict. 
+
+So, this is, again, you can use type dict or you can use binantic also. It's completely up to you. Because now agent state is all handled internally. 
+
+There is least user interference. Understand what I'm trying to say. Okay. 
+
+This is an internal state. User does not directly interact with the state. User interacts with the agent, you can say, overall. 
+
+Okay. And state is an internal state or a schema. So, since the user does not have a direct interaction, there is least chance that the schema will not be followed. 
+
+And so, I don't have to enforce. Okay. And for that reason, I can use the type dict reliably. 
+
+Okay. Remember this. Then what are nodes and edges? So, let me just draw this in simplest terms.
+
+(2:20:22 - 2:20:49)
+What are nodes and edges? So, if this is node one, and this is your node two. Okay. So, this is your edge. 
+
+So, connection between the nodes is called as an edge. Simple. Nothing more.
+
+(2:20:50 - 2:24:41)
+Okay. So, these are the connections. And nodes are where your LLMs are. 
+
+So, in each of the nodes, you can have an LLM. Each of the nodes can be an agent or simply an LLM API call. So, when I say agent, that means I have LLM plus two. 
+
+So, prompt will always be there because you cannot have an API call without a prompt. So, prompt is, anyway, I'm assuming inherently. So, each node will have its own prompt, no doubt, because here also there is an LLM. 
+
+Here also there is an LLM. Okay. So, there could be two ways this agent could be configured. 
+
+Sorry, this node could be configured. This node could be configured as an agent on its own. So, you can call it as a sub agent then, sub agent one and the sub agent two, which is run by the node two. 
+
+So, you can have sub agents, okay, within the overall agent. Or this may not be an agent altogether because it doesn't need to have a tool. It probably just needs to have an API call. 
+
+So, that is also possible. So, for example, I'll give a simple example. So, query. 
+
+So, customer query is there. Let's say that goes to a node and that goes to another node and then goes to some router node. This is a router node. 
+
+Typically, the router nodes are written in this kind of a rhombus and that router node decides which agent is being used. Now, these are actual agents. So, agent one, agent two and agent three, let's say. 
+
+Now, I'll show you what I mean in this case. So, let's say customer query. What are your working hours? Okay. 
+
+So, the first node, the node number one is making a simple LLM API call. It's not an agent, doesn't need a tool and just it categorises, okay, the purpose is to categorise the customer query as billing or technical or general. The second node is again a simple LLM API call. 
+
+It's not an agent because it will just do the sentiment analysis, okay. And this agent will simply return whether the query is, whether the query has a positive sentiment, negative sentiment or a neutral sentiment. That's it. 
+
+That's the only output of this two API calls. So, back-to-back API calls and they are chained together as two different nodes, okay. So, these are technically not agents because it doesn't need to have any tool, a simple that query, the same query. 
+
+And where is this node pulling the query from? The node pulls the query from the agent state, okay. And the output is fed back to the agent state, remember. So, it pulls the agent state as the input, okay. 
+
+So, and the output is fed back to the agent state. This node also takes the input from the agent state. Query is directly fed to the agent state, remember. 
+
+The query is fed to the agent state. See, this graph shows the sequence of operations, okay. But query does not directly jump into the node one, no.
+
+(2:24:41 - 2:24:53)
+Let me repeat, directly the query does not jump to the node one. Query is actually fed to the agent state. Node one gets the information about the customer query from the agent state.
+
+(2:24:54 - 2:27:32)
+The output is also fed back to the agent state, updated. This output is also fed back to the agent state. So, all the agent, sorry, all the nodes will do the read and write operations into the agent state, okay. 
+
+So, by the time the sequence, the workflow reaches the router, now router will decide based on the, let us say, query sentiment, okay, and the type of query, which agent will finally reply. So, obviously, when I am calling these as agents, all these three guys have access to some tool. So, there will be an LLM plus some tool being used by each of these three agents. 
+
+That is why I am calling them as agents, plus there will be a prompt. So, all the three things will be here anyway. That is why I am calling them as agent. 
+
+So, these are the agents which will finally reply back to the user, okay, based on some LLM, based on some tool call, and of course, both are orchestrated using a prompt. So, prompt will help the agent to make sense out of the user query, everything else, I mean. Plus, these three agents are also going to be connected to our agent state. 
+
+So, from the agent state, again, each of these three agents get an idea about what all has happened. Okay, what was the customer query? Read from the state. What did the node one do? What was the output of the node one? Read from the agent state. 
+
+What was the output of the node two? Read from the agent state. And then, if that input is needed, for example, so, for example, just imagine that the agent one does not need the information about the sentiment, fine, it will not read it, it will only read, let us say the agent one is a billing agent, sorry, billing support agent, agent two is technical support agent, agent three is general support agent. So, the billing support agent does not need the sentiment, it only needs the query and the category just to back check that indeed, it is a billing agent query. 
+
+I mean, the query has been routed to the right department kind of thing. So, that is what is all happening within the agent state. Okay, remember that all the updations will happen in the agent state. 
+
+And this all thing is what we call as the state management. So, let us build one agent and I think it will be much more clearer. So, I have installed all of these, this have just run a few minutes before the session.
+
+(2:27:33 - 2:28:05)
+So, I will be needing the OpenAI keys, let me define the state using type dict. So, I am just importing the type dict, that is the base model and naming the state as state. So, you can literally have any other name here. 
+
+But normally, it is a you can say convention to name it as a state. So, you can call it as an agent state also, no worries. You can call it as an agent state also, that is completely fine. 
+
+But then make sure that everywhere it is being referred as an agent state, not just simply a state. Okay. So, I will just go back.
+
+(2:28:05 - 2:28:40)
+And then what does the agent state have the agent state has? So, what are you defining in the class here, you are defining the schema for the state, what all information will be stored in that state. So, what all information will be stored in that state that is defined here in the schema. So, what you are defining here is the schema, this is schema for schema for agent state.
+
+(2:28:41 - 2:29:20)
+Let us not call it as an agent state, but lang graph state, because your lang graph, lang graph can have multiple agents. Okay, so all the agents will still be able to access the same state. Okay. 
+
+Now, these are the fields, these are the fields in the schema. And you can also define the data type. So, schema also has the data type, data type of the data type of the fields present.
+
+(2:29:21 - 2:29:37)
+So, these are fields or variables okay, present in the schema. Okay. So, that is what it is.
+
+(2:29:41 - 2:34:20)
+But again, since we are using type dict, we are not enforcing it. But that is not needed because these are all internally updated, the user is not updating, the user is not influencing these updates. So, since these are being done by the code themselves, they will mostly adhere to the instructions. 
+
+Okay. So, messages will store the input and output of each node. Okay, this is the input and output of each node, there is only one thing. 
+
+Okay. Now, let me define a node here. Now, each node, whenever I say that a node gets executed, okay, so I said that query goes to the node one. 
+
+So, typically the node is given by a box. When the query goes to the node one and the node one executes, the execution of the node one means a function attached to that node is executing, just like tool execution means a function attached to the tool executes. Exactly the same way, when I say a node is executing, a function attached to the node executes. 
+
+Is that clear? So, right now, I have not attached that function to any node, I have just created a function, the code below, I will attach this function to the node, remember that. So, this is the function I have created. And what is this function doing? If you read this closely, so the first input it needs is the state itself. 
+
+So, this function reads the state, can you see, it function reads the state. And this function does a simple print and this function returns the messages. So, what does that mean? Now, since it is already having access to the state, initially the state would be empty. 
+
+This function greeter node will update the messages section, it will update that messages field with this string. So, this string gets attached in a way to the messages. So, messages field will have this new value. 
+
+So, this is the value and this is the field. Now, this field has to come from the state only, remember that. If there is a new field which is not a part of the state, then the state will not get updated. 
+
+So, theoretically, you can have name here, you can have any name here, messages 1, 2, 3, 4. But the problem is messages 1, 2, 3, 4 that this field is not present in the agent state. And so, the agent state technically will not get updated there. You might even get an error. 
+
+So, that is possible. So, let us execute this and execute this. Now, let us build a graph and while building the graph, I am going to attach that function with the node. 
+
+So, here I am importing the state graph. This is going to build your empty graph for now, starter and the ender. So, this is your graph builder, state initialised. 
+
+Now, greeter node, now you can see, you are creating a node, add node means you are adding a node where into the graph, you are adding a node into the graph, the name of the node is greeter and the function that will get executed is greeter node. So, that is where you are attaching the function with the node here. And this is the node name, this is optional, you can attach a name to the greeter node. 
+
+Now, why this name is needed? So, that you can actually see this. So, whatever the name that you want to display on the node is this string. So, name to be displayed on the node, maybe I can display name of the node, then you will realise what is happening. 
+
+Fine. And now, the only problem here is this name has to match here, because theoretically, I can give any other name, but there has to be a way. So, what this is doing? This is a conversation starter.
+
+(2:34:21 - 2:35:16)
+This is a conversation starter, means your query will go to which node. So, who is capturing the query in the first place, this guy is capturing the query. And after capturing the user query, this is a user query, who is capturing the starter node, this gets automatically created. 
+
+So, starter and ender nodes are already imported, you are not creating them, you are only creating this. Remember that here the function being used is add edge, not add node. So, remember, once again, these nodes are already being imported, you can scroll the code above and see. 
+
+I am already importing these nodes. Okay, so I have already imported this node, this node. So, these are the nodes being imported.
+
+(2:35:18 - 2:35:29)
+You are adding a connection. So, here you have the start, you have the end, okay, you have already imported them. And now you are creating a greeter node.
+
+(2:35:30 - 2:36:25)
+And you are now adding a so this is what gets created here. But now you have to add the edges. So, this function add edge between start and greeter. 
+
+So, start and greeter, this is the edge which gets created. Okay, so this is what happened. And then you are saying add edge, add edge between greeter and end. 
+
+So, between greeter and end, this is the second edge which gets added. Let me know if everyone has understood till here. I'm not going to explain at this level of granularity subsequently. 
+
+I'll simply say add nodes, add edges, and build a graph. It should be clear later on, okay. So, take two minutes to understand what is happening, because all the subsequent codes will have the same code repeated.
+
+(2:36:26 - 2:36:50)
+Repeated will have n number of nodes, n number of edges. Looking at the code, you should be able to read who is being connected to where. Okay, so remember that the conversation starter is always from the start, the query is always captured by the start. 
+
+And you don't have to write down a code for that. That is the default. So, user query is always captured by the start.
+
+(2:36:51 - 2:37:27)
+User query is always captured by the start. Remember that. Okay, so take two minutes, understand. 
+
+I'll answer any questions before I go beyond this. Okay. Okay, so Renuka had asked some time back, in order to maintain the state, we have to implement some kind of memory cache.
+
+(2:37:27 - 2:37:33)
+That's what we're doing. We are maintaining a state. It's not memory or cache, the agent state.
+
+(2:37:34 - 2:43:57)
+Okay, but you can also implement memory and cache. So, there are different purpose for each of these things. So, if you want to only capture the API calls, input and output, then you have to create a separate memory module, where the conversation history will be there between the user and the LLM. 
+
+Conversation history between the user and the LLM, that is captured mostly in the memory. But the agent state is for different thing. So, you have to create a separate memory module, different nodes will keep a track of what node has run and what is the output of each node. 
+
+Okay, in the entire graph, this entire graph can be treated as the agent. So, this is the terminology and taxonomy. Understand what is being referred as an agent here. 
+
+Agent could be referred as the entire block. This would be referred as an agent or could be referred as an agent or individual node could also be agents, okay, if there is a tool call somewhere. So, right now, I'm referring the entire graph, this is a line graph, this entire graph as an agent right now. 
+
+So, until and unless there is a different definition, you can for now assume that your entire graph itself is an agent in this notebook, maybe also in the next notebook, okay. So, that is one. Mohamad is asking, can you repeat a stateless model? Models do not remember the previous conversation history, that is the meaning of stateless. 
+
+Arinduka is asking, for example, chatGPT does not remember, it must have a similar memory. This I think I have discussed so many times, okay. So, chatGPT is the application layer. 
+
+I remember I mentioned this very clearly. So, your GPT 4.0 mini or GPT 5.0, these are the models, chatGPT is the application interface. So, what you have created is an application using the models. 
+
+Who remembers the conversation? The application remembers, not the models, okay. So, you have an application layer and you have a web interface to that application, which is what you are using by the name as chatGPT, okay. So, you are not directly accessing the model, you are first accessing the application, applications keep a track of your conversations and those conversations are shared with your model, clear. 
+
+So, adding edges is like correcting the flow, yes, absolutely. So, there will be branching also, later I will teach you in the next notebook, how do you branch out and how do you branch in merge those branches. So, everything, any arrow that you would see later is a edge, any arrow that you see later, yes, absolutely. 
+
+Pandya Rajan is saying, but we still have to manually linking, yes. That is why I said, here you create everything from scratch one by one, it is like the code is creating the nodes and the graphs. In your agent builder kit, you just had to do a drag and drop, but you did have to do manually drag and drop and connect them, right. 
+
+The same thing you are doing using the code. Remember, everyone, the last week, we still had to click, we still had to click to add the agent nodes and we were able to connect those agent nodes, okay, by manually dragging those lines, that edges we were able to create, same thing we are doing, but using the code. So, greeter node is the ID, greeter node is the name of the function which will get executed, okay, it is not the ID or anything. 
+
+Greeter node is the function which gets executed when this node is executed. Greeter here is the name of the node and each node has a bound function behind the scenes, let us not unnecessarily introduce taxonomy, that will only confuse. So, there is nothing called as ID things, okay, it is the name of the node which is the greeter and the function attached to the node, which is exactly a Python function. 
+
+Simple, these are only two things, do not unnecessarily complicate, okay, name of the node and the function, you just have to attach them. Where do you attach? That attachment is happening when you add the node into your graph, that is where you are adding, attaching, clear. There are two nodes and both the nodes write state, it means they are overwriting, yes, yes, it is overwriting and that is what I will show you, it is overwriting and how do I solve that problem, that also I will show you, very good, Pandya Rajan, okay. 
+
+So, in this case, if both the nodes are accessing, of course, they are not accessing together right now, in this flow, they are going to access one by one. Right now, there is only one node, so of course, but in the next node, there are going to be two things and they will overwrite because my agent state still has only one parameter, you can see, my agent state, okay, I am still using the same state, you see, nowhere I did recreation of that state, so I am still using the same state, okay, and your state gets overwritten, that I will show you, so I will not give a spoiler alert, but your answer is correct. And there is a way to resolve that, diagram shows you are showing the screen has only one node, yes, there is only one node and later on we will be creating multiple nodes, so hold on.
+
+(2:44:00 - 2:44:16)
+Rituka is asking, so we are using here line graph to add nodes and attach functions to execute, yes, absolute, that is what we have done until now. Now, let us execute and see step by step what is happening, okay. So, I think I had done till here, okay, now you have to compile.
+
+(2:44:17 - 2:44:23)
+So, this is done. Now, let us compile this. And once you compile, you will be able to print.
+
+(2:44:23 - 2:50:03)
+So, I think mostly this works 99 percent times. Printing the node means basically just displaying it visually. You can also use this mermaid diagram again, but this is not very reliable. 
+
+This is using some mermaid API behind the scenes. Many a times this mermaid API does not work. So, if this gets printed, you are lucky today. 
+
+Many of the days I have seen this code does not work. So, do not be surprised, but mostly this will work, okay. So, I will have this code, although in most of my other notebooks as well, but be mentally and physically prepared that this code can return you nothing or even an error. 
+
+But we will still be able to visualise it by simply typing graph and press enter, okay. Okay. So, I am initialising the graph by using some messages. 
+
+So, hi there is the initial input which the user is directly giving to the messages. And using this initial input, I am invoking the graph. So, now, what is happening? The first node will read this initial input via start, okay. 
+
+Now, already at the start, there is this messages, okay. So, when the control goes to the start, it will display hi there. And then it will be replaced by your greeter node with whatever greeting, okay. 
+
+I am a simple lang graph agent, I think that was the greeter node. Let us go back and check. Yeah. 
+
+Hello, I am a simple lang graph agent, you can see. And then the final output will be there. So, your initial message hi there has actually got replaced, has actually got replaced with this new message coming from the next. 
+
+Okay, let me just draw it and show you. So, you have the start, and then you have the node, greeter node. And then you have the end, okay. 
+
+And it is not doing anything. So, in the start, the messages, the messages, this is coming from your state, okay, this is your state. So, the messages section had this as the initial input, okay. 
+
+So, when the control went to the start, okay, it was already having the information about hi there. So, this mostly will be your user query or your conversation starter, user query or conversation starter, conversation starter. So, when the control is up to start, okay, when the start executes, it essentially reads that the message is hi there, fine, perfect, no problem. 
+
+So, if you just delete and connect the start to end, okay, and then you check the final state, okay, then it will still be hi there, it will still be hi there. But now what has happened is, now what has happened is, when the control goes to the next step, which is greeter, greeter has replaced the same messages with this message. Why this message? Because that was the message present in the function. 
+
+You can go back and check the greeter function, the greeter function replaces that messages, you can see. The greeter function is returning this, the greeter function is returning this. So, this guy replaces it directly in the agent state, it replaces this in the agent state, okay. 
+
+And so, the final output, if you see, already has the same, okay, the final output already has this. So, let us do one small activity. If that theory is same in principle, I will just, I will just modify this, okay, remember, I will just modify this. 
+
+And what I am going to do is, I will just add a simple line here. So, start and end, let us see what we get, if not error, then what, okay. So, I have got a lang chain, sorry, lang graph, in which I have greeter, okay, there is no connection between this, let us remove that greeter also, let us remove that greeter also. 
+
+So, there is no confusion, okay. So, now, there is a simple graph from start to end, fine, everyone, from start to end. And now, let us execute this. 
+
+Perfect, my final output is also high there, because there was nothing to replace it. Is that super clear everyone now? What has happened? Start has captured the user initial input, the greeter node is no longer there, the greeter node is no longer there. So, there is no replacement of the messages. 
+
+So, the final state is also the same as high there, because there is nothing attached to the start and end to, you know, they are already, you know, static nodes, I would say, yeah. So, end is to give the final output to the end user, that is the meaning of the end node. And start is simply to capture the user query, that is it.
+
+(2:50:03 - 2:53:09)
+So, that is the purpose of the start node and the end node, they are not there to modify the state anywhere. Start will only capture the user query, that is what I have done, okay. And end is throwing it back to the user, they are not supposed to do anything else. 
+
+Anything else has to be done in a custom node, okay. And you see, the moment I simply connected the start to the end, I did not execute it if you want, I can just show you, okay. So, start end and the message is still the same. 
+
+But now if you have anything other than that, okay. So, this guy is overwriting. So, that is one problem that we have now recognised, okay. 
+
+So, problem is the overwriting state, okay. This is what has happened. By default, each node replaces the value in the state, okay. 
+
+And this is a problem while building meaningful conversations, remember. How much time we have? Okay, 10 minutes. So, let us add two nodes here. 
+
+One is the greeting node, one is the enquiry node, okay. So, greeting node will say that, okay, I am the first node and I am going to add a greeting. And what is the greeting? Hello there. 
+
+There is another node which will say that, hi, I am the node number two, and I am updating the messages like, how can I help you? So, there are two nodes here. Now, I am building a new graph by adding these two nodes and then wiring them properly, fine. Let us look at the graph and things will be clear. 
+
+So, this is a multi-node graph. So, the start will capture the user query, give it to the greeting node, output of the greeting node will go to the enquiry node. So, these are the two nodes which are going to modify the state, remember. 
+
+These are the two nodes which they are going to modify the state. Now, let us do this one by one. So, I am invoking the entire graph now. 
+
+The entire graph is an agent, imagine that way, okay. So, I am invoking that entire graph or executing that entire graph. So, one by one. 
+
+So, when the control went to the greeting node, it added a greeting, it added a greeting. And then when the control went to the enquiry node, it added this enquiry. So, these are the two static outputs coming from the print, if you see the print messages, okay, node 1 and node 2. So, those prints are coming from here, once the nodes are getting executed. 
+
+And that is just to show you that these nodes are getting executed in that sequence, that is it, okay. Now, let me see what is the final output after. See, the final output is how I can help you today. 
+
+So, somewhere intermediately or intermittently, the agent state had messages equal to hello there, somewhere intermittently it would have been there, but that was got replaced, that is exactly replaced, okay. So, how can I help you today that has replaced hi there. So, the final state only contains the last agent s output.
+
+(2:53:11 - 2:53:36)
+The final state has the last agent s output, this is the problem or last nodes output technically now, okay. So, the first node was completely overwritten, this is not useful for a chatbot, because it wants to remember the entire conversation history. So, now that leads to something called as reducers, add messages, okay, I will directly show you.
+
+(2:53:36 - 2:54:04)
+So, this add messages is the one which we will be using as a reducer, okay. So, this you can read it from the documentation merges to list of messages updating, okay. Now, this is a new agent state, earlier I had used only state and now this is a new agent state I am creating, charge state, okay, again using type dict, but this time the messages is a list of messages, it is a list, can you see, annotated list of messages.
+
+(2:54:05 - 2:54:54)
+Okay, this is how I would read it. So, this is a field name, and it is an annotated list of messages. So, basically, since it is a list, it will see the data type is a list and list already has a built-in method called as append, it uses that append function. 
+
+So, each agent will append into the messages list. Once again, let me repeat, each node will append into the messages list. Now, the messages data type is a list, and I have added a reducer here, which means each node subsequently will only append its own message, it will read the previous messages and append its own message, it cannot overwrite anything.
+
+(2:54:55 - 2:55:13)
+So, the control went from 1 to 2, 2 will read what 1 has done and just add what I have done, that's it. When the control goes to 3, 3 will be able to see what 1 has done, what second has done, and okay, let me do something. And whatever I'm going to do, I'll just add it into that same list.
+
+(2:55:13 - 2:56:04)
+Is that clear now? That is what this code says. Hello? Is that clear? This is what the code says. Let's build and say this, okay. 
+
+So, now the nodes remain the same, but they will now be appending to the area. So, the only, only and only change that I did was, while building the state graph, while building the state graph, the name of the state, agent state changes. Okay, earlier it was only state, that is what I had created, and now it is the charge state. 
+
+Fine? Rest all code is exactly the same. Okay, so this is the only one line of code which has changed. Let me execute this. 
+
+This is a graph. So, graph and everything is same, nothing new. And now when I execute, let's see what happens.
+
+(2:56:05 - 2:56:56)
+Okay, this output is also the same. You might not feel the difference, but now when I print the output, you will see the difference. Okay, so the human message, hey, I need some help, that is what you initialised it with. 
+
+So, this was the user query which was initialised. So, this is the message with the start captured, start captured this. Okay. 
+
+And then this is all response data ID, ID and all that. This is hello there, coming from your greeter node. This is coming from the greeter node. 
+
+And then this is the human message coming from your enquiry node. How can I help you today? So, I see all the three outputs. And this entire thing is a Python list.
+
+(2:56:56 - 3:00:23)
+As you can see, there's a Python list of messages. And the entire thing is actually a dictionary. That's why I've used the type dictionary. 
+
+Okay, fine. So, this is clear. And if you want, I can just print them. 
+
+This is just a simple Python code. If you're still wondering and pondering, just copy paste to chargepd, it will explain you. But the purpose of this code is to just print this in a more sensible manner, in a more durable manner. 
+
+Okay, so I'm just printing the same output by using this simple for loop, one by one. Okay, so I'm just extracting the AI and the human message part, you can see human message and the AI part. That's the only thing that I'm extracting. 
+
+AI message right now is empty, because there is no API call being made. That's why in all these cases, API, sorry, AI message part is empty. And only you can see the human message part being updated. 
+
+Human message, this is also human message, that is also human message. When there is an actual API call, then the AI message part will also be there. Fine. 
+
+So, now the state finally contains initial messages plus the outputs from both the nodes correctly preserving the entire history. Okay, this is not memory, this is not cache. So, do not unnecessarily confuse yourself. 
+
+Okay, this is purely agent state. So, use the right terms for the right things. Don't try to find analogy everywhere. 
+
+Okay, so that forceful analogy thing will only confuse you. This is agent, agent builds and maintains its own state. And each node is able to use that agent state for updating what it can already, you know, update and see what all things have already happened. 
+
+Okay, so this is the thing. Note down these words, note down these statements. And remember, this is how you even convey. 
+
+This is the way you understand yourself. Okay, so don't try to find analogy and make it simpler. I have seen that in most technical terms, the moment you start making analogies, or try to make it simpler using, again, some of these analogies, you are getting wrong. 
+
+You're making it wrong. Okay, that will lead to only further confusions. Okay, so last part, that will take another maybe two minutes, I think. 
+
+So, much of the effort, but can we have an end-to-end descent thing? Okay, I will take another five minutes. Okay, so cycle. Now, what do you mean by cycle? Okay, so basically, looping back. 
+
+Okay, the output of the node one loops, goes to the agent two, agent two can loop back to the agent one, or node one. Okay, so that is called a cycling. And for that, we can also use conditional edges. 
+
+So, for example, now one node, let's say the node one goes to node two. Now, whether the node two will end the conversation, or will it go to the node three, for that I can add conditional edges. Okay, so here, I'm going to take a simple use case. 
+
+Okay, so until the user says bye, it will be looped. Okay, conditional edge, again, calls a function. So, let's see this one by one.
+
+(3:00:26 - 3:03:16)
+Okay, I'm importing a system message, like a human message, AI message, and there is a system message. Okay. Again, you can use the same type dict chat state, but it is since already there, I'm not typing it again, if you want, you can type it again. 
+
+Okay, but every time you invoke the overall graph, the state refreshes, remember that, what do you mean by invoke here, every time you invoke, okay, even though the name of the state is same, the same name of the state you are passing here also, okay, you will be using here, you will be using later on, okay, chat state, but this state will get refreshed every time the graph is invoked. Let me repeat third time, this state, so same state is being used by multiple graphs, if you have observed, the same state is being used by multiple graphs, multiple nodes, multiple agents, whatever what do you want to use, fine. But every time this graph gets invoked, this graph gets invoked, the chat state, the state somewhere that is present in your RAM, okay, gets refreshed. 
+
+But the structure remains the same. So, here I am going to use the structure, that is it. Okay. 
+
+So, I will be invoking it later. So, let us say I will be invoking it later. Is it? Yeah, here I am invoking it. 
+
+No, this is model invoke. This is the graph, and I am going to invoke it later. Okay. 
+
+So, here, chatbot.invoke, and the same chat state will get updated. Okay, fine. Okay. 
+
+So, this is the chatbot node, the main node for our chatbot. So, first, before you start creating the node, what is the best practise? You create a function which you are going to attach to that node. So, this is the function which I am going to attach to the chatbot node. 
+
+Okay. So, starter, start, chatbot node, end, basic structure, you can say. So, this is generating response, and I am initialising a model here, no doubt. 
+
+And I am reading, can you see what are we doing? This is reading the user query from the messages. I have been silent. Okay. 
+
+So, here I am reading, get the current conversation history. That is what I told you. We are not just writing values, we can also read the values. 
+
+So, I am reading the messages from the history, which is coming from the state automatically. This is a system message. Okay, you are a helpful assistant, you can put anything.
+
+(3:03:16 - 3:03:54)
+So, this is the role, essentially. I have been talking about the role. Task, you put within the prompt. 
+
+The role is normally you put in the system message. Now, you are making an API call. Model.invoke means API call. 
+
+In that API call, the system prompt plus the user query. So, these messages will have the user query. So, system message plus the user query. 
+
+Okay, these two combined together. This is plus means what? You are just appending, concatenating is the correct word. You are just concatenating two strings.
+
+(3:03:54 - 3:04:30)
+So, that combined string is now going to the model for your API call. And now I am updating the messages with the response. So, whatever is that response from the model, that is updated as a list. 
+
+Can you see, it is a list. So, return the AI response to be added to the state. So, this is now added to the state message. 
+
+Simple. Now, this is my conditional check node. Not yet, but this is the function which I am going to attach to the conditional check node.
+
+(3:04:30 - 3:11:29)
+Okay. Router node in a way. So, should continue. 
+
+So, again, it reads the state, prints, checking for the exit condition, reads the last message. So, minus one, because I told you that state will be a list. So, I am just looking at the last message. 
+
+So, minus one means look just at the last message. Okay. If the last message contains anywhere by, if the user says by, then the conversation has to end, right? If the user says by, or anywhere there is a by in the end, okay, the conversation has to end. 
+
+Otherwise, it will go back to the continue chat. Now, what is this continue chat? This is the name of the node, which I will be using later. Okay. 
+
+So, I have not yet created that node, but this continue chat will be a node. So, let us create these two functions. And finally, we'll start wiring. 
+
+So, enter the chatbot node, should continue is your router, and then it will decide whether to enter. So, see, you create that chatbot node, attach, and then you set the entry point at the chatbot. So, directly the start is attached to the chatbot, or you can add an edge. 
+
+Either way, it is fine. Okay. Automatically. 
+
+So, you have set, you are not adding it. So, earlier, if you see, I had added an edge from start to the greeting node. So, instead of doing that, you can also use this. 
+
+Set entry point. In this case, start will be automatically wired to your chatbot. And chatbot is wired, the chatbot is wired to should continue. 
+
+So, this is what is happening. The chatbot is continue, chatbot is wired to should continue, that is a conditional router. And it is also wired to end. 
+
+So, two things it is being wired to remember. See, I'm just zooming out to show you. So, chatbot, this is still here. 
+
+Okay, now, that is, so in the next chatbot is attached to should continue. So, this is your should continue. I mean, it will not be displayed, but this is a conditional node. 
+
+So, think it this way. So, chatbot is attached to a router node. And this router node is called as should continue. 
+
+Now, this is not displayed, unfortunately. Okay, this is not displayed. And from here, two things will happen. 
+
+One is continue chat, continue chat. And the other is end. You can see, these are the two things. 
+
+Okay, number one, and number two. So, this is your number one and number two. Fine. 
+
+And then the continue chat is attached back to chatbot. Okay, what does that mean? So, from here, this is wired back to this guy. Your continue chat is wired to your chatbot. 
+
+So, from here, it is wired back to your chatbot. So, whereas end is wired to end. So, this end, this end, small end, sorry, this is wired to actual end node. 
+
+This is my end node. Your end node. So, this is wired to the end node. 
+
+Okay, and here it is looped back. That is the exact way. And this is your start. 
+
+That is how you read it. That is how you read it. So, this router function that we have used, okay, that is a function that is not a node technically, which is why it is not displayed in the graph. 
+
+Remember that. Router function is not a node technically, okay. And that is the reason it is not being displayed. 
+
+Okay. And even this is should continue. If you see, this is also not being displayed. 
+
+This is also not being displayed, because that is also a function. Okay. So, what is happening? I think it is good. 
+
+And then all you have to do is just start this conversation. So, what is generative AI? Oh, I had to execute this. So, now you are building an agent into one, okay. 
+
+You are wrapping your, so in this code, what is happening? You might be thinking, what is happening here? You are wrapping your entire graph into an agent. So, that is what is happening. You are wrapping it into an agent. 
+
+Simple. Okay. So, it is now generating the response from the model, actual model API call is being made, because we have already used chat GPT here to invoke, remember. 
+
+So, it is going to give some answer. Perfect. So, it has given some answer. 
+
+And now it is, if you want, I can give example this and that. Now, so this is like literally mimicking a chat GPT interface in a Jupyter notebook. Okay. 
+
+I can ask. So, summarise this into bullet points. Now, I am expecting because of the agent state, I am expecting because of the agent state, you see, because of the agent state, it knew. 
+
+See, I said summarise this in two bullet points. So, because of the agent state, it knew exactly what summarization I am looking for, the beauty. You can see. 
+
+No, that has not happened. Oh, sorry, sorry. Right now, we are not passing the conversation history.
+
+(3:11:29 - 3:11:42)
+Sorry, sorry, that part will come later in the memory. This is just the agent state to track what each node has done, but not for the LLM. So, for the LLM part, it has to be still done.
+
+(3:11:42 - 3:12:57)
+Okay, anyway, but I can actually keep on conversing because it is still asking me. So, I can ask agentic AI versus AI agent in two bullet points. Let us see. 
+
+Okay, so I have got two bullet points, one for agentic AI, one is for AI agent. And let us say thanks, bye. So, once I say bye, then automatically it will stop. 
+
+I hope. No. Exit. 
+
+Sorry, the user has to type exit. So, this is what the code says. So, I will have to type exit. 
+
+It will stop. So, remember that unless the user is typing exit, it is in a while loop. Remember, it is in a while loop. 
+
+This is not a very efficient way of doing things. So, this is very, very crudest way. So, actually wrapping this entire thing into a proper way to orchestrate, that is what we will learn in the next notebook.
+
+(3:12:58 - 3:14:57)
+This is a very, very crude way of building a chatbot, using a while loop, and then invoking the graph again and again, and tracking what the user is saying. It is not a very intelligent way of doing things. But at least this is where the real learning comes, how to build an agent, how to update the states, how to create the state, update the states, how to wire, how to create the nodes, how to build the conditional edges. 
+
+So, those things are discussed in this notebook. These are the main takeaways from here, conditional edges, reducers. Because the next notebook will already assume that you know what a state is, what the nodes are, what are edges, what reducers are, what are conditional edges. 
+
+So, these explanations will not be repeated. Directly, we'll jump into advanced topics like memory checkpointing. This is where the model will know the previous conversations. 
+
+Right now, the agent knows the previous conversations, not the model. That's why it was not able to recollect. So, agent knowing and model knowing, there are two different things. 
+
+And then more flow control, for example, send and command. So, this we will see how to execute parallel nodes. Right now, it is still sequential. 
+
+But what if you want to create parallel nodes and so on? Okay, I'll stop here. I think we are done for the day. Tomorrow, we'll start with the third agent, which will be creating a conditional router like this proper and build a customer support agent without a model. 
+
+And then in the next notebook, we will attach a model and make it agentic. So, this is the agentic version of that. Okay, so this is the fourth one.
+
+(3:15:02 - 3:16:53)
+So, let me see if there are any questions. We are done. So, one is asking, will list grow dynamically? It will grow dynamically. 
+
+As the more and more agent conversations are happening, it will grow. If user will have more common variables, gross nodes, then how can I declare variables inside state class and more examples will be there in the subsequent projects where you will have more number of variables in the state. So, don't worry, we have already addressed that. 
+
+Okay, so we'll create a full on agents where you will have at least four to five variables within the agent state and which state variable will be updated that also can be done. Just like you remember, in the agent builder toolkit, customer support agent that we built in the last session, okay. So, there we had three global variables, one for the query, one for the sentiment, one for the query category, same thing we can have in line graph also. 
+
+So, chat state refreshed means what? Means what all the previous agents and nodes have done, they'll just get cleared from the memory. Okay, that's the main thing. Okay, so if I say chat box continue, it will go back to the start.
+
+(3:16:55 - 3:19:03)
+Won't my previous converse, see, there are two different things we are talking. One is the conversation being tracked in the agent state. And one is the conversation being tracked in the model. 
+
+Okay, we are right now not tracking for the model. It is all being updated in the agent state. Okay, but that updation in the agent state is not being shared with the model. 
+
+So, model still is stateless as of now. The conversations history is not being passed on to the model. Remember that. 
+
+So, model cannot apply its brain to continue or not, because it does not see that history. So, the only way to control the overall flow is via the code. And in the code, that is the reason I have hard coded that unless and until the user says exit, don't exit. 
+
+There is no other way you can control the user flow. Is that clear? There is no other way you can control the user flow, user flow or the conversation flow. Definitely not the model, because model conversations are still being stateless. 
+
+In this example, we have not implemented proper memory. Only that is the way that the model will decide to continue or not. Right now, that decision is being taken explicitly by the agent or the agent state. 
+
+Okay, why and how? Because of the while equal to true. So, by default, it will continue. That is the while equal to true means. 
+
+By default, it will continue unless the user says exit. Okay, so tomorrow we have a Q&A session. I think I forgot to announce that. 
+
+Okay. So, tomorrow we have a Q&A session. I should have announced that. 
+
+Yeah, Karthik. Okay. So, everyone who has more queries, please join that tomorrow's session. 
+
+Okay, time and link has been shared. So, any questions from all the previous sessions, we'll take it tomorrow. Okay, thank you.

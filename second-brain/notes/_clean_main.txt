@@ -1,0 +1,196 @@
+  
+
+Ai agentic development (January course)
+Link for day 14 Deployment of the agent
+
+https://www.skool.com/k21academy/classroom/3aa34ee1?md=3f305f863d69401a9c6ce58199f747a2
+
+
+
+1. Ask it to create pass fail criteria for notebook generation 
+2. Do the development in a phased manner, otherwise it will generate a block of code and u have no idea about it
+3. Project scaffold (project organisation folders):
+  1. Where will u put ur markdown file
+  2. Where will u put config files, source files, documentation, test files, agent files 
+4. Brainstorm how this project structure can be scaffolded, how it can be organised—-> we are not generating the code yet
+5. Ask model to give the files one by one and also ask model as to how to test it if its actually working or not
+6. Make sure model gives you more than 10 files then its a red flag. Like 20-25 files , it should have approx 7-8 python files
+7. Use best model for planning, how each file would help with ur project deliverable 
+8. For testing of files 
+   1. All agents can be in one file -how would u test the agent file with all agents
+   2. All api endpoints can be in one file - how would u test that
+   3. All document processing code can be in one file, how would you test it — processor.py file and pre processor.py  file
+   4. Whenever you are asking explanations from the model, ask it to generate an . Md file, a txt file to have version control and which can be used later on much easily — you can create a master document and keep on appending in every time
+
+
+Debugging using langfuse
+
+1. Why did he create three artificL bottlenecks aeound 44:20
+
+
+ . WSGI (Web Server Gateway Interface)
+ 
+
+The Problem: Python web applications (like Django or Flask) need a way to talk to web servers (like Apache or Nginx), but servers don't naturally speak Python.
+ The Solution: WSGI is a standardized pipe. It takes the incoming web request from the server, translates it into something Python understands, and passes back the app's response.
+ TL;DR: The universal translator that lets Python code run on standard web servers.
+
+MCP Server (start 1:20 min)
+
+. People who create tools , they host the tools on a server which runs tools and servers u the NLP Output
+
+The MCP Client
+The MCP Client is the hidden protocol engine running inside an AI application. While the application itself (like Claude Desktop or Cursor) acts as the Host that handles the AI's thinking and user interface, the Client is the dedicated software module that manages the technical handshake and data pipelines.
+What It Actually Does:
+ The Messenger: Translates the AI's high-level requests into the standardized JSON-RPC 2.0 format that servers understand.
+ The Pipe Manager: Spawns and monitors the literal connection pipes—whether that’s a local terminal process (⁠stdio⁠) or a remote web stream (⁠SSE⁠).
+ The Gatekeeper: Executes the initialization handshake to discover what tools, prompts, or resources a server has available before letting the AI touch them.
+
+The 5-Second Analogy: If the AI application is a computer, and the MCP Server is a printer, the MCP Client is the USB driver software running in the background making sure they can talk to each other.
+
+.  One mcp server can have multiple tools and the mcp server will decide which tool to give access to
+
+
+Tools which mcp server 
+
+. Database , server will run mcp server
+. File system
+. Internet access /web search
+
+
+
+Mcp server’s responsibility is handling the server side bugs , you as the client are not bothered 
+
+We can use Taviky Mcp server for web search
+
+. Protocol stdio
+
+When ur mcp host and server are on same device
+
+… important….
+
+Mcp solves the m*n problem to m+n problem
+
+. FastMCP is a Python framework (originally created by PrefectHQ) designed to make building Model Context Protocol (MCP) servers and clients incredibly fast and easy.  
+
+If MCP is the "USB-C port" that connects AI models to external data and tools, FastMCP is the software layer that saves you from writing weeks of low-level JSON-RPC boilerplate to make that connection happen.  
+
+The Core Benefits
+ Decorator-Driven: Just like FastAPI or Flask, you can turn any standard Python function into an AI-accessible tool simply by adding a decorator (e.g., ⁠@mcp.tool()⁠).
+
+
+
+
+   
+A2a 
+
+Developed by google as how the agents will talk securely to each other.
+
+
+2:18:00 lab to build mcp server
+
+
+​async (Asynchronous Programming): A way to write code that doesn't block. Instead of sitting idle while waiting for a slow task (like downloading a file or fetching data), the program pauses that task and does other work. It is all managed by a single engine called the Event Loop.
+
+​Nested Async (nest_asyncio): A workaround for Python's strict "one loop at a time" rule. It allows you to trigger an async process (asyncio.run()) inside an environment that is already running an event loop (like Jupyter Notebooks or Colab). It forces the existing loop to temporarily accommodate your new tasks without crashing.
+
+
+Mcp server creation :
+
+Using fastmcp (70% of all mcp servers)
+
+Bank building mcp server to chekc user balance, fraud transaction etc. 
+
+Python functions are wrapped up by fast mcp into mcp compliant tool
+
+- tool decorator converts a python function into a tool
+- Await client - list tools which ai can discover in mcp server
+- Tools = await client.list_tools
+
+
+For MCP server
+
+-Tools are post endpoints —> mcp.tool
+-Resources are get endpoints —> mcp.resource 
+- Prompts are usable templates —> mcp.prompt
+
+
+Mcp + llm integration—> 2:48:00 onwards (need to understand more )
+
+Prompt template creation 
+
+1. Resource about policy, claim history- context
+2. Populating prompt with claim and policy id
+3. Generating prompt analysis template
+4. Submiting new claim
+
+Mcp and llm binding ( understand 4 steps used)
+
+1. Get mcp tools and convert to open ai format
+2. Send query to llm with tool definition ( system and user prompt defined and open ai tool is binded) and reading ai message, similar to langchain chained prompt template with llm
+3. Llm calls tools , execute tools via mcp 
+4. Get results from llm with tool resultd
+
+User query -> llm -> decides which mcp tool to call -> returns result -> llm formats response
+
+
+- bind tools to open ai , define the tools schema - type, name,description, parameters 
+- json. Load() - load json data
+- Json.dump () - write json data
+
+
+Section 8
+
+Introducting A2a
+
+Letting 3 agents talk to each other 
+
+Agents need to discover each other and they use agent cards: what formats they use, what are their capabilities.. similar to robots.txt for agents
+
+What are their capabilities, it is like
+Robot txt
+
+Each agent will be hosted on a url running on a remote server 
+
+1. Triage agent - classifies the paitent emergency. Using two skills
+2. Diagnosis agent , has tags : to teigger these agents based on certain keywords
+3. Billing agent: has two skills
+
+All 3 agents are hosted as endloints
+ separately 
+And their agent card as per a2a
+
+- Agent executor
+
+There is an input for user prompt and there is an input for event_queue_event (new_agent_text).
+
+
+Launching the server (which server are we referring to )
+
+- default request handler
+- A2A starlet application 
+
+
+3:17:20
+
+Combined architecture (mcp and a2a combined)
+
+- order agent and inventory agent are connected via a2a
+Whereas order agent talks to order database via mcp and then inventory agent talks to inventory system via mcp
+
+Use cursor to create mcp servers
+
+1. Use prompt 
+2. Understand ur use case
+3. What platform u want to use/models
+4. Iterate 
+5. Experiment 
+6. Identify what works what not works 
+
+
+Mcp provides depth and a2a provides breadth and lateral movement 
+
+
+
+
+

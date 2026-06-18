@@ -1,0 +1,734 @@
+(1:58 - 2:13)
+Am I audible? Yes. Okay. So happy Valentine's Day.
+
+(2:13 - 2:38)
+I hope your Valentine is not an agent, AI agent. Not until now. Who knows the way that things are progressing every other day.
+
+(2:39 - 3:12)
+So no longer that would be a fantasy. Okay. So what better it will be when you have an agent who listens to you most importantly.
+
+(3:15 - 3:48)
+Anyway. So what was the last notebook that we were doing last project? I think we had already finished the customer support. That one was done, right? No one remembers? Interesting.
+
+(3:55 - 4:08)
+We were at reflective self-correctional code generation agent. Ah, right. Reflect and generate reflect.
+
+(4:08 - 5:44)
+That is probably the lab 5. Yeah. Is my screen visible? Okay. So now it should be visible.
+
+(5:45 - 6:19)
+So this is the one that we were doing, right? Okay. Fine. So let me give a high level idea what we are going to do in this.
+
+(6:20 - 6:40)
+Now this will be like again, if I go back to the agentic design pattern, there was one design pattern called as reflective design pattern in which you have back-to-back two agents. One agent does something and the other agent verifies. Okay.
+
+(6:45 - 6:50)
+That work. So let's say in this case, it is like a code generation. Okay.
+
+(6:50 - 7:01)
+So we'll have an advanced version of this as well. Okay, where we'll be building several agents like a planner agent, reflector agent, replanner agent and so on. Okay.
+
+(7:02 - 7:06)
+So we'll come to that. But let's go step by step. Fine.
+
+(7:07 - 7:27)
+So this agent will take the user request to generate some code. Okay. That code will be structured in a proper, you know, format and to structure that proper format as usual, I'll be using the Pydantic schema or type dict.
+
+(7:27 - 7:46)
+Okay, we'll use some schema. Okay. So this is the schema that will ask the code generator agent to you know, adhere to in which there will be prefix like this code is meant for so and so whatever is that non-code component that is a prefix the explanation in introductory text and everything.
+
+(7:47 - 7:58)
+So that is in the prefix. Normally any code will have the import functions. Okay, import or from something import something.
+
+(7:59 - 8:14)
+So all those import statements will be separately present and the actual code component of the final code. Okay. So this is just like, you know, you can say documentation about what that code does.
+
+(8:15 - 8:27)
+Import section will help us to identify what all packages are needed to run that code. Okay, so from here and this is the actual executable part anyway. So this guy called as reflect.
+
+(8:28 - 8:50)
+Okay, that will look into the imports and first try to run the imports one by one. Okay, if any of the imports are failing then maybe could be multiple reasons whether that package is not installed that could be one reason. Another reason could be mismatch in the packages usually.
+
+(8:50 - 9:25)
+Okay, if the import statement works then usually the functionality is sorted. Okay. So this reflect agent will actually work to first check each and every import statement works and if any of these are failing it will give you error message that error message is actually given back to the generator that so and so error has come or so and so import has failed.
+
+(9:25 - 9:53)
+Relook into the code, generate the updated code, this and that. So once iteratively all the import statements are working then the control goes to the code then line by line the code will be executed. Okay, not line by line but the entire code block and if there are any suggestions for improvement or if the code is not working maybe because of syntax errors logical errors any of those so that feedback is again given back to the generate code.
+
+(9:53 - 10:05)
+So this feedback iteration will be tracked by this counter. Okay, so this counter will be present where? In your state schema. Okay, agent state.
+
+(10:05 - 10:25)
+So let's say the k value is 3 so we will attempt these cycle 3 times at max. Okay. So that is what we can do. 
+
+You can make it 4, 5 whatever number. Okay. And all the code solution and errors code so these are also updated in the agent state.
+
+(10:26 - 10:31)
+Fine. So this guy reads from the agent state. This guy is not directly getting the output from the reflect code.
+
+(10:31 - 10:37)
+This is just updating everything in the agent state. Okay. And this is reading from the agent state.
+
+(10:38 - 10:52)
+And checking that if the attempt count exceeds the number of you know attempts allowed that is n. Okay. Then it will simply exit with whatever the final I mean the last solution was. Okay.
+
+(10:53 - 10:57)
+Including the error message. This is what best I could do. Okay.
+
+(10:57 - 11:25)
+Although there are some errors kind of thing. But if there are no errors and if the attempt solution is attempt count is less than n then or less than or equal to n in that case then this generate code will finally get the feedback that okay I have been able to generate whatever the required code is successfully without errors and that code will be given back to the user. So that's how the entire loop works.
+
+(11:25 - 11:39)
+So I have already given all this explanation here. I have replaced the GPT 4.0 with GPT 5 mini that is the one which we will be using. But if you want you can use GPT 4.0 mini also that's also good.
+
+(11:45 - 12:42)
+So we will be importing the variables. I would not want you to type the opening key. This is the best way. 
+
+And as a production grade example of this project I think I remember I had shown my AWS MCP server or AWS project anyone remembers? Did I show that? So in which I was giving natural language queries No. No one remembers. No MCP.
+
+(12:43 - 13:19)
+So a project in which I had implemented that along with the user interface I was giving natural language queries to my AWS account and a code gets generated which gets executed and based on that Boto3 code execution I was able to fetch my AWS account related information something. Yes. No UI.
+
+(13:20 - 14:37)
+Oh is that possible? UI was also there. So okay let's finish with this and then maybe we will go back and I will try to show you what I have done. Maybe we will spend maybe 5-10 minutes into the architecture and how the other things were implemented like PII reduction and those things. 
+
+Although that entire project was 90% white coded okay. I am considering to you know upload that entire project in GitHub. Okay so along with explanations maybe it might take time another week or so but I am considering to upload. 
+
+So that is I made two three versions in fact of that project. So two versions have been deployed for external one for myself. The version which I will be uploading will be you know a version of fully functional one. 
+
+Okay. Where I have no conflict of interest kind of thing. So there is a comment nowadays most of the developers are using cursor or some other AI tool for coding.
+
+(14:37 - 14:51)
+That is a standard right. So where else can we use this reflect pattern code. I think in there was one notebook in which I had given a few examples for each of these agentic patterns.
+
+(14:51 - 15:23)
+You can just check that. So reflect pattern again suppose you want to do some copywriting writing and copywriting back back to back. So there also you can do. 
+
+So for example there is a topic on which you have written or some AI agent has written. Now another agent which will act as a copywriter expert will verify grammatically you know everything conceptually technically. So there can be two to three copywriter agents.
+
+(15:23 - 16:19)
+One for you know grammar structure and writing style. Okay. Adapted to your writing style. 
+
+The other agent is looking into the technical aspects of it. I can also provide a third agent which makes sure that all the data is numerically correct up to date. Okay. 
+
+So that third agent will have access to a web search tool. Okay. So internally it will try to generate claims from my article or blog. 
+
+Okay. Wherever there are numbers, wherever there are figures. Okay. 
+
+Because I want to actually make my article also factually correct. So I have divided the tasks now. I am just giving you a high level idea. 
+
+So you can take this as a you know project post today's session. So one agent will write down the blog article based on the user topic. And three different reflector agents working in parallel.
+
+(16:19 - 17:16)
+So how to do that parallel agent? That is the next project I will show you how to create parallel agents or agents which work parallel. Now these two agents are working back to back. In our case, these agents are working back to back. 
+
+First this, then this, and then back to back. So how do you make these agents work parallelly? So that is what also we will see after this current example. Okay. 
+
+So as I just mentioned, I can have three agents. One which will do the copywriting, make sure that the blog looks like a human written. Now if you just search Google, you will get lot of instructions how to make AI content human like. 
+
+Okay. So you can download some of those instructions and feed it to this agent. Also if you have some previous articles which you have written manually maybe couple of years ago.
+
+(17:16 - 17:26)
+So from there you can create your own writing style. Okay. Go to chatGPT, upload those articles or whatever literature that you have created.
+
+(17:26 - 17:38)
+Ask chatGPT to give a complete DNA analysis of your writing style as a markdown file. Okay. So chatGPT will do a complete DNA analysis of your writing style.
+
+(17:38 - 19:52)
+Give it as a markdown file. Now that markdown file will be given to the copywriter. Okay. 
+
+And make sure that the blog is adhering to that. Okay. So those things, another one as I said, technical concepts and the third one is checking for the factual correctness, recency of the use cases maybe or model names. 
+
+It might be referring to old model names like 3.5, GPT 3.5 or GPT 4.0 mini. But now everyone is working with GPT 5, 5.2, 5 mini and so on or Gemini old models are there 1, 1.5. So because these agents, I mean these models okay, let's say if I am using GPT 4.0 mini. Now this was trained in 2023. 
+
+This GPT 4.0 was trained in 2023. This has no idea about any of the later models. Okay. 
+
+So if this guy generates a code for a LLM, that LLM being used will be naturally an old generation model. Right. So how do I make sure that my code makes use of the newer generation models. 
+
+So that can be done. So that is one use case. Another use case I can tell you is like let's say when I am creating these kind of tutorials. 
+
+Okay. So there is one agent which generates these end-to-end tutorials. These figures can be added later but think about this entire notebook being generated by one agent. 
+
+Okay. The other agent will now again check whether all the codes are running properly, whether the codes are properly documented. Those instructions you can have. 
+
+Okay. So one for checking the documentation and the comments. One agent again could run in parallel or you can combine them as you wish. 
+
+That all the codes are running properly and again recency of the API is being used. For example, if you are using older generation model in the generate code component. Okay. 
+
+It might refer to again models like GPT 4.0, 4.0 mini which are again older generation not agentic in nature. So GPT 4.0 they are not agentic. Friendly models I would say.
+
+(19:52 - 19:57)
+Agentic friendly models are GPT 5 series. They are meant for agentic tasks. Okay.
+
+(19:57 - 20:09)
+So the third agent can check for these kind of things also. Okay. So back-to-back refinement and after 2-3 refinements you get updated code with updated models.
+
+(20:10 - 20:20)
+You know updated documentation. Everything properly structured. Then it goes to a copywriter which will do the section numbering title this and that.
+
+(20:20 - 20:25)
+Okay. Like there are no sections but you can also do the section numbering if you want. Okay.
+
+(20:26 - 20:44)
+So let's say you want the section numbering also. You can put those in the instructions that okay take this notebook as the input and do the section numbering. Make sure that it is adhering to so and so guidelines. 
+
+There is a proper introduction. There is a conclusion this and that. If any of these components are missing put it there.
+
+(20:46 - 21:02)
+So a lot of use cases are there. You can reflect. Yeah. 
+
+So this is the one which we are doing. Okay. So this is the one which we are doing.
+
+(21:02 - 21:11)
+Reflective self-correcting code agent. I think towards the end I have given some other examples also. So two more examples I have given.
+
+(21:14 - 21:31)
+So one is GitHub copilot workspace. A developer can give copilot a high level task. For example add a new API endpoint for user profile. 
+
+Copilot will generate the plan and the initial code and then attempt to run the build and test. If the test fails it reads the log. So this can be done.
+
+(21:32 - 21:39)
+Again this is mostly what is happening in your cursor ID ultimately. They have built these agents. Okay.
+
+(21:39 - 21:49)
+Which is actually doing the same thing. So one agent will write, another agent will verify and then code iteration starts on its own. So what you get at the end is a verified code.
+
+(21:50 - 22:33)
+Okay. Mostly. So you don't have to manually verify. 
+
+I mean if you had initially started using cursor exactly the same time last year when the first version of the cursor ID was launched. That was very buggy. I mean very naive things. 
+
+But then later on went on, kept on refining their agents. So this is actually being used. There is another agent, sorry, use case here. 
+
+Automated data quality assurance agent. So agent is asked with writing a script to clean a dataset generates the script and runs it on a sample data and then checks for the output for anomalies. For example null values, incorrect data type. 
+
+If it finds these issues it reflects on the problem and it writes the script to handle those edge cases. Perfect. Okay.
+
+(22:34 - 22:49)
+So you see the agent or two agents. One is writing the code other is checking for anomalies. If there are any unhandled edge cases, okay it will give back that feedback to the generator code.
+
+(22:50 - 23:13)
+Sorry, the generator agent which will add those additional code for handling let's say those edge cases maybe missing values, outliers okay, anomalies in some patterns and so on. Fine. So after this what we will be doing is the parallel execution, the fan-out pattern which is our lab number 6 and 7. Okay.
+
+(23:24 - 23:31)
+Okay. So here it goes, gpt40mini I'll just change it to gpt5 and close the bracket here. Fine.
+
+(23:32 - 23:45)
+We'll no longer use the gpt40mini going forward. Okay. So what is this doing? You have the code generation system prompt.
+
+(23:46 - 24:05)
+So this is your system role. You are a coding assistant. Ensure that your code you provide will be executed with all the required imports and variables defined. 
+
+Make sure the point 3 has some code to run. So this is how you have to structure your codes. There has to be a prefix describing what solution you have implemented.
+
+(24:06 - 24:26)
+Put all your imports here and if there are no inputs needed, keep it as an empty string, but there has to be an import section. And then finally some code block functionality has to be there. And here is the user question. 
+
+After that, the user question will be appended. So this is the system prompt. I'll add this system prompt with the user.
+
+(24:28 - 24:37)
+And then the schema, that's what I told you. So these three things that you are expecting the generator code will adhere to some schema. So let me define that schema here.
+
+(24:38 - 24:52)
+So there will be a prefix section, there will be an import section and there will be the actual code section. So this is already explained. And now you are forcing the LLM to generate the code exactly in that structured format.
+
+(24:55 - 25:09)
+And you can see the data type. It's a renewal sequence that can be instantiated directly. So this is the code generator.
+
+(25:10 - 25:51)
+Now code to find the factor of a given number. I mean, you can just change this as per your wish. So can I get some requirement? I've just deleted that. 
+
+Let's see if that works. So questions from your side. Let's see if your code No one wants to generate any code.
+
+(25:53 - 26:06)
+I'm not able to see any response. That is your schema. That is not the agent state yet.
+
+(26:08 - 26:31)
+That is the schema in which your code generator will give the output. So this is the schema for code solutions. So the agent state will have the name as agent state. 
+
+So don't worry. So you should always write down the variable names exactly what they mean. So agent state will be called as agent state or state at least.
+
+(26:32 - 26:46)
+So this is the schema that we want the LLM to add here. Now which LLM? The LLM part of the generator agent. So this is the LLM that will be bound to the generator.
+
+(27:01 - 27:26)
+Prashanth, I just posted one. Let's see if that's possible. Create opportunity record and if stage is missing. 
+
+I have no idea what that means. Can we have something which is easy for everyone to comprehend? I mean you can try that at your end and let me know if that works. That's my sense.
+
+(27:26 - 27:33)
+It's easy for everyone to comprehend. So that you know becomes easy. Anyone else? Otherwise I'll take his.
+
+(27:34 - 27:46)
+Since no one else is responding. This is my Salesforce bundle actually like so. But again send email to executive.
+
+(27:46 - 28:08)
+This is what? Workflow kind of a thing? And you are looking for Python code? Yeah. It create opportunity and then it like if the stage is missing on that opportunity through the error and once the stage move to stage 10, then it send out email. Problem is with this.
+
+(28:08 - 28:29)
+How does it verify whether the code is working? Because then it will also have to generate some dummy data to update that workflow. Sure. I think then yeah. 
+
+Second one. Sentiment analysis for a given text and send an email to manager. Okay.
+
+(28:29 - 28:45)
+Now again sending email. How do you verify? So at max what it can generate is a code which uses the SMTP library. SMTP that is a go to library for creating email.
+
+(28:46 - 29:51)
+But let's try this. Let's try this. Okay. 
+
+What we get? So you have to give the code Python code. Let's write it down. Python code to do sentiment analysis for a given text and send an email to manager. 
+
+Okay. Let's run this. It should be able to generate something. 
+
+Now whether that works or not we'll see. So this is a code which finds the factorial of a given number which I generated in the previous Oh there is. Okay. 
+
+Okay. No worries. I'll print that code part. 
+
+So this is the code part. This is the code part that we have got. Ensure the vader lexicon is available. 
+
+Otherwise you'll have to download the vader lexicon quite more. So there is one function which does the sentiment analysis. Okay.
+
+(29:52 - 29:55)
+It's a class. Okay. And then compose email.
+
+(29:55 - 30:01)
+That's another function. Send email via SMTP. I told you it will be needing SMTP library.
+
+(30:02 - 30:30)
+And then this is the final function which will combine all the above three functions. And there is a main function also. Right. 
+
+Okay. So some manager example dot com replaced with your manager's email and SMTP. So only thing is checking this will work or not will need actual email, actual thing. 
+
+Okay. So let's do one thing. Let's do one thing.
+
+(30:30 - 30:56)
+I'll just copy the cell output. Okay. And I'll just paste it here so that manually I can check if there is any error in the code. 
+
+Okay. So this was the whole code. I'm just manually checking if there is any. 
+
+Analytic is not defined. Okay. I'll have to first import the import statements. 
+
+Okay. So let's see. So these are the import statements.
+
+(30:57 - 31:02)
+I'm just manually checking first. Okay. And then we'll automate that process also.
+
+(31:03 - 31:24)
+I'm just manually checking if that code works. Okay. So Mary has another example.
+
+(31:25 - 31:39)
+Okay. This looks okay. Positive, negative.
+
+(31:40 - 32:11)
+Now what these numbers are I'll have to see. Okay. Three digits. 
+
+3D is your three digits. 0.969, 0.192, 0.0 negative, 0.8 neutral. So mostly that statement is neutral. 
+
+It seems it got confused. And this is the compound of all the three. Maybe some percentages are there. 
+
+It has figured out. Looks that it is working. Let's take another example.
+
+(32:13 - 32:21)
+You see we have been able to get it. So indeed this plan is working. Let's take the other example.
+
+(32:34 - 33:30)
+So for multiline, make sure that you are using three double quote start, three double quote end. Receive promoters 9 to 10. Okay. 
+
+I think the formatting is correct. So in PSS I'll put the net promoter score and see if it let's say, I've just slightly formatted it to make it a bit more sensible. Okay.
+
+(33:34 - 33:39)
+So see, I have my system prompt plus the messages. Okay. That's what I told you.
+
+(33:39 - 33:51)
+We'll combine the two and then invoke. Okay. So some code has got generated. 
+
+Let's see the code. So this is the complete code part. NPS code, there is a function.
+
+(33:52 - 34:01)
+And what else? There is an example usage also. Fine. There are any imports? There are no imports needed.
+
+(34:01 - 34:10)
+You can actually now see if that works. So copy the cell output. Paste it here.
+
+(34:11 - 34:45)
+And let's see if that works. NPS is zero. In which case now you'll have to test for some of the examples. 
+
+Scores are there. Compute score function. So some invalid examples. 
+
+Invalid counts. Valid responses. So total response provided is 15. 
+
+Out of that 11 was valid. 4 was invalid. Okay.
+
+(34:47 - 35:01)
+Yeah. So basically they gave response like a none. So it does the validation also. 
+
+The score has to be numbers. So that validation is already there. So those are ignored I guess.
+
+(35:03 - 35:15)
+Yeah. And then promoters are 4, passives are 3, and detractors are 4. So this is the overall score. And so it goes to 0. So let me just change some of these numbers.
+
+(35:16 - 35:40)
+Okay. So 8, 9, 7, 6. Let me make this also as 8. 8. And then this is 9. So there are already 9, 10, 11. So let's make this as 4. Now let's see what happens.
+
+(35:42 - 36:00)
+So rounded NPS is 18 in this case. So promoters are 45, passives are 27, detractors are. Looks that it is working. 
+
+Okay. Now you'll have to find out whether this is correct business-wise. Implementation is correct business-wise.
+
+(36:00 - 36:07)
+That I cannot validate. Okay. So but it has given a code which is working in the very first shot.
+
+(36:09 - 36:41)
+Fine. Okay. So now what I'm going to create is the agent state schema. 
+
+So this is our actual agent state. Okay. In which we'll have the error flag, the messages. 
+
+Now this will be in the reducer. Add messages reducer. So all the messages will get added up. 
+
+Okay. So these messages will come mostly from your customer plus the reflector. Reflector will keep on adding messages into this.
+
+(36:42 - 36:52)
+And the code solution will be replaced every time the new solution is available. And number of items will be incremented. So that will also be stored here.
+
+(36:55 - 37:07)
+So this is the node function for the generator. Okay. So this is reading the messages from the agent state.
+
+(37:07 - 37:15)
+Number of items that has been done from the agent state. Initially that will be zero. And now the code solution is created here.
+
+(37:15 - 37:31)
+And now we will record the chain's answer into a new assistant. So basically what I have done is I have dumped the entire prefix plus the import plus the code. So all three things I have added to the I have added to the messages.
+
+(37:32 - 37:41)
+So that entire solution with the prefix, imports and the code, all three are added back to back. This is like concatenation only ultimately. Okay.
+
+(37:41 - 38:05)
+So I have created a single string. This is creating a single string ultimately. That becomes a new message. 
+
+And that single string gets flagged along with the assistant. So basically I am adding messages as a tuple that whose message that is. Okay. 
+
+Is it the user's message or the assistant's message. So this is the assistant's message. This entire thing that gets added to the messages.
+
+(38:05 - 38:13)
+And now I am incrementing. This function will update the incremented attempt, the code solution. Okay.
+
+(38:14 - 38:19)
+Entirely. And the messages. So this looks good.
+
+(38:20 - 38:41)
+Now the checking part of the code. Okay. Now you can use the exact function. 
+
+So basically your reflector here is using the exact function. That is to execute some Python code present as a string. So I am just having a Python code in the string format.
+
+(38:41 - 39:00)
+And you see this is the Python code in the string format. Typically your LLM will also return the code in the string format. The good thing is I can execute the code. 
+
+Okay. By using that exact function. If the entire code is in the form of a string. 
+
+Okay. So you can just change these numbers. Maybe 35.
+
+(39:01 - 39:24)
+And just verify that yes, that works. So this could be any Python code. Okay. 
+
+I have just taken a dummy code here just to show you that what the exact function actually does. Okay. So if there is any syntax error. 
+
+So for example if I say 15a, there will be a syntax error. Okay. So you will get some error. 
+
+No doubt. Exactly that syntax error. That's what I told you.
+
+(39:24 - 39:38)
+Fine. That's a syntax error. So the entire Python code is a string and you are executing that string. 
+
+Fine. Now this is the node function for your reflector. Okay.
+
+(39:38 - 40:01)
+Which is going to check. So first it reads what all has happened. It is reading the entire code solution and then separating the import and the code part separately. 
+
+Okay. Because this code solution has three parts. I told you. 
+
+Right. It has the prefix, it has the imports, it has the code. So I am interested in the import and the codes and also reading how many items have happened.
+
+(40:03 - 40:20)
+So first the import statements will be executed. That's what I told you. Right. 
+
+Back to back I am going to execute the import statements. If any of these import statements are failing, then obviously there will be an exception. I am grabbing that exception and giving it back to the generator.
+
+(40:20 - 40:51)
+Okay. Please fix this import section. I am appending that as a user message and then returning. 
+
+Same thing. So once this entire try block executes without any error, means all the import statements are running without any error, then we will start running the actual code. So scope contains your variables. 
+
+Okay. Because this is like a sandbox that you are creating. Okay.
+
+(40:51 - 41:11)
+So this scope contains the names of those variables. Okay. So after importing all the, sorry after executing all the import statements and the code, okay, where are you going to execute all of these within that scope. 
+
+Okay. So it's not going to mess up with your Jupyter notebook. I mean this collab notebook's variables.
+
+(41:11 - 41:18)
+A new scope gets created behind the scenes. Okay. A new scope means a new global namespace gets created.
+
+(41:18 - 42:12)
+So this Jupyter notebook already has a namespace. We don't want to use that namespace. I want this code to have its own namespace. 
+
+And that is what the name of the scope is. So if there is any error in any of these import statements will not have error but the code will have the error. And I am concatenating both the import and the code errors, sorry codes by giving an empty line. 
+
+So first all the import statements there will be an empty line and then all the codes. So that entire block along with the import, empty line and the code that is now getting executed. And every time it gets executed with a fresh namespace so that it starts from scratch. 
+
+It's not reusing a previously created variable. Okay. So that's why this was initially empty and now obviously it will use that.
+
+(42:14 - 42:36)
+So if there is any error I'll grab that error, ask this to reflect on this and try to solve and please return me the full solution after resolving that error. That's the message which I'll append it to the agent state. Now if there are no errors then obviously the final solution will also get, the final solution will also get updated.
+
+(42:37 - 43:27)
+Okay. Now this is a conditional routing. This happens when two conditions are met. 
+
+When the number of atoms have exceeded three or any one of the three attempts if the code solution works completely. So that is what you are saying here. Okay. 
+
+So if there is any error then go back and generate the code. That's what you are doing. If there are no errors or if the atoms have exceeded then the decision is to finish. 
+
+I mean go to end directly. I mean no longer do the iteration. It's very simple here.
+
+(43:27 - 43:40)
+From here itself you can read. So you need two information. One, if there is an error then this flag will have that. 
+
+This is like a Boolean. Okay. Right.
+
+(43:41 - 43:44)
+Yes or no. It will have that error. Yes or no.
+
+(43:46 - 44:02)
+And here you are updating that. Or you can have it as a Boolean also. True, false. 
+
+It depends how you are updating in this case. I am updating it as a string. Okay. 
+
+If you want you can update it as a Boolean also. I mean this error flag could be a Boolean. Actually true and false.
+
+(44:02 - 44:35)
+Okay. Right now it is true and false in a string format kind of thing. So that is what you are checking. 
+
+Whether there is no error or the number of attempts is greater than or equal to the number of attempts allowed. Now this is a constant. So if you go to PEP 8 style guidelines, all the constants must be in caps. 
+
+Okay. So this is the style guideline PEP 8 style guideline for Python. So all the constants are usually in caps.
+
+(44:36 - 45:51)
+So that you can see. Naming conventions and constants. Constants. 
+
+Okay. Constants are usually on a module level and written in all caps with underscore separating them. Correct. 
+
+So your code usually has to adhere these guidelines. So that is why the max attempt is in all caps. Now let's build the graph. 
+
+So importing the empty graph, adding two nodes and attaching the function for those two nodes. Entry point is your generate code. So your user query will directly go to the generate code. 
+
+From the generate code, the control goes to the check code. So generate code is your generator, check code is your reflector. And from the check code, what will happen is decided by your function. 
+
+Okay. Your outer function. So you are creating a conditional edge from, this is your from and this is to. 
+
+Sorry to will be one of these. This is from. One of these two. 
+
+Okay. Will be decided by your function here. Now whether it goes to end or it goes to generate code back.
+
+(45:53 - 46:07)
+Let's create this and let me. Perfect. Okay. 
+
+Now from generate it goes to check. That is a sure shot. I mean that is deterministic.
+
+(46:07 - 46:38)
+Okay. But from check code whether it will go to generate code or not. So can you see this is dotted, which means this is conditional. 
+
+So if the check code is giving any error, then only it will go back to the generate code. If there is no error, then it will go to the end. So these two are conditional you know executions. 
+
+And that condition is checked by this check code. So let's run this. So this entire line graph agent that we have created, coder agent is now wrapped into this function.
+
+(46:38 - 47:41)
+That's again a usual practise I've been doing. Okay. I'm just wrapping that agent along with the prompt and verbose I can create whether I want the output of each and every step that is what the verbose controls. 
+
+Okay. So and this is again for printing each of the events in the in case when verbose is true. Okay. 
+
+And in any case, I'm also going to print the final solution whether verbose is true or false. I'll still print the final solution. Okay. 
+
+So write some code to demonstrate how to do a pivot table in pandas using some hypothetical back testing results data. Okay. Okay. 
+
+I'm just fine. Now earlier that code was written by gpt4 mini. Now this is going to be gpt5 mini. 
+
+Let's see what happens. Now these are very straightforward tasks. So I don't think it will produce any error or so.
+
+(47:42 - 48:05)
+But let's see. Question in the chat. If the execution happens in scope namespace but if there is any error then the errors also should be handled in the scope main python or what exists. 
+
+So error is not handled. Error is captured and the same error message is given to the generator code. That's it.
+
+(48:08 - 48:16)
+Okay. No one is trying to resolve that error. Only the LLM will get the feedback about what error came in which line.
+
+(48:17 - 49:14)
+Okay. Because usually the traceback will have all that information that is called a traceback, right? So the traceback will have all the information. That entire traceback is given to the generator code for seeing what is the change. 
+
+And then it will consider that traceback. See it is as good as what you are doing. You get an error, you copy, paste it to chat gpt and ask for a solution. 
+
+Same thing is handled by this agent back to back. So instead of me copy pasting the code to chat gpt, it is internally doing the same thing. Clear? Okay. 
+
+So here is my solution attempt. This builds on a small hypothetical sales data frame to demonstrate the several use cases of pivot table. Okay. 
+
+Good. So some original data frame is there. You can also copy this cell output and so this is the final solution that it has given.
+
+(49:16 - 49:28)
+And why did it go to the final solution? Because there was no error. That is why directly it came as final solution. If there was any error then let's see.
+
+(49:35 - 50:11)
+Running the agent yeah it looks that it has worked. That is the entire solution which I pasted. So original data frame, some other sales by region and product, multiple aggregations, sales with totals, number of rows and then more aggregation.
+
+(50:11 - 51:38)
+So that works. So write some code to scrape data from any Wikipedia page. Okay. 
+
+So let's see if that code works. Okay. So this also it seems that it worked in one attempt.
+
+(51:41 - 51:52)
+Final solution here. It went and worked in one attempt. No errors found.
+
+(51:53 - 52:21)
+Correct. So that worked in a single attempt. Fine. 
+
+So we will do one more thing. So this is the third attempt I am doing for sentiment analysis using transformers. So let's see what it does.
+
+(52:23 - 53:49)
+Also. Okay. Let's see what happens. 
+
+So this is your user query. So here again there was no error. In all the three cases it has been able to do without any errors in the first attempt. 
+
+Now this is a stress test. Okay. So the prompt is this.
+
+(53:50 - 54:09)
+This is a prompt. This is a prompt. And now I want to call this agent.
+
+(54:12 - 55:30)
+Now let's see whether it is able to create that entire project. Seems it worked. No errors also which is strange. 
+
+Without error it is finished. I was expecting that at least API and those things will get. Okay. 
+
+So here is my code solution attempt. Python code intelligent router agent that analyses. Okay.
+
+(55:33 - 55:41)
+Let's see the solution what it has done. So it has created a vector store for embeddings and everything and retrieval also. Nice.
+
+(55:42 - 56:15)
+So opening a key it is able to probably fetch the opening a key from my environment variable itself. This is nice. Yeah. 
+
+So probably that is the reason it worked. And this is for generating the embeddings. This is chat call wrapper for getting this.
+
+(56:17 - 56:26)
+Okay. Bill, billing, charge, invoice, error, bug fail. So this is like doing the categorisation.
+
+(56:28 - 56:32)
+Okay. Using manual rules. It's not using an LLM.
+
+(56:32 - 56:43)
+And again the sentiment analysis is also being used by some manual rules. That is in the else condition. Yes.
+
+(56:43 - 57:01)
+In the if condition if there is opening a key available then directly use the opening. Makes sense. Now generate a rag for augmented response and then escalation to a human and then router.
+
+(57:02 - 57:14)
+Finally this is route by category. Same thing. And build a sample knowledge base. 
+
+Correct. Sample knowledge base has been created. We also use that JSON file.
+
+(57:16 - 57:52)
+Example run that demonstrates the system. Yeah. It seems to be correct actually. 
+
+Only red flag that I found was it's not using typical line graph agents. Okay. Because in the import statement there is no line graph. 
+
+So this has been completely created without any agent. It is possible because the workflow is more or less clear. So in this case it was possible to create it without the line graph also.
+
+(57:53 - 58:08)
+But yeah you can see this is pretty good. Okay. Use case line graph object.
+
+(58:08 - 59:37)
+Let me retry it. In this object with proper state management and conversational memory. Now let's see what happens. 
+
+This additional line will force it to use line graph now. Okay. So this is the updated lab link. 
+
+You can have it. Okay. Now it looks much more comprehensive.
+
+(59:44 - 1:00:26)
+This is strange. Again no line graph and it has finished without conversation state memory is there. Okay. 
+
+It is creating the conversation memory as a class. Data class, LLM wrapper. So is it not able to understand line graph? What is that line graph thing? That is strange. 
+
+Again knowledge base has been created. Line graph agent. It says line graph agent but not using line graph.
+
+(1:00:28 - 1:00:49)
+Router agent again. Any reason that you can think of? Why is it doing this way? Or maybe I provided too much information. So it thinks I can do it without the agent.
+
+(1:00:53 - 1:01:05)
+So line graph like agentic react system. So it has created a agentic react which is line graph like but still not using line graph. Okay.
+
+(1:01:05 - 1:03:39)
+So but again I think let's go ahead and you can experiment with this notebook. Okay. So quite good. 
+
+Okay. Any questions? Before moving on to the next design pattern and the use case. Okay. 
+
+So we can take a small break right now or we can take one more small notebook and take a break. That is also possible. So maybe we can specify line graph flow instead of just line graph. 
+
+Yeah. That's why probably it is trying to replicate line graph thing but not exactly doing that. Right.
+
+(1:05:04 - 1:05:23)
+Okay. So here is the link for the next lab. So parallel execution steps.
+
+(1:05:50 - 1:07:42)
+Yes. So everyone has opened that. Okay. 
+
+I started with the installations. Okay. So this is the one which I have shared.
+
+(1:07:43 - 1:08:21)
+So what we are going to learn in this how to run nodes in parallel. So till now we have been running nodes in sequence either iterative or straightforward as a workflow. But now we want to do parallel execution. 
+
+So in this notebook we will do a deterministic parallel execution. What it means is there will be two things which are fixed. Number one two things which will be fixed and that is fixed number of branches.
+
+(1:08:22 - 1:09:56)
+Let's say the branch 1 branch 2 and fixed number of fixed number of steps in these branches. So that is what. In the next notebook we will see how can we create variable number of branches and that variable is decided in run time by the LLM. 
+
+So LLM decides how many parallel branches will be created. So right now we will have these fixed branches and the number of steps again that will be mostly decided by the steps that will be followed in that branch. But you will have to understand that this is what the current notebook is doing. 
+
+We will have two clearly outlined branches that we are going to run. What it means is let's say this takes 10 seconds and this takes 20 seconds. So control will so once both of them or the output of both of them have reached then only this guy will execute. 
+
+So this is going to wait until the output from all the branch nodes or rather the branches are received. So this is going to wait 20 seconds. Remember that.
+
+(1:09:56 - 1:10:14)
+And only this will execute when all the results from both the branches are available in the agent state. So there could be one of the branch which can act as a bottleneck. So that you have to consider while doing the architecture and the design.
+
+(1:10:14 - 1:10:45)
+Is there any node which is causing unnecessary delay or something like that. But remember that the next step of the workflow will only execute when all the branches have merged and this merging will happen only when the output from this and the output from this are both available. So there could be difference in the execution times of each of these branches. 
+
+Remember that. Because they are going to be running two parallel threads. Think it that way.
+
+(1:10:47 - 1:11:07)
+So this is called as fan out fan in mechanism. Fan out means branching and merging is called as fan in. So I have done the installations. 
+
+Here I am going to use the wikipedia tool and tavili. So wikipedia tool for searching and tavili again for web searching. So two things I am going to use.
+
+(1:11:08 - 1:11:16)
+So let's take a simple example of a linear workflow. I don't need to explain this. Directly let's see the graph and that will be clear.
+
+(1:11:17 - 1:11:35)
+I just created four nodes back to back and just joined them. Nothing more. This code should be quite self illustrative. 
+
+So I build those nodes and I am just building the edges. Connecting them together back to back. There is an agent state which is very plain and simple.
+
+(1:11:38 - 1:11:54)
+And this is your return node value. Basically what we are saying is when you execute any of these nodes then this is like a dummy function. This is like a dummy function for that particular node execution.
+
+(1:11:55 - 3:07:25)
+So this is the function which will get called when this is executed. So normally what we do is we attach a node function. Here I am not creating four different node functions. 
+
+I am just creating a single node function and attaching it to the four nodes A, B, C and D. So what will get updated in the agent state is this. Step A, Step B, Step C, Step D. So this is the string which will get updated in the agent state. That's it. 
+
+So no fancy stuff. Back to back this is a linear agent. If you see here since I have not used a I am using annotated list operator.add So I am not using a reducer like add messages something like that. 
+
+Since I am not using a reducer what it does is there will be a overwriting. So I will show you. So you see initially it started with empty state then it you can say this step A gets added and then this step A along with step B. So this is getting replaced the original list of the messages is getting replaced with this new list. 
+
+You can see each of these steps. I think there is a add operator.add. So because of this I think yes it is getting added. And the final step has all the four states so fine that is clear. 
+
+So each of the nodes executes and after each of the node which is executed this is the string which gets added to the agent state which is what you can clearly see one by one. Now fine in fine out how to do that. So first you need to design in this case you will create four nodes again as usual there is no change. 
+
+Only change that will be when you are connecting these. So you will have to add an edge not a conditional edge you will have to add a normal edge from A to B and A to C. Earlier there were edges from A to B B to C, C to D D to N. Now what we are saying is there will be edge from A to B, A to C then there will be another edge from B to D, C to D and then D to N. So how many edges we will have? Start to A number 1, number 2 A to B number 3, A to C number 4, B to D, number 5, C to D and number 6, D to N so there will be 6 edges and these are the 6 edges start to A A to B, A to C then B to D, C to D that is a fan out part you can see this is a fan out part and this is a fan in part where the merging is happening fan out, fan in so both are merging and then this is D is ending ending the workflow and then you are compiling so again no big deal and let's execute that so step A and you see B and C get simultaneously executed when the control goes to D when the control goes to D by that time B and C have simultaneously got updated or they have updated before the control goes to D once D executes, D will add that ok I am also done let me repeat this part when the control goes to D by that time both B and C are done ok they are not being added one by one as in the previous case B and C were added so first B was added then C was added now B and C get simultaneously added here in the same step that means both were executed in the same step by the time the control goes to D once D is finishing they will add that ok I am also done ok so now there is another example when the left branch has got one step the right branch will have two steps so what are the nodes you will need A, B, C, X, D so five nodes you will create and edges are simple so start to A A to C, C to D then A to B, B to X, X to D and then X to sorry D to N that same thing whatever you see is what you will be doing exactly ok so so when you execute this time what will happen is this D will wait until both the branches are done ok so after A you will see C, B, X simultaneously ok you see A and then B, C you see B and C are getting executed or you know initialised simultaneously and by the time it goes to D you will also have the response from X ok that's what I said so by the time it goes to D you will also have the response from X then finally D will update ok now let's make it to a real world use ok so let's say for any given query I want to do a parallel search web search and a wikipedia search I will retrieve the content from both and then generate a more comprehensive answer make sense so here I am using GPT-5 mini model again temperature may not work just get rid of that so this is my agent state, question, answer and the context simple ok so here I am importing my wikipedia and tabularly this is a function which will do the web search using the tabularly this we have already explained and whatever the search results are ok so 3 search results they will be concatenated one below the other by using empty lines and space sorry dot or dash 3 dash ok this is a function to search wikipedia how many documents to load so top 2 documents for any wikipedia query so 2 documents from wikipedia and 3 web searches ok and then finally I will concatenate all that information so you get the context so this is also going to update the context can you see both of them are going to update the context formatted search docs formatted search docs so both of them are taking your agent state ok and both are updating the context here I am retrieving the context ok and since both of them are updating the context you have operator dot add if you see yeah so operator dot add so context is not getting overwritten they will get appended as a list so in one list you will have documents from here and the second component in the list will be documents from here a single list will have 2 entries one set of entries coming from here and one set of entries coming from here so that becomes my complete context to answer the question question is also getting updated in the agent state finally this is your answer template answer the following question using this context very very basic prompt you can make it polished how long you want the response to be what tone how much technical depth you want in that so all those things you can add it in your template here ok so template dot format question so there are 2 variables in this question and this you know prompt template you can say that you have created and that prompt template is now going to your system message and human message so basically this becomes your system message this part and then goes to your human message this part so I am just concatenating system message and the human message ok and invoking the LLM call and then finally whatever the answer I am getting from the LLM is being updated here in the agent state so this is the agent state that sorry yeah graph that I am building here so same thing I am adding a node search web adding a node wikipedia adding a node generate answer so 3 different nodes added and these are the respective node functions and then you are just connecting them so will the final join node wait yes that is taken care of by the framework ok so this will not execute unless I have got the search results and wikipedia results both ok the control will not allow to execute this node ok so I don't have to write down any additional function for that ok that is taken care of so I have got the graph or the agent you can say this is my agent ultimately now I can invoke with a question so if you want to do it this way or you can create if you go back I have been creating a wrapper function every time like where is my previous project normally I create a wrapper function for that reason it becomes easy for calling ok so just there is a wrapper function yeah so this is like a wrapper function you can implement ok all you have to do is you just copy this wrapper function into your project number 6 and your graph is the agent ultimately with this question ok so result let's see so it is generating the final answer it has got both the results now tabular results ok so we will have to update the code later we should be using pip instal line chain tabular and then use tabular from tabular search ok so try doing this later but at least for now it works so I have got the final answer that is not printed but I can pull the final answer from the agent state yeah so from the agent state this is the final answer that I have got question was tell me about nvd and its growth so this is what I have got so in principle this works we can take a small break ok and then we can continue to the next notebook where we will convert this into a fully functional project ok and another thing that we will learn is send basically we will be able to create parallel branches non deterministically I mean the llm will decide how many branches to get created so right now I had hard coded these branches clear that was the main take away I had hard coded these branches now in the next notebook number 7 ok this llm will decide how many branches will be created and for that we use the send function so that is the new thing that we are going to learn and end to end actual project ok so I will just share the notebook anyway so in the mean time you can also keep your installations ready we will go for a small break ok so I will also run these two cells so what if the middle node error out it will end actually I mean the entire graph will break if there is any error the entire graph will break graph by itself it will break because my worry is like it should not go to the infinite loop and it cost the llm no no no it would not because we are not looping it back so automatically there is no way it can loop back ok so or maybe I would suggest we already have the node functions so try to make some you know syntax errors in those node functions and see what happens you mean kind of catch the exception and break it from there right end it kind of yeah yeah ok back ok so what I had done here in the break is I purposefully added a code which I know will give an error ok obviously ok so this was not there originally and then building the graph did not throw an error but when the code is executed you can see so it's not going to go in a infinite loop your question I think miss Adi yes fine so once I have commented it that code will work ok next one so I had already given a high level idea what we are going to do so here we will be using a concept similar to map reduce so these are essential for efficient task decomposition and parallel processing so mapping is to break down a task into smaller subtasks ok and processing each of the subtasks in parallel so that is the concept behind map and reduce means once all these subtasks are executed in parallel you will get some results from each of these subtasks so you want to aggregate all those results of all the completed parallelised subtasks so that part is called as reduce so map means you break down a complex task into smaller ones and start executing those smaller tasks in parallel ok and then finally aggregate all the results so that is the map reduce concept we will be implementing in this project so it's like a project only ultimately so here we will design a system that will do two things it will first create a set of questions about a topic and then answer each of those questions in parallel and the answers of all those questions will be compiled together as a comprehensive report which will be generated based on those question answers on that topic and this will be generated by the LLM ok so this is the overall flow so user will ask a question let's say what is the impact of AI agents in job market I mean that kind of a thing ok or impact of AI agents in healthcare domain now this will generate a few questions ok and each of those answers will be searched ok so right now I think it is not being searched it is being generated ok but you can also enable this to be a using a tableau using tableau yeah yeah sorry so we are using tableau so indeed each of these answers will be searched from web and then answer will be generated all the three generated answers are given back to a compiled compiler compiler kind of a thing this is a reducer this is a reducer agent ok so this is a mapper agent which will create the sub tasks and assign and this is a reducer agent which will aggregate all those smaller answers and finally create a bigger proper complete response so the new thing that we are going to learn is how many parallel execution steps are going to happen we will not be hard coding it ok so that will be decided by your mapper ok that LLM which we are going to use ok so here are the agent state schemas that we have one question for the sorry one state for the questions list of questions it will maintain a list of questions this will have the question answer mapping ok then this is going to have the entire report and this is the overall state ok where the user requested topic is there list of questions are there answers list is there ok now all the answers list will get added because of the operator.add and then finally a report would be generated ok so that report will also be added to the agent state so later on we can fetch the entire report from this agent overall agent state ok so this is basically another learning that we are getting that not necessarily your entire project may have a single agent state you can have multiple agent states for multiple sub-agents and so on now we are going to use the send function so that does the dynamic task distribution and also when we do not have a fixed number of branches or what you call as edges so it creates automatically and parallelises like a router agent only difference from the router agent is router agent will typically execute one of the several branches but the send function will execute all the parallel branches ok so this is what we are importing from langrub.constants import send jpd file mini again we are using you can get rid of the temperature if you want and then this is a node function which will be used to generate the questions so sometimes it might generate 5 questions sometimes it might just generate 4 questions 3 questions which will be based on the complexity of the topic and that also you can mention it in the prompt here so generate a list of concise sub-questions related to the overall topic which would help build a good report so follow these rules do not create very long questions number of questions should be always 3 for simple topics and for more complex topics you can like impact of outlook or these are more like subjective in nature for that you can have 5 questions or you can improve this as well ok this is just one of the illustrative prompts that I have ok and the variable in this is your topic so that goes to the prompt template which goes to the structured output so here this is going to create questions so you have to map it to the pylantic schema here I am using is this ok so the base model is again coming from pylantic so this is mapped to a pylantic schema which will generate a list of questions as the output so next this is going to generate answers to those questions ok so and it will map to your answers schema so generate the answers about this question so this will be you know called back to back sorry in parallel and then finally note to continue to the answers ok so this is the one which does the parallel execution ok so this generate answer multiple copies of this generate answer will be created that's the point here ok so multiple copies of this function will be executed in parallel threads so there are 5 questions so 5 copies of this function will execute in 5 different threads and who makes sure the send function ok so here which function to parallelise ok and you are mapping the questions to each of these nodes ok 5 nodes let's say so each question is mapped to one of the node ok for question in states so if the number of questions here is 3 then 3 times this will be copied and you are just mapping so here you are mapping the question with the answer generator and how many such question answer generators will be created based on how many questions are present in the list of questions finally this is for compilation so once you have all the answers from all these parallel branches ok you are just joining all of them ok so once you have joined the question and answers that becomes a complete context now this is the final prompt to so below are a bunch of question and answers so about the topic so this is the user generated topic and then a detailed report for this topic basically that is the context ok so this will be going to a prompt template and from there it goes to the structured output for the report and then you are invoking with that prompt template finally the report will be updated in your agent state yeah I was also wondering this is already agent types ok let's do that change here today only I was making those changes fine so this is gone now let's build the agent graph ok compile it and print ok so generate questions can you see this dot here dot means it does not go to a single node it will create parallel copies of those nodes so if I want to draw this this is how it will look ok so from start it goes to generate questions ok and let's say 3 questions are generated so 3 branches will be there what happened ok sorry I am back so what I was saying is ok so this generate questions node is going to create let's say 3 questions assuming so this generate answer this generate answer generate answer and then generate answer so this node gets copied 3 times ok and for each of them the reducer is your compile report and then it goes to the end so this is how the entire workflow is right now ok if you want to use any 10 or an agent builder kit this is how you would actually be doing now only problem is your agent builder kit will not allow you to create these many nodes in real time so how many times this could be 3 this could be 5 this so that is why those kind of workflow automations work for more you know deterministic cases but for these kind of cases where you want much more flexibility you have to you know go back to a programmatic library like these where you can solve all of these kind of edge cases and exotic conditions I hope this is clear everyone what is going to happen in this any questions ok so now I am going to test my agent ok the topic is artificial intelligence or so in this case I am expecting 3 questions that's a very straight forward so I am just checking if compile report is already present then it will just fetch the so this is the list of questions what is artificial intelligence and the main types and what is AI's major application in industry impact and what is AI's main risk ethical issues and governance options so 3 questions and these are the 3 answers which I have got generated 1 2 and 3 ok so question answer mapping is there and now the compilation part is happening super so you see this is the compile report finally ok sector specific impacts 3 major applications so if you ask what is AI it will not give you this level of clarity I mean you can just go ahead and ask chart gpt directly it will not give you this level of answer no way no way close ok go to chart gpt even if you are using the best gpt 5.2 thinking model and ask what is artificial intelligence see what is the kind of output you get so it will give you what technical detail it is but not the impact on the industry which is what we are mostly looking for so it is giving all the terms types of AI by capability and a simple example you can also try it I mean there is nothing hidden in this but this is also giving you by capability by functional architecture by technical approach it is there you can see very well but major applications no where I can see any application sorry sorry these are applications yes I can see some applications are there sector specific and then cross cutting economic other things ethical there is nothing nothing on the governance and options those things are completely missing and risks implementation priorities trade off I mean this is quite good already right impact and applications of AI in healthcare domain now this is again going to be a more exhaustive one so at least I am expecting 5 questions so what is the primary AI application how does AI affect diagnosis treatment planning and decision making what evidence exist on AI's impact on patient outcomes and healthcare cost what ethical legal and data privacy challenges arise with AI what barriers so these are the 5 questions let me use the same in the chat GPT and even if I enable the web search which was probably not there web search so now I am enabling the web search let's see what I get the best 5.2 model is 20 times costlier than the model that we are currently using ok so what is behind making the prompt better answer than chat see it is not only the prompt it is the architecture of the implementation ok so you are getting 5 different questions 5 different answers and now you have to combine all of that so these 5 questions or 3 questions are providing you 3 completely different perspectives ok which are not duplicated I would say now the generated answer already will take each of these perspectives that is why your generated answer is much more inclusive much more comprehensive right such a thing is not being done here edition of Taveli makes even more up to date yes Taveli is being used as a web search so that's what we did in the start right so each of these answers are actually done by a Taveli web search so here indeed we are getting see the moment I enabled the web search I am able to get quite a good response here well we can compare so AI used in healthcare screening medical imaging diagnostics clinical decision support systems and EHR electronic health reports patient engagement and front door triage and operations management so almost 6 and then evidence what is the impact so key risks very good so already now let's see what our responses ok this is the response that we are getting now impact and applications of this executive summary primary AI applications in the healthcare ok I have got all the applications back to back again the same diagnostics drug discovery robotics everything how AI affects in diagnosis treatment planning clinical observation benefits risk and limitations ok and then practical takeaways legal and regulatory issues privacy security governance those kind of things are not discussed in this various large scale adoption future directions recommendations for the stakeholders developers vendors so all these things are completely missing ok these are all perspectives are missing because it is purely focussing on what the users intent was ok impact and applications so that is where so you can get a much more enriched report in such cases right again there is one more impact of AI on jobs in SAS domain let's see SAS industry let's see how it happens or we can AI agents let's use this way is your compiled report node calls LLM for summarization of all the yes so all the five answers are generated individually that also you can recover because agent state already has it right now I am recovering the compiled report from the agent state but technically your agent state agent state has everything maybe I will show you the individual answers also but answers are there you can see individual answers are there so question and answers are there so if you pull up this this has the question and the answers or if you want you can have the list of answers directly so questions list answer so maybe we can just check the overall state and see ok so this is the final report that I have got ok for the SAS ok AI agents will materially reshape in the next decade near term 1,2,3 we will see rapid augmentation via copilots embedded assistants medium term multi step task cross system orchestration and 7 plus years highly autonomous agents will be there and which SAS job roles are being most vulnerable which are customer support based no doubt ok sales developments basic content marketing production manual QA data entry ATL implementation and onboarding kind of simple things junior routines software engineering tasks but today only I was discussing about all these things with one fellow yeah so some realistic timelines have been given but we might even reach these timelines much much faster given the rate at which the advancements are happening ok yeah so fine ok so ok so you will be able to get the result of the last so compile report is only updating the report part ok which is what I am getting as a response it is only working on the report so let's do this extract the answers from the over this is only giving me the compile note this is not correct generate answer ok let's do the other way round response it has only keys it doesn't have the answers maybe ask jemini how to of agent maybe there is a simpler way we haven't yet saved it in the way that it can be directly exposed so answers are not directly exposed although while the agent is executing I am printing all the question answers but you can see it is being printed because of this so final state get method except and let's run this topic is quantum computing it knows some of my favourite topics from previous executions it seems jemini is also getting intelligent why is it taking so much time stream agent.invoke and then state so I am not calling it in a streaming mode which is why this is going to finish and then only give me the everything in the previous cases I was invoking in the streaming mode agent.stream which is why I was getting each and every step one by one now I think I have got the end yes so you can see your question answers are there total collected answers is 5 this is the question answer question answer answer ok perfect that works let me just see if I can do this in the stream mode but usually I mean I think this is already good so will not disturb it unnecessarily this already works ok just refresh your notebook this code will get updated ok so this is the additional code which I just added nothing else everything was the same so is there a way to find out where the model gets the information and provide a list of references that is from a tableau again so if you want to also print the context for each ok so then in that case we will have to modify the prompt ok so that it also exposes the references and which is what I am doing in the next lab deep structure this is the one which you are asking for ok in this case I will just show you the final output and you will be like oh this is what I wanted right so so so so so so you can take any one of them I will just show you detail report on how to build agents this and that this is all the complete execution introduction sources then this sources then this sources then this sources then this sources is that what you want and then final conclusion and summary yeah so it's already there fine so let's move on to this one let's finish this I think we are already getting a requirement for this so that was anyway the planned next ok so here we have to be careful that this agent will do a lot of searches and if you are running this entire notebook too many times you will easily exhaust your API limits for Tavli so you have to remember that so Tavli currently we are using is a free plan ok why is this not working anyone can think of what is happening here the speed is not a problem why is this getting it's not a problem while sharing this notebook or else I download this notebook and give it to you so this is number 8 you can upload and so let me start with the installations and then in the meantime I will continue with the explanations I have shared this lab in the chat you can download and upload it in your google drive and execute I don't know this is giving a trouble while sharing ok so you have to remember this you can also use brief so Tavli web search vs brief search so there are two options for the search APIs so although we have been using Tavli but you can also check this brief, brief also has very good you know considerable free tier limits so Tavli is a AI agent orientated web retrieval stack it's not a CRP search so I think I have already told you what is a server tool so search engine retrieval page so web search and brief web search so they form perspective of building LLM apps and agentic workflows so it also does the content extraction and crawling via single API Tavli position itself as a real time search extraction, researching and web crawling independent search index which endpoints for web news, images, videos plus LLM context and answer summarization options so that option is also there with brief ok so core capabilities and the difference so brief returns well structured snippets and rich result object does not focus on pulling the full page content as a part of the core search response brief explicitly contrasts itself with its services like Tavli that pull raw content Tavli will search, extract the raw content ok and you can get that entire raw content also full content without stitching multiple windows together fine so if you need full article parsing or crawling with first class features as Tavli if you need high quality search engine result page plus snippets plus media news endpoints then go for brief so maybe for let's say stock markets or something like that brief might be better ok because you don't need too much detailing but you still want to go with the latest media reports news and those things yeah and pricing free tier we get 1000 credits per month and then you have the pay as you go monthly plans brave is also request based this is credit based ok so $5 per 1000 request I think monthly 5 monthly credits are there which means indirectly you get 1000 requests ok cost intuition brief per request parsing is very predictable for SERP only workflows Tavli's cost depends on how many credits each operation consumes ok you can go through this ah ok so now advanced version of the previous notebook or workflow ok so I will submit a topic that will go to the planner ok and that will create a so of course it doesn't jump into the planner it will go via a prompt template ok now that report planner is equipped with a web search tool like in this case Tavli ah so overall objective is deep research and structured report generation so I will be asking to generate a structured report on a specific topic now since it is a structured report the structure of the report is set so the report will have a introduction that will have few sections and then it will have a conclusion now how many sections the planner will decide based on the topic there can be 3 sections 5 sections 8 sections let the planner decide based on the complexity of the topic and you know the kind of user has asked ok clear but in any case there will be a high level introduction and a conclusion so idea is that we will use that planner let's say the planner says for this report I will go for 5 sections all the 5 sections should be written in parallel and that is what this green boxes are ok or 3 sections are being written so this green box is where your section writer agent is this is a section writer agent ok which will run in parallel so all the 3 sections 5 sections or whatever be the number of sections that will be written in parallel how first again when the topic for that section goes to the researcher agent ok this will be equipped with a web search tool so before writing down anything ok in fact it's not it's job to write down anything it will only do a research so in the section 1 let's say some particular subtopic is going to be discussed so it will do a web search for that particular subtopic by generating another 3-4 sub questions ok and all those web search results will be given to the writer the writer will actually write down the sections let me repeat researcher will get the subtopic what the report planner has you know identified ok it will get the subtopic now based on that subtopic it will again do a web search so there is one level of web search done by the report planner to identify the sections for each of the section once again the researcher will do a web search let's say I am retrieving the 5 results those 5 results are given to the section writer section writer will write down the report and update it in the agent state so imagine that this is my agent state and so this kind of a agentic workflow will be run in parallel for each section so when all the 3 sections are written then format section what is this block going to do now this block will combine all the sections back to back section 1, section 2, section 3 that is what this guy will do it will combine all the 3 sections 5 sections whatever be and it will give to this writer final section writer now this guy will write down the introduction based on the section contents and also write down the conclusion based on the section contents because introduction has to speak what we are going to talk about in that article conclusion means what we have talked about already and may be the next steps may be the future outlook so those kind of things we normally discuss in the conclusion ok the potential applications, implications interpretations kind of things introduction is the agenda for that particular topic for that report sorry right so the sections have to be written as per the agenda so you cannot write down the introduction and then the later on sections ok so since the section contents are available now it's much easier for the LLM to write down the introduction section it's just similar to like for a research paper you write down your entire research paper and at the end you write down the abstract and the conclusion same story right now the only thing is the parallel execution of the final section what it means is the introduction section and the conclusion both these sections will be written again in parallel so individual sub sections will be written in parallel and the final sections which is introduction and the conclusion will also be written in parallel so all of them will update to the agent state from the agent state this node will pull out all the results and then generate it in a this is just doing string concatenation nothing else it is just concatenating the introduction with the sections and at the end conclusion it is just doing a string concatenation so this is the node function and then the final report will be given to you any questions in the workflow any questions in the workflow so this is all explained here let's there is a question in the chat how much usually we consume I will talk about that so that is based on how many web pages you want to retrieve from Tivoli for each web search ok and how many questions are getting generated so it is a multiplier ok so we are creating all these states now this is for the section ok so state to keep a track of the sections so I have this section name section so this is going to be a pedantic schema this is not an agent state let me tell you these are all see these are the states ok I think it is better to put them in a separate code block let's call them as agent states whereas these are pedantic schemas pedantic schemas for the LLM ok so section writer agent will use this ok let's say it will have the name of the section description and then what all the search has been done and the final content that it will write and update it in this field what all sections have sorry this report has how many sections so it will have a list of the section titles so this is only to have the section titles this is again querying so basically for writing each section it will do a query so this is the schema that will be used for that and this is again a list of websites so it's like an individual query and this is a list of those queries this is like an individual section and this is like a list of sections ok so when you are going to actually bind this with the nodes that will become more clearer so this has the report topic basically coming from the user ok this is the state input so this is the input state for the entire report generation and the output state so basically your last agent which is a compiled report ok node that will update the final report ok and your planner agent will make use of this now the report state again what is the running state of the report so what is the overall topic how many sections are there it's the list of all the sections how many sections have been completed so that's what I said this keeps a track of the running report report sections from search so this basically a string of any completed sections from the research to write final section so we have the writer agents those green blocks right so how many of those are complete and then the final report ok so one by one this will get updated so you can say this is your final agent actually this is your final agent actually two more intermittent agents are being used states are being used sorry so this keeps a track of the section so this section is coming from the previous state here class so yeah so report section and then search queries so all the search queries that we have defined above so you see this is like a schema so how the sections will be reported and saved in your state this is the pydentics schema ok so I am making use of this pydentics schema section that so that each section has a proper structure when it is updated in the agent state so each section will have a name will have a description ok will have a research component and will have the content part ok so each section which gets updated in the agent section state will have that structure ok again for all the queries I am using this pydentics schema ok for the queries and for each query search I am using the search query so this is for the individual search queries and then source string is there report sections and completed and this is the section output state so this can be a bit confusing I would strongly suggest that I will not invest too much time in you know discussing these what I would suggest is you can do one thing after the session if you find that this is very confusing ok that is completely you know expected because as we are moving towards more advanced cases ok the codes can become really daunting ok so I was in similar shoes so I can tell you my experience ok so that is not unexpected what I used to normally do is upload this to chat gpt and ask it to explain each of these classes why it is needed where it is being used two specific questions why it is needed where it is being used give me a sequential answer and explain me what is happening in each so that is your exact prompt ok it will explain you everything but I have already given a high level explanation there ok coming to the utility functions now ok this will so for example this run search queries so that will run asynchronously which means in parallel ok synchronous means sequential so first I am creating a data class that will be used to handle the objects created from the LLM responses so search query and there I am updating the so this is as a dictionary you can see ok the query string tabularly search wrapper is going to be used so async again which means this function run search queries will be used in multiple nodes asynchronously so this is the function which will be used in your send function that will be used by your send function so right so the function which is going to run parallel in multiple threads make sure that is the async mode ok so that each function takes its own time and the system waits for the execution end of each of these functions so how many number of results so this number can be increased or decreased so for each query 5 results will be retrieved ok include the raw content I have made it false if you want to make it true you can do that but the number of token consumed will be a lot so that is one thing you have to remember ok so in one case people reported it goes to even 200 to 300 thousand tokens in the last batch ok which is why I made it false 200 to 300 and there they were receiving 429 error that is a rate limit error they were easily going with a rate limit error reason for that is again for most of you people in fact all of you are having your open account in the tier 1 I never received that because my account is running in tier 3 my organisation account is running in tier 5 so I have a much much higher rate limit so I never have a problem running this code at my end but you guys might have as it was reported in some of the guys by previous batch ok so make sure that the token usage is so again you can control the number of tokens by decreasing the number of results that is one approach or not using the raw content to generate the section content that can also be another approach ok so for each search query again you are getting the query string and then you are asking that heavily search ok so number of results advanced mode include the raw answer no and the content so this is the flag basically which I have made it false it's the flag and if there is any exception I am just going to take care of that as well and then execute all the searches concurrently so all the 5 searches will be made ok and I am going to await until I get all the results so this is your asyncio .gather so basically this function search task will be run and all the outputs will be gathered and saved here in the search docs ok and here I am just checking there is a possibility that one of the searches might have failed and your search docs are having some document which is empty so if it is not an instance of the document so basically if that document is empty that will be skipped ok and only the valid results will be present in this list those results of the valid list sorry those list of valid results will be you know returned by this function otherwise this function will give you a list of empty fine so this is also done format search query now this is to format the search query and the search query results ultimately ok so here I am using the gpt4 now you might need to change this if you are going to use the gpt 5 mini model but for now let's keep that same what is the llm that I am using I have mentioned that not yet now here this is needed because of the tick token so what I am trying to do here is for each of the search results I am going to take maximum of 2000 tokens so for the token counting so in this case see this is the very important keyword here ok I might have 10000 also in that case let's say 10000 tokens listen to me in terms of calculations ok just look at the calculations so 2000 per query let's do that so this is 2000 into 5 queries ok per section let's say multiplied by 3 4 5 sections ok so this comes out to be how much plus again plus 2000 into 5 so that is one more let's say for the planner this is for the planner and these are for the section writers section because the planner is also going to use 5 queries ok so for each of them I am assuming that we are going to use the top 2000 tokens only ok so how much is this so this is ultimately 2000 into 5 into 5 plus 1 is 6 correct so 30 into 2 is 60 and that becomes 60000 tokens easily yeah so in my previous case I had not limited this so this was I think 8000 and in that case 8 into 30 was 240000 ok and that was exceeding the context window so right now this will fit into the context window fit into the context ok so this is per section remember that ok sorry sorry sorry this is not about the context this is also fitting in the token per minute context window is not a problem sorry it is also going to be a problem not so this is the second problem so one problem is the context window context window because the section writer section writer will take how many these many tokens for the context window of the section but parallely since all of these are being done parallely you also have to take care of the second problem and that second problem is your token per minute and token per day rate limits these are the rate limits so two things you need to take care of one is the rate limit and one is the context window so before we go ahead let's move on to this page and explore these two constraints so go to platform.openai.com it might ask you for login just login and go to your settings page from there go to your limits page I think organisation limits page will have everything and then it will tell you the usage tier ok I am just sharing this direct link just take a minute and review your own rate limits so here are your rate limits ok so context window that is for the constraint of a model ok so I think both of them are there so model constraints are there context window that is not going to change as per the tier which model are you using let's say GPT-5 mini model you are using so go to that page so model context window doesn't change with accounts so GPT-5 mini or 4o mini we are going to use let's say I think in this so you can go to models 4o mini so this is the GPT-4o mini model that we have been using and here the context window size is 128000 tokens ok which can easily exceed and we are already talking about 50000, 60000 tokens ok so the moment you increase that 2000 to 5000 so 5000 into 5 queries into 5 sections parallelly so that will easily go for 125000 tokens and you are going to you know reach the context window remember that that's why I limited it to 2000 so 2000 into 5 queries is 10000 and 5 sections parallelly so 2 into 5 is 10 and 10 into 5 is 50 so 50000 will be the utilisation of the context window 50000 tokens that is the calculation so we are well within the context window of that model if you are using GPT-5 mini this context window is already 400000 tokens so that is still not a problem so this is much higher for GPT-5 mini model but again as I said there are constraints regarding the GPT-5 mini is 4 million tokens per minute that is in my account can anyone tell me what is the GPT-4 O mini we have the 4 O mini so those are also getting deprecated which is why it is not showing the other models so I would suggest you to use GPT-4.1 mini instead of using 4 O mini that is much better so request per minute is not exceeding we are hardly making how many requests so 5 for sections 1 for no not 5 in fact 10 for each section we have a researcher and a writer and then there is a planner so planner is making one API call 5 sections and 5 writers so 5 plus 5 is 10 and obviously planner and the section writers will be back to back but let us assume all of these are happening in 1 minute only might take time because web search will also take time, compilation will take time then introspection will take time worst case let us assume that the planning and the section writing is happening in the same minute then so planning will take one API call one request that is section writing 5 sections so 5 researching 5 writing so 5 plus 5 is 10 plus 1 and 11 and your compilation and introduction and conclusion sections being written so 2 more so 11 plus 2 is 13 so hardly 13 to 14 API calls you are making so number of requests per minute will never exceed what will exceed is the token per day sorry this will also not exceed because this is 80 million so high chances that this will also not be hit this is the one which will be hit most likely so can anyone tell me what is the limit that you see in your usage tier for me it is 2 million tokens so this is the one which will constrain your gpt 4.1 nano 4.0 4.0 mini yeah this is 4 million tokens per minute and 4.1 is 2 million that is also 4 million tokens and gpt 5 mini is also 4 so all these are 4 million tokens in my account this might be 500000 tokens in the usage tier 1 500000 tokens not more than that anyone can confirm most likely it will be 500000 tokens mine is free account and it is 500000 correct that is what i remember so it is 500000 tokens and that is more likely to be met that is what i told you ok and we are already counting the token limits so you have to be careful ok so that was the main reason to limit it to 2000 only because if you don't limit it most likely your your rate limit will be reached so context window might also exceed ok both so one or two depends ok on the query and the topic so it could also hit your context window depends on the model that you have chosen but more likely instead of the context window it will hit your rate limits first ok so just to be on safe side i have kept 2000 which is quite decent ok 2000 tokens means roughly 1500 words 1500 words is quite good ok i am just taking the first truncation this is just going to be truncation i will show you max tokens what is this being used you can see this is pure truncation i am just taking the first 2000 tokens ok and then remaining i am just skipping so may not be a good idea ok you might make a API call and summarise that that can be another strategy so which means for each search result you are making a summarization ok in let's say 500 tokens that entire web page might contain 50000 token doesn't matter that 50000 token will be summarised in 500 tokens that could be one more strategy ok so instead of taking a truncated token as first 2000 tokens let me repeat this part of the statement itself ok can be replaced by see this raw content is there this raw content the problem is this raw content contains all the 40-50 thousand tokens ok so this raw content can be summarised by an LLM which is already Taveli is already you know giving it but if you just don't want to trust that Taveli summary you want to generate on your own that also can be done so the truncated tokens can be replaced with the summarised tokens in that case ok so let's check this so that is what is happening and then encoding is basically getting the token IDs encoding means getting the token IDs for which model GPT-4 model you can replace this with GPT-5 model GPT-5 mini model whatever model that you want to use let's make it GPT 4.1 ok and then different response format so sometimes Taveli gives you list sometimes it gives you a dictionary so that is what I am just checking if it is a list or if it is a dictionary of lists it could be a list of dictionaries also so many times there are inconsistencies it could be a list of dictionary or dictionary of lists either way so that is why you have these two conditions and if it is not a list sorry if it fails then no such results fine now this is also very important ok same or similar content is being retrieved by many such web searches so we want to do a deduplication of the URLs also so that I keep the unique sources because you are going to add up all the content from these sources to the LLM so you don't want to keep dumping the same results every time right so I will do that deduplication based on the URL and then format the outputs so here I am just going to add up can you see plus equal to plus equal to means you are just concatenating after formatting so first the title will be there then the URL will be there and then the most relevant content ok so this is the content you are getting from your Tavli search that is the summarised content but if you also want the raw content then you can also add it to your formatted content after truncation so here the content is the summarised result from Tavli I have already mentioned that Tavli gives you a summarised API call ok that gives you content which is already in the summary ok but it will also give you option to have the full content as the raw so this is the raw content part and I am taking the first 2000 token from the raw content part everything added and that is the formatted text I have now let's check for a query here let's say quantum computing is the topic which I want to check and also include the raw content so yes you can see the raw content has lot of URLs and everything so I will just go for the first results first results so this is the query follow up questions are none answer and then there are no images results ok so these are the results this is your list ok so this is the first URL from where I got and this is the title of that webpage this is the quantum sorry content now this is the content which was generated by Tavli's LLM ok this is the content which was generated by the Tavli's LLM what is the relevant score with my query so it's like 99.8% matching with my query and then the raw content which is coming so once this finishes then the next URL would be there then the next URL next title next content from the Tavli the similarity score and then the raw content and so on so this way all the 5 results are populated you can see this so docs 0 is your first result that you are iterating ok this is the first result that I have iterated now we want to see how the formatted output looks like so max tokens is 500 I am saying that was a configurable parameter so earlier I had hardcoded it to be 2000 now that I am changing it to 500 so basically what it is doing is again second level of truncation so for each search result I take the first 500 tokens only ok so now let's see the output so it is going to print the first 500 tokens from each of those 5 search results so this is how it comes fine so this is a report structure report structure introduction you have then the main body sections and then the conclusion so here no web search is needed no web search is needed you will need the web search for the planning and you will use the web search for main body sections so report plan queries generator so you are a technical expert now this is the prompt template which will be used to plan the queries for the initial planner ok so this is the report topic on which I will be generating that report and this is how it is going to be organised your goal is to generate variable number that variable you can specify later on 3 4 5 ok based on the search queries that will help to gather enough comprehensive information to create this entire report simple ok so this is going to be used by your planner agent this is for the sections ok so this is the overall topic this is the report organisation this is the search context so this becomes your sub topic for that particular section ok so based on this search context you have to generate a list of 5 questions ok can I ask one quick question yeah so in the previous screen you are showing like once we got the result it was having some score right some score so that score is coming from tabling yes so for best practise point of view if we consider that score is a kind of higher to minimise number of input for the LLM we can just like threshold also ok yeah you can use that score and you can have a threshold like 0.8 or 0.7 so any web search result which is at least 80% relevant I will include that otherwise I will just exclude or ignore so you can use that score and apply a filter also quickly so this is the node function which is going to generate the report plan ok again number of queries I have written it to be 8 but you can again change ok so these are the 8 queries to generate the report plan first ok see the plan can have 3 or 5 sections still but how many queries to generate that plan this is that number ok I am just using all the prompt templates back to back and everything same just go through this I mean if I try to line by line explain this will take another one hour so but this is the overall idea maybe so you can convert the search query into string objects if there are no documents return empty generate the sections as per the schema that we have applied and now invoke the actual call so this is what now instruction prompt for the section builder so this is the section writer prompt ok so you are providing clear instructions how to write down the structure sorry of the sections structure of the sections so this is the topic on which you have to write and then while generating the number of queries and sorry this is for the query generator researcher sorry this is for the researcher section researcher yeah this is for the section researcher so some instructions are there and here we are going to use this prompt template in this node function so how many queries again so the planner had 8 queries and the section researchers are 5 so this is the number I am specifying so the main planner has got 8 queries to plan the sections and each of the section researchers are using 5 more queries ok so node section for the section builder so this is the one which is going to write down ok for the web queries and finally your writer prompt ok so here you can provide the limit of the section word limit how the section has to be written what kind of numbering has to be followed what is the approach style professional technical maybe audience also you can provide context is your source material from the researcher and what all quality checks you want to do so this is and then a node function for the section builder or the writer ok in this case so the same prompt template I am using here invoking with the message and finally this is for the writer so this is the entire node function for the writer you can see this is the node function for the writer so this is what you have built now ok let me put all these in a line graph so I am going to have these two boxes ok so there is a generate query search web and the write section so three in fact ok so this sub node will start to take the section topic this will take the section topic and give it to the generate queries ok so this is the one which is going to use the generate queries once the queries are generated it will search the web once the search web is done it will go back to the write section and after write section it will go to the end so end of your section writing basically so start of the section writing end of the section writing I think this is very clear if you read it from here it will be very clear I am just displaying it again so this is the component which I am going to multiply three four five times based on so this is what is going to be run five times or eight times depends on the planner the planner will decide how many copies of this will be made for each section ok so this will be run for each section so you are using that same function section builder with web search ok ok and now we have the so we have already time up maybe we can continue tomorrow we are already done with the node functions now the last part remains is how do you format these sections so I have already mentioned that you just concatenate them using some separator so this is the separator ok concatenate them ok and then this is the final section writer so the introduction and the conclusion so here also you can put the word limit the style guidelines are there numberings if you want writing approach quality checks those things and that will be fed inside this node so let's write down so this is the node function which will be used in this node ok and yes send function to parallelise that node function two times one for introduction and one for conclusion so that is where again you are going to use the send function compilation so this is again a simple python function where you are going to pull everything from your report state and just concatenate it that's it this is purely concatenation ok nothing else I mean you are just pulling out for different sections of for loop because you don't know how many sections are there so for that you need a for loop and then you are just replacing the introduction and the conclusion that is a temporary placeholder you had created ok so this is what you have built finally and this is the final graph this is how it looks ok why is this yellowed because this will be copied multiple times ok so report plan and this will be copied multiple times for each section and then finally all the sections are formatted basically they will be combined and the final sections will be written parallel again so this will be in parallel that's why you see that dotted line here and then goes to the compilation now again this is a function to wrap this entire line graph this entire report builder agent I am just wrapping it in this ok as an agent and recursion limit I am setting this is very very important so I don't want infinite calls being made so that is what the recursion limit will take care of apart from formatting this is just for formatting the events so I want that every step to be printed in the console so that is what the event is so every node which gets executed is an event and for each of them which when it goes to end I want to display what all has happened ok so maybe I will stop this how to build AI agent systems maybe we can on the unpack of AI agents on sass let's see now yeah so this is the last you can run so don't run too many times this might take some time but don't run it too many times so 1 2 3 4 5 6 sections are created here and now the section web searches are happening section writing is happening completed so all the section writing is completed now the formatting will happen final section introduction and conclusion is written now the compilation will happen compilation will happen and the report is done so yes I have got the introduction AI agents the sass industry example use cases the sources for each applications of agents in the sass use cases sources pretty good challenges yeah so if there are any questions let me know in the next class but questions cannot be please explain this entire block once again so for that as I have already said please evolve now from those kind of questions please evolve ok make use of chatgpd to explain you the codes line by line ok I can only explain the logic behind anything not line by line codes now ok after 4 5 weeks into the programme now ok chalo ok so any questions if we use brave search code patterns might be different slightly because the kind of outputs the brave searches exposing will be different so we are asking them to follow some schema although but you will have to see what all things brave api exposes so we need to check the brave api first ok so we will meet tomorrow and I have 3 more projects end to end and then we will finish with the lang graph and next week we will start with the deployment ok of these agents

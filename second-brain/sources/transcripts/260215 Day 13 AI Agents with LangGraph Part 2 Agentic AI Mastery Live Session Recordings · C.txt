@@ -1,0 +1,1278 @@
+(0:00 - 5:14)
+What I have got a mail, so let us see how it goes. Okay, so let us continue. The lab 8 was mostly done. 
+
+Let me see if there are any questions on that. We have two more labs and if time permits, I will take one more end-to-end project, online graph. This will have a lot of things, regulatory, compliance, security, PII, protection, guardrails. 
+
+So, too many things are there, more like real life, end-to-end agentech system. Okay, let us see if everyone is fine till the lab 8. No questions? Interesting. Okay, there are a couple of chats. 
+
+Planning to meet Jensen. I do not know, these guys are so heavily guarded. So, neither I have any agenda to talk to him. 
+
+Okay, so most of the other things which I should be knowing are already publicly available, accessible. So, yes, but I have heard that a lot of, you know, big shots are there, including even the PM of France and people from Microsoft, I mean the senior leadership from Microsoft, Google are also going to come there. Interesting, missed the two classes. 
+
+Okay, so in the last two classes, we have been building very serious agents. Now, we are in the last leg of these agent building, which are mostly advanced stuff, but mostly you will be able to get it. If you have some idea about line graph, okay, it should be possible. 
+
+So, do not worry. Hey, Prashant sir, quick question. Are we also going to autogen like, you know, like line graph? Are we also covering that autogen? Autogen, no. 
+
+Again, too many frameworks, we are not planning. So, primarily two frameworks, one is line graph, other is the crew AI. So, next week after the deployment, I will take one complete session on crew AI, I think two to three projects I have. 
+
+Last batch also had taken three projects. So, mostly I am going to add one more to that. Okay, so we will do crew AI, which is a completely different philosophy of creating agents. 
+
+So, anything which is on similar lines, just the change of syntax, I mean, you should be very thorough with what kind of pattern we are going to use for what kind of use case, okay. And line graph is one library which covers all the patterns which can create agents from all the patterns. Okay.
+
+(5:17 - 8:15)
+Sure. But crew AI has a completely different philosophy. So, which will be, you know, really interesting to watch out. 
+
+So, that is the reason I am interested more in crew AI and line graph. The third most popular is your autogen. But again, autogen we can take but again, time limitations are here. 
+
+Maybe let me have a discussion with the team how long we have. Based on that, maybe we can take one or two projects on autogen. Especially this will be helpful for people who are coming from Azure background. 
+
+Okay. Because in that case, we can take a few models from the Azure, that is opening a model deployed on Azure plus we can also connect our agents to MS fabric. Okay, so let me think about that. 
+
+I do have a project in this, but the main thing is the time. Okay, I will also need to craft it for the session. So, I do have, I have done something in the past in the similar lines, but we will need to check out at least one session I will need for that. 
+
+So, if I am able to get this, good. This is our session number 13. Okay. 
+
+Okay. 13th session. So, we have one, two, two weeks easily. 
+
+Yeah. So, 21st and 22nd and 28th and 1st. So, we have four more sessions at least that I can guarantee. 
+
+Okay, if anything more comes in, it will switch to the 7th March session. So, let me just discuss with the team. If that works for them, extending it beyond first, then maybe if I am allowed, I will do it. 
+
+Okay. Yeah. So, these are the top three, you do not have to, you know, hop on to learn every other session, sorry, every other framework. 
+
+Okay. So, the primary reason to focus on Language Graph is it literally covers the entire landscape of all the agents that you can imagine and kind of a use case that is there existing in a market, okay, from end to end. Yeah, like in my like, sorry, so 10 feet kind of 100 feet view, I also feel like, you know, the Lang Graph and Autogen is a kind of like, you know, similar, maybe like, you know, but I was just like looking like, you know, that is also like a hot topic in the market.
+
+(8:16 - 8:36)
+Yeah, I am looking forward to the Crew AI, as you said. Yeah, Crew AI has a completely different philosophy of creating agent, which is going to be interesting, as I have already said. Here you are creating a graph, a flow of events, which is visually, you can make out, okay, you can visualise what all things are happening.
+
+(8:36 - 14:55)
+There, these are atomic agents, and they are just coordinating amongst themselves to fulfil a complete task. Okay, so there you do not have the visual flow of the data, visual flow of the executions or something, you just let out 10 different agents with a single goal, and then they will coordinate amongst each other and they will fulfil that goal. That is the kind of that's why the word crew is coming up there. 
+
+Right? No, you are creating a team, okay, rather than kind of a workflow. So if you have a use case, which is kind of a workflow automation, or a workflow requiring agents, then like graph is the best, I would say. But if you have autonomous agents, which can, you know, think reason, work on its own, and then finally, contribute to the overall team progress, that's probably crew AI's job more or less. 
+
+Right. So there is one more question for small business like produce company for organic veggies, how is one able to help them out? As there might be a business opportunity for me. Okay. 
+
+Interesting. Produce company for organic veggies. No, so this is still too broad, I would say, on what aspect, what is the main pain point, if you just write it down in one or two lines, I can probably also help you how can that pain point be solved by using AI, agentic AI, regenerative AI, that kind of a thing. 
+
+Right. So interestingly, I'm okay. The marketing part, getting visibility. 
+
+So there are, I'm sure there are already platforms, right? Where they would be already selling, is it? So then if there are, see, there are two things, if so, then it is mostly related to content creation, to get that kind of a visibility. Okay. So content creation would be obviously, two parts. 
+
+One is the visuals, they have to be really appealing. And second is the text part, of course, how they describe their produce, okay, in short, crisp manner, which is compelling. Okay, these are the keywords you have to use in your prompts, basically, and then make a combination. 
+
+So all the photographs need not be real photographs. That's what even Amazon is doing heavily. I mean, okay, so you can give some of the representative photographs to these banana, banana kind of thing. 
+
+And you can generate more high quality with lesser background noise or your own background, you can mention whichever. So see, I'm not from the creative team, the creative team has better visualisation capability. And all that visualisation capability transforms into the prompt. 
+
+And that's how you get the end result, right. So I know how to do it, but what to be done that has to be known. So these are the two, you know, low effort, I would say, based stuff, which can be done. 
+
+If it is purely marketing, then these are the and then of course, they can also create posters, maybe which can be put out as print, or maybe hoardings. So all those are ultimately going to the content creation. And this is what I can think about. 
+
+And yes, lead generation. Yes, another very good point. So lead generation, again, where does where are the leads being captured from? So for the lead generation, again, you would be needing these creatives. 
+
+So whether you put these creatives on Facebook, or let's say, Instagram, okay, where are your customers and customers? Or are you targeting corporates, big media houses, or you know, something like that, then probably even LinkedIn might be to some extent appropriate, but ultimately, it boils down to the creatives. Okay, that's what I understood here. Okay, so creatives will help us to get the leads. 
+
+And once the leads are there, you have to automate that entire workflow. Okay, so the lead will drop in where, let's say it is a Google Sheet from there, it goes to your CRM, you can build your own CRM even, just write down some of the prompts in the agenting, all your requirement is you need to exactly identify what has to be done clearly. Okay, once you get the lead, what will you do? If you mentioned that workflow very clearly, the agent will able to, you know, write down a complete end to end CRM, I have seen that people are using their own CRMs, own built CRM more extensively these days, compared to, you know, the already existing in the market. 
+
+And the main reason for that is the customisation that they are able to do it in their own CRMs, their own custom workflows, okay, which they can easily integrate versus the market available CRMs. Now that you should be going only when there is a huge volume and the scalability is a concern. Okay, otherwise, if it is a small business, as you said, maybe it's better to stick to own CRM. 
+
+If that also, you know, eliminates the recurring costs, plus there is a complete customisation capabilities. So if there is a technical expertise to do that, I would actually do that way. Okay. 
+
+So again, it's not only the CRM, but that CRM will be connected to the vendors, to the end users, not many, you know, people are there connected to that. You need to identify all the stakeholders, how you are going to reach out to them. It should also have the capability for your email marketing, maybe and other stuff.
+
+(14:57 - 22:30)
+Okay. Fine, let us come to the topic. We will discuss those other things later. 
+
+Okay. I already shared the link for the lab 8. Okay. Just let me know if there are any issues or any questions in that. 
+
+We did finish that lab 8. The last question that I had given was the detailed report on impact of AI agents in the SaaS industry. Right. So that was it. 
+
+And there was one more subsequent question, which I did not, you know, execute. That was on detailed report on how DeepSeek has disrupted the AI market. Now, that was a pretty old thing. 
+
+Now, the new thing, which is disrupting the AI market is probably what? What is disrupting the AI market these days? Maybe cloud code, cloud co-work. This is coming up. Now, even Anthropic is coming up with their own agents. 
+
+Okay. They are getting into agentic business directly. Okay. 
+
+So, they are entering the shoes of SaaS companies now. They used to create AI solutions for their customers. Now, Anthropic is saying we will create the same solution and 100th the cost. 
+
+So, the SaaS companies, which were billing hundreds of people every day, I mean, per hour billing or per day billing. Now, those are not needed because all that work to do is all going to be done by your agents. So, the number of billable humans are lesser. 
+
+Okay. And anyway, the code is being massively generated by your agents. So, that is a kind of paradigm shift I am seeing now. 
+
+Okay. That will happen sooner or later. In fact, sooner. 
+
+Okay. So, instead of, so that kind of negotiations will start and it has already started. I have been seeing some of the use cases. 
+
+So, you cannot just naively try to justify your client company that we are going to need 50 people for 50 days or 100 days for this particular project. You simply say, why do you need 50 people? If the code is being generated by agents and you are, you know, charge equity, this and that. So, we do not have that kind of a budget. 
+
+So, you just will allow for billing for only five people. So, the solution architect may be one or two developers and one tester. That is it. 
+
+You do the remaining thing. So, this kind of a thing will happen. I mean, very soon, maybe in the next six months to one year. 
+
+But this is, be prepared for this. So, if your core ability is to only write down shallow level code, it is very difficult to survive because these are the people who are going to be most easily replaceable. If the core ability is to, you know, architect the end-to-end solution and present it to the client right from requirement gathering till delivery, then that is a role which will survive. 
+
+If the core ability is expert level of coding, that will survive, expert level of testing experience. So, anything which is going to expertise will survive. But low hanging, you know, shallow level jobs, which can be easily automated, will, I do not think, easily survive for long now. 
+
+Okay, let us get started. The lab 9, I am sharing the link. Then I am sharing my screen. 
+
+So, Praful is asking how about these stock picking, buying, selling, showing alerts. So, one of my friend is already doing. He is, he was my colleague in the company. 
+
+He left exactly for doing that professionally. He was doing that by passion, no doubt. And we really discussed those kind of things, stock picking, buying, selling, showing alerts at length for more than three years. 
+
+So, I think that company name is Stochastic, S-T-O-C-K, Stochastic, Stochastic, not Stochastic, Stochastic, something like that, S-T-O-C-K. So, that is the name. I do not remember exactly, but that guy is exactly doing the same thing. 
+
+So, it is possible, it is possible. So, I will just share you the link. I cannot take any responsibility, but you can just explore. 
+
+So, this is one use case, as you mentioned, which came and, you know, evolved right in front of my eyes. So, that is how I can talk about this particular product, right from brainstorming till this product and this guy leaving the company to do it full time. So, needs a lot of experience and guts to use the agents for making financial decisions. 
+
+So, both, not just the AI leverage, but also technical leverage, technical analysis basically. Okay. So, lab 9, I have shared the link. 
+
+Let us get started with that. Okay. So, all the other co-curricular questions we will take towards the end now. 
+
+Yeah. So, this was it. So, how many of you were able to run this completely to get the end result? Can I see in the chat? How many of you were able to run this end to end? See, the depth of this will be restricted by the prompt, as I have already mentioned. 
+
+I have, I think I have already mentioned that 300 to 500 words per section. If you want a more, you know, elaborate sections, then you have to. So, this is for the final section. 
+
+So, yeah, title sources, quality checks, and 400 to 500 word limit. So, I have put a strict word limit here. If you want, you can increase that word limit that can also be done.
+
+(22:30 - 25:23)
+So, you will get more, you know, comprehensive reports. Okay. You can try that. 
+
+And if you want more comprehensive research, again, as I said, I have also restricted the number of search results many places, right. So, those numbers also you can change. So, for example, for the initial planner, it was three, sorry, eight. 
+
+And for the section researchers, it was five. So, you can increase those numbers as well. Okay. 
+
+So, you see, these numbers can be changed. And this, so how much of the raw tokens you are going to use to generate the entire section. So, 2000 raw tokens. 
+
+Anyway, the summary is being shared. But along with the summary, how many tokens you want to share in the raw content part. So, this 2000 is on the raw content part, not on the overall thing. 
+
+Okay. So, per page, first 2000 tokens, because I'm simply concatenating, truncating it. So, I'm just truncating it. 
+
+I'm just taking the first 2000 tokens as the truncated token. So, that will be used for the research. Okay. 
+
+Section writing. So, I would encourage you to, you know, experiment with some of these numbers and see how better you want to make these, you know, reports. Also, I would encourage you to experiment on these prompts. 
+
+Okay. So, you can make these prompts more comprehensive, more illustrative for your own use case. So, suppose you are writing down this end-to-end report as a compliance report, or maybe a evaluation report or an assessment report. 
+
+Okay. So, then you'll have to tailor these prompts based on your use case. So, pick up one use case, which is apart from, you know, content writing or blog writing. 
+
+This is more like a blog writing. Okay. So, take one use case from your domain. 
+
+And what I would suggest is download this notebook, give it to ChatGPT or Gemini Cloud, whatever your favourite model is, and ask it to follow this as a base. Okay. And then give a prompt that you want to modify these prompts as per my use case. 
+
+So, define your use case as much in detail as possible. Then give a context that I have already created such an agent for blog writing and report generation, structured report generation. I am attaching this notebook, okay, for your reference.
+
+(25:23 - 31:51)
+Now, this is important because otherwise, that guy, Cloud Gemini or ChatGPT will generate some random agent in some random framework, and then it will be very difficult for you to understand what is happening there. It's always beneficial to start from what you already know and build on top of it. Okay. 
+
+So, don't directly jump to an unknown thing. And try to contradict also. Okay. 
+
+So, that's if there is some suggestion which you don't feel might work or maybe appropriate in your use case, contradict it. Okay. So, don't blindly keep on accepting. 
+
+So, all those things can be mostly avoided if you are starting from some base, which is one of our notebook. Okay. So, this is what I would actually do. 
+
+So, either you share it as a Jupyter notebook, or you can download this as a regular Python file, or you can print this as a PDF also. So, Microsoft Print2PDF, something like that, you can print it. Only problem with the print is some of the prompts can get truncated. 
+
+If I just show you, some of the prompts can get truncated, which is a, okay, so if you see this prompt is getting truncated. Okay, you can see. So, this is a problem. 
+
+While printing it, this is also getting truncated, prompt and quotes, both could get truncated. So, it's better to directly upload the Jupyter notebook, because all these models are very much capable of reading your Jupyter notebooks easily. Okay. 
+
+Cell by cell, section by section, and you get a similar structured notebook, it will simply copy it in its memory and replace the prompts with your use case based prompts. Okay. So, this is one activity I would strongly suggest everyone to do in this coming week. 
+
+If you want me to review it, please upload that notebook into your school platform and just tag me. Okay. In your diary, progress diary, upload this into your progress diary and tag me. 
+
+I'll definitely spend 5-10 minutes in reviewing it. Okay. And that's a good opportunity to show it with others as well share it with others, get a peer review thing. 
+
+Okay. So, get some suggestions from others how it could be further improved or what others can learn from there. Okay. 
+
+So, these are very important things in community engagement. Right. So, make an extended version of this. 
+
+That's what I'm trying to recommend. And all these diagrams can be made better from ChatGPT. So, what I'll do is copy this image and give it to ChatGPT and ask it to make it more professional version of it depending on your use case. 
+
+I mean, this is how it looks, but now my use case has changed. So, can you adapt this image to the current use case? So, you will be able to generate or regenerate all these images for a slightly different use case also. So, enrich your notebooks with your different use cases. 
+
+Okay. So, that can also be done. Because now, or simplest, just try this. 
+
+Copy and paste this in ChatGPT and say replace all the GPT 4.0 with GPT 5.0 mini. At least that bare minimum thing you should be able to do. Right. 
+
+And make all the fonts as times because these are like sans. So, maybe if you are able to at least do that, which means you are able to, you know, modify an image in principle as per your use case. Fine. 
+
+So, let's move ahead. All good till here. Or if you are still looking for, you know, more examples, I would suggest again the same thing. 
+
+Upload this to notebook, notebook to Gemini and say that I want you to go through this notebook thoroughly and give me five use cases which I can, you know, replicate or five use cases which I can create based on this notebook or design patterns present in this notebook. So, this is another exercise you should do. Okay. 
+
+I can, you know, give on hypothetically something, something, something. But if ChatGPT is giving, it will be with justifications. Okay. 
+
+And ask it to justify why this is more appropriate. Give me, you know, a point by point justification or ask it to make the response more convincing or compelling. Okay. 
+
+Not just random bluff. And enable the web search. So, write down another line of prompt that if there are similar use cases which has been implemented by some other companies in other industries, give me the names of those use cases and the links where I can go and verify. 
+
+Perfect. So, you get established use cases and hyperlinks where you can actually go and verify and read the entire article which those companies might have posted. So, that is how you have to enrich yourself. 
+
+I mean, I can do that in all these running sessions. But these things, if you do it by yourself, you get the benefit. Personally, that is how you are differentiating yourself from all the other 40 people who are taking these sessions. 
+
+Plus, we are, you know, focussing on more productive, more tricky things to be discussed in the sessions which you will anyway not be able to comprehend with ChatGPT without me. So, anything which you can do with ChatGPT or Gemini without me, that is what I am suggesting, please go ahead and do that. So, I do not want to spoon feed everything in this live sessions. 
+
+Clear? So, the same activity should be done for every other project or every other lab that I have done, all the 7, 8 labs. There are end-to-end projects. Please go ahead and do that. 
+
+So, another end-to-end project, this is the one which I have shared just now. So, I have already done this. So, let us start with this one.
+
+(32:00 - 37:28)
+And then OpenAI also has the AgentBuilderKit. Okay. And the AgentBuilder SDK, Google has the SDK, Anthropic has the SDK. 
+
+So, I mean, it is not only about Language Graph, CRIUI or Autogen. Now, these model vendor companies, they are also coming up with their own agent SDKs. Now, one potential example, potential advantage that I can see is probably their agents will be easy to integrate with the models, but these companies are not known for their software development as such. 
+
+Okay. These are purely AI things. More importantly, their frameworks or their SDKs, what they call, may not support everything in the ecosystem. 
+
+So, LangChain, why we are sticking to that is LangChain is like a huge ecosystem like Python. You can do literally everything in Python. Same thing goes in LangChain. 
+
+You can build agents, you can build workflows, you can do all sorts of stuff. You can connect with all sorts of models from all sorts of vendors. So, it is like a matured framework. 
+
+Now, these SDKs have just popped up in the last two to three months. Not many people have used them. There are not many established use cases. 
+
+So, I mean, we should wait and watch for them to get first popular, than to directly jumping on these newer SDKs from these model vendors out of FOMO. Okay, that is my view. Okay. 
+
+So, I would wait and watch for at least another six months to nine months for one of these to become extremely popular, let us say, whether it is Google s Agent Development Kit or OpenAI s or Cloud s, whatever. So, one of these, which gets more popular or similar popularity like LandGraph, then I would start considering it. Okay. 
+
+So, that would be my approach. So, these are the three which have already become popular and mature. Mature in the sense you get a lot of use cases already from the industry established, plus the community support is also there. 
+
+There are a lot of already articles which you can follow and get more projects. You can just go to medium.com or do a Google search, LandGraph project, Crew UI projects, and you will get thousands of articles where end-to-end projects are documented. Thousands of GitHub repos where you get end-to-end projects or agents which are documented, not only these eight to 10. 
+
+Okay. So, that is the kind of maturity I am looking for. Once you have that kind of maturity for a framework, then the reliability automatically starts in. 
+
+Okay. So, until then, do not get into the FOMO stuff and try to eagerly learn every other framework which is being launched every other day. Right. 
+
+Unless the company has a clear mandate that Prashant, we should be using this framework. I do not care whatever your opinion is, the client has asked for this, let us go for this. If that is the kind of statement coming, then no doubt. 
+
+But if I am given a choice, I will stick to these top two to three frameworks where there is a good amount of AI maturity, use case available, support available, code base available. Why code base available? Because most of the code you will anyway be generating from ChargeGPT, Gemini, and Cloud. Okay. 
+
+And these models have been trained three months ago, six months ago, whereas your framework has launched last month. So, these models have never seen your framework. Listen to my last statement. 
+
+These models literally would have never seen your framework. So, how do you expect your models, the Gemini ChargeGPT models to help you in code generation, which means technically you are on your own if you want to use these frameworks. Right. 
+
+So, when you have enough established use cases, community support, code base available, okay, the kind of codes that are generated from using these models, they are much more, I would say usable, less buggy, and less chances of getting deprecated and so on. How about NA10? Do you suggest again anyway to get into that as well? See, NA10 is not bad, but again, one needs to be an expert in that. If you want to do NA10, do only NA10 10 hours a day. 
+
+Okay. Don't switch to these code base things. So, those people who are thoroughly advocating NA10, they are not into coding at all. 
+
+So, don't have your shoes in coding and no coding platforms simultaneously. There is a saying, okay, putting yourself in two different boats. Okay. 
+
+You are bound to sink in between. So, for me, I would always advocate a code base thing, frameworks, which gives me much more flexibility and visibility for each and every step. And, you know, or if I am, let us say a solution architect, I do not want to do the coding, but I still want to create POCs.
+
+(37:29 - 40:59)
+Fair enough. You can go to OpenAI s Agent Builder Kit, which I have demonstrated, or you can go to NA10. Okay. 
+
+But spend enough time so that you can explore, just okay. Okay. Let us compile. 
+
+So, installations are done. So, what is the new thing in this? Okay. So, in the previous notebook, we had clearly outlined the steps. 
+
+I mean, our steps were clear. The only thing is how many such agents will be needed. That was not clear. 
+
+Okay. That was decided by your planner. Here, two agents will be needed back to back. 
+
+Sorry, parallelly, not back to back. But overall workflow was very clear that we will first use the report planner, who will plan how many sections will be written based on the web search. Then each of these sections will be written in parallel. 
+
+Okay, using the researcher who will first research for the topics. Okay. Subtopics, and then write down the sections by the section writer agent. 
+
+And once all these sections are written, that will be formatted, given to the another couple of agents who will write down the introduction and conclusion. Finally, the report will be compiled. So, you see, there is a complete clarity on the workflow. 
+
+Now, here, that determinism on the workflow is not present. Although we have an initial plan, you will find this word initial plan. Okay, but that is not guaranteed that the overall flow will follow that plan religiously.
+
+(40:59 - 42:25)
+Okay, because we have a reflection and a replan step. What it means is, based on the current outputs, there is a possibility that the entire plan may change. In runtime, that's like more realistic scenarios now. 
+
+Okay. So, some original plan is there. Whatever part of that original plan is executed, that will be anyway updated in the agent state. 
+
+But don't think that the overall workflow will stick to that original plan. So, based on how things are progressing, okay, it may need some replanning as well. And if there is a replanning needed, it will update and change the original plan also in the agent state. 
+
+And the subsequent steps will follow the replanned workflow rather than the original workflow. So, that's the overall idea about this. And we keep on tracking what are the steps which are remaining. 
+
+If there are steps remaining, then it keeps on looping to execute each of those steps. Let's say you are in the step number three. And by the time you reach the step three, you think that four and five are not needed. 
+
+They can be, you know, just done in one step itself. Fine. So, replanning starts and only four and five are merged together.
+
+(42:25 - 50:06)
+And in the next iteration, four and five, which is merged together now as a single step, will be executed. So, that is the kind of thing. Or by the time you are reaching the third, it realises that probably I might need more number of steps. 
+
+So, again, it goes to the replanning and so on. So, plan modification is the key that we are doing here. You can just read this. 
+
+Take your time. Give me two minutes. Okay. 
+
+So, any question in the overall workflow? This is what I already explained. Yeah. Prashant, the explanation and the image flow, can you take one second up? Here, yeah. 
+
+This part, Prashant, like once, you know, it's searching webhook. And after that, it's sending back to execution plan, sending to object is where it's completing original plan and executed steps, right? The next step, the check, initially, if it is making the iteration still, there will be some content and response will be available. So, you said that his response is null. 
+
+Then only response will be there, but it's incomplete, right? This yes and no have got interchanged. Okay. Yeah. 
+
+Yeah. I know that there was, I also had this in my mind, but I was just checking if anyone is able to find that. Just confused because the main purpose is that there will be content, but still refining that one, right? The cycle. 
+
+Okay. So, see, this is more important. Because this is easy to even, you know, follow. 
+
+Okay. This is like an indicative plan, which was generated a long time back. But now, let's stick to this because here we have a much better clarity. 
+
+What is expected from reflection and planning? And what is that dynamic feedback doing? And how is the agent state getting maintained throughout the overall workflow? Okay. So, yes. Okay. 
+
+So, utility function, this is again going to do the truncation of the content length. Okay. Just as we did. 
+
+Now, you can see, we want to be safe. Your GPT-40 mini model, I think that had 128,000 token as the context window. So, I've truncated it to 127,000 tokens.
+
+(50:06 - 51:04)
+So, now, if you are using your GPT-5 mini, okay, this can be easily 350,000 tokens because there the context window limit is 400,000 tokens. Okay. So, you can use GPT-5, GPT-5 mini, whatever model you want. 
+
+So, here, again, if you want, you can use, increase this now, 350. Let's see. That would work. 
+
+So, this is token counting and more or less this code is exactly similar to what we have done. The whole purpose of this is to count the tokens from all the text documents that we are getting after the web search and truncate them to fit within the maximum. So, we are going to concatenate each of the search results back to back and the total concatenated content should be less than 350,000 tokens because otherwise that will exceed the API call rate limits.
+
+(51:05 - 52:33)
+And I'm still keeping some 50,000 tokens for the output to be generated because the output will also need some additional, you know, memory from there. So, 400,000 is input plus output. Okay. 
+
+So, I'm keeping 50,000 tokens reserved for the output, which is probably more than sufficient. Yeah. So, this is what it is. 
+
+So, it is going to return the truncated documents. And now, I'm having some, you know, dummy text documents to check whether my function is working or not. So, here, I'm taking the max number of tokens as 20. 
+
+Let's see. So, just to visualise how the truncation is going to happen. So, this is taking the first 20 tokens from the document, one, and then the first 20 tokens from the document two, and so on. 
+
+Okay. So, that is what the truncate documents is doing. Process and truncate text. 
+
+So, maybe if you want, you can go back to your 127,000, but fine. So, the next utility function is you're searching the web and extracting information. Now, this is exactly similar to one of our previous codes. 
+
+Okay. So, how many such results? In this case, I have set three, you can make it five. Okay, whatever number we want, you can increase.
+
+(52:35 - 53:32)
+Advanced, do you want to include the answer? Answer is your summarised LLM summary for that particular web page. That is the answer and include. So, I don't want that answer or the LLM based summary. 
+
+Rather, I want the raw content. So, this is exactly different from the previous example where we were mostly relying on this. We were also taking this, but we were truncating it anyway. 
+
+So, here also we are truncating it 127,000 tokens. You might want to increase it up to you. Okay. 
+
+And then let's do this calling web search. So, what is lang graph? Maybe you can, what is model confidence? So, this is the search query. Let's see.
+
+(53:33 - 55:42)
+So, how many documents we have got? We have got three documents. And I'm looking at the third document now. So, I'm getting this complete 127,000 tokens. 
+
+I guess you can just copy the cell output. And so, this is in a markdown format, no doubt. Okay. 
+
+You can ask it to print also. So, let's just want to print it in a format easy to comprehend. There is one, you can use this. 
+
+So, this is the complete markdown display. Of that entire web page. So, now if I just copy that cell output, go to OpenAI, OpenAXL.
+
+(55:48 - 57:34)
+So, if that content is not truncated, let's see the last line. From there, we can make out whether it is truncated or not. Note, I don't think this is truncated. 
+
+So, usually this is the last line. So, if you want to know how many is it 25. So, this shows 4,000 tokens only. 
+
+So, you see almost that entire web page is only 4,000 tokens. And we have gone up to the limit of 127,000 tokens. That's a huge limit. 
+
+Okay. There would rarely be a scenario where the truncation will happen for a single web page at least. This entire web page from title till the copyright information, everything is hardly 4,200 tokens. 
+
+So, this was just to give an idea that how much content would be there in a single web page. Okay. So, you have got a fair idea now that roughly 4 to 5,000 tokens will be present in a single web page. 
+
+So, this can help you for planning and counting. Yeah. So, so these are all the functions for creating your graph. 
+
+So, this is the graph where the entry point goes to the chatbot. Okay. And this chatbot will have access to tools, which tool the Taveli web search tool, the output of that tool will be given back to the chatbot for reflection. 
+
+So, do I have all the necessary information to answer the user query? If yes, it will go to end and reply. If not, more tool calls will happen. Okay. 
+
+So, that's the iteration which is going to happen there. So, you can see here. So, this is the system message, you can make it more elaborate as you want.
+
+(57:34 - 57:44)
+You can use the GPT-5 mini model, GPT-5 is costly. So, I will go with GPT-5 mini model. You can go with GPT-5 also, which is 10 times costlier, up to you.
+
+(57:47 - 58:09)
+So, mini is also faster, no doubt. So, the only tool that I have right now is web search and extract information, you can have more number of tools, doesn't matter. Okay. 
+
+And then we are also going with, so binding that tool, same thing. This is all we have done in lang chain earlier. Okay. 
+
+This is purely lang chain part till here. Now, this is defining the chatbot. Okay.
+
+(58:10 - 1:02:52)
+State. Okay. Where is the state? State. 
+
+Yeah. Here is the state, which is list of annotated messages, and I am adding the reducer. So, which means this list will keep growing as more and more conversations are happening back to back. 
+
+Okay. So, that is your reducer. So, I am using that and pulling all the messages and making sure that this entire list of messages is less than this number of tokens, that is the truncation function. 
+
+And strategy is last, which means if a truncation is needed, it will keep the last 127,000 tokens rather than the first 127,000 tokens. So, that is the meaning of the strategy here last. Okay. 
+
+It will keep the later information, not the earlier information. And again, or token counter you want to use. So, this ideally should be the same model which you want to use for generation. 
+
+So, these two models must be ideally the same. Allow partial true, that is fine. So, it will take the partial conversation history also. 
+
+Okay. If you make it false, then let us say if the truncation is happening in the, I am just taking some number, okay, in the fifth interaction, then the entire fifth interaction will be left out. If you are not allowing for partial interactions or partial conversations, if you allow, then partially fifth will also be included. 
+
+If you make it false, then the entire conversation where the truncation is happening in between, that entire conversation will be left out. Okay. And now you are building a graph, adding the node for tools, and then the chatbot goes to the tools, tools. 
+
+This is a conditional check. Okay. So, either it goes back to the tools, okay, or it goes to the end. 
+
+Very simple node, nothing exotic happening there. So, setting the entry point to the chatbot, adding the edge from tools to the chatbot, and you are just compiling it. So, in a real life scenario where you really do not want to write down codes for this, have a mental model, I would say. 
+
+Have a workflow jotted down pen paper, take a snapshot, give it to chatGPT, ask it to replicate that in LandGraph. Easy, right? Or if you think that this is relevant to you, take a copy image, go to chatGPT and say that this is, you know, what I want to replicate. Okay, go to chatGPT copy image. 
+
+Okay, and go to chatGPT, maybe ask it to give me code to create this LandGraph workflow. Simple. So, even if you get the workflow, you can get it. 
+
+But exactly, the point I am trying to make is you can also do the combination of multiple workflows as you want. So, you may not get exactly the same code, but at a high level, some tool. Now, because we do not have the information about what tool, let us create a dummy tool. 
+
+In our case, this tool would be what? Web search tool, right? And then it is taking some model. In our case, we have taken GPT-5 model, tool node, and then binding those tools, and then creating. So, this is your chatbot. 
+
+That also we have it, right? Messages, it is reading the messages from the state messages. And the system message is there and LLM with tools, you are binding that, right? Binding tools. It is the same thing, you see. 
+
+We have also the same kind of code. You have the LLM binding those with the tools, okay? Class is there. This is a chatbot, messages, state messages, okay? And then the nodes for, so route after the chatbot. 
+
+Basically, this is the conditional checking, okay? When to end and when to go back to the tools. And this is the same code that we want to build our Langraph workflow, compiled and run. So, if you understand things well, you can easily get it done from chatGPT or anything, okay? So, you do not always have to start from scratch.
+
+(1:02:52 - 1:04:12)
+You can build things or reuse things, I would say. So, this is wrapping the entire agent that we created above into a function, which will keep a track of the agent prompt and the user configuration, which can also track the threads. So, you can provide your own threads. 
+
+So, can you tell me about Langraph, okay? So, you can replace this with model on threads. So, it is making a tool call, you can see. And this is the call ID. 
+
+Arguments, so this is the query, model context protocol, MCP, definition MCP protocol, AI model, 222, 23. So, these are all the queries which is happening, okay? And then these are the results you can see. And finally, the AI message based on these results. 
+
+Short answer is adjacent RPC-based protocol for connecting LLM hosts. And these are the key concepts. There is a host, there is a client, there is a server, and then you have the resources, tools and prompts, okay? So, this is how it works at a high level.
+
+(1:04:13 - 1:05:45)
+And the notable client side features, security, privacy, safety, YMCP matters, common use cases. So, without web search, if you directly ask this question, okay, you may not be able to get this kind of elaborate. And you know, complete, it covers the entire breadth of that topic. 
+
+See, it might only explain you what is MCP, but it will not get into the security matters, common use cases kind of things. You can just ask what is model context protocol. So, that is one big advantage of your web search. 
+
+Okay, so who are the current founders of NVIDIA? What did they previously do? And how did NVIDIA become such a huge company with a huge market cap? So, that's a complete, you know, extensive tool call. Now, here that what is going to happen. So, multiple tool calls will happen. 
+
+Why? Because it may not be able to extract all the information at one go. So, your model will decide that, okay, first I will search for the founders. Once I get the information about the founders, then by each of their names, I'll search what they did previously. 
+
+Once I get all that information, then the next step is to check how did NVIDIA become a huge company? And what is the current market cap? So, that is why you can see that multiple tool calls have happened here. Okay, so I think 1, 2, 3, 4, 5. Yeah, so five tool calls have happened. Okay, and these are the queries.
+
+(1:05:45 - 1:06:38)
+Okay, so based on the initial query, what was the initial query? Tool call ID, NVIDIA founders, something like this. Okay, so it knew that Jensen Wang is there. But the guys, Sun Microsystems, Bell Labs, Education, History, NVIDIA, co-founder, these are the keywords that were used in the searches. 
+
+Okay, so the last query is how did NVIDIA become a huge company? Reasons for NVIDIA growth, GPU, data centre, AI gaming, 1993 history, timeline, key milestones, and then NVIDIA market cap. So, it is actually doing much better than a human search. You would have not been able to identify this much spectrum of searches that you would have done.
+
+(1:06:38 - 1:07:06)
+And it is all within just, you know, five seconds hardly it might have taken. NVIDIA market cap, wave, AI wave, GPU, data centre, cryptocurrency, gaming, vehicles, autonomous vehicles, CUDA, because see, a lot of GPUs are being used for cryptocurrency mining also, gaming as well, autonomous vehicles. So, these are, so do not think that all your GPUs are used by AI models.
+
+(1:07:06 - 1:07:21)
+I mean, that is probably 20-25%. 75% is still being used for other applications, industrial applications as well. So, here I get the complete report you can see.
+
+(1:07:23 - 1:09:15)
+Okay, these are what these guys did before NVIDIA. And how did NVIDIA become such a huge company, step by step. And I can also summarise the timeline shortly. 
+
+So, that is for a follow-up question. Who is the current founder of Microsoft? Again, you can do the same thing. I mean, I can run it, but pretty much similar. 
+
+Okay. So, in principle, this agent works. Now, the next part of our agent. 
+
+So, this, what is this agent that we have created just now? That is the web search agent and is able to, it is a web search sub-agent. Now, this sub-agent will need a planner or a supervisor agent. Okay. 
+
+So, you need to be very clear what you have done. This is not your entire project. This is a small part of the entire project we have created is a web search sub-agent. 
+
+An agent which does a web search presents the comprehensive results. Okay. Next is to create the entire schema for our planning agent. 
+
+So, there was already a schema for the web search agent. Now, a schema for the planning agent. Okay. 
+
+So, the input plan, previous steps that have got executed and the entire response of these models. Okay. So, response would either be the final output or if there is any error that would be updated in the response itself. 
+
+So, state for executing the overall plan, current status in terms of the steps which have got executed and the overall output from each of these steps. Everything we have got here and this is again operator.add. So, it will keep on adding. Okay.
+
+(1:09:15 - 1:16:57)
+So, create AI workflow for plan generation. The next step is this. So, you want to plan to follow to get a well-researched output. 
+
+So, this is the Pydentics schema for the plan. So, if you are just giving a prompt to the LLM for doing the planning, it might submit that plan or it might create that plan or generate that plan in any format. It could be adjacent format, it could be a string format, it can have any length, breadth, verbosity and so on. 
+
+So, that s like you have invoked the creativity level of these models which is what I don t want. I want a plan in a structured format and that structured format is enforced by this Pydentics schema. Okay. 
+
+So, there has to be a plan and in that plan there has to be steps as a list. Fine. So, the description of those steps is different steps to follow the plan and should be in sorted order. 
+
+So, numbering 1, 2, 3, 4 should be present. Okay. So, now the prompt starts for these models to generate that plan. 
+
+So, this is a system prompt, analyse the given query or task in detail and follow these rules to make a plan. So, come up with a simple step-by-step plan, maximum 5 steps, this you can increase, decrease as per your use case. This plan should have should involve individual tasks that if executed correctly will yield the correct answer. 
+
+Okay. Do not add any extra superfluous steps. The result of the final step should lead to the final answer and make sure that each step has all round all the information needed and do not skip these and then there will be placeholders, okay, for the messages and so on. 
+
+So, again I can use the GPT-5 or GPT-5 mini model. Let s go with the mini model. So, I am creating the final chain, this planner prompt which will need the messages from the state and the output will be as per the plan identic schema that we have created. 
+
+So, this is the function calling plan is not, oh sorry, forward to, yeah. So, now let s invoke this with some user prompt and check if that plan worked. So, I am just only verifying the plan component. 
+
+So, step-by-step, okay. So, that s how I would also do it in wipe coding, okay. First, I want to verify my planner. 
+
+It is taking some time. Okay. So, these are the steps. 
+
+Let me just print those steps. Identify the individuals who founded Microsoft, confirm the year and location and then provide the concise statement naming the founder. So, there are three steps, okay. 
+
+There are three steps to that question, okay. So, what I have got is the list of steps. Can you see? That is what my identic schema plan was, okay. 
+
+It has the type as plan, plan will be the name of the field and within that I will have the steps as a list, right. So, you can see I have the type as plan and the steps as a list of three strings. So, these are the three strings which will be used for query also. 
+
+Next is creating AI workflow for the re-planner part. So, we have the sub-agent which is web search. Now, I have the planner agent and now the re-planner agent with reflection. 
+
+So, basically the output of each of these sub-agents will be reflected, I mean analysed, okay. And if any re-planning is needed that will be suggested by this agent, okay. So, again I am creating up identic schema for that literal as the response. 
+
+So, response will come as a string and then again act. So, basically this is going to generate a re-plan. So, action to perform, action to perform if you want to respond to the user, use response. 
+
+If you need to further use the tools to get the answer, use the plan. So, that is the description, okay. So, it will be action is union of response and plan. 
+
+Basically response is this which will come out as a string and the plan which will also come out as a list of steps, okay. So, it is a union of those. Okay. 
+
+So, this is my re-planner prompt. Let us read this. For the given objective, come up with a simple step-by-step plan. 
+
+This should involve the individual task that if executed correctly will yield the correct answer. Do not add any extra superfluous steps. The result of the final step should be the final answer, okay. 
+
+Make sure that each step has all the information. So, this part was already there more or less in the main planner. This is the main objective. 
+
+This is the original plan. Now, you have currently these many steps which are already done with their results. So, past steps already has the steps which have got executed and the results, fine. 
+
+What else? Update your plan accordingly as necessary. So, if no more steps are needed, then analyse all the information collected and generate a detailed formatted answer in the markdown. So, if nothing else is needed, then this itself will generate the final answer, okay. 
+
+While generating the final answer, if there are special characters in the text, make sure that they are escaped properly. Otherwise, your markdown formatting will be spoiled. Otherwise, fill out the plan. 
+
+So, what more to do, okay. Add the only add the steps that still need to be done, okay. Do not return previously done steps as a part of the plan.
+
+(1:16:57 - 1:19:59)
+That s it, okay. So, original plan you have given and if this needs some replanning, this is the line which will help it to do the replanning, okay. So, for the replanner, let me use the best model GPT-5, okay. 
+
+Let s use this GPT-5 instead of the GPT-5 mini. Okay. So, this will use the planner AI workflow from the above and generate a plan for the user. 
+
+So, let s invoke and see what we get. Now, we will be creating a couple of node functions which will be used by our subagents. So, this is for the step execution, okay. 
+
+So, this will read the plan from your agent state, okay, which is a plan execute which we created here. And then the list of the past steps, if not planned. So, if the plan is empty, then nothing to execute. 
+
+It will probably, yeah, the response. So, it is returning. So, nothing more will be executed here, okay. 
+
+So, this function will end saying this is the final response. So, if there are steps, then all these steps will be joined. That s what the string is doing. 
+
+So, step i comma step in enumerate, okay. And this i will ensure that it is joined in a numeric order, okay. So, you are joining and i plus 1 because by default enumeration starts with 0. So, step 1 will have number as 0. I do not want that. 
+
+The step 1 should have a number 1. So, I am incrementing it. So, first step will have a number 1, second step will have a number 2 instead of the first step having a number 0. That s the default for enumerate. So, here this entire plan will be a numbered list, you can say, as a string. 
+
+And I am also going to print that. And let me take the first step of that plan. And this is again the plan string, that overall task. 
+
+You are tasked with executing this step only. So, basically, whatever is that current step that is going to be executed now. Here are the past steps, again to give a high level context. 
+
+And call the tools when you need more information. If you are doing a web search, optimise the query. Do not call tools for analysing existing information or compiling reports. 
+
+So, any information which is already there, you do not need to do research, okay. So, finally, you have to invoke that entire workflow and update your agent steps. So, create node function for replanner again.
+
+(1:20:03 - 1:20:16)
+So, this will update the current plans next step if needed by reflecting on the past steps, right. So, I am putting it within a try except block here. Output await replanner dot invoke.
+
+(1:20:16 - 1:21:07)
+So, basically, this will get the output from the replanner that we created above and printing the output, okay. So, there could be two types of output. One is the end response. 
+
+If there is no more steps to be included, it will give you the final response. Otherwise, if it needs a tool call, if it needs some action, this will be printed here. And if there is any error in executing any of the steps here, that will be caught by this exception and I am going to print this. 
+
+Conditional edge, again, whether to go to the end response, okay, or go back to reflection step. The react agent is your reasoning and action, okay. So, that is your reasoning step.
+
+(1:21:09 - 1:24:36)
+Now, the entire graph, let us look at the graph first. So, this is the main planner. The output of that will go to the react agent reasoning and action, and then that goes to the replanner. 
+
+So, these two guys will do all the job, okay. If any replanning is needed, it will go back and give it to the react agent. React agent has all the tools, which will execute those tools, output of that will give to the replanner. 
+
+Replanner will keep checking whether I have all the information available. If not, that remaining steps goes back to the react agent. React agent to execute the remaining step will probably need more tool calls. 
+
+As and when it needs the tool calls, it will use that tool call, okay. And once it gets all the information, again, the output will be given to the replanner. Let us say the step number four, and then the replanner sees that, okay, there is still one more step left. 
+
+Let us go back and ask it to complete the step five. So, this guy will again complete the step five, give it to the replanner. Replanner now has all the information that all the five steps are, you know, executed. 
+
+Is there any more information which is needed? If yes, then it will still go back to the react agent and say that, okay, you still need to fetch this more information. So, even after the original plan got executed, it can still continue if there is some information which is still missing. And then the react agent will fetch that information, give it back to the replanner. 
+
+Now that replanner has all the information, it will generate a final response. Okay. So, let us test that, okay. 
+
+Again, this is a wrapper function, the usual practise. This is just the same copy paste from all the previous codes. Event, again, as I said, means a node execution is an event. 
+
+So, whenever a node gets executed, okay, I will print the steps what has been done in that node. Else, if it is a last step, then I will display that final response in Markdown. Okay. 
+
+I am also putting a recursion limit of 50. So, no more than 50 times this entire thing will go back to back. That is the recursion limit here. 
+
+So, who is the current CEO of Tesla, their hometown and why did Tesla company become so valuable in the stock market? Let us see. So, past steps is empty because this is the very first starting. So, who is the current CEO? There is a put the plan, identify the current CEO of Tesla and their hometown, birthplace, list and group the main reasons. 
+
+So, that is the second step. Third step is to give concrete supporting examples of facts for each reason for the profitability, gigafactory, lot of it. Okay. 
+
+Next step is to add a brief balanced note about the valuation and criticisms. And finally, we want to summarise and answer. So, these are the five steps that I have got. 
+
+Okay, these are the five steps. I have converted this entire plan as a string into a plan as a numbered list. So, that is the end of the plan.
+
+(1:24:37 - 1:25:41)
+Now, calling a web search for each of these five back to back. Now, these are back to back, one by one, not parallel. That is how it is also different from the previous one, where we used to do parallel searches. 
+
+Now, this is back to back searches sequential. So, you can see step by step. So, this is the first step. 
+
+And yeah, nice. Here is the compact practical 3D Q2 plan. I think this is the raw content which has got generated from somewhere, which is probably irrelevant. 
+
+Okay. Yeah, this talks about some food Japanese bag. This is irrelevant. 
+
+So, it will re-verify. So, you see, the web searches were giving irrelevant results. So, it came back with a revised problem, sorry, revised plan.
+
+(1:25:41 - 1:27:57)
+You can see create printable map. I will re-tailor the plan. Okay. 
+
+So, re-verify. That jumped. Using at least two up to date reliable sources. 
+
+So, I think we have limited the number of web search to three. Okay. So, two out of three should give the same answer. 
+
+Maybe we can make it five. That will be easier. Calling web search again. 
+
+Okay. So, the web query has changed. Originally, it was something different. 
+
+Now, the query has changed. And they have also limited to tesla.com. Okay. Okay. 
+
+Also, coming from the ACC filings. So, this is more authentic. So, this is the re-plan, it seems. 
+
+The complete re-plan. Again, it is giving that nonsense, which is very interesting. Re-planner output. 
+
+So, still it is struggling to get the name of the CEO and their hometown. So, or I might be reading the initial part, because it is in the, you know, reducer. So, this is the initial, but the later information will have it. 
+
+Let us see. Yeah, yeah. From this point onwards, we have that information. 
+
+Yes, we have that information. It is calling the web search. Now, he has identified that Elon Musk is the main.
+
+(1:27:58 - 1:28:12)
+So, now, the other web searches are happening now. Their birthplace, biography, Wikipedia articles, calling web search tools, and then plan. So, you see, a lot of planning, re-planning is happening.
+
+(1:28:12 - 1:29:14)
+And it is still working. You can see. So, this can make a lot of API calls. 
+
+I mean, you can very well see. This is very much, you know, production grade thing you have created. Okay. 
+
+So, probably restricting it to three was not a good idea. Maybe I will go up and make it five, which will probably help it. So, here I can make it five or eight. 
+
+Okay. Run this so that this function gets updated. Or maybe we can keep on updating everything else.
+
+(1:29:28 - 1:32:22)
+And now we can run this. So, I think it is pretty much running. Okay. 
+
+And I will just rerun everything. We can take a small break here. Let this finish in the meantime. 
+
+The only change that I did was made that three as five. And let us see if it is able to finish that in lesser number of iterations. Okay. 
+
+Without those nonsense webpage results. Okay. So, any questions? So, this will take five, seven minutes. 
+
+So, let that finish in the meantime. All good? You have a question? Yes, sir. Yeah. 
+
+Thanks, Prasann. So, the re-planner is nothing but if there are any steps yet to be executed, that will be executed. Also, if the result is not good, then... Correct. 
+
+Correct. Okay. That is one thing. 
+
+Also, it will rewrite the whole plan again if the result is not looking good. Correct. Two things happening. 
+
+Right? Two things. Okay. Two things. 
+
+Two things. So, if the results are coming as per the original plan, then it will continue. But let us say currently we are in the step three. 
+
+The step three was supposed to give some output. And if you are not getting that output, then it will either rephrase the plan, step three, and re-execute the step three. Because re-plan also means rephrasing the query in this particular case. 
+
+Okay. So, the re-plan only for that individual step, that step three, right? Not for again from the scratch one, two, no, right? No, no, no. See, anything which has happened and the relevant information is there, that is what we have also mentioned. 
+
+So, anything which is already there will not go back to that. But any step which it finds that it has not, you know, executed correctly or there was an error, let us say in the step three. So, then it will try to see why that error came and re-plan that step three so that it sticks to the original plan and, you know, it gets fruitful, right? Okay. 
+
+So, that is a LLM responsibility to decide the response of the previous step is looking here, right? Okay. We are also providing all the previous responses of the previous steps to the LLM for reflection, right? And the last step, query and the, sorry, not the query, the plan and the output of that plan, both. We are providing it for reflection.
+
+(1:32:24 - 1:32:33)
+The output is given by your React agent. Re-planner is reflecting on it. Okay. 
+
+Okay. Okay. Sure.
+
+(1:32:33 - 1:46:39)
+The tool execution is happening at the React agent. React agent, it is a React agent reasoning and action. So, that will have the access to the tool. 
+
+Re-planner does not have access to the tool. Re-planner is only reflecting what all has happened. Is it going as per the original plan? If there is something which needs to be redone, that plan is modified and given back to the React agent. 
+
+Now, React agent will read that plan, okay? What is the new plan? And based on that, okay, I have already completed two steps. The third step needs to be re-executed. That is what is, you know, mandated by my Re-planner. 
+
+So, I will re-execute the third step with this newer query. Sure. Thank you. 
+
+Okay. Okay. So, back.
+
+(1:47:31 - 1:48:08)
+So, this time when I increase the number of results for the query, I am not getting all that nonsense results. So, to the point. So, you can see. 
+
+So, three steps it was able to finish. Re-planner output, concise explanations, and then pass steps, plan once again. These are the pass steps which have been done, okay, and the results.
+
+(1:48:09 - 1:49:15)
+Then Re-planner output, plan, and the pass steps and the results. So, this will keep on expanding. And then the response, final response when everything was available. 
+
+So, that final response here is the answer. That is what you get as the final answer. Okay, why Tesla became so valuable? Product and technology, leadership, financial and skill dynamics, market dynamics, leadership, and brand. 
+
+Okay. So, this kind of output I got by using GPT-5 model throughout. So, somewhere above we have used GPT-5 mini as well. 
+
+So, we may not be able to get this kind of output. So, if you want output like this properly formatted, then make sure you are using the best capable model, but also be mentally prepared to pay more for the token usage. Okay.
+
+(1:49:16 - 1:51:10)
+But otherwise, this is fully functional. So, this is the output that I have got just now. This is 59, sorry, cell number 59. 
+
+And this is the cell number 60. So, this I executed during the break. So, this is what I have got. 
+
+Okay. In the case of this question, very structured response I have got including the entire timeline and everything. Okay. 
+
+So, the next one. Here, this is an enhancement over the existing agentic RAG that we did the last week, I think. So, the enhancement is the escalation part and actual human in the loop, h-i-t-l, not h-t-i-l. 
+
+So, human in the loop that is h-i-t-l. So, that is the part that we are going to implement now. So, this part is all the same, but the actual escalation, I will just go and share the notebook first, putting all the installations. 
+
+Okay. What is new? Let me directly jump to that part. So, that will be easy for us to comprehend. 
+
+So, this is the complete agent that we are building. In the last example, what we had made was the customer query comes in, we are categorising it as billing, technical or general. So, that is what this node is doing.
+
+(1:51:11 - 1:55:35)
+Then this node is getting the sentiment of that customer query, whether it is positive, negative or neutral. And if the sentiment is negative, it was directly getting escalated to the human. Okay. 
+
+And from there, it was ending. Now, what we have done is when the sentiment is positive or neutral, one of these three agents will reply based on the custom knowledge base, that JSON file, okay, which has the custom knowledge base. Based on that, it will respond. 
+
+Who will respond? The LLM will respond in these three cases. So, the general billing response, general response and the general technical response. I mean, you can make it simply billing, general and technical, just to avoid the confusion. 
+
+We will do that anyway. So, all these three responses are generated by the model. Okay. 
+
+Now, it is a good idea to check whether the user is satisfied with that response or not. So, I'm actually going to ask that to the user. And if the user says yes, then it will go and end. 
+
+Okay. If the user says no, it actually goes back to the escalation. Okay. 
+
+So, this part is not yet implemented. I would want you to do it, this last part. Okay. 
+
+So, here it is simply checking and ending. But this additional conditional branching can be also done. Okay. 
+
+So, let us say the model has generated some response, but it is highly likely that some of the users may not be very satisfied with the overall response. And if the user is still insisting on some additional information or something, then can it be escalated to the human for the further assistance? Okay. And then it actually waits for the human input. 
+
+So, I will act as the human and type down my response, and then it will go to end. So, these are the enhancements we are going to do in the existing project. Okay. 
+
+So, let us go up. Installing all the libraries. Okay. 
+
+Download this JSON file that acts as your knowledge base. All of these we have done. So, nothing much to explain in this. 
+
+If you have missed the previous sessions, please go through the recordings. Okay. What is the problem? Lanchain.store. This was I think lanchain core. 
+
+Go back and see. Correct. It was lanchain core. 
+
+This was not update lanchain core.document. That works. Okay. So, the only change needed is in this cell. 
+
+Okay. I am just pasting that code in the chat. Okay.
+
+(1:55:35 - 1:57:34)
+Just replace this with the newer version. Okay. So, create the vector database using the text embedding tree model. 
+
+Add your data to your database. Set it as a retriever, and you can verify. So, all steps are more or less the same. 
+
+Nothing new. Yeah. So, it works. 
+
+Different policy, we are able to get the content. So, here it will be empty because the category name is different. So, all these explanations I have done. 
+
+Enquiry state, this is also the same. So, this is the main customer support state, which has the customer query, query category, sentiment, and the final response. And the only addition that I have added is this. 
+
+This is a new field to store the user satisfaction so that at the end, I can also retrieve the user feedback. This is again the same, positive, neutral, negative. And so, literal means it will pick one of these three values, like an enumerated list. 
+
+Okay. Now, the node functions, these are exactly the same node functions, nothing new. So, GPT-4 Omini model, I can replace it with GPT-5 Mini, close the bracket, and get rid of the temperature. 
+
+Same, same. There is nothing different in this. Okay. 
+
+So, this is for query categorisation. Okay. I can verify that it works.
+
+(1:57:36 - 1:58:08)
+So, yeah. Then this is for getting the sentiment. So, this is a prompt. 
+
+I am creating it a prompt template, giving it to the model for structured output, and updating the sentiment from the agent state. So, this query sentiment is a part of the agent state here that you are importing support state. So, let us check what is the refund policy that is neutral.
+
+(1:58:09 - 1:59:39)
+What is the refund policy? I am fed up with this product. I need a refund. So, that is clearly negative. 
+
+So, this is all being classified by the model. Okay. Now, these are the three which will generate your technical response. 
+
+This is the one based on the knowledge base. So, first, I am pulling the customer query and then category, checking if the category is indeed technical. If not, it will go to the else, and it will simply say apologies. 
+
+I am not able to answer. And if it is indeed technical, then it will do a metadata filter, do a search, get the top three documents, join them, and then put this as a context in your prompt template. This is a customer query. 
+
+That entire prompt template is chained to the LLM, and then we are invoking that chain. Okay. And the reply is updated in the final response part of your agent support state. 
+
+Let us see. So, the customer query is what is a refund policy. As general, this was supposed to be, this is interesting. 
+
+Why is it not able to answer? It was supposed to be general, I guess. Oh, yeah, it is general, but I am using the wrong agent, technical. So, this guy is only going to answer technical queries, not general queries.
+
+(1:59:39 - 1:59:50)
+Right. So, that is why this is the answer. So, this is correct. 
+
+This is correct. Now, this is technical, and you are using a technical response generator. So, this will reply now.
+
+(1:59:55 - 2:00:14)
+Yeah. So, this will reply now properly. So, if there is a mismatch in the category, then the agent will not reply. 
+
+So, this is for generating your billing response. And similarly, you can verify. And this is the one which will give response to your general queries.
+
+(2:00:14 - 2:00:27)
+Okay. You can verify that also works. Human escalation, right now, this is a static thing.
+
+(2:00:27 - 2:05:39)
+Okay. This is not an active thing. We will improvise this later. 
+
+Okay. So, this simply says that apologies, we are sorry, I am escalating. So, very standard static message, nothing new. 
+
+This is the router. This is the one which is going to decide based on the sentiment and the category. So, the sentiment is negative, okay, then straightaway escalate. 
+
+Otherwise, if it is technical or billing, I mean, the query category is technical or billing, then goes to the corresponding technical or billing, otherwise, go to the general. Sorry, I got disconnected. Okay, I am back now. 
+
+So, two placeholders, one for checking the satisfaction, as I mentioned, and other for waiting for email. So, this is anyway empty, because we are going to manually update this. Okay. 
+
+And yes, this is the route after the feedback. If the user feedback says yes, or no. So, if it is no or not satisfied, then escalate to the human agent. 
+
+Otherwise, go to the end. That's what I mentioned. So, this is the route after feedback. 
+
+So, we are going to ask for the user feedback and a new conditional router to decide what to do next. So, router is already there, but not connected to the current graph. So, that you should try. 
+
+So, here is the overall route after feedback. Categorise enquiry, then get the sentiment and do the routing for one of the response nodes. If negative, then escalate to the human. 
+
+Otherwise, produce the appropriate response by one of these. Okay. So, let's see. 
+
+Yeah, so these are my node names. Technical response, billing response, general response. These are the associated node functions.
+
+(2:05:40 - 2:05:51)
+And escalate, check for human. So, these are the nodes, clearly. And we have already seen how to wire them up. 
+
+Okay. So, this is all just wiring them up. Determine the router.
+
+(2:05:51 - 2:06:16)
+Yes, here also I have to make those changes. Just making the names a bit shorter. In all the three cases, I am going to check for satisfaction.
+
+(2:06:17 - 2:07:50)
+And I can also check for satisfaction for the human input. Okay. That's up to you, how you want to implement. 
+
+Let's see if this node gets generated. Yeah, so correct. Fine. 
+
+So, integration of this route after feedback is not yet done in this. That is what I told you, right. You can try doing this. 
+
+So, after this, it is actually ending, but you should somewhere here implement that function in the graph. Fine. So, let's actually, so this is wrapping up the entire agent into a final support function. 
+
+Okay. So, this is again to create the threads for different users. Escalation message is there static, okay, for now. 
+
+And then we are trying to invoke that entire agent with whatever customer query and these configurations. Check where it stopped. So, is it stopping at the satisfaction or is it stopping at the human input? Okay. 
+
+So, you get the final response. If the final response is not equal to the escalation message, okay, that means we are stopping either in the, so if it is not same as the escalation means it is not in this block. It means it is in one of these three blocks.
+
+(2:07:51 - 2:08:41)
+Okay. So, which means you have stopped at this stage, not this stage. Okay. 
+
+That is what we are doing. So, when does it stop here? When the final message is same as the escalation message. Okay. 
+
+So, that is basically your else condition, other condition. So, the feedback is saying yes, then you can go to end. Next step is go to end. 
+
+Okay. And you can update that also in your agent state. You have to update that in the agent state. 
+
+So, that is what we are doing here. And we are simply displaying that conversation has ended, final user was satisfied and I am just updating the state. Else if it is no, then this is where again you will want to wire this to your escalation.
+
+(2:08:41 - 2:08:55)
+Okay. So, right now that is not being done, but you can think of that here. Okay. 
+
+So, here I am just updating. Okay. Escalating to the human, but it does not actually escalate right now.
+
+(2:08:55 - 2:14:25)
+Okay. It simply goes and end. Okay. 
+
+Now, this is a block for both direct escalations. One is and, and after the no feedback. So, yeah. 
+
+So, the final escalation message is equal to the escalation message. Sorry, final response is equal to the escalation message. So, basically this is in this block here. 
+
+Okay. So, this is what will happen now. So, human agent is entering your response and I am just going to manually type the response. 
+
+Okay. Let me help you out, whatever, and then it will go to the end. So, you might instead of ending, make it recursive until the user is really satisfied and the conversation naturally ends by saying, buy this, buy and so on, buy, thanks, whatever. 
+
+So, till then it goes in a recursive loop and everything gets locked. So, that is the stretch goal you should do from this project at the end. Okay. 
+
+Let me repeat that last part. So, once the human agent has entered the conversation, after their response, it actually goes to the end. The next step is ended. 
+
+So, instead of directly going to end, okay, that is where you can create a sub-agent kind of thing, which is the human itself. So, the human response itself could be a kind of a sub-agent, which can be looped back and forth with the, you know, user, okay, until the user is satisfied. And every time after maybe the human agent response, the user can mark whether they are satisfied or not. 
+
+If the user is not satisfied, the human will be prompted to respond further. If the user is satisfied, it will go to end. So, that kind of a router mechanism you can implement. 
+
+So, I do not want to make it too complicated right now. But you will have to first sit and decide with the user interface UI UX guys, how they want to, you know, put the chat on their platform, okay, what all conditions, what all flows that they want to implement. So, based on all those flows, this code will change, okay. 
+
+This looks a bit complicated. But you can just give this to chat GPT and ask it to make it simpler version of this also, right. I got this from a Gemini model long back. 
+
+But I think still, we can improve this part. Okay, so let me test. Can you tell me about your shipping policy? So error generate general response. 
+
+So, so somewhere when changing the name, something got messed up the router. Yeah, so I've got some response. Sure, here is your our shipping policy free shipping for orders above $500. 
+
+Flat 20 shipping fee for orders under $500. Okay, so there is a dollar sign, which is why it is getting slightly messed up here, we need to check. How is the dollar sign coming up for typical delivery five to seven business days, if you have any damaged hardware, please report within 48 hours will be arranged for replacement. 
+
+Are you satisfied? Let's say yes. My conversation ended on the response user is satisfied and so on. How do I get my invoice? Let's see. 
+
+Okay, you can download this invoice from let's say no here. So then it says escalating to human agent and stops it doesn't actually do that escalation. That is what I told you that that part I have not yet implemented in this that is left to you as your stretch goal for this.
+
+(2:14:27 - 2:24:03)
+I'm fed up. So this will directly go to the escalation. Okay, it will not ask for satisfaction, this will directly go for escalation. 
+
+So sister apologies, we are really sorry, I'm escalating this to a human agent, please wait. So now it should actually was it taking so much time? Yeah, this is the input I was expecting. Was it taking so much time? That's what so I don't know sometimes it gets stuck. 
+
+So apologies, yes, and instantly that message is coming, please enter your response. So this is a human agent. Okay, so I can you know, provide some more illustrative name here, a name of a human agent, probably let's say Prashant in bracket human agent. 
+
+Okay, so then the user knows that this response is coming from a human agent. Okay, so sure, I will help you out. Fine. 
+
+So now, second stretch goal is basically to make this conversation back and forth. Okay. Now, someone has to impersonate the user, I will impersonate the human agent and few times that conversation will go, everything gets logged. 
+
+Okay, and then I will get the final satisfaction before it ends. Okay, so if the user says bye, then it goes for the satisfaction score. Or I can also trigger that satisfaction, maybe. 
+
+So those things will have to implement additional. You can check for additional you know, queries here, I have just commented them out. But more or less, this is completely working. 
+
+If you want this updated code, just refresh your browser, you will get this updated code. Fine. So this project is also done, done and done. 
+
+Okay. So the next week, we'll do a deployment of this project. I mean, it's already quite good. 
+
+Okay. Most time we have 40 minutes. So we can take one more project. 
+
+Okay. Give me two minutes so that I can upload all the project related documents. In the meantime, if you have any questions, you can put it in the chat. 
+
+So take your time, experiment and run this so that you are satisfied. Okay, what is happening there? Okay, I'm sharing the link. Do we have the UI for this agent? Okay. 
+
+Should not be difficult to create the UI. If you want to do that UI, what we can do is, okay, let's do one thing. So it's not just all about the UI. 
+
+There will be many things more in that. Okay. Configuring your environment. 
+
+So that goes to more like a deployment. So maybe that part, we will take it in the next session, creating a UI. I have it ready. 
+
+I can show it up front. But how did we get to that, that journey I want to teach, which will not happen in the next half an hour. Okay.
+
+(2:24:03 - 2:32:29)
+So probably the next session will focus on, let's say we have got these agents in a Jupyter Notebook or Colab Notebook. How do you take your agent from Colab Notebook to production with a proper user interface end to end? Okay. And then deploy it in local. 
+
+Basically, user interface means deployment. These two are synonymous. Okay. 
+
+So when the moment you say a user interface to view that interface, okay, you have to deploy that agent. So that's what I think mentioned also last week, sorry, last class, that deployment we are going to take in the next session. Okay. 
+
+So first, we'll deploy it in local. All the deployment code, we will be white coding. So how? I'll do it live in front of you. 
+
+Okay. Well, although I have the, you know, codes with me, but I'll try to do a white coding, okay, to generate all that code. But the generated code, I may not run because that might be a bit buggy and will not waste the session time in doing the debugging in the live session. 
+
+So but how to generate that kind of a code, that journey I will teach you. And I tried and tested code, which actually works, I will share it. As I say, fine, I think it's already there in my GitHub repo. 
+
+Okay, so we'll use that GitHub repo link. If you want, I can share it. But no, that would be like a spoiler alert. 
+
+So it's already there in my GitHub repo. Okay, that entire code for the deployment in local, as well as the deployment in AWS. Okay, so we'll focus more on this deployment part from existing code, how to get to that existing code, what are the prompts, what are the steps that I'll teach you. 
+
+But probably in the live session, I may not take the actual generated code from the models, because that might still need some verifications, revisions, debugging and all that. So I hope that is fine, right? If you integrate this to the company website, how it is done? Does it happen in deployment? Answer is yes, it is done in the deployment, but not to be done by guys like you and me. The front end developers job is to do that integration. 
+
+Okay, those guys who know React, Node, TypeScript, JavaScript, the front end languages, we are backend developers. Okay, so our job is to develop the agent and the, you can say, backend code, logic, server level, server side, everything, okay? API endpoints, routes, so maybe also in the deployment, you'll also talk about scaling, handling thousands of queries simultaneously, load balancing. So these are the things that we as, you know, AI engineers will be bothered about. 
+
+The front end developers job is to integrate this existing system with their company website. So we have a very clear demarcation of the jobs here. Okay, because for the front end deployment, you need to know these additional languages and technologies, okay? There's Node, React, TypeScript, JavaScript, many things more, because that is how the front end will be developed. 
+
+In the next session, the user interface that will develop will use that JavaScript, CSS, HTML, but all those codes, again, as I said, will be generated by a model, and we are not going to test whether that is working in the live session. I already have a working version of all that code, okay, which I will share at a single zip file, and plus it is already there in my GitHub. So you'll directly do a git clone and take it to the deployment. 
+
+Fine. But ideally, yes, that has to be taken care of by the deployment team, the web development team, sorry. Okay, so this project again, which I'm sharing, let me also upload the project files, which will be needed. 
+
+You can download it from the chat. So first thing that we'll have to do is upload this to your, yeah, upload this to your session storage. That entire zip file has to be uploaded. 
+
+This is not project two, this is project number. Okay, just remove the numbering to avoid that confusion. So many projects that we have been doing. 
+
+Okay, so automated regulatory compliance report generator, this is much more advanced, okay, and has a lot of nuances. So all the project related files are here in this lab 11.zip, which I've just shared. So first thing is we will have to unzip it.
+
+(2:32:29 - 2:33:04)
+Okay, so you can unzip, unzip, unzip, unzip file. So you'll have to just run this code. Okay.
+
+(2:33:05 - 2:33:13)
+And it will do the unzipping. Refresh and you should get all the files unzipped. Fine.
+
+(2:33:14 - 2:35:43)
+So once it is unzipped, then I'll go to instal everything. So you have four Excel sheets and two JSON files. Okay. 
+
+So opening a key, grant access, verify that it has worked. And now this is some code that you should be able to write to read these Excel files. So you can import pandas as ed, ed dot read underscore Excel. 
+
+Okay, start reading these files one by one. I think you can do that. So dot xlsx and this will be called as transactions data frame df. 
+
+Okay, to our d name. And let's also do that for the other ones. Okay, but before any of these, let's also print each of these files dot head. 
+
+Okay. Then the same thing we will do for the customers, customers df equal to perfect. Okay, let's run this. 
+
+So unzipped files are temporary. Okay, you'll have to upload this every time. So if you want to save it, then you'll have to mount your drive. 
+
+I think that has already been taught many times earlier. You have to mount the drive and then reference those files from the mounted location. Okay. 
+
+The mounted location means your actual Google drives location. So this is also done. And then we have the findings and then source.
+
+(2:35:43 - 2:42:20)
+We have the transaction data for the customers data and SAR findings. Okay. So you can see 10,000 records are there we can check the shape also. 
+
+This is your shape, customer data frame dot shape. Okay. Then we have the SAR findings. 
+
+So let's read this. So once it recognises the pattern, it becomes easy. You can see I'm not even generating the complete codes. 
+
+It's actually Gemini, which is finishing. So I'll explain you all the data, don't worry. But first, let's then we have the prior regulatory findings. 
+
+This is findings data basically. So findings df equal to come on, come on, come on. Yes. 
+
+And this is dot shape. I think this will have five entries. Correct. 
+
+And finally, we have the regulatory thresholds. Okay. Which is our data image something. 
+
+Regulatory thresholds will be a JSON file, I think. So there is a regulatory threshold JSON file. Okay. 
+
+Just copy this part and load this JSON. So load this JSON, import JSON and then regulatory thresholds. And let's also print it. 
+
+Yeah. So I have the regulatory thresholds printed. Similarly, I can also ask it to load the JSON file, which is Vincent temporary template. 
+
+So this is the template in which I want to find it. So I've got all the data loaded. Let's look at the overall project now. 
+
+So what I would do is just refresh your browser. Okay, you will get all the updated codes immediately. Just refresh your browser. 
+
+If you have been able to do it along with me, then fine. Otherwise, if you're still lagging, just refresh your browser, you will get the updated code. Okay, you might need to reconnect. 
+
+That's the only thing or restart your notebook. Okay, so business scenario Midwest Bank, a regional bank with $8 billion in assets. Now this is completely a fictional bank with data, everything, okay, that must produce quarterly regulatory compliance reports for three regulators. 
+
+One is Vincent, which is dealing with the anti money laundering, okay, or Bank Secrecy Act. Other is the OCC, which is the Office of the Comptroller of the Currency, which deals with safety and soundness. And the third is the state bank department. 
+
+So three compliance reports generated every quarter, that is the overall business. Now each report has 8 to 15 sections covering and ML transaction monitoring that is anti money laundering, transaction monitoring, KYC compliances, suspicious activity reports, that is SARS. Okay, and filed and the risk assessment summaries, remediation progress on prior findings. 
+
+So what is the challenge? Challenge is that the compliance team of six officers currently takes four weeks per quarterly cycle to accumulate all the data, analyse and create these things manually. So they will manually extract the data from five internal systems, write narrative analysis. So these five files, five, six files I have provided cross reference figures format to each of the regulators template. 
+
+So one of the template I have shared, that is the Vincent template I have shared. Okay, so similarly, there will be templates for the other two. Now, there would be still errors. 
+
+Okay, usually the figures in narratives could not be matching, may not be matching with the data tables, that could be one source of error. Section referencing could be outdated regulatory thresholds, and inconsistent terminology across sections written by different officers. Again, quite possible that different officers are writing different sections of the same report based on their specialities and expertise. 
+
+So an error in Q2 2004 report triggered a regulatory enquiry costing 200 hours of remediation. So I hope this is a very sound, you know, business problem to make you motivated for this project. Okay, so these are the patterns, agentic patterns we have applied, orchestrator worker, evaluator optimiser and human in the loop.
+
+(2:42:20 - 2:49:20)
+So these are the three, and these are the three rules as well. So orchestrator will read the template. So very much like a planner agent that we have done. 
+
+Okay, I'm just repurposing that design template, okay, in this new project altogether. So all the design patterns, everything is done from my side. Okay, it's just that one additional project because we have time left. 
+
+So I thought I'll take this. Plan sections dynamically and works the draft for each of the sections in parallel, fine. Evaluator optimiser, again, this evaluator will check for the numerical accuracy, terminology, cross references. 
+
+Okay, so this is very much similar to your reflector agent in your generate code and then reflector code. Okay, so this is very much similar to that. And then loops back to workers if errors are found. 
+
+So same, we are implementing some of those patterns here, just the change in that terminology. And finally, human in the loop. So HITL, which is compliance officer reviews the final report edits approves with the interrupt in place. 
+
+And once everything is working, then obviously, the final report would be generated, fine. So expected business impact, you can see the report generation time, which used to be four weeks can literally be done in two to three days, depending on how soon this compliance officer reviews. So numerical errors will be zero post the HITL. 
+
+Terminology inconsistencies will be minimal compliance officer hours per quarter will be very small. Okay, that is basically reviewing and approving. Okay, this number could be even much smaller, actually, and audit remediations may not be needed altogether. 
+
+So the overall learning objective, so we have already loaded these data. And first, we'll build an orchestrator worker pattern in line graph using send API. Okay, so what does the send do? You remember, that will parallel execution or dynamic parallel fan out, and then implement an evaluator optimiser loop that will check the generated report sections for the numerical accuracy and compliance. 
+
+And then human in the loop using the interrupt. And then PII reduction is also there to ensure no customer level data ever reaches the LLM. So that is the new thing that we are going to implement in this. 
+
+Okay, so this is although going to be rule based, but still quite reliable. And end to end there will be a state management. And so we've already unzipped it. 
+
+I think, yeah. So these are the data that I've already generated and given it to you in the zip file. So 10,000 records with suspicious activity flags are there at the end, you can see is suspicious. 
+
+So some of them will have suspicious activity, false means there is no suspicious activity. You can see transaction ID, this is just fake data, I've used Faker to generate all of that data. So some dates are there, sender account is there, account number, and then receiver account. 
+
+So sender and receiver account is their amount in US dollars currency, you can see what is the type of transfer internal. And, or ACHY transfer, these are the different transfer mode transaction types, you can do a value counts and find out what are the different transaction types. And then you can also do a value count to figure out how many suspicious transactions are there in here. 
+
+Okay. There's a specious report. That's for counts. 
+
+Yeah, so out of that 9,614 are not suspicious 386 transactions have been marked as suspicious. That's how you can do an EDN and all that. Okay. 
+
+And for SAR file, if you want to see how many fields are SAR files for transactions, again, data frame, transaction type, if you want to see the transaction type. So these are the different types of transactions. But I'm more interested in the SAR file or not. 
+
+So that is the field, just copy and paste here. So, fine. So suspicious activity 386, out of which SAR file is only 232. 
+
+So SAR is your status activity, suspicious activity report. So ideally, this number should have been same as this, which is not same, which means there are a lot of suspicious activity for which the report has not yet been filed. So that is a compliance issue. 
+
+Okay, now you have the customer's data frame also customer ID is there some fictitious names, date of birth, I have nationality, NG, probably Nigeria, I don't know. This code is there KYC status, whether it is verified, rejected, outdated kind of thing, you can just check the data type. Then KYC last verified is there that field, when was it last verified? And then what is the kind of account business account or a personal account or a trust account? Then obviously per flag is there. 
+
+Okay. Then SARs data is there again. So this is the SARs report. 
+
+Okay, when was it filed? And then you have the customer ID, filing date, suspicious activity, type, why was it flagged as suspicious activity, rapid movement of friends or restructuring, unusual wire pattern, identity fraud, what is the amount which was involved? And what is the narrative? I mean, this is basically a detailed explanation. And that and then whether it is filed or still under review, that kind of data I have. Finally, the findings. 
+
+So finding sequence number is there regulator for which regulator finding date, category of finding, KYC refresh, AML transaction monitoring, how was that suspicious activity identified? That is the findings report. Okay. Again, severity is there. 
+
+AML is always a high risk, high severity kind of thing. And description is there. Remediation status, whether that has been completed or in progress.
+
+(2:49:20 - 2:49:32)
+So you can also do a value count on this and check how many are still in progress. And then final remediation deadline. So see in progress has a higher deadline, which is at a later date.
+
+(2:49:32 - 2:50:42)
+The ones which are completed are having dates which are you know, older, you can see. So the filing date and the deadline date. So ideally, your filing date should be earlier than the deadline. 
+
+So these are all the kind of data people who are not from the finance industry may find it a bit daunting, but you know, stay with the overall concept here. Okay. Now, this is the regulatory threshold that CTR threshold is 10,000 SAR filing deadline day. 
+
+So I mean, the SAR filing has to be done within 30 days of the deadline. Okay. So these are the deadlines as you see. 
+
+Okay. And then KYC refresh filing. So every for high risk, it has to be done within 12 months. 
+
+KYC refresh for medium risk account has to be done every 24 months. And KYC refresh for low risk account has to be done every 36 months. False positive target percent has to be less than 50 and perp enhanced due diligence is set to 2. So these are some technical things.
+
+(2:50:42 - 2:53:59)
+And now this is the template in which one has to file the report there. Okay. So report title is there, regulator is there, sections are there like AML transaction monitoring description, value of the transaction monitored, alert rates, false positive rates, tuning actions which have been taken, then SAR reports are there, KYC compliance is there, remediation project. 
+
+So these are the five main sections, sorry, four main sections. One is the AML transaction monitoring, second section is on suspicious activity, third is on the KYC compliance and the fourth is on the remediation. And that is the exact four data frame that we have. 
+
+Yeah. So these four data that we have correct. Now we have the data query tools. 
+
+Okay. Okay. Sorry. 
+
+Yeah, we have reached here. I was just checking something which was giving a problem but now that is resolved. There is a question in the chat. 
+
+Perp enhanced. No, no. Perp is a politically exposed person.
+
+(2:54:02 - 2:54:39)
+Perp is politically exposed person. So, okay. So we will be writing SQL databases to get all this kind of data. 
+
+But for now, we are just going to read this Python data frames and we are going to simulate the database tools which our agents are going to use. Okay. So we will define Python function that the workers can call to compute the statistics from our synthetic data.
+
+(2:54:39 - 2:58:02)
+Fine. So we will be using these functions and wrapping them into tools. Right. 
+
+So this is going to compute the AML transaction monitoring statistics. This is going to compute the SAR filing statistics for that quarter. Now you do not have to really understand any of these. 
+
+So stay with the overall objective. Okay. This is to compute the KYC compliance. 
+
+This is status of prior regulatory findings and remediation. And for one of the examples, I have just taken that. Okay. 
+
+So query the AML statistics and just print for all the key value items. So I am just doing all the statistics for all the data that I have got from the four tables. So this is what I have got at the end. 
+
+Total transactions I have monitored is 10,000. Suspicious alerts generated is 386. We have seen that number. 
+
+Alert rate is 3.86%. True positive is 135. Okay, which should be lower than a false positive. And the false positive rate percentage is 65, which should have been lower than 50%. 
+
+So this is a compliance issue. I think if you go to the somewhere thresholds, false positive target percent was 50. And now that is exceeding that number. 
+
+So this is going to be reported. Now CTR filings 584 and transaction value in US dollars that is the total and average transaction values 92795. Now let us create the Langrath states. 
+
+These are all your agent states, section name, narrative, raw data, confidence. So as I said, this entire project was wipe coded. You just have to tell what exactly needs to be done. 
+
+And you can take help from the previous notebooks, I would suggest to also share it with your wipe coding platform, whether you are going to use ChargeAPT, Gemini. You can upload or if you are using Windsurf, Cursor, whatever, then make sure that these Jupyter notebooks or collab notebooks are present in a folder called as reference documents or something like example notebooks. Normally I keep it as example notebooks, where I will put all these 10 labs as example notebooks. 
+
+And I will first prompt I will do is I want you to go through these example notebooks and learn my coding style and the kind of design patterns I have already implemented in my previous agents. So that is the kind of prompt so that the system is familiar with my style, with my coding pattern, with my naming pattern. So that style gets replicated exactly. 
+
+So this is very, very important. And plus, this is a second advantage is that there's something can be reused. So put that in the prompt. 
+
+If some of these agents and patterns can be reused as it is just by changing some of the cosmetic changes, then use it. Use it without hesitations or as many times as needed, kind of. So those things are very, so then it becomes like repurposing your existing agents for a new project.
+
+(2:58:02 - 2:58:11)
+Okay. So all these agent states you defined LLM is being initialised. I'm using GPT 4.1 mini.
+
+(2:58:11 - 2:58:16)
+Okay. Now this is a non-reasoning best agent. This is the best non-reasoning agent.
+
+(2:58:16 - 2:59:12)
+Okay. Or if you want a reasoning agent, then go for GPT 5 mini. That is the best cheapest reasoning agent. 
+
+Let me repeat, reasoning agents will output thinking tokens also, which will be built as the output tokens. Okay. So if you go to any of these models, models, okay. 
+
+So these guys like GPT 5 mini will give you output tokens, reasoning tokens that will also give you reasoning token support. Can you see reasoning token support? Now the reasoning tokens are built as per the output token. So that is one thing you have to remember. 
+
+This is very important if you want to see the reason behind that thought process that helps in auditability. Okay. So that also you can go back and check.
+
+(2:59:14 - 2:59:35)
+So I've run this. I think it is all you can see from this. It's completely running state. 
+
+I would want you to follow this. And if you are still not very clear what is happening, again, go to charge GPT and upload this, ask it to explain you section by section what all is happening. But more or less what we are doing at a high level is we have got some raw data.
+
+(2:59:35 - 2:59:53)
+We have the objective to generate a comprehensive compliance report based on the template that has been shared by a regulator. Okay. And now I'm going to employ many agents to not only draft, but also to verify and you know, do that in an iterative loop.
+
+(2:59:53 - 3:02:58)
+And then finally compile it into the format which is requested by the regulator. Okay. So all these things are going to be done by agentic workflow. 
+
+That is the overall objective here. So I'm going to compile these four sections parallelly. So what are the four sections if you go up? There are four sections in your, these are the four sections in your template. 
+
+So this section, this section, this section, and this section. So idea is to put, see each of those four sections are rated with four different data. So all these guys will have access to tools, which I created as four different functions. 
+
+Okay. So those functions will be used as tools by these agents. So four worker agents, which will work in parallel, there will be an orchestrator. 
+
+And then once all of them have submitted their reports, then it will be going to the evaluator agent, which will do the accuracy check. And it can go back and forth two times maximum. And then finally this report will be assembled and synthesised. 
+
+And again, a human in the loop will verify that. That's very straightforward, I guess. Yeah. 
+
+So this is the orchestrator node, worker node. Now this is the worker node, which will be, sorry, this is the router. And this is the one which will going to create the section worker multiple times, four times this will be created. 
+
+Okay. So by using the send function, I have already taught this send function. And also you will have the prompt templates. 
+
+So this is the prompt template for your section worker node. Similarly, you have the prompt section for the evaluator node, then the routing, and finally your synthesis node. Okay. 
+
+And human in the loop node. So these are all the, then you can connect all these nodes into a graph, compile that, build and compile that graph. So this is what, so orchestrator that will create as many four section workers, four section workers in parallel. 
+
+All of them will give their output to the evaluator. Evaluator will check for the accuracy back and forth a couple of times. Then finally, once everything is verified, it will go to the synthesiser, which will synthesise the end report in the proper template. 
+
+And it will give for the human in the loop review. That is how the end pipeline works. Okay. 
+
+Yeah. So now you can actually start this graph result dot invoke. This was not needed. 
+
+We had already rebuild the graph. Why did this come? Oh, sorry, I think I copied this part twice. So rebuilding was not needed.
+
+(3:02:58 - 3:07:41)
+This part was copied twice by mistake. This till here, we have already had that. This part was the new. 
+
+Okay. So I do that. So starting this compliance report generation, orchestrator four sections. 
+
+These are the four sections in parallel. So these four workers are working. All four are done. 
+
+And then the evaluator found seven issues, okay, in the first iteration. So routing back to the workers for the revision. And then it found nine issues. 
+
+Okay. So two times, you can increase that number maybe. Okay. 
+
+So went for remediation. And then the final report was assembled. And human in loop paused. 
+
+Everything you can just do it. So check for the interrupt keyboard. So graph is will be paused here when you run this. 
+
+And you all you have to do is just press enter. And so waiting for compliance report review. So all you have to do is just press enter and this will work exactly. 
+
+Same thing, same thing. So this is compliance report officer approval. Okay, just keep running back to back, you will get this anyway. 
+
+So once it is approved, then it goes for the final report generation. So this is your final report generation after the approval from the compliance officer. You can also inspect the completed sections one by one. 
+
+So these are the completed sections as per the format. Okay, so how many these are all the key numbers which have been verified from the data by your evaluator. Okay, so these are all the key numbers. 
+
+Inspector evaluator results are also there at the end. So these are the issues found and the remediations everything. PII reduction can also be done. 
+
+So again, as I told you, this is going to be a rejects pattern for now. So searching for SSN, email, phone numbers, account number, customer ID and credit card. So these are some standard patterns you can easily get. 
+
+Okay, so we have implemented these standard patterns. So that PII reduction happens from your report. Okay, so first it is doing a PII scan of the final report. 
+
+No PII detected, safe. So done. Otherwise, if there are you might want to introduce manually and see if this code works. 
+
+So fortunately, in our case, the report which got generated already did not have any PII. But you might want to physically change it somewhere and add a customer transaction and see how the PII reduction happens. Okay, so session resumption and time travel is also possible. 
+
+So we are using the check pointer after every state transition, which will save what all has happened until then. So that is the checkpoint results. So you can go back and resume. 
+
+That is what this code does. How many checkpoints were created? Okay. Because in real life, each of these processes can take several minutes. 
+
+So it's good to, you know, checkpoint after every step. That is what this guy has done. This code has done. 
+
+So nine checkpoints have been captured here. Okay. And then multi-model comparisons, you can also do, you can change the model. 
+
+So here, this was done with GPT 4.18 with a different temperature. This is with a higher temperature. So more varied, potentially more natural process you might get. 
+
+But again, the problem is this might also lead to more hallucinations. Okay. So instead of increasing the temperature, you might want to change the model altogether like GPT 5 million. 
+
+So that also you can do and go with. So lower temperature is preferred for regulatory reports where precision and consistency are paramount. Okay. 
+
+So numbers can get easily hallucinated. So you have to be very, very careful. So testing and validation. 
+
+So again, quality check is there for numerical accuracy, section completeness and PII. So all of these, we are checking once again, using these functions just to make sure that everything is working. Now here, some of these stats check is failing. 
+
+Okay. So you will again stimulate a human in the loop rejection flow. Okay. 
+
+So this is like a second report which gets generated. Okay. With all those issues.
+
+(3:07:42 - 3:08:44)
+And then compliance officers decision is to fail because of those issues. And this process can continue one to two times more. Okay. 
+
+But at least this looks more real life kind of a scenario. Of course, how all these things will be orchestrated in your internal system that you need to figure out. Okay. 
+
+You can make a web interface where all these reports can be presented and there are buttons to approve, disapprove, add comments, kind of things that can also be done. But yeah, so these are the key learnings from this quick project. Okay. 
+
+So next session, we will talk about some deployment. Okay. And if time permits, the last, that is this session on 22nd.
+
+(3:08:45 - 3:09:34)
+Okay. I will take some examples of crew AI. Okay. 
+
+End to end projects. Okay. Or I will also give you one or two assignments on line graph. 
+
+So please be mentally and physically prepared. So next week, I'll give you some assignments or maybe this week itself, the team will mail you. Okay. 
+
+Some assignments or end to end projects. So I'll give you with a business scenario. What is the deliverable? What is the exact agent? Or what is the overall business problem? Now, how you solve this is up to you. 
+
+How you code that, white coding, Gemini, Cloud, whatever you want to use, I don't care. I want a problem to be solved. Okay. 
+
+You can put everything into a working notebook like this. Okay. If any data is needed, generate that synthetic data.
+
+(3:09:35 - 3:09:40)
+Also from chat, GPT, Cloud, whatever. Submit that notebook for review. That's what I would say.
+
+(3:09:40 - 3:10:28)
+Okay. So submit that data to the support team and flag me in your report diary. So I can also come back and review it. 
+
+Okay. So let's do it. Three, four scenarios I'll give you. 
+
+At least pick two of those scenarios and try to implement it on your own. Make sense? Kimi 2.1. I have not used Kimi. Not very fond of Chinese models. 
+
+I also have not been very much using any of these deep seek models or Kimi models. So I've normally stayed to OpenAI models and Cloud models for the API. Gemini models also to some extent.
+
+(3:10:29 - 3:10:43)
+So open source model means you need the grok or open router. So grok is good again. But as I said, I have not been experimenting too much with grok models or open router.
+
+(3:10:44 - 3:11:14)
+So my go-to models are always one of these three ones, even for the POCs. If you want, you can use it, no doubt. So I cannot give my comment or feedback, frankly, because I have not been using them. 
+
+So have a nice week ahead. Okay. Thank you. 
+
+And we'll meet in the next session for the deployment. Okay. Bye-bye. 
+
+Thank you.
