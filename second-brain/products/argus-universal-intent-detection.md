@@ -1,4 +1,4 @@
-# ARGUS — Universal Intent Detection for Third-Party-Introduced Risk
+# Kartikeya  — Universal Intent Detection for Third-Party-Introduced Risk
 
 > *Working name. Argus Panoptes: the all-seeing guardian who watches every gate, and looks two ways at once — at what a thing **claims** to be, and what it is **actually capable of**.*
 
