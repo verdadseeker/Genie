@@ -13,6 +13,7 @@
 
 | Folder | Document | What it is |
 |---|---|---|
+| [`.`](visual-map.md) | **Visual Map** | One-page picture of everything below — diagrams, funnel, competitor map, the 5 Fires. **Skim this first.** |
 | [`vision/`](vision/vision.md) | **Vision** | The founding document — belief, archetype blend, the moat, the guardrails, the signature framework. **Start here.** |
 | [`strategy/`](strategy/go-to-market.md) | **Go-To-Market** | The systematic approach: internet → YouTube → owned audience → in-person workshops → scale, phase by phase with metrics and decision rules. |
 | [`strategy/`](strategy/resources-and-investment.md) | **Resources & Investment** | Honest accounting of money, time, team, timeline, and legal/ethical risk. Three budget tiers (Lean / Serious / Empire). |
